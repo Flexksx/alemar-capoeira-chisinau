@@ -10,6 +10,7 @@
 	import Search from '@lucide/svelte/icons/search';
 	import ChevronLeft from '@lucide/svelte/icons/chevron-left';
 	import ChevronRight from '@lucide/svelte/icons/chevron-right';
+	import ThemeToggle from '$lib/components/ThemeToggle.svelte';
 
 	const songs: Song[] = songsData as Song[];
 
@@ -87,13 +88,13 @@
 			</button>
 		</div>
 
-		<!-- Placeholder for symmetry -->
-		<div class="w-11"></div>
+		<!-- Theme Toggle -->
+		<ThemeToggle />
 	</div>
 </header>
 
 <!-- Main Content -->
-<main class="h-dvh pt-[60px] pb-[80px] safe-top safe-bottom">
+<main class="h-dvh pt-[calc(60px+env(safe-area-inset-top))] pb-[80px] safe-bottom">
 	<Carousel
 		class="h-full"
 		opts={{

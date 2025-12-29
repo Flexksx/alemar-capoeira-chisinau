@@ -10,7 +10,37 @@
 :root {
   --radius: 0.75rem;
   
-  /* Dark theme - warm, earthy tones inspired by berimbau wood and capoeira culture */
+  /* Light theme - default */
+  --background: oklch(0.98 0.005 80);
+  --foreground: oklch(0.15 0.02 60);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.15 0.02 60);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.15 0.02 60);
+  --primary: oklch(0.55 0.15 75);
+  --primary-foreground: oklch(0.98 0.01 80);
+  --secondary: oklch(0.95 0.01 80);
+  --secondary-foreground: oklch(0.2 0.02 60);
+  --muted: oklch(0.95 0.01 80);
+  --muted-foreground: oklch(0.45 0.02 60);
+  --accent: oklch(0.95 0.02 145);
+  --accent-foreground: oklch(0.2 0.02 60);
+  --destructive: oklch(0.55 0.22 25);
+  --border: oklch(0.9 0.01 80);
+  --input: oklch(0.9 0.01 80);
+  --ring: oklch(0.55 0.15 75);
+  --sidebar: oklch(0.97 0.005 80);
+  --sidebar-foreground: oklch(0.15 0.02 60);
+  --sidebar-primary: oklch(0.55 0.15 75);
+  --sidebar-primary-foreground: oklch(0.98 0.01 80);
+  --sidebar-accent: oklch(0.95 0.01 80);
+  --sidebar-accent-foreground: oklch(0.2 0.02 60);
+  --sidebar-border: oklch(0.9 0.01 80);
+  --sidebar-ring: oklch(0.55 0.15 75);
+}
+
+/* Dark theme - warm, earthy tones inspired by berimbau wood and capoeira culture */
+.dark {
   --background: oklch(0.12 0.01 60);
   --foreground: oklch(0.95 0.01 80);
   --card: oklch(0.16 0.01 55);
@@ -55,36 +85,6 @@
   --sidebar-accent-foreground: oklch(0.95 0.01 80);
   --sidebar-border: oklch(0.28 0.02 55);
   --sidebar-ring: oklch(0.75 0.15 75);
-}
-
-/* Light theme option */
-.light {
-  --background: oklch(0.98 0.005 80);
-  --foreground: oklch(0.15 0.02 60);
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.15 0.02 60);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.15 0.02 60);
-  --primary: oklch(0.55 0.15 75);
-  --primary-foreground: oklch(0.98 0.01 80);
-  --secondary: oklch(0.95 0.01 80);
-  --secondary-foreground: oklch(0.2 0.02 60);
-  --muted: oklch(0.95 0.01 80);
-  --muted-foreground: oklch(0.45 0.02 60);
-  --accent: oklch(0.95 0.02 145);
-  --accent-foreground: oklch(0.2 0.02 60);
-  --destructive: oklch(0.55 0.22 25);
-  --border: oklch(0.9 0.01 80);
-  --input: oklch(0.9 0.01 80);
-  --ring: oklch(0.55 0.15 75);
-  --sidebar: oklch(0.97 0.005 80);
-  --sidebar-foreground: oklch(0.15 0.02 60);
-  --sidebar-primary: oklch(0.55 0.15 75);
-  --sidebar-primary-foreground: oklch(0.98 0.01 80);
-  --sidebar-accent: oklch(0.95 0.01 80);
-  --sidebar-accent-foreground: oklch(0.2 0.02 60);
-  --sidebar-border: oklch(0.9 0.01 80);
-  --sidebar-ring: oklch(0.55 0.15 75);
 }
 
 @theme inline {

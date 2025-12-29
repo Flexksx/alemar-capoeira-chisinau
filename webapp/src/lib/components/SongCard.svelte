@@ -14,7 +14,7 @@
 
 <article class="flex h-full flex-col">
 	<!-- Song Header -->
-	<header class="shrink-0 border-b border-border px-4 pb-4 pt-2">
+	<header class="shrink-0 border-b border-border px-4 pb-4 pt-4">
 		<div class="mb-2 flex items-start justify-between gap-2">
 			<h1 class="font-display text-2xl font-bold leading-tight text-foreground">
 				{song.title}
