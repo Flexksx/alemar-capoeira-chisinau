@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { createSongSearch } from '$lib/search';
 	import type { Song } from '$lib/types';
+	import { sortSongsByCategory } from '$lib/utils';
 	import CategoryBadge from './CategoryBadge.svelte';
 	import X from '@lucide/svelte/icons/x';
 	import Search from '@lucide/svelte/icons/search';
@@ -13,7 +14,8 @@
 		onSelectSong: (songId: string) => void;
 	}
 
-	let { songs, isOpen, onClose, onSelectSong }: Props = $props();
+	let { songs: unsortedSongs, isOpen, onClose, onSelectSong }: Props = $props();
+	const songs = $derived(sortSongsByCategory(unsortedSongs));
 
 	let query = $state('');
 	let inputRef = $state<HTMLInputElement | null>(null);

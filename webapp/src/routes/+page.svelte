@@ -6,13 +6,14 @@
 	import SearchModal from '$lib/components/SearchModal.svelte';
 	import songsData from '$lib/data/songs.json';
 	import type { Song } from '$lib/types';
+	import { sortSongsByCategory } from '$lib/utils';
 	import Menu from '@lucide/svelte/icons/menu';
 	import Search from '@lucide/svelte/icons/search';
 	import ChevronLeft from '@lucide/svelte/icons/chevron-left';
 	import ChevronRight from '@lucide/svelte/icons/chevron-right';
 	import ThemeToggle from '$lib/components/ThemeToggle.svelte';
 
-	const songs: Song[] = songsData as Song[];
+	const songs: Song[] = sortSongsByCategory(songsData as Song[]);
 
 	let sidebarOpen = $state(false);
 	let searchOpen = $state(false);

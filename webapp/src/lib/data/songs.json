@@ -387,5 +387,345 @@
       }
     },
     "structure": ["v1", "v2", "c1", "v1", "v2", "c1"]
+  },
+  {
+    "id": "nego-nago",
+    "title": "Nego Nagô",
+    "author": "Mestre Ananias",
+    "category": "REGIONAL",
+    "tags": ["corrido", "angola"],
+    "verses": {
+      "v1": {
+        "type": "verse",
+        "pt": "Nego nagô quando morre, vai na tumba de banguê\nOs parentes vão dizendo, urubu tem que comer\nAqui babá, a cangerê, nego nagô, tem catinga de Sariguê",
+        "localizations": {
+          "ro": {
+            "transcription": "Negu nago kandu mori, vai na tumba dji banguê\nUș parentis vão dizendu, urubu tem ke komer\nAki babá, a kangerê, negu nago, tem katinga dji sariguê",
+            "translation": "Nego nagô, când moare, merge în mormântul din Banguê\nRudele tot spun: urubu (vulturul) trebuie să mănânce\nAici, babá, a cangerê, nego nagô are miros de sariguê"
+          }
+        }
+      },
+      "c1": {
+        "type": "chorus",
+        "pt": "Aqui babá, a cangerê, nego nagô tem catinga de sariguê",
+        "localizations": {
+          "ro": {
+            "transcription": "Aki babá, a kangerê, negu nago tem katinga dji sariguê",
+            "translation": "Aici, babá, a cangerê, nego nagô are miros de sariguê"
+          }
+        }
+      },
+      "c2": {
+        "type": "chorus",
+        "pt": "Aqui babá, a cangerê, nego nagô tem catinga de sariguê\nAqui babá, a cangerê, nego nagô tem catinga de sariguê",
+        "localizations": {
+          "ro": {
+            "transcription": "Aki babá, a kangerê, negu nago tem katinga dji sariguê\nAki babá, a kangerê, negu nago tem katinga dji sariguê",
+            "translation": "Aici, babá, a cangerê, nego nagô are miros de sariguê\nAici, babá, a cangerê, nego nagô are miros de sariguê"
+          }
+        }
+      }
+    },
+    "structure": ["v1", "c2", "v1", "c2"]
+  },
+  {
+    "id": "o-mae-amanha-eu-vou",
+    "title": "Ô mãe amanhã eu vou",
+    "author": "Traditional",
+    "category": "ANGOLA",
+    "tags": ["corrido", "angola"],
+    "verses": {
+      "v1": {
+        "type": "verse",
+        "pt": "Ô mãe amanhã eu vou\nÔ mãe amanhã chego lá",
+        "localizations": {
+          "ro": {
+            "transcription": "O mãi amanhă eu vou\nO mãi amanhă shegu la",
+            "translation": "O, mamă, mâine plec\nO, mamă, mâine ajung acolo"
+          }
+        }
+      },
+      "c2": {
+        "type": "chorus",
+        "pt": "Mãe amanhã eu vou\nMãe amanhã chego lá",
+        "localizations": {
+          "ro": {
+            "transcription": "Mãi amanhă eu vou\nMãi amanhă shegu la",
+            "translation": "Mamă, mâine plec\nMamă, mâine ajung acolo"
+          }
+        }
+      },
+      "v2": {
+        "type": "verse",
+        "pt": "Ô mãe amanhã eu vou\nÔ mãe amanhã chego lá, aí aí",
+        "localizations": {
+          "ro": {
+            "transcription": "O mãi amanhă eu vou\nO mãi amanhă shegu la, ai ai",
+            "translation": "O, mamă, mâine plec\nO, mamă, mâine ajung acolo, ai ai"
+          }
+        }
+      }
+    },
+    "structure": ["v1", "c2", "v2", "c2"]
+  },
+  {
+    "id": "ta-na-hora-de-jogar",
+    "title": "Tá na hora de jogar",
+    "author": "Traditional",
+    "category": "REGIONAL",
+    "tags": ["corrido", "roda"],
+    "verses": {
+      "c1": {
+        "type": "chorus",
+        "pt": "Tá na hora de jogar\nVamos lá vadiar\nTá na hora de jogar\nVamos lá vadiar\n(2x)",
+        "localizations": {
+          "ro": {
+            "transcription": "Ta na ora dji jogar\nVamus la vadiar\nTa na ora dji jogar\nVamus la vadiar\n(2x)",
+            "translation": "E timpul să jucăm\nHai să vadiăm\nE timpul să jucăm\nHai să vadiăm\n(2x)"
+          }
+        }
+      },
+      "c2": {
+        "type": "chorus",
+        "pt": "Eu vou, eu vou\nVou vadiar\nEu vou, eu vou\nVou vadiar\n(2x)",
+        "localizations": {
+          "ro": {
+            "transcription": "Eu vou, eu vou\nVou vadiar\nEu vou, eu vou\nVou vadiar\n(2x)",
+            "translation": "Eu merg, eu merg\nMă duc să vadi-ez\nEu merg, eu merg\nMă duc să vadi-ez\n(2x)"
+          }
+        }
+      },
+      "v1": {
+        "type": "verse",
+        "pt": "Quando chega a hora\nPara mim é uma alegria\nEu pego no berimbau\nE começo a cantoria",
+        "localizations": {
+          "ro": {
+            "transcription": "Kuandu shega a ora\nPara mim e uma alegria\nEu pegu nu berimbau\nI komeçu a kantoria",
+            "translation": "Când vine momentul\nPentru mine e o bucurie\nPun mâna pe berimbau\nȘi încep cântarea"
+          }
+        }
+      },
+      "v2": {
+        "type": "verse",
+        "pt": "Berimbau me convidou\nEu não posso recusar\nBenzo logo meu corpo\nE entro para jogar",
+        "localizations": {
+          "ro": {
+            "transcription": "Berimbau mi konvidou\nEu nao posu rekuzar\nBenzo logo meu korpu\nI entru para jogar",
+            "translation": "Berimbau m-a chemat\nNu pot să refuz\nÎmi binecuvântez îndată trupul\nȘi intru să joc"
+          }
+        }
+      },
+      "v3": {
+        "type": "verse",
+        "pt": "A roda passou do meio\nBerimbau falou assim\nO jogo termina agora\nMas a capoeira não tem fim",
+        "localizations": {
+          "ro": {
+            "transcription": "A roda pasou du mei-u\nBerimbau falou asim\nU jogo termina agora\nMas a kapoeira nao tem fim",
+            "translation": "Roata (roda) a trecut de mijloc\nBerimbau a spus așa\nJocul se termină acum\nDar capoeira n-are sfârșit"
+          }
+        }
+      },
+      "v4": {
+        "type": "verse",
+        "pt": "Pra quem vive capoeira\nQuando o berimbau desarma\nDá uma tristeza no espírito\nE os olhos enchendo d’água",
+        "localizations": {
+          "ro": {
+            "transcription": "Pra kem vivi kapoeira\nKuandu u berimbau dezarma\nDa uma tristez-a nu ispiritu\nI us olhus enchendu d’agua",
+            "translation": "Pentru cine trăiește capoeira\nCând berimbau se oprește\nVine o tristețe în suflet\nȘi ochii se umplu de lacrimi"
+          }
+        }
+      }
+    },
+    "structure": ["c1", "c2", "v1", "c1", "v2", "c1", "v3", "c1", "v4", "c1"]
+  },
+  {
+    "id": "meu-patua",
+    "title": "Meu patuá",
+    "author": "Traditional",
+    "category": "REGIONAL",
+    "tags": ["corrido", "roda"],
+    "verses": {
+      "c1": {
+        "type": "chorus",
+        "pt": "Foi na Bahia que eu mandei fazer\nFoi na Bahia que mandei preparar\nMeu patuá meu pai\nMeu patuá\nMeu patuá para me proteger",
+        "localizations": {
+          "ro": {
+            "transcription": "Foi na Bahia ke eu mandei fazer\nFoi na Bahia ke mandei preparar\nMeu patuá meu pai\nMeu patuá\nMeu patuá para mi proteger",
+            "translation": "În Bahia am trimis să mi se facă\nÎn Bahia am trimis să mi se pregătească\nPatuá-ul meu, tată\nPatuá-ul meu\nPatuá-ul meu ca să mă protejeze"
+          }
+        }
+      },
+      "v1": {
+        "type": "verse",
+        "pt": "Era domingo era um dia de oferendas\nE eu levei flores para Iemanjá\nFoi celebrar Janaina\nRainha menina\nE a Iemanjá que e a dona do mar",
+        "localizations": {
+          "ro": {
+            "transcription": "Era domingo era um djia dji oferendas\nI eu levei flores para Iemanjá\nFoi selebrar Janaina\nRainha menina\nI a Iemanjá ke e a dona du mar",
+            "translation": "Era duminică, era o zi de ofrande\nȘi am dus flori pentru Iemanjá\nA fost să o celebrez pe Janaina\nRegina-fetiță\nȘi pe Iemanjá, stăpâna mării"
+          }
+        }
+      },
+      "v2": {
+        "type": "verse",
+        "pt": "Na Bahia um mestre velho mandingueiro\nAbriu a roda fazendo uma louvação\nCantou bem forte o lamento\nMe dando a bênção\nEra hora de eu sair para jogar",
+        "localizations": {
+          "ro": {
+            "transcription": "Na Bahia um meștri velhu mandingueiru\nAbriu a roda fazendu uma louvasau\nKantou bem forti u lamento\nMi dandu a bênsau\nEra ora dji eu sair para jogar",
+            "translation": "În Bahia, un maestru bătrân, mandingueiro\nA deschis roda făcând o laudă (louvação)\nA cântat tare jelania\nDându-mi binecuvântarea\nEra timpul să ies să joc"
+          }
+        }
+      },
+      "v3": {
+        "type": "verse",
+        "pt": "Foi convidado para uma roda de gigantes\nCom dois pandeiros e três berimbaus\nE um atabaque tocando\nManeiro e sereno\nEra hora de eu sair para jogar",
+        "localizations": {
+          "ro": {
+            "transcription": "Foi konvidadu para uma roda dji gigantes\nCom dois pandeirus i treiș berimbaus\nI um atabaque tokandu\nManeiru i serenu\nEra ora dji eu sair para jogar",
+            "translation": "Am fost invitat la o roda de giganți\nCu două pandeiro și trei berimbau\nȘi un atabaque cântând\nFrumos și senin\nEra timpul să ies să joc"
+          }
+        }
+      },
+      "v4": {
+        "type": "verse",
+        "pt": "Meu patuá é meu berimbau sagrado\nE minha vida também é meu cantar\nÉ os meus amigos sorrindo\nSempre junto comigo\nNa volta que o mundo da",
+        "localizations": {
+          "ro": {
+            "transcription": "Meu patuá e meu berimbau sagradu\nI minha vida tambem e meu kantar\nE us meus amigos sorindu\nSempri junto komigu\nNa volta ke u mundu da",
+            "translation": "Patuá-ul meu e berimbau-ul meu sacru\nȘi viața mea e și cântecul meu\nSunt prietenii mei zâmbind\nMereu lângă mine\nÎn întoarcerea pe care o face lumea"
+          }
+        }
+      }
+    },
+    "structure": ["c1", "v1", "c1", "v2", "c1", "v3", "c1", "v4", "c1"]
+  },
+  {
+    "id": "samba-le-le-bateu-na-porta",
+    "title": "Samba lê lê bateu na porta",
+    "author": "Traditional",
+    "category": "SAMBA",
+    "tags": ["samba", "festa"],
+    "verses": {
+      "c1": {
+        "type": "chorus",
+        "pt": "Samba lê lê bateu na porta\nSamba lê lê vai ver quem é ?\nSamba lê lê é meu amor\nSamba lê lê samba no pé",
+        "localizations": {
+          "ro": {
+            "transcription": "Samba le le bateu na porta\nSamba le le vai ver kem e?\nSamba le le e meu amor\nSamba le le samba nu pe",
+            "translation": "Samba Lelê a bătut la ușă\nSamba Lelê se duce să vadă cine e?\nSamba Lelê e iubirea mea\nSamba Lelê dansează samba din picioare"
+          }
+        }
+      },
+      "v1": {
+        "type": "verse",
+        "pt": "Andam dizendo por aí\nQue o amor se acabou\nÉ mentira de quem disse\nEle apenas começou",
+        "localizations": {
+          "ro": {
+            "transcription": "Andam dizendu por ai\nKe u amor se acabou\nE mințira dji kem disi\nEli apenas komesou",
+            "translation": "Umblă vorba pe-acolo\nCă iubirea s-a terminat\nE minciuna celui care-a spus\nAbia a început"
+          }
+        }
+      },
+      "v2": {
+        "type": "verse",
+        "pt": "Mas mulher velha não se casa\nPorque não acha ninguém\nQuando chega no roçado\nChama todos de meu bem",
+        "localizations": {
+          "ro": {
+            "transcription": "Mais mulier velha nao se kaza\nPorke nao așa ninguem\nKuandu shega nu roșadu\nShama todos dji meu bem",
+            "translation": "Dar femeia bătrână nu se mărită\nFiindcă nu găsește pe nimeni\nCând ajunge la ogor\nÎi strigă pe toți: „dragul meu”"
+          }
+        }
+      },
+      "v3": {
+        "type": "verse",
+        "pt": "Olha aí moça bonita\nCoisa linda de se ver\nVocê é o pé da rosa\nEu sou a rosa do pé",
+        "localizations": {
+          "ro": {
+            "transcription": "Olia ai mosa bonita\nKoiza linda dji se ver\nVose e u pe da roza\nEu sou a roza du pe",
+            "translation": "Uite-acolo, fată frumoasă\nCe lucru minunat de văzut\nTu ești tulpina trandafirului\nEu sunt trandafirul de pe tulpină"
+          }
+        }
+      }
+    },
+    "structure": ["c1", "v1", "c1", "v2", "c1", "v3", "c1"]
+  },
+  {
+    "id": "vim-no-navio-de-aruanda",
+    "title": "Vim no navio de Aruanda",
+    "author": "Traditional",
+    "category": "ANGOLA",
+    "tags": ["corrido", "angola"],
+    "verses": {
+      "c1": {
+        "type": "chorus",
+        "pt": "Vim no navio de Aruanda, Aruanda ê\nVim no navio de Aruanda, Aruanda á\nPorque me trouxeram de Aruanda\nPra que me trouxeram de Aruanda\nVim no navio de Aruanda, Aruanda ê",
+        "localizations": {
+          "ro": {
+            "transcription": "Vim nu navio dji Aruanda, Aruanda ê\nVim nu navio dji Aruanda, Aruanda a\nPorke mi troușeram dji Aruanda\nPra ke mi troușeram dji Aruanda\nVim nu navio dji Aruanda, Aruanda ê",
+            "translation": "Am venit pe vasul din Aruanda, Aruanda ê\nAm venit pe vasul din Aruanda, Aruanda á\nDe ce m-au adus din Aruanda?\nPentru ce m-au adus din Aruanda?\nAm venit pe vasul din Aruanda, Aruanda ê"
+          }
+        }
+      }
+    },
+    "structure": ["c1", "c1"]
+  },
+  {
+    "id": "adeus-santo-amaro-vou-ver-vou-pra-la",
+    "title": "Adeus Santo Amaro (Vou ver, vou pra lá)",
+    "author": "Traditional",
+    "category": "ANGOLA",
+    "tags": ["corrido", "despedida", "angola"],
+    "verses": {
+      "c1": {
+        "type": "chorus",
+        "pt": "Adeus Santo Amaro, vou ver, vou pra lá\nVou ver, vou pra lá, vou ver, eu vou pra lá\n(Adeus Santo Amaro, eu vou ver, vou pra lá)\nVou ver, vou pra lá, vou ver angoleiro vadiar\n(Adeus Santo Amaro, vou ver, vou pra lá)",
+        "localizations": {
+          "ro": {
+            "transcription": "Adeus Santu Amaru, vou ver, vou pra la\nVou ver, vou pra la, vou ver, eu vou pra la\n(Adeus Santu Amaru, eu vou ver, vou pra la)\nVou ver, vou pra la, vou ver angoleiru vadiar\n(Adeus Santu Amaru, vou ver, vou pra la)",
+            "translation": "La revedere, Santo Amaro, mă duc să văd, plec acolo\nMă duc să văd, plec acolo, mă duc să văd, eu plec acolo\n(La revedere, Santo Amaro, mă duc să văd, plec acolo)\nMă duc să văd, plec acolo, mă duc să-i văd pe angoleiro vadiind\n(La revedere, Santo Amaro, mă duc să văd, plec acolo)"
+          }
+        }
+      }
+    },
+    "structure": ["c1"]
+  },
+  {
+    "id": "meu-atabaque-e-de-couro-de-boi",
+    "title": "Meu atabaque é de couro de boi",
+    "author": "Traditional",
+    "category": "ANGOLA",
+    "tags": ["corrido", "angola"],
+    "verses": {
+      "c1": {
+        "type": "chorus",
+        "pt": "Meu atabaque é de couro de boi\nOlha o meu atabaque\n(é de couro de boi)\nMeu atabaque\n(é de couro de boi)",
+        "localizations": {
+          "ro": {
+            "transcription": "Meu atabaque e dji kouru dji boi\nOlia u meu atabaque\n(e dji kouru dji boi)\nMeu atabaque\n(e dji kouru dji boi)",
+            "translation": "Atabaque-ul meu e din piele de bou\nUite la atabaque-ul meu\n(e din piele de bou)\nAtabaque-ul meu\n(e din piele de bou)"
+          }
+        }
+      }
+    },
+    "structure": ["c1"]
+  },
+  {
+    "id": "balanca-rede",
+    "title": "Balança rede",
+    "author": "Traditional",
+    "category": "REGIONAL",
+    "tags": ["corrido", "popular"],
+    "verses": {
+      "c1": {
+        "type": "chorus",
+        "pt": "Eu vou botar minha rede na varanda\nEu quero ver minha rede balançar\nBalança rede ioio\nBalança rede iaia",
+        "localizations": {
+          "ro": {
+            "transcription": "Eu vou botar minha redji na varanda\nEu keru ver minha redji balansar\nBalansa redji ioio\nBalansa redji iaia",
+            "translation": "O să-mi pun hamacul pe verandă\nVreau să-mi văd hamacul legănându-se\nLeagănă-te, hamacule, ioio\nLeagănă-te, hamacule, iaia"
+          }
+        }
+      }
+    },
+    "structure": ["c1", "c1"]
   }
 ]
