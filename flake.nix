@@ -30,7 +30,6 @@
           packages = with pkgs; [
             # Node.js / TypeScript / Frontend
             nodejs_24
-            corepack # Provides pnpm and yarn
             pnpm
             nodePackages.typescript
             nodePackages.typescript-language-server
@@ -44,9 +43,6 @@
           ];
 
           shellHook = ''
-            # Enable pnpm via corepack
-            corepack enable
-
             echo "🚀 Voisso TypeScript Development Environment"
             echo "Node.js: $(node --version)"
             echo "pnpm:    $(pnpm --version)"
