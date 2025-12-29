@@ -1,252 +1,351 @@
 [
-	{
-		"id": "parana-e",
-		"title": "Paraná Ê",
-		"author": "Traditional",
-		"category": "REGIONAL",
-		"tags": ["corrido", "popular"],
-		"verses": {
-			"c1": {
-				"type": "chorus",
-				"pt": "Paraná ê, Paraná ê, Paraná",
-				"localizations": {
-					"ro": {
-						"transcription": "Parana ie, Parana ie, Parana",
-						"translation": "Paraná (nume de râu în Brazilia)"
-					}
-				}
-			},
-			"v1": {
-				"type": "verse",
-				"pt": "Vou dizer a meu mestre\nComo Paraná é bom",
-				"localizations": {
-					"ro": {
-						"transcription": "Voi dzizer a meu meștri\nComu Parana e bom",
-						"translation": "Voi spune maestrului meu\nCât de bun este Paraná"
-					}
-				}
-			},
-			"v2": {
-				"type": "verse",
-				"pt": "Água de beber\nParaná é bom",
-				"localizations": {
-					"ro": {
-						"transcription": "Agua dji beber\nParana e bom",
-						"translation": "Apă de băut\nParaná este bun"
-					}
-				}
-			},
-			"v3": {
-				"type": "verse",
-				"pt": "Terra de plantar\nParaná é bom",
-				"localizations": {
-					"ro": {
-						"transcription": "Tera dji plantar\nParana e bom",
-						"translation": "Pământ de cultivat\nParaná este bun"
-					}
-				}
-			}
-		},
-		"structure": ["c1", "v1", "c1", "v2", "c1", "v3", "c1"]
-	},
-	{
-		"id": "zum-zum-zum",
-		"title": "Zum Zum Zum",
-		"author": "Traditional",
-		"category": "ANGOLA",
-		"tags": ["ladainha", "angola"],
-		"verses": {
-			"c1": {
-				"type": "chorus",
-				"pt": "Zum zum zum, capoeira mata um\nZum zum zum, capoeira mata um",
-				"localizations": {
-					"ro": {
-						"transcription": "Zum zum zum, capoeira mata um\nZum zum zum, capoeira mata um",
-						"translation": "Zum zum zum, capoeira omoară pe unul\nZum zum zum, capoeira omoară pe unul"
-					}
-				}
-			},
-			"v1": {
-				"type": "verse",
-				"pt": "Eu já vivo enjoado\nDe viver aqui na terra",
-				"localizations": {
-					"ro": {
-						"transcription": "Eu ja vivu enjoadu\nDji viver aki na tera",
-						"translation": "Sunt deja sătul\nDe a trăi aici pe pământ"
-					}
-				}
-			},
-			"v2": {
-				"type": "verse",
-				"pt": "Ô mamãe eu vou pra lua\nEu vou falar com as estrelas",
-				"localizations": {
-					"ro": {
-						"transcription": "O mamãi eu voi pra lua\nEu voi falar com as estrelas",
-						"translation": "O, mamă, mă duc pe lună\nVoi vorbi cu stelele"
-					}
-				}
-			}
-		},
-		"structure": ["c1", "v1", "c1", "v2", "c1"]
-	},
-	{
-		"id": "volta-do-mundo",
-		"title": "Volta do Mundo",
-		"author": "Traditional",
-		"category": "ANGOLA",
-		"tags": ["corrido", "roda"],
-		"verses": {
-			"c1": {
-				"type": "chorus",
-				"pt": "Volta do mundo, camará\nVolta do mundo, camará",
-				"localizations": {
-					"ro": {
-						"transcription": "Volta du mundu, camara\nVolta du mundu, camara",
-						"translation": "Întoarcerea lumii, camarade\nÎntoarcerea lumii, camarade"
-					}
-				}
-			},
-			"v1": {
-				"type": "verse",
-				"pt": "O mundo dá volta, camará\nO mundo dá volta, camará",
-				"localizations": {
-					"ro": {
-						"transcription": "O mundu da volta, camara\nO mundu da volta, camara",
-						"translation": "Lumea se întoarce, camarade\nLumea se întoarce, camarade"
-					}
-				}
-			}
-		},
-		"structure": ["c1", "v1", "c1"]
-	},
-	{
-		"id": "samba-de-roda",
-		"title": "Samba Lelê",
-		"author": "Traditional",
-		"category": "SAMBA",
-		"tags": ["samba", "festa"],
-		"verses": {
-			"c1": {
-				"type": "chorus",
-				"pt": "Samba Lelê tá doente\nTá com a cabeça quebrada",
-				"localizations": {
-					"ro": {
-						"transcription": "Samba Lele ta doenti\nTa com a cabesa quebrada",
-						"translation": "Samba Lelê e bolnavă\nAre capul spart"
-					}
-				}
-			},
-			"c2": {
-				"type": "chorus",
-				"pt": "Samba, samba, samba ô Lelê\nSamba, samba, samba ô Lalá",
-				"localizations": {
-					"ro": {
-						"transcription": "Samba, samba, samba o Lele\nSamba, samba, samba o Lala",
-						"translation": "Samba, samba, samba o Lelê\nSamba, samba, samba o Lalá"
-					}
-				}
-			},
-			"v1": {
-				"type": "verse",
-				"pt": "Samba Lelê precisa\nÉ de uma boa lambada",
-				"localizations": {
-					"ro": {
-						"transcription": "Samba Lele presiza\nE dji uma boa lambada",
-						"translation": "Samba Lelê are nevoie\nDe o lovitură bună"
-					}
-				}
-			}
-		},
-		"structure": ["c1", "c2", "v1", "c2"]
-	},
-	{
-		"id": "ie-maior-e-deus",
-		"title": "Iê, Maior é Deus",
-		"author": "Traditional",
-		"category": "ANGOLA",
-		"tags": ["ladainha", "abertura"],
-		"verses": {
-			"c1": {
-				"type": "chorus",
-				"pt": "Iê, maior é Deus\nIê, maior é Deus, camará",
-				"localizations": {
-					"ro": {
-						"transcription": "Ie, maior e Deus\nIe, maior e Deus, camara",
-						"translation": "Iê, cel mai mare este Dumnezeu\nIê, cel mai mare este Dumnezeu, camarade"
-					}
-				}
-			},
-			"v1": {
-				"type": "verse",
-				"pt": "Iê, viva meu mestre\nIê, viva meu mestre, camará",
-				"localizations": {
-					"ro": {
-						"transcription": "Ie, viva meu meștri\nIe, viva meu meștri, camara",
-						"translation": "Iê, trăiască maestrul meu\nIê, trăiască maestrul meu, camarade"
-					}
-				}
-			},
-			"v2": {
-				"type": "verse",
-				"pt": "Iê, quem me ensinou\nIê, quem me ensinou, camará",
-				"localizations": {
-					"ro": {
-						"transcription": "Ie, kem mi ensinou\nIe, kem mi ensinou, camara",
-						"translation": "Iê, cel care m-a învățat\nIê, cel care m-a învățat, camarade"
-					}
-				}
-			},
-			"v3": {
-				"type": "verse",
-				"pt": "Iê, a capoeira\nIê, a capoeira, camará",
-				"localizations": {
-					"ro": {
-						"transcription": "Ie, a capoeira\nIe, a capoeira, camara",
-						"translation": "Iê, capoeira\nIê, capoeira, camarade"
-					}
-				}
-			}
-		},
-		"structure": ["c1", "v1", "c1", "v2", "c1", "v3", "c1"]
-	},
-	{
-		"id": "boa-viagem",
-		"title": "Boa Viagem",
-		"category": "REGIONAL",
-		"tags": ["despedida", "corrido"],
-		"verses": {
-			"c1": {
-				"type": "chorus",
-				"pt": "Adeus, adeus\nBoa viagem",
-				"localizations": {
-					"ro": {
-						"transcription": "Adeus, adeus\nBoa viajeim",
-						"translation": "La revedere, la revedere\nDrum bun"
-					}
-				}
-			},
-			"v1": {
-				"type": "verse",
-				"pt": "Eu vou me embora\nBoa viagem",
-				"localizations": {
-					"ro": {
-						"transcription": "Eu voi mi embora\nBoa viajeim",
-						"translation": "Eu plec\nDrum bun"
-					}
-				}
-			},
-			"v2": {
-				"type": "verse",
-				"pt": "Eu vou com Deus\nBoa viagem",
-				"localizations": {
-					"ro": {
-						"transcription": "Eu voi com Deus\nBoa viajeim",
-						"translation": "Merg cu Dumnezeu\nDrum bun"
-					}
-				}
-			}
-		},
-		"structure": ["c1", "v1", "c1", "v2", "c1"]
-	}
+  {
+    "id": "parana-e",
+    "title": "Paraná Ê",
+    "author": "Traditional",
+    "category": "REGIONAL",
+    "tags": ["corrido", "popular"],
+    "verses": {
+      "c1": {
+        "type": "chorus",
+        "pt": "Paraná ê, Paraná ê, Paraná",
+        "localizations": {
+          "ro": {
+            "transcription": "Parana ie, Parana ie, Parana",
+            "translation": "Paraná (nume de râu în Brazilia)"
+          }
+        }
+      },
+      "v1": {
+        "type": "verse",
+        "pt": "Vou dizer a meu mestre\nComo Paraná é bom",
+        "localizations": {
+          "ro": {
+            "transcription": "Voi dzizer a meu meștri\nComu Parana e bom",
+            "translation": "Voi spune maestrului meu\nCât de bun este Paraná"
+          }
+        }
+      },
+      "v2": {
+        "type": "verse",
+        "pt": "Água de beber\nParaná é bom",
+        "localizations": {
+          "ro": {
+            "transcription": "Agua dji beber\nParana e bom",
+            "translation": "Apă de băut\nParaná este bun"
+          }
+        }
+      },
+      "v3": {
+        "type": "verse",
+        "pt": "Terra de plantar\nParaná é bom",
+        "localizations": {
+          "ro": {
+            "transcription": "Tera dji plantar\nParana e bom",
+            "translation": "Pământ de cultivat\nParaná este bun"
+          }
+        }
+      }
+    },
+    "structure": ["c1", "v1", "c1", "v2", "c1", "v3", "c1"]
+  },
+  {
+    "id": "zum-zum-zum",
+    "title": "Zum Zum Zum",
+    "author": "Traditional",
+    "category": "ANGOLA",
+    "tags": ["ladainha", "angola"],
+    "verses": {
+      "c1": {
+        "type": "chorus",
+        "pt": "Zum zum zum, capoeira mata um\nZum zum zum, capoeira mata um",
+        "localizations": {
+          "ro": {
+            "transcription": "Zum zum zum, capoeira mata um\nZum zum zum, capoeira mata um",
+            "translation": "Zum zum zum, capoeira omoară pe unul\nZum zum zum, capoeira omoară pe unul"
+          }
+        }
+      },
+      "v1": {
+        "type": "verse",
+        "pt": "Eu já vivo enjoado\nDe viver aqui na terra",
+        "localizations": {
+          "ro": {
+            "transcription": "Eu ja vivu enjoadu\nDji viver aki na tera",
+            "translation": "Sunt deja sătul\nDe a trăi aici pe pământ"
+          }
+        }
+      },
+      "v2": {
+        "type": "verse",
+        "pt": "Ô mamãe eu vou pra lua\nEu vou falar com as estrelas",
+        "localizations": {
+          "ro": {
+            "transcription": "O mamãi eu voi pra lua\nEu voi falar com as estrelas",
+            "translation": "O, mamă, mă duc pe lună\nVoi vorbi cu stelele"
+          }
+        }
+      }
+    },
+    "structure": ["c1", "v1", "c1", "v2", "c1"]
+  },
+  {
+    "id": "volta-do-mundo",
+    "title": "Volta do Mundo",
+    "author": "Traditional",
+    "category": "ANGOLA",
+    "tags": ["corrido", "roda"],
+    "verses": {
+      "c1": {
+        "type": "chorus",
+        "pt": "Volta do mundo, camará\nVolta do mundo, camará",
+        "localizations": {
+          "ro": {
+            "transcription": "Volta du mundu, camara\nVolta du mundu, camara",
+            "translation": "Întoarcerea lumii, camarade\nÎntoarcerea lumii, camarade"
+          }
+        }
+      },
+      "v1": {
+        "type": "verse",
+        "pt": "O mundo dá volta, camará\nO mundo dá volta, camará",
+        "localizations": {
+          "ro": {
+            "transcription": "O mundu da volta, camara\nO mundu da volta, camara",
+            "translation": "Lumea se întoarce, camarade\nLumea se întoarce, camarade"
+          }
+        }
+      }
+    },
+    "structure": ["c1", "v1", "c1"]
+  },
+  {
+    "id": "samba-de-roda",
+    "title": "Samba Lelê",
+    "author": "Traditional",
+    "category": "SAMBA",
+    "tags": ["samba", "festa"],
+    "verses": {
+      "c1": {
+        "type": "chorus",
+        "pt": "Samba Lelê tá doente\nTá com a cabeça quebrada",
+        "localizations": {
+          "ro": {
+            "transcription": "Samba Lele ta doenti\nTa com a cabesa quebrada",
+            "translation": "Samba Lelê e bolnavă\nAre capul spart"
+          }
+        }
+      },
+      "c2": {
+        "type": "chorus",
+        "pt": "Samba, samba, samba ô Lelê\nSamba, samba, samba ô Lalá",
+        "localizations": {
+          "ro": {
+            "transcription": "Samba, samba, samba o Lele\nSamba, samba, samba o Lala",
+            "translation": "Samba, samba, samba o Lelê\nSamba, samba, samba o Lalá"
+          }
+        }
+      },
+      "v1": {
+        "type": "verse",
+        "pt": "Samba Lelê precisa\nÉ de uma boa lambada",
+        "localizations": {
+          "ro": {
+            "transcription": "Samba Lele presiza\nE dji uma boa lambada",
+            "translation": "Samba Lelê are nevoie\nDe o lovitură bună"
+          }
+        }
+      }
+    },
+    "structure": ["c1", "c2", "v1", "c2"]
+  },
+  {
+    "id": "ie-maior-e-deus",
+    "title": "Iê, Maior é Deus",
+    "author": "Traditional",
+    "category": "ANGOLA",
+    "tags": ["ladainha", "abertura"],
+    "verses": {
+      "c1": {
+        "type": "chorus",
+        "pt": "Iê, maior é Deus\nIê, maior é Deus, camará",
+        "localizations": {
+          "ro": {
+            "transcription": "Ie, maior e Deus\nIe, maior e Deus, camara",
+            "translation": "Iê, cel mai mare este Dumnezeu\nIê, cel mai mare este Dumnezeu, camarade"
+          }
+        }
+      },
+      "v1": {
+        "type": "verse",
+        "pt": "Iê, viva meu mestre\nIê, viva meu mestre, camará",
+        "localizations": {
+          "ro": {
+            "transcription": "Ie, viva meu meștri\nIe, viva meu meștri, camara",
+            "translation": "Iê, trăiască maestrul meu\nIê, trăiască maestrul meu, camarade"
+          }
+        }
+      },
+      "v2": {
+        "type": "verse",
+        "pt": "Iê, quem me ensinou\nIê, quem me ensinou, camará",
+        "localizations": {
+          "ro": {
+            "transcription": "Ie, kem mi ensinou\nIe, kem mi ensinou, camara",
+            "translation": "Iê, cel care m-a învățat\nIê, cel care m-a învățat, camarade"
+          }
+        }
+      },
+      "v3": {
+        "type": "verse",
+        "pt": "Iê, a capoeira\nIê, a capoeira, camará",
+        "localizations": {
+          "ro": {
+            "transcription": "Ie, a capoeira\nIe, a capoeira, camara",
+            "translation": "Iê, capoeira\nIê, capoeira, camarade"
+          }
+        }
+      }
+    },
+    "structure": ["c1", "v1", "c1", "v2", "c1", "v3", "c1"]
+  },
+  {
+    "id": "boa-viagem",
+    "title": "Boa Viagem",
+    "category": "REGIONAL",
+    "tags": ["despedida", "corrido"],
+    "verses": {
+      "c1": {
+        "type": "chorus",
+        "pt": "Adeus, adeus\nBoa viagem",
+        "localizations": {
+          "ro": {
+            "transcription": "Adeus, adeus\nBoa viajeim",
+            "translation": "La revedere, la revedere\nDrum bun"
+          }
+        }
+      },
+      "v1": {
+        "type": "verse",
+        "pt": "Eu vou me embora\nBoa viagem",
+        "localizations": {
+          "ro": {
+            "transcription": "Eu voi mi embora\nBoa viajeim",
+            "translation": "Eu plec\nDrum bun"
+          }
+        }
+      },
+      "v2": {
+        "type": "verse",
+        "pt": "Eu vou com Deus\nBoa viagem",
+        "localizations": {
+          "ro": {
+            "transcription": "Eu voi com Deus\nBoa viajeim",
+            "translation": "Merg cu Dumnezeu\nDrum bun"
+          }
+        }
+      }
+    },
+    "structure": ["c1", "v1", "c1", "v2", "c1"]
+  },
+  {
+    "id": "eu-pisei-na-folha-seca",
+    "title": "Eu pisei na folha seca",
+    "author": "Traditional",
+    "category": "REGIONAL",
+    "tags": ["corrido"],
+    "verses": {
+      "v1": {
+        "type": "verse",
+        "pt": "Eu pisei na folha seca",
+        "localizations": {
+          "ro": {
+            "transcription": "Eu pisei na folha seka",
+            "translation": "Am călcat pe frunza uscată"
+          }
+        }
+      },
+      "c1": {
+        "type": "chorus",
+        "pt": "Ouvi fazer chué chuá,\nchué chué chué chuá\nOuvi fazer chué chuá",
+        "localizations": {
+          "ro": {
+            "transcription": "Ovi fazer chue chua,\nchue chue chue chua\nOvi fazer chue chua",
+            "translation": "Am auzit făcând chué chuá,\nchué chué chué chuá\nAm auzit făcând chué chuá"
+          }
+        }
+      },
+      "v2": {
+        "type": "verse",
+        "pt": "Joga o nego para cima deixa o nego vadiar",
+        "localizations": {
+          "ro": {
+            "transcription": "Joga u nego para cima deixa u nego vadiar",
+            "translation": "Aruncă negrul în sus lasă negrul să se plimbe"
+          }
+        }
+      },
+      "v3": {
+        "type": "verse",
+        "pt": "vocé diz que dá no nego, no nego vocé não dá",
+        "localizations": {
+          "ro": {
+            "transcription": "vose diz ke da nu nego, nu nego vose nao da",
+            "translation": "tu spui că dai în negru, în negru tu nu dai"
+          }
+        }
+      },
+      "v4": {
+        "type": "verse",
+        "pt": "nego da canela seca, chega de Baragadá",
+        "localizations": {
+          "ro": {
+            "transcription": "nego dji kanela seka, chega dji Baragada",
+            "translation": "negru cu canela uscată, ajunge de Baragadá"
+          }
+        }
+      }
+    },
+    "structure": ["v1", "c1", "v2", "c1", "v3", "c1", "v4", "c1"]
+  },
+  {
+    "id": "o-de-casa-o-de-fora",
+    "title": "Ô de casa ô de fora",
+    "author": "Traditional",
+    "category": "ANGOLA",
+    "tags": ["corrido", "angola"],
+    "verses": {
+      "c1": {
+        "type": "chorus",
+        "pt": "Ô de casa ô de fora\nMeu filho vai ver quem é\nPode ser os angoleiros\nLá da Ilha de Maré",
+        "localizations": {
+          "ro": {
+            "transcription": "O dji kasa o dji fora\nMeu filho vai ver kem e\nPode ser os angoleiros\nLa dji Ilha dji Mare",
+            "translation": "O de casă o de afară\nFiul meu va vedea cine este\nPoate fi angoleiros\nDe pe Insula de Maré"
+          }
+        }
+      },
+      "v1": {
+        "type": "verse",
+        "pt": "Urucungo ta chamando\nO nego pra vadiar\nVou chamar o cantador\nO famoso Waldemar",
+        "localizations": {
+          "ro": {
+            "transcription": "Urucungo ta chamando\nU nego pra vadiar\nVoi chamar u kantador\nU famozu Waldemar",
+            "translation": "Urucungo cheamă\nNegrul să se plimbe\nVoi chema cântărețul\nFaimosul Waldemar"
+          }
+        }
+      },
+      "v2": {
+        "type": "verse",
+        "pt": "Berimbau chamou pro jogo\nAngoleiro já chegou\nHoje tem mandingaria\nNo terreiro de ioio",
+        "localizations": {
+          "ro": {
+            "transcription": "Berimbau chamou pro jogo\nAngoleiro ja chegou\nOje tem mandingaria\nNu terreiro dji ioio",
+            "translation": "Berimbau a chemat la joc\nAngoleiro a sosit deja\nAstăzi este mandingaria\nÎn terenul de ioio"
+          }
+        }
+      }
+    },
+    "structure": ["c1", "v1", "c1", "v2", "c1"]
+  }
 ]
-
