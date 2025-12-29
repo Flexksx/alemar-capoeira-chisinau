@@ -31,7 +31,7 @@
 
 		{#if song.tags.length > 0}
 			<div class="mt-2 flex flex-wrap gap-1.5">
-				{#each song.tags as tag}
+				{#each song.tags as tag (tag)}
 					<span class="rounded-md bg-muted px-2 py-0.5 text-xs text-muted-foreground">
 						#{tag}
 					</span>
@@ -43,7 +43,7 @@
 	<!-- Song Content - Verses -->
 	<div class="flex-1 overflow-y-auto overscroll-contain px-2 py-4">
 		<div class="space-y-3">
-			{#each song.structure as verseId, index}
+			{#each song.structure as verseId, index (`${verseId}-${index}`)}
 				{@const verse = song.verses[verseId]}
 				{#if verse}
 					<VerseBlock {verse} {verseId} {language} />

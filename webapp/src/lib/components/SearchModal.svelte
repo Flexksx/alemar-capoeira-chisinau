@@ -1,7 +1,6 @@
 <script lang="ts">
-	import { createSongSearch, type SearchResult } from '$lib/search';
+	import { createSongSearch } from '$lib/search';
 	import type { Song } from '$lib/types';
-	import { Input } from '$lib/components/ui/input';
 	import CategoryBadge from './CategoryBadge.svelte';
 	import X from '@lucide/svelte/icons/x';
 	import Search from '@lucide/svelte/icons/search';
@@ -87,7 +86,7 @@
 					</div>
 				{:else if results.length > 0}
 					<ul class="divide-y divide-border">
-						{#each results as result}
+						{#each results as result (result.song.id)}
 							<li>
 								<button
 									onclick={() => handleSelect(result.song.id)}
@@ -117,7 +116,7 @@
 							Toate cântecele
 						</p>
 						<ul class="divide-y divide-border rounded-lg border border-border">
-							{#each songs as song}
+							{#each songs as song (song.id)}
 								<li>
 									<button
 										onclick={() => handleSelect(song.id)}

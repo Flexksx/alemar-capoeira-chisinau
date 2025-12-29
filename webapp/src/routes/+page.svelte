@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { Carousel, CarouselContent, CarouselItem } from '$lib/components/ui/carousel';
-	import { getEmblaContext, type CarouselAPI } from '$lib/components/ui/carousel/context';
+	import { type CarouselAPI } from '$lib/components/ui/carousel/context';
 	import Sidebar from '$lib/components/Sidebar.svelte';
 	import SongCard from '$lib/components/SongCard.svelte';
 	import SearchModal from '$lib/components/SearchModal.svelte';
@@ -104,7 +104,7 @@
 		{setApi}
 	>
 		<CarouselContent class="h-full -ml-0">
-			{#each songs as song, index}
+			{#each songs as song (song.id)}
 				<CarouselItem class="h-full pl-0">
 					<div class="h-full overflow-hidden">
 						<SongCard {song} />
