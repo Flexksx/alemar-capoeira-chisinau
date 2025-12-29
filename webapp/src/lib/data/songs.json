@@ -347,5 +347,45 @@
       }
     },
     "structure": ["c1", "v1", "c1", "v2", "c1"]
+  },
+  {
+    "id": "conselho",
+    "title": "Conselho",
+    "author": "Traditional",
+    "category": "SAMBA",
+    "tags": ["samba"],
+    "verses": {
+      "v1": {
+        "type": "verse",
+        "pt": "Deixe de lado esse baixo astral\nErga a cabeça enfrente o mal\nQue agindo assim será vital para o seu coração\nÉ que em cada experiência se aprende uma lição",
+        "localizations": {
+          "ro": {
+            "transcription": "Deixe dji lado esse baixo astral\nErga a cabesa enfrente u mal\nKe agindo assim sera vital para o seu coracao\nE ke em kada esperiensa se aprende uma licao",
+            "translation": "Lasă deoparte acest starea de spirit joasă\nRidică capul înfruntă răul\nCă acționând astfel va fi vital pentru inima ta\nEste că în fiecare experiență se învață o lecție"
+          }
+        }
+      },
+      "v2": {
+        "type": "verse",
+        "pt": "Eu já sofri por amar assim\nMe dediquei mas foi tudo em vão\nPra que se lamentar\nSe em sua vida pode encontrar\nQuem te ame com toda força e ardor\nAssim sucumbirá a dor (tem que lutar)",
+        "localizations": {
+          "ro": {
+            "transcription": "Eu ja sofri por amar assim\nMe dedikei mas foi tudo em vao\nPra ke se lamentar\nSe em sua vida pode encontrar\nKem te ame com toda forsa e ardor\nAssim sukumbira a dor (tem ke lutar)",
+            "translation": "Am suferit deja iubind astfel\nM-am dedicat dar a fost totul în zadar\nPentru ce să te plângi\nDacă în viața ta poți găsi\nPe cineva care să te iubească cu toată puterea și ardoarea\nAstfel va sucumbe durerea (trebuie să lupți)"
+          }
+        }
+      },
+      "c1": {
+        "type": "chorus",
+        "pt": "Tem que lutar, não se abater\nSó se entregar a quem te merecer\nNão estou dando nem vendendo\nComo o ditado diz\nO meu conselho é pra te ver feliz",
+        "localizations": {
+          "ro": {
+            "transcription": "Tem ke lutar, nao se abater\nSo se entregar a kem te merecer\nNao estou dando nem vendendo\nComu u ditado diz\nU meu konselho e pra te ver feliz",
+            "translation": "Trebuie să lupți, nu te descuraja\nDoar să te predai celui care te merită\nNu dau nici vând\nCum spune zicala\nConsiliul meu este să te văd fericit"
+          }
+        }
+      }
+    },
+    "structure": ["v1", "v2", "c1", "v1", "v2", "c1"]
   }
 ]
