@@ -727,5 +727,220 @@
       }
     },
     "structure": ["c1", "c1"]
+  },
+  {
+    "id": "quem-vem-la-sou-eu",
+    "title": "Quem vem lá, sou eu",
+    "author": "Traditional",
+    "category": "ANGOLA",
+    "tags": ["corrido", "angola", "roda"],
+    "verses": {
+      "c1": {
+        "type": "chorus",
+        "pt": "Quem vem lá, sou eu\nQuem vem lá, sou eu\nBerimbau bateu\nCapoeira sou eu",
+        "localizations": {
+          "ro": {
+            "transcription": "Kem vem la, sou eu\nKem vem la, sou eu\nBerimbau bateu\nKapoeira sou eu",
+            "translation": "Cine vine acolo? Sunt eu\nCine vine acolo? Sunt eu\nBerimbau a bătut\nCapoeira sunt eu"
+          }
+        }
+      },
+      "c2": {
+        "type": "chorus",
+        "pt": "Quem vem lá - sou eu\nQuem vem lá - sou eu\nBerimbau mais eu\nCapoeira sou eu",
+        "localizations": {
+          "ro": {
+            "transcription": "Kem vem la - sou eu\nKem vem la - sou eu\nBerimbau maiș eu\nKapoeira sou eu",
+            "translation": "Cine vine acolo? — Sunt eu\nCine vine acolo? — Sunt eu\nBerimbau și eu\nCapoeira sunt eu"
+          }
+        }
+      },
+      "v1": {
+        "type": "verse",
+        "pt": "Eu venho de longe, venho de Itabuna\nJogo Capoeira meu nome é Suassuna",
+        "localizations": {
+          "ro": {
+            "transcription": "Eu venhu dji lonji, venhu dji Itabuna\nJogu kapoeira meu nomi e Suassuna",
+            "translation": "Vin de departe, vin din Itabuna\nJoc capoeira, numele meu e Suassuna"
+          }
+        }
+      },
+      "v2": {
+        "type": "verse",
+        "pt": "Mas sou eu, sou eu\nQuem vem lá\nEu sou bevenuto\nQuem vem lá\nMontado a cavalo\nQuem vem lá\nFumando a charuto-\nQuem vem lá\nMas sou eu, sou eu\nQuem vem lá\nQuem vem lá, sou eu",
+        "localizations": {
+          "ro": {
+            "transcription": "Maiș sou eu, sou eu\nKem vem la\nEu sou bevenuto\nKem vem la\nMontadu a kavalu\nKem vem la\nFumandu a sharutu\nKem vem la\nMaiș sou eu, sou eu\nKem vem la\nKem vem la, sou eu",
+            "translation": "Dar sunt eu, sunt eu\nCine vine acolo?\nEu sunt Bevenuto\nCine vine acolo?\nCălare pe cal\nCine vine acolo?\nFumând un trabuc\nCine vine acolo?\nDar sunt eu, sunt eu\nCine vine acolo?\nCine vine acolo? Sunt eu"
+          }
+        }
+      }
+    },
+    "structure": ["c1", "c2", "v1", "c1", "v2", "c1"]
+  },
+  {
+    "id": "marinheiro-sou",
+    "title": "Marinheiro sou",
+    "author": "Traditional",
+    "category": "REGIONAL",
+    "tags": ["corrido", "popular", "call-and-response"],
+    "verses": {
+      "c1": {
+        "type": "chorus",
+        "pt": "Marinheiro sou",
+        "localizations": {
+          "ro": {
+            "transcription": "Marinheiru sou",
+            "translation": "Sunt marinar"
+          }
+        }
+      },
+      "v1": {
+        "type": "verse",
+        "pt": "Eu não sou daqui",
+        "localizations": {
+          "ro": {
+            "transcription": "Eu nao sou daqui",
+            "translation": "Eu nu sunt de aici"
+          }
+        }
+      },
+      "v2": {
+        "type": "verse",
+        "pt": "Eu não tenho amor",
+        "localizations": {
+          "ro": {
+            "transcription": "Eu nao tenhu amor",
+            "translation": "Eu n-am iubire"
+          }
+        }
+      },
+      "v3": {
+        "type": "verse",
+        "pt": "Eu sou da Bahia",
+        "localizations": {
+          "ro": {
+            "transcription": "Eu sou da Bahia",
+            "translation": "Eu sunt din Bahia"
+          }
+        }
+      },
+      "v4": {
+        "type": "verse",
+        "pt": "De São Salvador",
+        "localizations": {
+          "ro": {
+            "transcription": "Dji São Salvador",
+            "translation": "Din São Salvador"
+          }
+        }
+      },
+      "v5": {
+        "type": "verse",
+        "pt": "Oh! Marinheiro, marinheiro",
+        "localizations": {
+          "ro": {
+            "transcription": "O! Marinheiru, marinheiru",
+            "translation": "O, marinarule, marinarule"
+          }
+        }
+      },
+      "v6": {
+        "type": "verse",
+        "pt": "Quem te ensinou a nadar",
+        "localizations": {
+          "ro": {
+            "transcription": "Kem tji ensinou a nadar",
+            "translation": "Cine te-a învățat să înoți"
+          }
+        }
+      },
+      "v7": {
+        "type": "verse",
+        "pt": "Ou foi o tombo do navio",
+        "localizations": {
+          "ro": {
+            "transcription": "Ou foi u tombu du navio",
+            "translation": "A fost oare răsturnarea vasului"
+          }
+        }
+      },
+      "v8": {
+        "type": "verse",
+        "pt": "Ou foi o balanço do mar",
+        "localizations": {
+          "ro": {
+            "transcription": "Ou foi u balansu du mar",
+            "translation": "Sau legănarea mării"
+          }
+        }
+      },
+      "v9": {
+        "type": "verse",
+        "pt": "Oi lá vem, lá vem",
+        "localizations": {
+          "ro": {
+            "transcription": "Oi la vem, la vem",
+            "translation": "Oi, iată-l, iată-l că vine"
+          }
+        }
+      },
+      "v10": {
+        "type": "verse",
+        "pt": "Ele vem faceiro!",
+        "localizations": {
+          "ro": {
+            "transcription": "Eli vem faseiru!",
+            "translation": "Vine mândru!"
+          }
+        }
+      },
+      "v11": {
+        "type": "verse",
+        "pt": "Todo de branco",
+        "localizations": {
+          "ro": {
+            "transcription": "Todo dji branku",
+            "translation": "Îmbrăcat tot în alb"
+          }
+        }
+      },
+      "v12": {
+        "type": "verse",
+        "pt": "Com seu bonezinho",
+        "localizations": {
+          "ro": {
+            "transcription": "Com seu bonezinyu",
+            "translation": "Cu șepcuța lui"
+          }
+        }
+      }
+    },
+    "structure": [
+      "v1",
+      "c1",
+      "v2",
+      "c1",
+      "v3",
+      "c1",
+      "v4",
+      "c1",
+      "v5",
+      "c1",
+      "v6",
+      "c1",
+      "v7",
+      "c1",
+      "v8",
+      "c1",
+      "v9",
+      "c1",
+      "v10",
+      "c1",
+      "v11",
+      "c1",
+      "v12",
+      "c1"
+    ]
   }
 ]
