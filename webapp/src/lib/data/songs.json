@@ -1062,5 +1062,85 @@
       }
     },
     "structure": ["s1", "c1", "s1", "c1", "s2", "c2", "s2", "c3"]
+  },
+  {
+    "id": "a-mare-ta-cheia",
+    "title": "A maré tá cheia",
+    "author": "Traditional",
+    "category": "REGIONAL",
+    "tags": ["corrido", "call-and-response", "mar", "roda"],
+    "verses": {
+      "v1": {
+        "type": "verse",
+        "pt": "A maré tá cheia, ioió\nA maré tá cheia, iaiá",
+        "localizations": {
+          "ro": {
+            "transcription": "A mare ta cheia, ioio\nA mare ta cheia, iaia",
+            "translation": "Marea e plină, ioió\nMarea e plină, iaiá"
+          }
+        }
+      },
+      "c1": {
+        "type": "chorus",
+        "pt": "A maré tá cheia, ioió\nA maré tá cheia, iaiá",
+        "localizations": {
+          "ro": {
+            "transcription": "A mare ta cheia, ioio\nA mare ta cheia, iaia",
+            "translation": "Marea e plină, ioió\nMarea e plină, iaiá"
+          }
+        }
+      },
+      "v2": {
+        "type": "verse",
+        "pt": "A maré subiu",
+        "localizations": {
+          "ro": {
+            "transcription": "A mare subiu",
+            "translation": "Marea a crescut"
+          }
+        }
+      },
+      "c2": {
+        "type": "chorus",
+        "pt": "Sobe maré",
+        "localizations": {
+          "ro": {
+            "transcription": "Sobi mare",
+            "translation": "Urcă, mare"
+          }
+        }
+      },
+      "v3": {
+        "type": "verse",
+        "pt": "A maré desceu",
+        "localizations": {
+          "ro": {
+            "transcription": "A mare desceu",
+            "translation": "Marea a scăzut"
+          }
+        }
+      },
+      "c3": {
+        "type": "chorus",
+        "pt": "Desce maré",
+        "localizations": {
+          "ro": {
+            "transcription": "Desse mare",
+            "translation": "Coboară, mare"
+          }
+        }
+      },
+      "v4": {
+        "type": "verse",
+        "pt": "Ô maré é de maré\nVou pra Ilha de Maré",
+        "localizations": {
+          "ro": {
+            "transcription": "O mare e dji Mare\nVou pra Ilha dji Mare",
+            "translation": "O, marea e din Maré\nMă duc spre Insula Maré"
+          }
+        }
+      }
+    },
+    "structure": ["v1", "c1", "v2", "c2", "v3", "c3", "v4", "c1"]
   }
 ]
