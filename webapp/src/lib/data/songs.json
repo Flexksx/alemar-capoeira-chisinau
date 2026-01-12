@@ -1142,5 +1142,55 @@
       }
     },
     "structure": ["v1", "c1", "v2", "c2", "v3", "c3", "v4", "c1"]
+  },
+  {
+    "id": "pisada-de-lampiao",
+    "title": "Pisada de Lampião",
+    "author": "Traditional",
+    "category": "REGIONAL",
+    "tags": ["corrido", "call-and-response", "popular", "roda"],
+    "verses": {
+      "c1": {
+        "type": "chorus",
+        "pt": "E, e, e, tum tum tum",
+        "localizations": {
+          "ro": {
+            "transcription": "E, e, e, tum tum tum",
+            "translation": "E, e, e, tum tum tum"
+          }
+        }
+      },
+      "v1": {
+        "type": "verse",
+        "pt": "Olha a pisada de Lampião",
+        "localizations": {
+          "ro": {
+            "transcription": "Olia a pisada dji Lampião",
+            "translation": "Uite urma (pasul) lui Lampião"
+          }
+        }
+      },
+      "v2": {
+        "type": "verse",
+        "pt": "Lampião desceu a serra",
+        "localizations": {
+          "ro": {
+            "transcription": "Lampião desceu a sera",
+            "translation": "Lampião a coborât din munți"
+          }
+        }
+      },
+      "v3": {
+        "type": "verse",
+        "pt": "Amanhã é dia santo",
+        "localizations": {
+          "ro": {
+            "transcription": "Amanhã e djia santu",
+            "translation": "Mâine e zi sfântă"
+          }
+        }
+      }
+    },
+    "structure": ["c1", "v1", "c1", "v1", "c1", "v2", "c1", "v3", "c1"]
   }
 ]
