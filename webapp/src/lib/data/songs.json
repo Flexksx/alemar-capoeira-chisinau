@@ -942,5 +942,65 @@
       "v12",
       "c1"
     ]
+  },
+  {
+    "id": "voce-nao-sabe-o-valor",
+    "title": "Você não sabe o valor",
+    "author": "Traditional",
+    "category": "REGIONAL",
+    "tags": ["corrido", "popular", "capoeira"],
+    "verses": {
+      "c1": {
+        "type": "chorus",
+        "pt": "Você não sabe o valor que a capoeira tem\nVocê não sabe o valor que a capoeira tem\nEla tem valor demais, ê se segura rapaz\nVocê não sabe o valor que a capoeira tem",
+        "localizations": {
+          "ro": {
+            "transcription": "Vose nao sabi u valor ke a kapoeira tem\nVose nao sabi u valor ke a kapoeira tem\nEla tem valor dji-mais, ê se segura rapaiz\nVose nao sabi u valor ke a kapoeira tem",
+            "translation": "Tu nu știi ce valoare are capoeira\nTu nu știi ce valoare are capoeira\nAre prea multă valoare, ê, ține-te bine, băiete\nTu nu știi ce valoare are capoeira"
+          }
+        }
+      },
+      "v1": {
+        "type": "verse",
+        "pt": "Um dia a capoeira ela lhe ajudou\nTirou você da miséria lhe transformou\nOs seus amigos jamais, nenhum deles foram capaz\nDe te dar ajuda na vida quando precisou\nTu não sabe o valor",
+        "localizations": {
+          "ro": {
+            "transcription": "Um djia a kapoeira ela li ajudou\nTirou vose da mizeria li transformou\nUs seus amigos jamaiș, nenhum deles foram kapaz\nDji tji dar ajuda na vida kuandu preşizô\nTu nao sabi u valor",
+            "translation": "Într-o zi capoeira te-a ajutat\nTe-a scos din mizerie, te-a transformat\nPrietenii tăi niciodată—niciunul n-a fost în stare\nSă-ți dea ajutor în viață când ai avut nevoie\nTu nu știi valoarea"
+          }
+        }
+      },
+      "v2": {
+        "type": "verse",
+        "pt": "Um dia um grande amigo ele me disse assim\nVamos jogar capoeira, vamos lá brincar\nMuita gente conheci, ai foi que eu entendi\nQue a capoeira ela veio pra me ajudar\nTu não sabe o valor",
+        "localizations": {
+          "ro": {
+            "transcription": "Um djia um grandi amigo eli mi disi asim\nVamus jogar kapoeira, vamus la brĩnkar\nMuita gente konheci, ai foi ke eu entendi\nKe a kapoeira ela veio pra mi ajudar\nTu nao sabi u valor",
+            "translation": "Într-o zi un mare prieten mi-a zis așa:\nHai să jucăm capoeira, hai să ne jucăm\nAm cunoscut multă lume, atunci am înțeles\nCă capoeira a venit să mă ajute\nTu nu știi valoarea"
+          }
+        }
+      },
+      "v3": {
+        "type": "verse",
+        "pt": "Hoje eu lembro de um mundo em que um dia passei\nTudo na vida parceiro a primeira vez\nAgradeço ao bom senhor\nA capoeira me ajudou\nEla me fez ser na vida hoje quem eu sou\nTu não sabe o valor",
+        "localizations": {
+          "ro": {
+            "transcription": "Oji eu lembr-u dji um mundu em ke um djia pasei\nTudo na vida, parceiru, a primeira vez\nAgradeçu ao bom senhor\nA kapoeira mi ajudou\nEla mi fez ser na vida oji kem eu sou\nTu nao sabi u valor",
+            "translation": "Azi îmi amintesc de o lume prin care într-o zi am trecut\nTotul în viață, prietene, e prima oară\nÎi mulțumesc bunului Domn\nCapoeira m-a ajutat\nEa m-a făcut să fiu în viață azi cine sunt\nTu nu știi valoarea"
+          }
+        }
+      },
+      "v4": {
+        "type": "verse",
+        "pt": "Eu falo da capoeira com muita emoção\nMexe com meu corpo todo com meu coração\nSe é pra falar de amor, ela que me conquistou\nEla me botou nos braços e me tirou do chão\nTu não sabe o valor",
+        "localizations": {
+          "ro": {
+            "transcription": "Eu falu da kapoeira com muita emoşau\nMexi com meu korpu todo, com meu korasau\nSe e pra falar dji amor, ela ke mi konkistou\nEla mi botou nos brasus i mi tirou du şau\nTu nao sabi u valor",
+            "translation": "Eu vorbesc despre capoeira cu multă emoție\nÎmi mișcă tot corpul și inima\nDacă e să vorbim de iubire, ea e cea care m-a cucerit\nM-a luat în brațe și m-a ridicat de la pământ\nTu nu știi valoarea"
+          }
+        }
+      }
+    },
+    "structure": ["c1", "c1", "v1", "c1", "v2", "c1", "v3", "c1", "v4", "c1"]
   }
 ]
