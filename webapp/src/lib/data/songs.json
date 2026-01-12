@@ -1192,5 +1192,134 @@
       }
     },
     "structure": ["c1", "v1", "c1", "v1", "c1", "v2", "c1", "v3", "c1"]
+  },
+  {
+    "id": "olha-o-nego-sinha",
+    "title": "Olha o nego, sinhá",
+    "author": "Traditional",
+    "category": "ANGOLA",
+    "tags": ["corrido", "call-and-response", "angola", "roda"],
+    "verses": {
+      "c1": {
+        "type": "chorus",
+        "pt": "Olha o nego sinhá",
+        "localizations": {
+          "ro": {
+            "transcription": "Olia u nego sinhá",
+            "translation": "Uite-l pe negru, stăpână"
+          }
+        }
+      },
+      "v1": {
+        "type": "verse",
+        "pt": "Olha lá o nego",
+        "localizations": {
+          "ro": {
+            "transcription": "Olia la u nego",
+            "translation": "Uite-l acolo pe negru"
+          }
+        }
+      },
+      "v2": {
+        "type": "verse",
+        "pt": "Mas que nego danado",
+        "localizations": {
+          "ro": {
+            "transcription": "Mas ke nego danadu",
+            "translation": "Ce negru năzdrăvan"
+          }
+        }
+      },
+      "v3": {
+        "type": "verse",
+        "pt": "Oi me pega esse nego",
+        "localizations": {
+          "ro": {
+            "transcription": "Oi mi pega esi nego",
+            "translation": "Hei, prinde-l pe negrul ăsta"
+          }
+        }
+      },
+      "v4": {
+        "type": "verse",
+        "pt": "E derruba no chão",
+        "localizations": {
+          "ro": {
+            "transcription": "I derruba nu șau",
+            "translation": "Și trântește-l la pământ"
+          }
+        }
+      },
+      "v5": {
+        "type": "verse",
+        "pt": "Esse nego é valente",
+        "localizations": {
+          "ro": {
+            "transcription": "Esi nego e valenti",
+            "translation": "Negrul ăsta e curajos"
+          }
+        }
+      },
+      "v6": {
+        "type": "verse",
+        "pt": "Esse nego é um cão",
+        "localizations": {
+          "ro": {
+            "transcription": "Esi nego e um kau",
+            "translation": "Negrul ăsta e un câine (foarte dur)"
+          }
+        }
+      },
+      "v7": {
+        "type": "verse",
+        "pt": "Mas castiga esse nego\nMas conforme a razão",
+        "localizations": {
+          "ro": {
+            "transcription": "Mas kastiga esi nego\nMas konformi a razau",
+            "translation": "Dar pedepsește-l pe negrul ăsta\nÎnsă după dreptate"
+          }
+        }
+      },
+      "v8": {
+        "type": "verse",
+        "pt": "Esse nego é ligeiro",
+        "localizations": {
+          "ro": {
+            "transcription": "Esi nego e lijiêru",
+            "translation": "Negrul ăsta e iute"
+          }
+        }
+      },
+      "v9": {
+        "type": "verse",
+        "pt": "Esse nego é cão",
+        "localizations": {
+          "ro": {
+            "transcription": "Esi nego e kau",
+            "translation": "Negrul ăsta e dur (ca un câine)"
+          }
+        }
+      }
+    },
+    "structure": [
+      "v1",
+      "c1",
+      "v2",
+      "c1",
+      "v3",
+      "c1",
+      "v4",
+      "c1",
+      "v5",
+      "c1",
+      "v6",
+      "c1",
+      "v7",
+      "c1",
+      "v8",
+      "c1",
+      "v9",
+      "c1"
+    ]
   }
 ]
