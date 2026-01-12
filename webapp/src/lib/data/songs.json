@@ -1002,5 +1002,65 @@
       }
     },
     "structure": ["c1", "c1", "v1", "c1", "v2", "c1", "v3", "c1", "v4", "c1"]
+  },
+  {
+    "id": "beira-mar-ioio-iaia",
+    "title": "Beira mar ioiô, beira mar iaiá",
+    "author": "Traditional",
+    "category": "REGIONAL",
+    "tags": ["corrido", "call-and-response", "roda"],
+    "verses": {
+      "s1": {
+        "type": "verse",
+        "pt": "Beira mar ioiô\nBeira mar iaiá",
+        "localizations": {
+          "ro": {
+            "transcription": "Beira mar ioio\nBeira mar iaia",
+            "translation": "Pe malul mării, ioiô\nPe malul mării, iaiá"
+          }
+        }
+      },
+      "c1": {
+        "type": "chorus",
+        "pt": "Beira mar ioiô\nBeira mar iaiá",
+        "localizations": {
+          "ro": {
+            "transcription": "Beira mar ioio\nBeira mar iaia",
+            "translation": "Pe malul mării, ioiô\nPe malul mării, iaiá"
+          }
+        }
+      },
+      "s2": {
+        "type": "verse",
+        "pt": "Beira mar, beira mar",
+        "localizations": {
+          "ro": {
+            "transcription": "Beira mar, beira mar",
+            "translation": "Pe malul mării, pe malul mării"
+          }
+        }
+      },
+      "c2": {
+        "type": "chorus",
+        "pt": "É de ioiô",
+        "localizations": {
+          "ro": {
+            "transcription": "E dji ioio",
+            "translation": "Este al lui ioiô"
+          }
+        }
+      },
+      "c3": {
+        "type": "chorus",
+        "pt": "É de iaiá",
+        "localizations": {
+          "ro": {
+            "transcription": "E dji iaia",
+            "translation": "Este al lui iaiá"
+          }
+        }
+      }
+    },
+    "structure": ["s1", "c1", "s1", "c1", "s2", "c2", "s2", "c3"]
   }
 ]
