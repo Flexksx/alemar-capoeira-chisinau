@@ -4,7 +4,7 @@
     "title": "Paraná Ê",
     "author": "Traditional",
     "category": "REGIONAL",
-    "tags": ["corrido", "popular"],
+    "tags": [ "corrido", "popular" ],
     "verses": {
       "c1": {
         "type": "chorus",
@@ -47,14 +47,14 @@
         }
       }
     },
-    "structure": ["c1", "v1", "c1", "v2", "c1", "v3", "c1"]
+    "structure": [ "c1", "v1", "c1", "v2", "c1", "v3", "c1" ]
   },
   {
     "id": "zum-zum-zum",
     "title": "Zum Zum Zum",
     "author": "Traditional",
     "category": "ANGOLA",
-    "tags": ["ladainha", "angola"],
+    "tags": [ "ladainha", "angola" ],
     "verses": {
       "c1": {
         "type": "chorus",
@@ -87,14 +87,14 @@
         }
       }
     },
-    "structure": ["c1", "v1", "c1", "v2", "c1"]
+    "structure": [ "c1", "v1", "c1", "v2", "c1" ]
   },
   {
     "id": "volta-do-mundo",
     "title": "Volta do Mundo",
     "author": "Traditional",
     "category": "ANGOLA",
-    "tags": ["corrido", "roda"],
+    "tags": [ "corrido", "roda" ],
     "verses": {
       "c1": {
         "type": "chorus",
@@ -117,14 +117,14 @@
         }
       }
     },
-    "structure": ["c1", "v1", "c1"]
+    "structure": [ "c1", "v1", "c1" ]
   },
   {
     "id": "samba-de-roda",
     "title": "Samba Lelê",
     "author": "Traditional",
     "category": "SAMBA",
-    "tags": ["samba", "festa"],
+    "tags": [ "samba", "festa" ],
     "verses": {
       "c1": {
         "type": "chorus",
@@ -157,14 +157,14 @@
         }
       }
     },
-    "structure": ["c1", "c2", "v1", "c2"]
+    "structure": [ "c1", "c2", "v1", "c2" ]
   },
   {
     "id": "ie-maior-e-deus",
     "title": "Iê, Maior é Deus",
     "author": "Traditional",
     "category": "ANGOLA",
-    "tags": ["ladainha", "abertura"],
+    "tags": [ "ladainha", "abertura" ],
     "verses": {
       "c1": {
         "type": "chorus",
@@ -207,13 +207,13 @@
         }
       }
     },
-    "structure": ["c1", "v1", "c1", "v2", "c1", "v3", "c1"]
+    "structure": [ "c1", "v1", "c1", "v2", "c1", "v3", "c1" ]
   },
   {
     "id": "boa-viagem",
     "title": "Boa Viagem",
     "category": "REGIONAL",
-    "tags": ["despedida", "corrido"],
+    "tags": [ "despedida", "corrido" ],
     "verses": {
       "c1": {
         "type": "chorus",
@@ -246,14 +246,14 @@
         }
       }
     },
-    "structure": ["c1", "v1", "c1", "v2", "c1"]
+    "structure": [ "c1", "v1", "c1", "v2", "c1" ]
   },
   {
     "id": "eu-pisei-na-folha-seca",
     "title": "Eu pisei na folha seca",
     "author": "Traditional",
     "category": "REGIONAL",
-    "tags": ["corrido"],
+    "tags": [ "corrido" ],
     "verses": {
       "v1": {
         "type": "verse",
@@ -306,14 +306,14 @@
         }
       }
     },
-    "structure": ["v1", "c1", "v2", "c1", "v3", "c1", "v4", "c1"]
+    "structure": [ "v1", "c1", "v2", "c1", "v3", "c1", "v4", "c1" ]
   },
   {
     "id": "o-de-casa-o-de-fora",
     "title": "Ô de casa ô de fora",
     "author": "Traditional",
     "category": "ANGOLA",
-    "tags": ["corrido", "angola"],
+    "tags": [ "corrido", "angola" ],
     "verses": {
       "c1": {
         "type": "chorus",
@@ -346,14 +346,14 @@
         }
       }
     },
-    "structure": ["c1", "v1", "c1", "v2", "c1"]
+    "structure": [ "c1", "v1", "c1", "v2", "c1" ]
   },
   {
     "id": "conselho",
     "title": "Conselho",
     "author": "Traditional",
     "category": "SAMBA",
-    "tags": ["samba"],
+    "tags": [ "samba" ],
     "verses": {
       "v1": {
         "type": "verse",
@@ -386,14 +386,14 @@
         }
       }
     },
-    "structure": ["v1", "v2", "c1", "v1", "v2", "c1"]
+    "structure": [ "v1", "v2", "c1", "v1", "v2", "c1" ]
   },
   {
     "id": "nego-nago",
     "title": "Nego Nagô",
     "author": "Mestre Ananias",
     "category": "REGIONAL",
-    "tags": ["corrido", "angola"],
+    "tags": [ "corrido", "angola" ],
     "verses": {
       "v1": {
         "type": "verse",
@@ -426,14 +426,14 @@
         }
       }
     },
-    "structure": ["v1", "c2", "v1", "c2"]
+    "structure": [ "v1", "c2", "v1", "c2" ]
   },
   {
     "id": "o-mae-amanha-eu-vou",
     "title": "Ô mãe amanhã eu vou",
     "author": "Traditional",
     "category": "ANGOLA",
-    "tags": ["corrido", "angola"],
+    "tags": [ "corrido", "angola" ],
     "verses": {
       "v1": {
         "type": "verse",
@@ -466,14 +466,14 @@
         }
       }
     },
-    "structure": ["v1", "c2", "v2", "c2"]
+    "structure": [ "v1", "c2", "v2", "c2" ]
   },
   {
     "id": "ta-na-hora-de-jogar",
     "title": "Tá na hora de jogar",
     "author": "Traditional",
     "category": "REGIONAL",
-    "tags": ["corrido", "roda"],
+    "tags": [ "corrido", "roda" ],
     "verses": {
       "c1": {
         "type": "chorus",
@@ -536,14 +536,14 @@
         }
       }
     },
-    "structure": ["c1", "c2", "v1", "c1", "v2", "c1", "v3", "c1", "v4", "c1"]
+    "structure": [ "c1", "c2", "v1", "c1", "v2", "c1", "v3", "c1", "v4", "c1" ]
   },
   {
     "id": "meu-patua",
     "title": "Meu patuá",
     "author": "Traditional",
     "category": "REGIONAL",
-    "tags": ["corrido", "roda"],
+    "tags": [ "corrido", "roda" ],
     "verses": {
       "c1": {
         "type": "chorus",
@@ -596,14 +596,14 @@
         }
       }
     },
-    "structure": ["c1", "v1", "c1", "v2", "c1", "v3", "c1", "v4", "c1"]
+    "structure": [ "c1", "v1", "c1", "v2", "c1", "v3", "c1", "v4", "c1" ]
   },
   {
     "id": "samba-le-le-bateu-na-porta",
     "title": "Samba lê lê bateu na porta",
     "author": "Traditional",
     "category": "SAMBA",
-    "tags": ["samba", "festa"],
+    "tags": [ "samba", "festa" ],
     "verses": {
       "c1": {
         "type": "chorus",
@@ -646,14 +646,14 @@
         }
       }
     },
-    "structure": ["c1", "v1", "c1", "v2", "c1", "v3", "c1"]
+    "structure": [ "c1", "v1", "c1", "v2", "c1", "v3", "c1" ]
   },
   {
     "id": "vim-no-navio-de-aruanda",
     "title": "Vim no navio de Aruanda",
     "author": "Traditional",
     "category": "ANGOLA",
-    "tags": ["corrido", "angola"],
+    "tags": [ "corrido", "angola" ],
     "verses": {
       "c1": {
         "type": "chorus",
@@ -666,14 +666,14 @@
         }
       }
     },
-    "structure": ["c1", "c1"]
+    "structure": [ "c1", "c1" ]
   },
   {
     "id": "adeus-santo-amaro-vou-ver-vou-pra-la",
     "title": "Adeus Santo Amaro (Vou ver, vou pra lá)",
     "author": "Traditional",
     "category": "ANGOLA",
-    "tags": ["corrido", "despedida", "angola"],
+    "tags": [ "corrido", "despedida", "angola" ],
     "verses": {
       "c1": {
         "type": "chorus",
@@ -686,14 +686,14 @@
         }
       }
     },
-    "structure": ["c1"]
+    "structure": [ "c1" ]
   },
   {
     "id": "meu-atabaque-e-de-couro-de-boi",
     "title": "Meu atabaque é de couro de boi",
     "author": "Traditional",
     "category": "ANGOLA",
-    "tags": ["corrido", "angola"],
+    "tags": [ "corrido", "angola" ],
     "verses": {
       "c1": {
         "type": "chorus",
@@ -706,14 +706,14 @@
         }
       }
     },
-    "structure": ["c1"]
+    "structure": [ "c1" ]
   },
   {
     "id": "balanca-rede",
     "title": "Balança rede",
     "author": "Traditional",
     "category": "REGIONAL",
-    "tags": ["corrido", "popular"],
+    "tags": [ "corrido", "popular" ],
     "verses": {
       "c1": {
         "type": "chorus",
@@ -726,14 +726,14 @@
         }
       }
     },
-    "structure": ["c1", "c1"]
+    "structure": [ "c1", "c1" ]
   },
   {
     "id": "quem-vem-la-sou-eu",
     "title": "Quem vem lá, sou eu",
     "author": "Traditional",
     "category": "ANGOLA",
-    "tags": ["corrido", "angola", "roda"],
+    "tags": [ "corrido", "angola", "roda" ],
     "verses": {
       "c1": {
         "type": "chorus",
@@ -776,14 +776,14 @@
         }
       }
     },
-    "structure": ["c1", "c2", "v1", "c1", "v2", "c1"]
+    "structure": [ "c1", "c2", "v1", "c1", "v2", "c1" ]
   },
   {
     "id": "marinheiro-sou",
     "title": "Marinheiro sou",
     "author": "Traditional",
     "category": "REGIONAL",
-    "tags": ["corrido", "popular", "call-and-response"],
+    "tags": [ "corrido", "popular", "call-and-response" ],
     "verses": {
       "c1": {
         "type": "chorus",
@@ -948,7 +948,7 @@
     "title": "Você não sabe o valor",
     "author": "Traditional",
     "category": "REGIONAL",
-    "tags": ["corrido", "popular", "capoeira"],
+    "tags": [ "corrido", "popular", "capoeira" ],
     "verses": {
       "c1": {
         "type": "chorus",
@@ -1001,14 +1001,14 @@
         }
       }
     },
-    "structure": ["c1", "c1", "v1", "c1", "v2", "c1", "v3", "c1", "v4", "c1"]
+    "structure": [ "c1", "c1", "v1", "c1", "v2", "c1", "v3", "c1", "v4", "c1" ]
   },
   {
     "id": "beira-mar-ioio-iaia",
     "title": "Beira mar ioiô, beira mar iaiá",
     "author": "Traditional",
     "category": "REGIONAL",
-    "tags": ["corrido", "call-and-response", "roda"],
+    "tags": [ "corrido", "call-and-response", "roda" ],
     "verses": {
       "s1": {
         "type": "verse",
@@ -1061,14 +1061,14 @@
         }
       }
     },
-    "structure": ["s1", "c1", "s1", "c1", "s2", "c2", "s2", "c3"]
+    "structure": [ "s1", "c1", "s1", "c1", "s2", "c2", "s2", "c3" ]
   },
   {
     "id": "a-mare-ta-cheia",
     "title": "A maré tá cheia",
     "author": "Traditional",
     "category": "REGIONAL",
-    "tags": ["corrido", "call-and-response", "mar", "roda"],
+    "tags": [ "corrido", "call-and-response", "mar", "roda" ],
     "verses": {
       "v1": {
         "type": "verse",
@@ -1141,14 +1141,14 @@
         }
       }
     },
-    "structure": ["v1", "c1", "v2", "c2", "v3", "c3", "v4", "c1"]
+    "structure": [ "v1", "c1", "v2", "c2", "v3", "c3", "v4", "c1" ]
   },
   {
     "id": "pisada-de-lampiao",
     "title": "Pisada de Lampião",
     "author": "Traditional",
     "category": "REGIONAL",
-    "tags": ["corrido", "call-and-response", "popular", "roda"],
+    "tags": [ "corrido", "call-and-response", "popular", "roda" ],
     "verses": {
       "c1": {
         "type": "chorus",
@@ -1191,14 +1191,14 @@
         }
       }
     },
-    "structure": ["c1", "v1", "c1", "v1", "c1", "v2", "c1", "v3", "c1"]
+    "structure": [ "c1", "v1", "c1", "v1", "c1", "v2", "c1", "v3", "c1" ]
   },
   {
     "id": "olha-o-nego-sinha",
     "title": "Olha o nego, sinhá",
     "author": "Traditional",
     "category": "ANGOLA",
-    "tags": ["corrido", "call-and-response", "angola", "roda"],
+    "tags": [ "corrido", "call-and-response", "angola", "roda" ],
     "verses": {
       "c1": {
         "type": "chorus",
@@ -1321,5 +1321,66 @@
       "v9",
       "c1"
     ]
+  },
+  {
+    "id": "tava-la-em-casa",
+    "title": "Tava lá em casa",
+    "author": "Traditional",
+    "category": "REGIONAL",
+    "tags": [ "corrido", "história", "luta" ],
+    "verses": {
+      "c1": {
+        "type": "chorus",
+        "pt": "Tava lá em casa, \nSem pensar, sem imaginar",
+        "localizations": {
+          "ro": {
+            "transcription": "Tava la em kaza\nSeim pensar, seim imajinar",
+            "translation": "Eram acasă\nFără să gândesc, fără să-mi imaginez"
+          }
+        }
+      },
+      "v1": {
+        "type": "verse",
+        "pt": "Tava lá em casa\nSem pensar, sem imaginar,\nQuando ouvi bater na porta\nSalomão mandou chamar",
+        "localizations": {
+          "ro": {
+            "transcription": "Tava la em kaza\nSeim pensar, seim imajinar,\nKuandu ovi batêr na porta\nSalomau mandou shamar",
+            "translation": "Eram acasă\nFără să gândesc, fără să-mi imaginez,\nCând am auzit bătăi în ușă\nSolomon a trimis să mă cheme"
+          }
+        }
+      },
+      "v2": {
+        "type": "verse",
+        "pt": "Tava lá em casa, \nSem pensar, sem imaginar",
+        "localizations": {
+          "ro": {
+            "transcription": "Tava la em kaza\nSeim pensar, seim imajinar",
+            "translation": "Eram acasă\nFără să gândesc, fără să-mi imaginez"
+          }
+        }
+      },
+      "v3": {
+        "type": "verse",
+        "pt": "Quando ouvi bater na porta\nSalomão mandou chamar",
+        "localizations": {
+          "ro": {
+            "transcription": "Kuandu ovi batêr na porta\nSalomau mandou shamar",
+            "translation": "Când am auzit bătăi în ușă\nSolomon a trimis să mă cheme"
+          }
+        }
+      },
+      "v4": {
+        "type": "verse",
+        "pt": "Para ajudar a vencer\nA batalha liderar",
+        "localizations": {
+          "ro": {
+            "transcription": "Para aiudar a vence\nA batalia ligera",
+            "translation": "Pentru a ajuta la biruință\nSă conduc bătălia"
+          }
+        }
+      }
+
+    },
+    "structure": [ "v1", "c1", "v2", "c1", "v3", "c1", "v4", "c1", "v2", "c1", "v3", "c1" ]
   }
 ]
