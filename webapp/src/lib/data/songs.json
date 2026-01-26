@@ -1382,5 +1382,35 @@
 
     },
     "structure": [ "v1", "c1", "v2", "c1", "v3", "c1", "v4", "c1", "v2", "c1", "v3", "c1" ]
+  },
+  {
+    "id": "eu-vim-aqui-pra-lhe-ver",
+    "title": "Eu vim aqui pra lhe ver",
+    "author": "Traditional",
+    "category": "REGIONAL",
+    "tags": [ "corrido" ],
+    "verses": {
+      "v1": {
+        "type": "verse",
+        "pt": "Eu vim aqui pra lhe ver\npra saber da sua saude.\nMeu cavalo empacou na ladeira\neu vim pra lhe ver, mais não pude.",
+        "localizations": {
+          "ro": {
+            "transcription": "Eu vim aki pra li ver\npra saber da sua saudji.\nMeu kavalu empacou na ladeira\neu vim pra li ver, maiș nau pudji.",
+            "translation": "Am venit aici să te văd\nsă aflu de sănătatea ta.\nCalul meu s-a oprit în deal\nam venit să te văd, dar n-am putut."
+          }
+        }
+      },
+      "c1": {
+        "type": "chorus",
+        "pt": "Eu vim aqui pra lhe ver\npra saber da sua saude.\nMeu cavalo empacou na ladeira\neu vim pra lhe ver, mais não pude.",
+        "localizations": {
+          "ro": {
+            "transcription": "Eu vim aki pra li ver\npra saber da sua saudji.\nMeu kavalu empacou na ladeira\neu vim pra li ver, maiș nau pudji.",
+            "translation": "Am venit aici să te văd\nsă aflu de sănătatea ta.\nCalul meu s-a oprit în deal\nam venit să te văd, dar n-am putut."
+          }
+        }
+      }
+    },
+    "structure": [ "v1", "c1" ]
   }
 ]
