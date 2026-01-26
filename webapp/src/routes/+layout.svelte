@@ -23,6 +23,6 @@
 	</script>`}
 </svelte:head>
 
-<div class="min-h-dvh bg-background text-foreground">
+<div class="bg-background text-foreground">
 	{@render children()}
 </div>

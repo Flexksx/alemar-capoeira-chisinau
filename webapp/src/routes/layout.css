@@ -149,8 +149,6 @@
     /* Improve font rendering */
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    /* Touch action for better swipe handling */
-    touch-action: pan-x pan-y;
   }
 }
 
