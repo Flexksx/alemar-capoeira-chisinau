@@ -50,76 +50,6 @@
     "structure": [ "c1", "v1", "c1", "v2", "c1", "v3", "c1" ]
   },
   {
-    "id": "zum-zum-zum",
-    "title": "Zum Zum Zum",
-    "author": "Traditional",
-    "category": "ANGOLA",
-    "tags": [ "ladainha", "angola" ],
-    "verses": {
-      "c1": {
-        "type": "chorus",
-        "pt": "Zum zum zum, capoeira mata um\nZum zum zum, capoeira mata um",
-        "localizations": {
-          "ro": {
-            "transcription": "Zum zum zum, capoeira mata um\nZum zum zum, capoeira mata um",
-            "translation": "Zum zum zum, capoeira omoară pe unul\nZum zum zum, capoeira omoară pe unul"
-          }
-        }
-      },
-      "v1": {
-        "type": "verse",
-        "pt": "Eu já vivo enjoado\nDe viver aqui na terra",
-        "localizations": {
-          "ro": {
-            "transcription": "Eu ja vivu enjoadu\nDji viver aki na tera",
-            "translation": "Sunt deja sătul\nDe a trăi aici pe pământ"
-          }
-        }
-      },
-      "v2": {
-        "type": "verse",
-        "pt": "Ô mamãe eu vou pra lua\nEu vou falar com as estrelas",
-        "localizations": {
-          "ro": {
-            "transcription": "O mamãi eu voi pra lua\nEu voi falar com as estrelas",
-            "translation": "O, mamă, mă duc pe lună\nVoi vorbi cu stelele"
-          }
-        }
-      }
-    },
-    "structure": [ "c1", "v1", "c1", "v2", "c1" ]
-  },
-  {
-    "id": "volta-do-mundo",
-    "title": "Volta do Mundo",
-    "author": "Traditional",
-    "category": "ANGOLA",
-    "tags": [ "corrido", "roda" ],
-    "verses": {
-      "c1": {
-        "type": "chorus",
-        "pt": "Volta do mundo, camará\nVolta do mundo, camará",
-        "localizations": {
-          "ro": {
-            "transcription": "Volta du mundu, camara\nVolta du mundu, camara",
-            "translation": "Întoarcerea lumii, camarade\nÎntoarcerea lumii, camarade"
-          }
-        }
-      },
-      "v1": {
-        "type": "verse",
-        "pt": "O mundo dá volta, camará\nO mundo dá volta, camará",
-        "localizations": {
-          "ro": {
-            "transcription": "O mundu da volta, camara\nO mundu da volta, camara",
-            "translation": "Lumea se întoarce, camarade\nLumea se întoarce, camarade"
-          }
-        }
-      }
-    },
-    "structure": [ "c1", "v1", "c1" ]
-  },
-  {
     "id": "samba-de-roda",
     "title": "Samba Lelê",
     "author": "Traditional",
@@ -158,56 +88,6 @@
       }
     },
     "structure": [ "c1", "c2", "v1", "c2" ]
-  },
-  {
-    "id": "ie-maior-e-deus",
-    "title": "Iê, Maior é Deus",
-    "author": "Traditional",
-    "category": "ANGOLA",
-    "tags": [ "ladainha", "abertura" ],
-    "verses": {
-      "c1": {
-        "type": "chorus",
-        "pt": "Iê, maior é Deus\nIê, maior é Deus, camará",
-        "localizations": {
-          "ro": {
-            "transcription": "Ie, maior e Deus\nIe, maior e Deus, camara",
-            "translation": "Iê, cel mai mare este Dumnezeu\nIê, cel mai mare este Dumnezeu, camarade"
-          }
-        }
-      },
-      "v1": {
-        "type": "verse",
-        "pt": "Iê, viva meu mestre\nIê, viva meu mestre, camará",
-        "localizations": {
-          "ro": {
-            "transcription": "Ie, viva meu meștri\nIe, viva meu meștri, camara",
-            "translation": "Iê, trăiască maestrul meu\nIê, trăiască maestrul meu, camarade"
-          }
-        }
-      },
-      "v2": {
-        "type": "verse",
-        "pt": "Iê, quem me ensinou\nIê, quem me ensinou, camará",
-        "localizations": {
-          "ro": {
-            "transcription": "Ie, kem mi ensinou\nIe, kem mi ensinou, camara",
-            "translation": "Iê, cel care m-a învățat\nIê, cel care m-a învățat, camarade"
-          }
-        }
-      },
-      "v3": {
-        "type": "verse",
-        "pt": "Iê, a capoeira\nIê, a capoeira, camará",
-        "localizations": {
-          "ro": {
-            "transcription": "Ie, a capoeira\nIe, a capoeira, camara",
-            "translation": "Iê, capoeira\nIê, capoeira, camarade"
-          }
-        }
-      }
-    },
-    "structure": [ "c1", "v1", "c1", "v2", "c1", "v3", "c1" ]
   },
   {
     "id": "boa-viagem",
@@ -655,6 +535,16 @@
     "category": "ANGOLA",
     "tags": [ "corrido", "angola" ],
     "verses": {
+      "v1": {
+        "type": "verse",
+        "pt": "Vim no navio de Aruanda, Aruanda ê\nVim no navio de Aruanda, Aruanda á\nPorque me trouxeram de Aruanda\nPra que me trouxeram de Aruanda\nVim no navio de Aruanda, Aruanda ê",
+        "localizations": {
+          "ro": {
+            "transcription": "Vim nu navio dji Aruanda, Aruanda ê\nVim nu navio dji Aruanda, Aruanda a\nPorke mi troușeram dji Aruanda\nPra ke mi troușeram dji Aruanda\nVim nu navio dji Aruanda, Aruanda ê",
+            "translation": "Am venit pe vasul din Aruanda, Aruanda ê\nAm venit pe vasul din Aruanda, Aruanda á\nDe ce m-au adus din Aruanda?\nPentru ce m-au adus din Aruanda?\nAm venit pe vasul din Aruanda, Aruanda ê"
+          }
+        }
+      },
       "c1": {
         "type": "chorus",
         "pt": "Vim no navio de Aruanda, Aruanda ê\nVim no navio de Aruanda, Aruanda á\nPorque me trouxeram de Aruanda\nPra que me trouxeram de Aruanda\nVim no navio de Aruanda, Aruanda ê",
@@ -666,7 +556,7 @@
         }
       }
     },
-    "structure": [ "c1", "c1" ]
+    "structure": [ "v1", "c1" ]
   },
   {
     "id": "adeus-santo-amaro-vou-ver-vou-pra-la",
@@ -677,16 +567,37 @@
     "verses": {
       "c1": {
         "type": "chorus",
-        "pt": "Adeus Santo Amaro, vou ver, vou pra lá\nVou ver, vou pra lá, vou ver, eu vou pra lá\n(Adeus Santo Amaro, eu vou ver, vou pra lá)\nVou ver, vou pra lá, vou ver angoleiro vadiar\n(Adeus Santo Amaro, vou ver, vou pra lá)",
+        "pt": "Adeus Santo Amaro, vou ver, vou pra lá",
         "localizations": {
           "ro": {
-            "transcription": "Adeus Santu Amaru, vou ver, vou pra la\nVou ver, vou pra la, vou ver, eu vou pra la\n(Adeus Santu Amaru, eu vou ver, vou pra la)\nVou ver, vou pra la, vou ver angoleiru vadiar\n(Adeus Santu Amaru, vou ver, vou pra la)",
-            "translation": "La revedere, Santo Amaro, mă duc să văd, plec acolo\nMă duc să văd, plec acolo, mă duc să văd, eu plec acolo\n(La revedere, Santo Amaro, mă duc să văd, plec acolo)\nMă duc să văd, plec acolo, mă duc să-i văd pe angoleiro vadiind\n(La revedere, Santo Amaro, mă duc să văd, plec acolo)"
+            "transcription": "Adeus Santu Amaru, vou ver, vou pra la",
+            "translation": "La revedere, Santo Amaro, mă duc să văd, plec acolo"
+          }
+        }
+      },
+      "v1": {
+        "type": "verse",
+        "pt": "Vou ver, vou pra lá, vou ver, eu vou pra lá",
+        "localizations": {
+          "ro": {
+            "transcription": "Vou ver, vou pra la, vou ver, eu vou pra la",
+            "translation": "Mă duc să văd, plec acolo, mă duc să văd, eu plec acolo"
+          }
+        }
+      },
+
+      "v2": {
+        "type": "verse",
+        "pt": "Vou ver, vou pra lá, vou ver angoleiro vadiar",
+        "localizations": {
+          "ro": {
+            "transcription": "Vou ver, vou pra la, vou ver angoleiru vadiar",
+            "translation": "Mă duc să văd, plec acolo, mă duc să-i văd pe angoleiro vadiind"
           }
         }
       }
     },
-    "structure": [ "c1" ]
+    "structure": [ "c1", "v1", "c1", "v2", "c1" ]
   },
   {
     "id": "meu-atabaque-e-de-couro-de-boi",

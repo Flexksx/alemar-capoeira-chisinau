@@ -119,7 +119,18 @@
                           ? 'bg-primary/10 font-medium text-primary'
                           : 'text-foreground hover:bg-accent'}"
                       >
-                        {song.title}
+                        <span class="block">{song.title}</span>
+                        {#if song.tags.length > 0}
+                          <div class="mt-1.5 flex flex-wrap gap-1.5">
+                            {#each song.tags as tag (tag)}
+                              <span
+                                class="rounded-md bg-muted px-2 py-0.5 text-xs text-muted-foreground"
+                              >
+                                #{tag}
+                              </span>
+                            {/each}
+                          </div>
+                        {/if}
                       </button>
                     </li>
                   {/each}
