@@ -15,11 +15,12 @@
   import { sortSongsByCategory } from "$lib/utils";
   import Menu from "@lucide/svelte/icons/menu";
   import Search from "@lucide/svelte/icons/search";
+  import FileDown from "@lucide/svelte/icons/file-down";
   import ChevronLeft from "@lucide/svelte/icons/chevron-left";
   import ChevronRight from "@lucide/svelte/icons/chevron-right";
   import ThemeToggle from "$lib/components/ThemeToggle.svelte";
 
-  const songs: Song[] = sortSongsByCategory(songsData as Song[]);
+  const songs: Song[] = sortSongsByCategory(songsData as unknown as Song[]);
 
   let sidebarOpen = $state(false);
   let searchOpen = $state(false);
@@ -60,6 +61,10 @@
 
   function scrollNext() {
     carouselApi?.scrollNext();
+  }
+
+  function exportSongbookPdf() {
+    void goto("/songs/export");
   }
 
   const currentSong = $derived(songs[currentIndex]);
@@ -129,8 +134,16 @@
       </button>
     </div>
 
-    <!-- Theme Toggle -->
-    <ThemeToggle />
+    <div class="flex items-center gap-1">
+      <button
+        onclick={exportSongbookPdf}
+        class="flex h-11 w-11 items-center justify-center rounded-full text-foreground transition-colors hover:bg-accent"
+        aria-label="Export songs as PDF"
+      >
+        <FileDown class="h-5 w-5" />
+      </button>
+      <ThemeToggle />
+    </div>
   </div>
 </header>
 

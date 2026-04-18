@@ -243,3 +243,56 @@
   --animate-accordion-down: accordion-down 0.2s ease-out;
   --animate-accordion-up: accordion-up 0.2s ease-out;
 }
+
+@media print {
+  @page {
+    size: A4;
+    margin: 14mm 14mm 18mm;
+  }
+
+  html,
+  body {
+    background: white !important;
+    color: black !important;
+  }
+
+  .no-print {
+    display: none !important;
+  }
+
+  .print-songbook-header {
+    break-after: auto;
+    border-bottom: none !important;
+    margin-bottom: 0 !important;
+    padding-bottom: 0 !important;
+  }
+
+  .songbook-grid {
+    align-items: start;
+  }
+
+  .songbook-song {
+    break-inside: avoid;
+    border: none !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    background: transparent !important;
+    padding: 0 !important;
+  }
+
+  .songbook-verse {
+    break-inside: avoid;
+  }
+
+  .print-page-number {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    font-size: 10px;
+    color: #666;
+  }
+
+  .print-page-number::before {
+    content: "Page " counter(page);
+  }
+}
