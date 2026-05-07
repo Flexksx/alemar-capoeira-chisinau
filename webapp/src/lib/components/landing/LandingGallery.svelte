@@ -1,15 +1,36 @@
 <script lang="ts">
 	import { useLanguageStore } from '$lib/i18n.svelte';
+	import bichoMicho from '$lib/assets/photos/bicho_micho.jpg';
+	import serginho from '$lib/assets/photos/serginho.jpg';
+	import ticoTicoMimi from '$lib/assets/photos/tico_tico_mimi.jpg';
+	import bichoBibi from '$lib/assets/photos/bicho_bibi.jpg';
 	import groupPhoto from '$lib/assets/photos/20250815_195516.jpg';
+	import bucharest from '$lib/assets/photos/bucuresti_group_photo.jpg';
+	import tiraspol from '$lib/assets/photos/tiraspol.jpg';
+	import verandamall from '$lib/assets/photos/verandamall.jpg';
+	import bucharest2 from '$lib/assets/photos/bucuresti_group_photo2.jpg';
+	import video1 from '$lib/assets/videos/558934128_24493304180342324_2883331840718687193_n.mp4';
+	import video2 from '$lib/assets/videos/559186123_31809521748693885_2546781122121030783_n.mp4';
 
 	const lang = useLanguageStore();
 
-	const photos = [
-		{ src: groupPhoto, alt: 'Alemar Capoeira Chișinău', wide: true },
-		{ src: '/photos/action.jpg', alt: 'Capoeira move', wide: false },
-		{ src: '/photos/jogo.jpg', alt: 'Jogo de Capoeira', wide: false },
-		{ src: groupPhoto, alt: 'Group training', wide: false },
-		{ src: '/photos/event.jpg', alt: 'Capoeira event', wide: true }
+	type GalleryItem =
+		| { type: 'photo'; src: string; alt: string; wide: boolean }
+		| { type: 'video'; src: string; wide: boolean };
+
+	// Videos first, then photos. grid-flow-dense fills gaps caused by wide items.
+	const items: GalleryItem[] = [
+		{ type: 'video', src: video1, wide: false },
+		{ type: 'video', src: video2, wide: false },
+		{ type: 'photo', src: bichoMicho, alt: 'Jogo de Capoeira — demonstrație publică', wide: true },
+		{ type: 'photo', src: serginho, alt: 'Sergiu Melnic la berimbau', wide: false },
+		{ type: 'photo', src: ticoTicoMimi, alt: 'Roda de Capoeira', wide: true },
+		{ type: 'photo', src: bichoBibi, alt: 'Jogo — roda în aer liber', wide: false },
+		{ type: 'photo', src: groupPhoto, alt: 'Alemar Capoeira Chișinău — antrenament', wide: true },
+		{ type: 'photo', src: bucharest, alt: 'Echipa la București', wide: false },
+		{ type: 'photo', src: tiraspol, alt: 'Echipa la Tiraspol cu steagul Braziliei', wide: false },
+		{ type: 'photo', src: verandamall, alt: 'Batizado — Veranda Mall', wide: false },
+		{ type: 'photo', src: bucharest2, alt: 'Echipa la București — Meli Melo', wide: false }
 	];
 </script>
 
@@ -21,30 +42,28 @@
 			{lang.t.gallery.title}
 		</h2>
 
-		<div class="grid grid-cols-2 gap-2 md:grid-cols-3 md:gap-3">
-			{#each photos as photo, i}
+		<div class="grid grid-cols-2 gap-2 md:grid-cols-3 md:gap-3 [grid-auto-flow:dense]">
+			{#each items as item}
 				<div
-					class="group relative overflow-hidden bg-card {photo.wide && i === 0
-						? 'col-span-2 row-span-1'
-						: ''} {photo.wide && i === 4 ? 'col-span-2' : ''}"
-					style="aspect-ratio: {photo.wide ? '16/7' : '4/5'}"
+					class="group relative overflow-hidden bg-card {item.wide ? 'col-span-2' : ''}"
+					style="aspect-ratio: {item.wide ? '16/7' : '4/5'}"
 				>
-					<img
-						src={photo.src}
-						alt={photo.alt}
-						class="h-full w-full object-cover object-center transition-transform duration-700 group-hover:scale-105"
-						onerror={(e) => {
-							const img = e.currentTarget as HTMLImageElement;
-							img.style.display = 'none';
-							const placeholder = img.parentElement?.querySelector('.placeholder') as HTMLElement | null;
-							if (placeholder) placeholder.style.display = 'flex';
-						}}
-					/>
-					<div
-						class="placeholder absolute inset-0 hidden items-center justify-center bg-card border border-border/20"
-					>
-						<span class="font-impact text-4xl text-border/30 tracking-widest">ALEMAR</span>
-					</div>
+					{#if item.type === 'video'}
+						<video
+							src={item.src}
+							autoplay
+							muted
+							loop
+							playsinline
+							class="h-full w-full object-cover object-center"
+						></video>
+					{:else}
+						<img
+							src={item.src}
+							alt={item.alt}
+							class="h-full w-full object-cover object-center transition-transform duration-700 group-hover:scale-105"
+						/>
+					{/if}
 					<!-- Gold hover overlay -->
 					<div
 						class="absolute inset-0 border border-primary/0 transition-all duration-300 group-hover:border-primary/30"

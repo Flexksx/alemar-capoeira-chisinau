@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { useLanguageStore, type Language } from '$lib/i18n.svelte';
+	import alemArLogo from '$lib/assets/alemar-logo.png';
 
 	const lang = useLanguageStore();
 
@@ -22,8 +23,8 @@
 	class="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-6 py-4 md:px-10"
 	style="background: linear-gradient(to bottom, rgba(15,10,5,0.95) 0%, rgba(15,10,5,0) 100%)"
 >
-	<a href="/" class="font-impact text-xl tracking-widest text-primary uppercase">
-		Alemar Capoeira
+	<a href="/">
+		<img src={alemArLogo} alt="Alemar Capoeira" class="h-10 w-auto rounded-sm" />
 	</a>
 
 	<!-- Desktop nav -->
