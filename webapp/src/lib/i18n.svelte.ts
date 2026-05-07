@@ -172,7 +172,7 @@ const translations: Record<Language, Translations> = {
 			daysLabel: 'Days',
 			time: '18:30 – 20:30',
 			timeLabel: 'Schedule',
-			location: 'Calea Ieșilor 10, 4th floor',
+			location: 'Calea Ieșilor 10, 5th floor',
 			locationLabel: 'Location',
 			free: 'First class is free',
 			cta: 'Come and try'
@@ -192,7 +192,7 @@ const translations: Record<Language, Translations> = {
 			subtitle: 'First class is free. Come as you are.',
 			instructor: 'Instructor',
 			phone: 'Phone',
-			address: 'Calea Ieșilor 10, 4th floor, Chișinău',
+			address: 'Calea Ieșilor 10, 5th floor, Chișinău',
 			cta: 'Get in touch',
 			facebook: 'Facebook'
 		},
