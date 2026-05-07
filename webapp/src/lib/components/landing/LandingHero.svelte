@@ -27,10 +27,10 @@
 	></video>
 
 	<!-- Dark scrim: base + gradient -->
-	<div class="absolute inset-0 bg-black/55"></div>
+	<div class="absolute inset-0 bg-black/40"></div>
 	<div
 		class="absolute inset-0"
-		style="background: linear-gradient(to bottom, rgba(10,7,3,0.1) 0%, rgba(10,7,3,0.75) 100%)"
+		style="background: linear-gradient(to bottom, rgba(10,7,3,0.05) 0%, rgba(10,7,3,0.55) 100%)"
 	></div>
 
 	<!-- Geo texture overlay -->
