@@ -44,10 +44,10 @@
 					{lang.t.contact.phone}
 				</p>
 				<a
-					href="tel:+37379550130"
+					href="tel:+37379707072"
 					class="font-display text-lg text-foreground transition-colors hover:text-primary"
 				>
-					079 55 01 30
+					079 70 70 72
 				</a>
 			</div>
 
@@ -57,12 +57,12 @@
 					{lang.t.contact.facebook}
 				</p>
 				<a
-					href="https://facebook.com/capoeirachisinau"
+					href="https://www.facebook.com/capoeiramd/"
 					target="_blank"
 					rel="noopener noreferrer"
 					class="font-display text-lg text-foreground transition-colors hover:text-primary"
 				>
-					@capoeirachisinau
+					@capoeiramd
 				</a>
 			</div>
 		</div>
@@ -72,7 +72,7 @@
 		</p>
 
 		<a
-			href="tel:+37379550130"
+			href="tel:+37379707072"
 			class="inline-block border border-primary px-12 py-5 font-impact text-xl tracking-[0.2em] uppercase text-primary transition-all duration-300 hover:bg-primary hover:text-primary-foreground"
 		>
 			{lang.t.contact.cta} →
