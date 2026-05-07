@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { useLanguageStore } from '$lib/i18n.svelte';
-	import video1 from '$lib/assets/videos/558934128_24493304180342324_2883331840718687193_n.mp4';
+	import video1 from '$lib/assets/videos/559186123_31809521748693885_2546781122121030783_n.mp4';
 
 	const lang = useLanguageStore();
 </script>
