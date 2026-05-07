@@ -41,7 +41,7 @@ const translations: Record<Language, Translations> = {
 			songs: 'Cântece'
 		},
 		hero: {
-			tagline: 'Artă marțială. Dans. Muzică.',
+			tagline: 'Artă marțială braziliană. Acrobații. Muzică.',
 			line1: 'CAPOEIRA',
 			line2: 'ÎN CHIȘINĂU',
 			cta: 'Prima lecție gratuită',
@@ -49,8 +49,8 @@ const translations: Record<Language, Translations> = {
 		},
 		about: {
 			title: 'CE ESTE CAPOEIRA?',
-			quote: 'O luptă care este un dans, un dans care este o luptă.',
-			body: 'Capoeira este o artă marțială braziliană care îmbină luptă, dans, acrobații și muzică. Născută din rezistența africană, ea exprimă libertate, creativitate și comunitate. Fiecare joc este o conversație fizică — un dialog între doi oameni, fără cuvinte.',
+			quote: 'Născută din rezistență. Forjată ca luptă. Vie prin muzică.',
+			body: 'Capoeira este o artă marțială braziliană care combină tehnici de luptă, acrobații și muzică. Născută din rezistența africană în Brazilia, îmbină forța fizică cu strategia fluidă. Fiecare confruntare este un schimb în timp real — doi sportivi care se citesc și se contracarează.',
 			highlight: 'Mai mult decât sport. O cultură.'
 		},
 		classes: {
@@ -85,7 +85,7 @@ const translations: Record<Language, Translations> = {
 			facebook: 'Facebook'
 		},
 		footer: {
-			tagline: 'Artă marțială. Dans. Muzică.',
+			tagline: 'Artă marțială braziliană. Acrobații. Muzică.',
 			since: 'Activi din 2003 în Chișinău'
 		}
 	},
@@ -97,7 +97,7 @@ const translations: Record<Language, Translations> = {
 			songs: 'Песни'
 		},
 		hero: {
-			tagline: 'Боевое искусство. Танец. Музыка.',
+			tagline: 'Бразильское боевое искусство. Акробатика. Музыка.',
 			line1: 'КАПОЭЙРА',
 			line2: 'В КИШИНЁВЕ',
 			cta: 'Первый урок бесплатно',
@@ -105,8 +105,8 @@ const translations: Record<Language, Translations> = {
 		},
 		about: {
 			title: 'ЧТО ТАКОЕ КАПОЭЙРА?',
-			quote: 'Борьба, которая является танцем, танец, который является борьбой.',
-			body: 'Капоэйра — бразильское боевое искусство, объединяющее борьбу, танец, акробатику и музыку. Рождённая из африканского сопротивления, она выражает свободу, творчество и общность. Каждая игра — это физический диалог между двумя людьми.',
+			quote: 'Рождена из сопротивления. Закалена в бою. Жива через музыку.',
+			body: 'Капоэйра — бразильское боевое искусство, сочетающее боевые техники, акробатику и музыку. Рождённая из африканского сопротивления в Бразилии, она объединяет физическую силу с боевой стратегией. Каждая схватка — живой обмен между двумя спортсменами, которые читают и нейтрализуют друг друга.',
 			highlight: 'Больше чем спорт. Это культура.'
 		},
 		classes: {
@@ -141,7 +141,7 @@ const translations: Record<Language, Translations> = {
 			facebook: 'Facebook'
 		},
 		footer: {
-			tagline: 'Боевое искусство. Танец. Музыка.',
+			tagline: 'Бразильское боевое искусство. Акробатика. Музыка.',
 			since: 'С 2003 года в Кишинёве'
 		}
 	},
@@ -153,7 +153,7 @@ const translations: Record<Language, Translations> = {
 			songs: 'Songs'
 		},
 		hero: {
-			tagline: 'Martial Art. Dance. Music.',
+			tagline: 'Brazilian Martial Art. Acrobatics. Music.',
 			line1: 'CAPOEIRA',
 			line2: 'IN CHIȘINĂU',
 			cta: 'First class free',
@@ -161,8 +161,8 @@ const translations: Record<Language, Translations> = {
 		},
 		about: {
 			title: 'WHAT IS CAPOEIRA?',
-			quote: 'A fight that is a dance, a dance that is a fight.',
-			body: 'Capoeira is a Brazilian martial art that blends combat, dance, acrobatics, and music. Born from African resistance, it expresses freedom, creativity, and community. Every jogo is a physical conversation — a dialogue between two people, without words.',
+			quote: 'Born from resistance. Forged as combat. Alive through music.',
+			body: 'Capoeira is a Brazilian martial art that combines combat techniques, acrobatics, and music. Born from African resistance in Brazil, it blends physical power with combat strategy. Every sparring match is a live exchange — two athletes reading and countering each other.',
 			highlight: 'More than sport. A culture.'
 		},
 		classes: {
@@ -197,7 +197,7 @@ const translations: Record<Language, Translations> = {
 			facebook: 'Facebook'
 		},
 		footer: {
-			tagline: 'Martial Art. Dance. Music.',
+			tagline: 'Brazilian Martial Art. Acrobatics. Music.',
 			since: 'Active since 2003 in Chișinău'
 		}
 	}

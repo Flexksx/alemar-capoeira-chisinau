@@ -20,7 +20,7 @@
 				<div class="relative pl-6 mb-10">
 					<span class="absolute left-0 top-0 h-full w-px bg-primary"></span>
 					<blockquote class="font-display italic text-xl md:text-2xl text-primary/90 leading-relaxed">
-						"{lang.t.about.quote}"
+						{lang.t.about.quote}
 					</blockquote>
 				</div>
 
