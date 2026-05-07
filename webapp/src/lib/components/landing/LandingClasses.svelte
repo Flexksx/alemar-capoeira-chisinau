@@ -1,5 +1,7 @@
 <script lang="ts">
 	import { useLanguageStore } from '$lib/i18n.svelte';
+	import { reveal } from '$lib/actions/reveal';
+	import { Calendar, Clock, MapPin } from '@lucide/svelte';
 
 	const lang = useLanguageStore();
 
@@ -7,17 +9,17 @@
 		{
 			label: lang.t.classes.daysLabel,
 			value: lang.t.classes.days,
-			icon: '◈'
+			icon: Calendar
 		},
 		{
 			label: lang.t.classes.timeLabel,
 			value: lang.t.classes.time,
-			icon: '◉'
+			icon: Clock
 		},
 		{
 			label: lang.t.classes.locationLabel,
 			value: lang.t.classes.location,
-			icon: '◎'
+			icon: MapPin
 		}
 	]);
 </script>
@@ -28,7 +30,7 @@
 	style="background: linear-gradient(135deg, oklch(0.14 0.015 60) 0%, oklch(0.12 0.01 60) 100%)"
 >
 	<div class="mx-auto max-w-5xl px-6 md:px-10">
-		<div class="mb-16 text-center">
+		<div class="mb-16 text-center" use:reveal>
 			<h2
 				class="font-impact text-[clamp(3rem,9vw,7rem)] leading-none tracking-[0.04em] text-foreground"
 			>
@@ -41,12 +43,14 @@
 
 		<!-- Info cards -->
 		<div class="grid gap-px md:grid-cols-3" style="background: oklch(0.28 0.02 55)">
-			{#each infoCards as card}
+			{#each infoCards as card, i}
+			{@const Icon = card.icon}
 				<div
 					class="flex flex-col gap-4 p-8 md:p-10"
 					style="background: oklch(0.14 0.015 60)"
+					use:reveal={{ delay: i * 100 }}
 				>
-					<span class="text-3xl text-primary">{card.icon}</span>
+					<Icon size={28} class="text-primary" />
 					<p class="text-xs font-medium tracking-[0.25em] uppercase text-foreground/40">
 						{card.label}
 					</p>
@@ -58,7 +62,7 @@
 		</div>
 
 		<!-- CTA area -->
-		<div class="mt-16 flex flex-col items-center gap-6">
+		<div class="mt-16 flex flex-col items-center gap-6" use:reveal={{ delay: 200 }}>
 			<div class="flex items-center gap-4">
 				<span class="h-px w-8 bg-primary/40"></span>
 				<p class="font-display italic text-lg text-primary">

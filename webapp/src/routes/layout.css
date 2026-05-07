@@ -219,6 +219,45 @@
   }
 }
 
+/* Scroll-triggered reveal */
+@layer utilities {
+  .reveal-hidden {
+    opacity: 0;
+    transform: translateY(28px);
+    transition: opacity 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+                transform 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+
+  .reveal-hidden.revealed {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Contact CTA gold pulse */
+@layer utilities {
+  @keyframes gold-pulse {
+    0%, 100% { box-shadow: 0 0 0 0 oklch(0.75 0.15 75 / 0); }
+    50% { box-shadow: 0 0 0 8px oklch(0.75 0.15 75 / 0.15); }
+  }
+
+  .pulse-gold {
+    animation: gold-pulse 2.5s ease-in-out infinite;
+  }
+}
+
+/* Animated scroll chevron */
+@layer utilities {
+  @keyframes bounce-down {
+    0%, 100% { transform: translateY(0); opacity: 0.5; }
+    50% { transform: translateY(6px); opacity: 1; }
+  }
+
+  .bounce-down {
+    animation: bounce-down 1.8s ease-in-out infinite;
+  }
+}
+
 /* Smooth transitions for interactive elements */
 @layer base {
   button, a, [role="button"] {

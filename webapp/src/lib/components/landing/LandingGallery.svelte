@@ -1,5 +1,7 @@
 <script lang="ts">
 	import { useLanguageStore } from '$lib/i18n.svelte';
+	import { reveal } from '$lib/actions/reveal';
+	import GalleryLightbox from './GalleryLightbox.svelte';
 	import bichoMicho from '$lib/assets/photos/bicho_micho.jpg';
 	import serginho from '$lib/assets/photos/serginho.jpg';
 	import ticoTicoMimi from '$lib/assets/photos/tico_tico_mimi.jpg';
@@ -32,21 +34,40 @@
 		{ type: 'photo', src: verandamall, alt: 'Batizado — Veranda Mall', wide: false },
 		{ type: 'photo', src: bucharest2, alt: 'Echipa la București — Meli Melo', wide: false }
 	];
+
+	// Flat list for lightbox (all items)
+	const lightboxItems = items.map((item) =>
+		item.type === 'video'
+			? { type: 'video' as const, src: item.src }
+			: { type: 'photo' as const, src: item.src, alt: item.alt }
+	);
+
+	let lightboxOpen = $state(false);
+	let lightboxIndex = $state(0);
+
+	function openLightbox(index: number) {
+		lightboxIndex = index;
+		lightboxOpen = true;
+	}
 </script>
 
 <section class="py-24 md:py-36" id="gallery">
 	<div class="mx-auto max-w-6xl px-6 md:px-10">
 		<h2
 			class="mb-12 font-impact text-[clamp(2.5rem,7vw,5rem)] leading-none tracking-[0.04em] text-foreground/20"
+			use:reveal
 		>
 			{lang.t.gallery.title}
 		</h2>
 
 		<div class="grid grid-cols-2 gap-2 md:grid-cols-3 md:gap-3 [grid-auto-flow:dense]">
-			{#each items as item}
-				<div
-					class="group relative overflow-hidden bg-card {item.wide ? 'col-span-2' : ''}"
+			{#each items as item, i}
+				<button
+					class="group relative overflow-hidden bg-card text-left cursor-zoom-in {item.wide ? 'col-span-2' : ''}"
 					style="aspect-ratio: {item.wide ? '16/7' : '4/5'}"
+					onclick={() => openLightbox(i)}
+					use:reveal={{ delay: (i % 3) * 80 }}
+					aria-label="Open media {i + 1}"
 				>
 					{#if item.type === 'video'}
 						<video
@@ -55,7 +76,7 @@
 							muted
 							loop
 							playsinline
-							class="h-full w-full object-cover object-center"
+							class="h-full w-full object-cover object-center pointer-events-none"
 						></video>
 					{:else}
 						<img
@@ -66,10 +87,18 @@
 					{/if}
 					<!-- Gold hover overlay -->
 					<div
-						class="absolute inset-0 border border-primary/0 transition-all duration-300 group-hover:border-primary/30"
+						class="absolute inset-0 border border-primary/0 transition-all duration-300 group-hover:border-primary/40 group-hover:bg-black/10"
 					></div>
-				</div>
+				</button>
 			{/each}
 		</div>
 	</div>
 </section>
+
+{#if lightboxOpen}
+	<GalleryLightbox
+		items={lightboxItems}
+		startIndex={lightboxIndex}
+		onclose={() => (lightboxOpen = false)}
+	/>
+{/if}

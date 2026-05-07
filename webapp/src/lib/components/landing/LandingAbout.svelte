@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { useLanguageStore } from '$lib/i18n.svelte';
+	import { reveal } from '$lib/actions/reveal';
 	import groupPhoto from '$lib/assets/photos/20250815_195516.jpg';
 
 	const lang = useLanguageStore();
@@ -12,7 +13,7 @@
 	<div class="relative mx-auto max-w-6xl px-6 md:px-10">
 		<div class="grid gap-16 md:grid-cols-2 md:gap-24 md:items-center">
 			<!-- Left: title + quote -->
-			<div>
+			<div use:reveal={{ delay: 0 }}>
 				<h2 class="font-impact text-[clamp(2.5rem,7vw,5rem)] leading-none tracking-[0.04em] text-foreground mb-8">
 					{lang.t.about.title}
 				</h2>
@@ -30,25 +31,33 @@
 			</div>
 
 			<!-- Right: body + photo -->
-			<div class="flex flex-col gap-8">
+			<div class="flex flex-col gap-8" use:reveal={{ delay: 150 }}>
 				<p class="text-foreground/70 text-lg leading-relaxed">
 					{lang.t.about.body}
 				</p>
 
-				<div
-					class="relative aspect-[4/3] overflow-hidden bg-card"
-					style="clip-path: polygon(0 0, 100% 0, 100% 90%, 92% 100%, 0 100%)"
-				>
-					<img
-						src={groupPhoto}
-						alt="Alemar Capoeira Chișinău"
-						class="h-full w-full object-cover object-center"
-						onerror={(e) => ((e.currentTarget as HTMLImageElement).style.display = 'none')}
-					/>
-					<!-- Placeholder when no photo -->
-					<div class="absolute inset-0 flex items-center justify-center bg-card -z-10">
-						<span class="font-impact text-6xl text-border tracking-widest">CAPOEIRA</span>
+				<!-- Photo with clipped corner + gold accent -->
+				<div class="relative">
+					<div
+						class="relative aspect-[4/3] overflow-hidden bg-card"
+						style="clip-path: polygon(0 0, 100% 0, 100% 90%, 92% 100%, 0 100%)"
+					>
+						<img
+							src={groupPhoto}
+							alt="Alemar Capoeira Chișinău"
+							class="h-full w-full object-cover object-center"
+							onerror={(e) => ((e.currentTarget as HTMLImageElement).style.display = 'none')}
+						/>
+						<!-- Placeholder when no photo -->
+						<div class="absolute inset-0 flex items-center justify-center bg-card -z-10">
+							<span class="font-impact text-6xl text-border tracking-widest">CAPOEIRA</span>
+						</div>
 					</div>
+					<!-- Gold fill at the clipped corner -->
+					<div
+						class="absolute bottom-0 right-0 pointer-events-none"
+						style="width: 8%; padding-bottom: 10%; clip-path: polygon(100% 0, 100% 100%, 0 100%); background: oklch(0.75 0.15 75 / 0.45)"
+					></div>
 				</div>
 			</div>
 		</div>

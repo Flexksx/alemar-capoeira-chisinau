@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { useLanguageStore } from '$lib/i18n.svelte';
+	import { reveal } from '$lib/actions/reveal';
 	import eventsData from '$lib/data/events.json';
 
 	const lang = useLanguageStore();
@@ -14,18 +15,17 @@
 
 	const events = eventsData as LandingEvent[];
 
-	const formatDate = (iso: string) => {
-		const date = new Date(iso);
-		return date.toLocaleDateString(
-			lang.current === 'ro' ? 'ro-RO' : lang.current === 'ru' ? 'ru-RU' : 'en-GB',
-			{ day: 'numeric', month: 'long', year: 'numeric' }
-		);
-	};
+	const today = new Date();
+	today.setHours(0, 0, 0, 0);
+
+	function isPast(iso: string) {
+		return new Date(iso) < today;
+	}
 </script>
 
 <section class="py-24 md:py-36" id="events">
 	<div class="mx-auto max-w-5xl px-6 md:px-10">
-		<div class="mb-16">
+		<div class="mb-16" use:reveal>
 			<h2
 				class="font-impact text-[clamp(3rem,9vw,7rem)] leading-none tracking-[0.04em] text-foreground"
 			>
@@ -45,15 +45,17 @@
 			</div>
 		{:else}
 			<div class="flex flex-col gap-0">
-				{#each events as event}
+				{#each events as event, i}
+					{@const past = isPast(event.date)}
 					<div
-						class="group relative flex gap-8 border-b border-border/20 py-8 transition-colors hover:border-primary/30"
+						class="group relative flex gap-8 border-b border-border/20 py-8 transition-colors hover:border-primary/30 {past ? 'opacity-40' : ''}"
+						use:reveal={{ delay: i * 80 }}
 					>
 						<!-- Date column -->
 						<div class="w-32 shrink-0">
 							<time
 								datetime={event.date}
-								class="font-impact text-4xl leading-none text-primary tracking-[0.04em]"
+								class="font-impact text-4xl leading-none tracking-[0.04em] {past ? 'text-foreground/60' : 'text-primary'}"
 							>
 								{new Date(event.date).getDate()}
 							</time>
@@ -64,6 +66,13 @@
 								)}
 								{new Date(event.date).getFullYear()}
 							</p>
+							{#if past}
+								<p class="mt-2 text-[10px] tracking-[0.2em] uppercase text-foreground/30">
+									past
+								</p>
+							{:else}
+								<span class="mt-2 inline-block h-1.5 w-1.5 rounded-full bg-primary animate-pulse"></span>
+							{/if}
 						</div>
 
 						<!-- Content -->

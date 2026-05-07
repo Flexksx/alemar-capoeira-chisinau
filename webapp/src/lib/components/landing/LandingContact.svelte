@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { useLanguageStore } from '$lib/i18n.svelte';
+	import { reveal } from '$lib/actions/reveal';
 	import { User, Phone, Facebook, MapPin } from '@lucide/svelte';
 
 	const lang = useLanguageStore();
@@ -20,18 +21,20 @@
 	></div>
 
 	<div class="relative mx-auto max-w-4xl px-6 md:px-10 text-center">
-		<h2
-			class="font-impact text-[clamp(3.5rem,11vw,9rem)] leading-none tracking-[0.04em] text-foreground"
-		>
-			{lang.t.contact.title}
-		</h2>
+		<div use:reveal>
+			<h2
+				class="font-impact text-[clamp(3.5rem,11vw,9rem)] leading-none tracking-[0.04em] text-foreground"
+			>
+				{lang.t.contact.title}
+			</h2>
 
-		<p class="mt-6 font-display italic text-xl md:text-2xl text-primary/90">
-			{lang.t.contact.subtitle}
-		</p>
+			<p class="mt-6 font-display italic text-xl md:text-2xl text-primary/90">
+				{lang.t.contact.subtitle}
+			</p>
+		</div>
 
 		<div class="my-12 grid gap-8 md:grid-cols-3">
-			<div class="flex flex-col items-center gap-2">
+			<div class="flex flex-col items-center gap-2" use:reveal={{ delay: 0 }}>
 				<User class="mb-2 h-6 w-6 text-primary" />
 				<p class="text-xs tracking-[0.25em] uppercase text-foreground/40">
 					{lang.t.contact.instructor}
@@ -39,7 +42,7 @@
 				<p class="font-display text-lg text-foreground">Sergiu Melnic</p>
 			</div>
 
-			<div class="flex flex-col items-center gap-2">
+			<div class="flex flex-col items-center gap-2" use:reveal={{ delay: 100 }}>
 				<Phone class="mb-2 h-6 w-6 text-primary" />
 				<p class="text-xs tracking-[0.25em] uppercase text-foreground/40">
 					{lang.t.contact.phone}
@@ -52,7 +55,7 @@
 				</a>
 			</div>
 
-			<div class="flex flex-col items-center gap-2">
+			<div class="flex flex-col items-center gap-2" use:reveal={{ delay: 200 }}>
 				<Facebook class="mb-2 h-6 w-6 text-primary" />
 				<p class="text-xs tracking-[0.25em] uppercase text-foreground/40">
 					{lang.t.contact.facebook}
@@ -68,17 +71,19 @@
 			</div>
 		</div>
 
-		<p class="mb-10 flex items-center justify-center gap-2 text-sm tracking-[0.15em] uppercase text-foreground/40">
+		<p class="mb-10 flex items-center justify-center gap-2 text-sm tracking-[0.15em] uppercase text-foreground/40" use:reveal={{ delay: 150 }}>
 			<MapPin class="h-4 w-4 shrink-0 text-primary/60" />
 			{lang.t.contact.address}
 		</p>
 
-		<a
-			href="tel:+37379707072"
-			class="inline-block border border-primary px-12 py-5 font-impact text-xl tracking-[0.2em] uppercase text-primary transition-all duration-300 hover:bg-primary hover:text-primary-foreground"
-		>
-			{lang.t.contact.cta} →
-		</a>
+		<div use:reveal={{ delay: 250 }}>
+			<a
+				href="tel:+37379707072"
+				class="pulse-gold inline-block border border-primary px-12 py-5 font-impact text-xl tracking-[0.2em] uppercase text-primary transition-all duration-300 hover:bg-primary hover:text-primary-foreground"
+			>
+				{lang.t.contact.cta} →
+			</a>
+		</div>
 	</div>
 </section>
 

@@ -5,18 +5,43 @@
 	const lang = useLanguageStore();
 
 	let menuOpen = $state(false);
+	let activeSection = $state('hero');
 
 	const languages: Language[] = ['ro', 'ru', 'en'];
 
 	const navLinks = $derived([
-		{ href: '#classes', label: lang.t.nav.classes },
-		{ href: '#events', label: lang.t.nav.events },
-		{ href: '#contact', label: lang.t.nav.contact }
+		{ href: '#classes', label: lang.t.nav.classes, id: 'classes' },
+		{ href: '#events', label: lang.t.nav.events, id: 'events' },
+		{ href: '#contact', label: lang.t.nav.contact, id: 'contact' }
 	]);
 
 	function closeMenu() {
 		menuOpen = false;
 	}
+
+	$effect(() => {
+		const sections = ['hero', 'about', 'classes', 'gallery', 'events', 'contact'];
+		const observers: IntersectionObserver[] = [];
+
+		sections.forEach((id) => {
+			const el = document.getElementById(id);
+			if (!el) return;
+
+			const observer = new IntersectionObserver(
+				([entry]) => {
+					if (entry.isIntersecting) {
+						activeSection = id;
+					}
+				},
+				{ threshold: 0.35 }
+			);
+
+			observer.observe(el);
+			observers.push(observer);
+		});
+
+		return () => observers.forEach((o) => o.disconnect());
+	});
 </script>
 
 <nav
@@ -32,9 +57,12 @@
 		{#each navLinks as link}
 			<a
 				href={link.href}
-				class="text-sm font-medium tracking-widest uppercase text-foreground/70 transition-colors hover:text-primary"
+				class="relative text-sm font-medium tracking-widest uppercase transition-colors hover:text-primary {activeSection === link.id ? 'text-primary' : 'text-foreground/70'}"
 			>
 				{link.label}
+				{#if activeSection === link.id}
+					<span class="absolute -bottom-1 left-0 h-px w-full bg-primary"></span>
+				{/if}
 			</a>
 		{/each}
 		<a
@@ -107,7 +135,7 @@
 			<a
 				href={link.href}
 				onclick={closeMenu}
-				class="font-impact text-4xl tracking-widest uppercase text-foreground/80 transition-colors hover:text-primary"
+				class="font-impact text-4xl tracking-widest uppercase transition-colors hover:text-primary {activeSection === link.id ? 'text-primary' : 'text-foreground/80'}"
 			>
 				{link.label}
 			</a>

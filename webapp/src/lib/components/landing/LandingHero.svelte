@@ -1,12 +1,19 @@
 <script lang="ts">
 	import { useLanguageStore } from '$lib/i18n.svelte';
+	import { ChevronDown } from '@lucide/svelte';
 	import video1 from '$lib/assets/videos/559186123_31809521748693885_2546781122121030783_n.mp4';
 
 	const lang = useLanguageStore();
+
+	let scrollY = $state(0);
+	let videoParallax = $derived(scrollY * 0.1);
 </script>
 
-<section class="relative flex min-h-dvh flex-col items-center justify-center" id="hero">
-	<!-- Full-bleed video background -->
+<svelte:window bind:scrollY />
+
+<section class="relative flex min-h-dvh flex-col items-center justify-center overflow-hidden" id="hero">
+	<!-- Full-bleed video background with parallax -->
+	<!-- Video is slightly oversized (110% height) so parallax movement never reveals background -->
 	<video
 		src={video1}
 		poster="/photos/hero.jpg"
@@ -15,7 +22,8 @@
 		loop
 		playsinline
 		aria-label="Capoeira training session"
-		class="absolute inset-0 h-full w-full object-cover object-center"
+		class="absolute inset-x-0 h-[120%] w-full object-cover object-center"
+		style="top: -10%; transform: translateY(-{videoParallax}px); will-change: transform"
 	></video>
 
 	<!-- Dark scrim: base + gradient -->
@@ -65,8 +73,9 @@
 	</div>
 
 	<!-- Scroll indicator -->
-	<div class="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center">
-		<div class="h-10 w-px bg-gradient-to-b from-primary/0 to-primary/50"></div>
+	<div class="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1">
+		<div class="h-6 w-px bg-gradient-to-b from-primary/0 to-primary/40"></div>
+		<ChevronDown size={18} class="bounce-down text-primary/60" />
 	</div>
 </section>
 
