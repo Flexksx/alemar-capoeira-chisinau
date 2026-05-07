@@ -23,25 +23,25 @@
 	const searcher = $derived(createSongSearch(songs));
 	const results = $derived(query.trim() ? searcher.search(query) : []);
 
-	// Focus input when modal opens
 	$effect(() => {
 		if (isOpen && inputRef) {
-			// Small delay to ensure the modal is visible
 			setTimeout(() => inputRef?.focus(), 100);
-		}
-		if (!isOpen) {
-			query = '';
 		}
 	});
 
+	function handleClose() {
+		query = '';
+		onClose();
+	}
+
 	function handleSelect(songId: string) {
 		onSelectSong(songId);
-		onClose();
+		handleClose();
 	}
 
 	function handleKeydown(e: KeyboardEvent) {
 		if (e.key === 'Escape') {
-			onClose();
+			handleClose();
 		}
 	}
 </script>
@@ -52,7 +52,7 @@
 	<!-- Backdrop -->
 	<button
 		class="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm"
-		onclick={onClose}
+		onclick={handleClose}
 		aria-label="Close search"
 		tabindex="-1"
 	></button>
@@ -71,7 +71,7 @@
 					class="flex-1 bg-transparent text-base outline-none placeholder:text-muted-foreground"
 				/>
 				<button
-					onclick={onClose}
+					onclick={handleClose}
 					class="flex h-8 w-8 items-center justify-center rounded-full text-muted-foreground transition-colors hover:bg-accent hover:text-foreground"
 					aria-label="Close"
 				>

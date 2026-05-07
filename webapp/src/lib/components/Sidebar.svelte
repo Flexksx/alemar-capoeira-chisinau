@@ -12,6 +12,7 @@
     type Song,
   } from "$lib/types";
   import X from "@lucide/svelte/icons/x";
+  import House from "@lucide/svelte/icons/house";
 
   interface Props {
     songs: Song[];
@@ -72,7 +73,16 @@
     <header
       class="flex items-center justify-between border-b border-border px-4 py-4 safe-top"
     >
-      <h2 class="font-display text-xl font-bold text-foreground">Cântece</h2>
+      <div class="flex flex-col gap-0.5">
+        <a
+          href="/"
+          class="flex items-center gap-1.5 text-xs text-muted-foreground transition-colors hover:text-primary"
+        >
+          <House class="h-3 w-3" />
+          <span class="tracking-wider uppercase">Alemar Capoeira</span>
+        </a>
+        <h2 class="font-display text-xl font-bold text-foreground">Cântece</h2>
+      </div>
       <button
         onclick={onClose}
         class="flex h-10 w-10 items-center justify-center rounded-full text-muted-foreground transition-colors hover:bg-accent hover:text-foreground"
