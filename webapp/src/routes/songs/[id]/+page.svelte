@@ -98,36 +98,35 @@
 
 <!-- Header -->
 <header
-  class="fixed top-0 left-0 right-0 z-30 bg-background/80 backdrop-blur-lg border-b border-border safe-top"
+  class="fixed top-0 left-0 right-0 z-30 border-b border-border/30 safe-top"
+  style="background: oklch(0.14 0.01 60 / 0.92); backdrop-filter: blur(8px)"
 >
   <div class="flex items-center justify-between px-2 py-2">
     <button
       onclick={() => (sidebarOpen = true)}
-      class="flex h-11 w-11 items-center justify-center rounded-full text-foreground transition-colors hover:bg-accent"
+      class="btn-icon"
       aria-label="Open menu"
     >
-      <Menu class="h-6 w-6" />
+      <Menu class="h-5 w-5" />
     </button>
 
     <!-- Song indicator -->
-    <div class="flex items-center gap-2">
+    <div class="flex items-center gap-1">
       <button
         onclick={scrollPrev}
         disabled={!canScrollPrev}
-        class="flex h-8 w-8 items-center justify-center rounded-full text-muted-foreground transition-colors hover:bg-accent hover:text-foreground disabled:opacity-30"
+        class="btn-icon h-8 w-8 disabled:opacity-30"
         aria-label="Previous song"
       >
         <ChevronLeft class="h-5 w-5" />
       </button>
-      <span
-        class="min-w-[4rem] text-center text-sm font-medium text-muted-foreground"
-      >
+      <span class="min-w-[4rem] text-center font-impact text-lg tracking-[0.1em] text-muted-foreground">
         {currentIndex + 1} / {songs.length}
       </span>
       <button
         onclick={scrollNext}
         disabled={!canScrollNext}
-        class="flex h-8 w-8 items-center justify-center rounded-full text-muted-foreground transition-colors hover:bg-accent hover:text-foreground disabled:opacity-30"
+        class="btn-icon h-8 w-8 disabled:opacity-30"
         aria-label="Next song"
       >
         <ChevronRight class="h-5 w-5" />
@@ -137,7 +136,7 @@
     <div class="flex items-center gap-1">
       <button
         onclick={exportSongbookPdf}
-        class="flex h-11 w-11 items-center justify-center rounded-full text-foreground transition-colors hover:bg-accent"
+        class="btn-icon"
         aria-label="Export songs as PDF"
       >
         <FileDown class="h-5 w-5" />
@@ -173,7 +172,7 @@
 <!-- Search FAB -->
 <button
   onclick={() => (searchOpen = true)}
-  class="fixed bottom-6 right-6 z-30 flex h-14 w-14 items-center justify-center rounded-full bg-primary text-primary-foreground shadow-lg transition-transform hover:scale-105 active:scale-95 safe-bottom"
+  class="fixed bottom-6 right-6 z-30 flex h-14 w-14 items-center justify-center bg-primary text-primary-foreground shadow-lg transition-all hover:brightness-110 active:scale-95 safe-bottom"
   aria-label="Search songs"
 >
   <Search class="h-6 w-6" />

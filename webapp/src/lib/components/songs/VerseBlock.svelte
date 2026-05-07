@@ -39,15 +39,15 @@
 </script>
 
 <div
-	class="group relative rounded-xl px-4 py-3 transition-colors {isChorus
-		? 'bg-primary/5 border-l-4 border-primary/40'
-		: 'hover:bg-muted/50'}"
+	class="group relative px-4 py-3 transition-colors {isChorus
+		? 'border-l-2 border-primary bg-primary/5'
+		: 'hover:bg-muted/30'}"
 >
 	<!-- Verse type indicator -->
 	<div class="mb-2 flex items-center justify-between">
-		<span class="flex items-center gap-1.5 text-xs font-medium uppercase tracking-wide text-muted-foreground">
+		<span class="label-xs flex items-center gap-1.5">
 			{#if isChorus}
-				<Music class="h-3 w-3" />
+				<Music class="h-3 w-3 text-primary" />
 				Refren
 			{:else}
 				Vers
@@ -58,45 +58,42 @@
 			<Popover bind:open={popoverOpen}>
 				<PopoverTrigger>
 					<button
-						class="flex h-8 w-8 items-center justify-center rounded-full text-muted-foreground transition-colors hover:bg-accent hover:text-foreground"
+						class="btn-icon h-7 w-7"
 						aria-label="Change language"
 					>
 						<Languages class="h-4 w-4" />
 					</button>
 				</PopoverTrigger>
-				<PopoverContent class="w-48 p-1" align="end">
+				<PopoverContent class="w-44 p-1 rounded-none" align="end">
 					<div class="flex flex-col gap-0.5">
 						<button
 							onclick={() => selectMode('original')}
-							class="flex items-center gap-2 rounded-md px-3 py-2 text-left text-sm transition-colors {showMode ===
-							'original'
+							class="flex items-center gap-2 px-3 py-2 text-left text-sm transition-colors {showMode === 'original'
 								? 'bg-primary/10 text-primary'
-								: 'hover:bg-accent'}"
+								: 'hover:bg-muted'}"
 						>
-							<span class="flex h-5 w-5 items-center justify-center rounded text-xs font-bold">🇧🇷</span>
+							<span class="text-xs">🇧🇷</span>
 							Original
 						</button>
 						{#if hasTranscription}
 							<button
 								onclick={() => selectMode('transcription')}
-								class="flex items-center gap-2 rounded-md px-3 py-2 text-left text-sm transition-colors {showMode ===
-								'transcription'
+								class="flex items-center gap-2 px-3 py-2 text-left text-sm transition-colors {showMode === 'transcription'
 									? 'bg-primary/10 text-primary'
-									: 'hover:bg-accent'}"
+									: 'hover:bg-muted'}"
 							>
-								<span class="flex h-5 w-5 items-center justify-center rounded text-xs font-bold">📖</span>
+								<span class="text-xs">📖</span>
 								Transcriere
 							</button>
 						{/if}
 						{#if hasTranslation}
 							<button
 								onclick={() => selectMode('translation')}
-								class="flex items-center gap-2 rounded-md px-3 py-2 text-left text-sm transition-colors {showMode ===
-								'translation'
+								class="flex items-center gap-2 px-3 py-2 text-left text-sm transition-colors {showMode === 'translation'
 									? 'bg-primary/10 text-primary'
-									: 'hover:bg-accent'}"
+									: 'hover:bg-muted'}"
 							>
-								<span class="flex h-5 w-5 items-center justify-center rounded text-xs font-bold">🇷🇴</span>
+								<span class="text-xs">🇷🇴</span>
 								Traducere
 							</button>
 						{/if}
@@ -107,15 +104,14 @@
 	</div>
 
 	<!-- Verse text -->
-	<p class="whitespace-pre-line text-base leading-relaxed {isChorus ? 'font-medium' : ''}">
+	<p class="whitespace-pre-line text-base leading-relaxed {isChorus ? 'font-medium text-foreground' : 'text-foreground/80'}">
 		{displayText}
 	</p>
 
 	<!-- Mode indicator -->
 	{#if showMode !== 'original'}
-		<div class="mt-2 text-xs text-muted-foreground">
+		<div class="label-xs mt-2">
 			{showMode === 'transcription' ? '📖 Transcriere' : '🇷🇴 Traducere'}
 		</div>
 	{/if}
 </div>
-

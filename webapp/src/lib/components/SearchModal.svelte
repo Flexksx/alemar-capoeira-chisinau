@@ -51,7 +51,7 @@
 {#if isOpen}
 	<!-- Backdrop -->
 	<button
-		class="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm"
+		class="fixed inset-0 z-50 bg-black/70 backdrop-blur-sm"
 		onclick={handleClose}
 		aria-label="Close search"
 		tabindex="-1"
@@ -59,10 +59,10 @@
 
 	<!-- Modal -->
 	<div class="fixed inset-x-4 top-4 z-50 mx-auto max-w-lg safe-top">
-		<div class="overflow-hidden rounded-2xl bg-card shadow-2xl">
+		<div class="overflow-hidden bg-card shadow-2xl border border-border/40">
 			<!-- Search Header -->
-			<div class="flex items-center gap-2 border-b border-border p-3">
-				<Search class="h-5 w-5 shrink-0 text-muted-foreground" />
+			<div class="flex items-center gap-2 border-b border-border/40 p-3">
+				<Search class="h-4 w-4 shrink-0 text-primary" />
 				<input
 					bind:this={inputRef}
 					bind:value={query}
@@ -72,7 +72,7 @@
 				/>
 				<button
 					onclick={handleClose}
-					class="flex h-8 w-8 items-center justify-center rounded-full text-muted-foreground transition-colors hover:bg-accent hover:text-foreground"
+					class="btn-icon h-8 w-8"
 					aria-label="Close"
 				>
 					<X class="h-5 w-5" />
@@ -83,16 +83,16 @@
 			<div class="max-h-[60vh] overflow-y-auto overscroll-contain">
 				{#if query.trim() && results.length === 0}
 					<div class="flex flex-col items-center justify-center py-12 text-muted-foreground">
-						<Music class="mb-2 h-10 w-10 opacity-50" />
-						<p class="text-sm">Niciun rezultat pentru "{query}"</p>
+						<Music class="mb-2 h-8 w-8 opacity-30" />
+						<p class="text-sm tracking-wide">Niciun rezultat pentru "{query}"</p>
 					</div>
 				{:else if results.length > 0}
-					<ul class="divide-y divide-border">
+					<ul class="divide-y divide-border/30">
 						{#each results as result (result.song.id)}
 							<li>
 								<button
 									onclick={() => handleSelect(result.song.id)}
-									class="flex w-full items-start gap-3 px-4 py-3 text-left transition-colors hover:bg-accent"
+									class="flex w-full items-start gap-3 px-4 py-3 text-left transition-colors hover:bg-muted/50"
 								>
 									<div class="flex-1 min-w-0">
 										<div class="flex items-center gap-2">
@@ -102,7 +102,7 @@
 											<CategoryBadge category={result.song.category} size="sm" />
 										</div>
 										{#if result.song.author}
-											<p class="mt-0.5 truncate text-sm text-muted-foreground">
+											<p class="mt-0.5 truncate text-xs tracking-wider uppercase text-muted-foreground">
 												{result.song.author}
 											</p>
 										{/if}
@@ -114,15 +114,15 @@
 				{:else}
 					<!-- Empty state - show all songs -->
 					<div class="p-3">
-						<p class="mb-2 text-xs font-medium uppercase tracking-wide text-muted-foreground">
+						<p class="label-xs mb-2 px-1">
 							Toate cântecele
 						</p>
-						<ul class="divide-y divide-border rounded-lg border border-border">
+						<ul class="divide-y divide-border/30 border border-border/30">
 							{#each songs as song (song.id)}
 								<li>
 									<button
 										onclick={() => handleSelect(song.id)}
-										class="flex w-full items-center gap-3 px-3 py-2.5 text-left transition-colors hover:bg-accent"
+										class="flex w-full items-center gap-3 px-3 py-2.5 text-left transition-colors hover:bg-muted/50"
 									>
 										<span class="flex-1 truncate text-sm font-medium text-foreground">
 											{song.title}
@@ -138,4 +138,3 @@
 		</div>
 	</div>
 {/if}
-

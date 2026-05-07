@@ -55,7 +55,7 @@
 <!-- Backdrop -->
 {#if isOpen}
   <button
-    class="fixed inset-0 z-40 bg-black/50 backdrop-blur-sm transition-opacity"
+    class="fixed inset-0 z-40 bg-black/60 backdrop-blur-sm transition-opacity"
     onclick={onClose}
     aria-label="Close menu"
     tabindex="-1"
@@ -71,21 +71,21 @@
   <div class="flex h-full flex-col">
     <!-- Header -->
     <header
-      class="flex items-center justify-between border-b border-border px-4 py-4 safe-top"
+      class="flex items-center justify-between border-b border-border/40 px-4 py-4 safe-top"
     >
-      <div class="flex flex-col gap-0.5">
+      <div class="flex flex-col gap-1">
         <a
           href="/"
-          class="flex items-center gap-1.5 text-xs text-muted-foreground transition-colors hover:text-primary"
+          class="flex items-center gap-1.5 text-[10px] tracking-[0.25em] uppercase text-muted-foreground transition-colors hover:text-primary"
         >
           <House class="h-3 w-3" />
-          <span class="tracking-wider uppercase">Alemar Capoeira</span>
+          Alemar Capoeira
         </a>
-        <h2 class="font-display text-xl font-bold text-foreground">Cântece</h2>
+        <h2 class="font-impact text-2xl tracking-[0.08em] text-foreground">Cântece</h2>
       </div>
       <button
         onclick={onClose}
-        class="flex h-10 w-10 items-center justify-center rounded-full text-muted-foreground transition-colors hover:bg-accent hover:text-foreground"
+        class="btn-icon h-9 w-9"
         aria-label="Close menu"
       >
         <X class="h-5 w-5" />
@@ -103,8 +103,9 @@
             <AccordionItem value={category} class="border-b-0">
               <AccordionTrigger class="px-2 py-3 hover:no-underline">
                 <div class="flex items-center gap-2">
+                  <!-- Rotated diamond instead of circle dot -->
                   <span
-                    class="h-2 w-2 rounded-full {category === 'ANGOLA'
+                    class="inline-block h-2 w-2 rotate-45 {category === 'ANGOLA'
                       ? 'bg-amber-500'
                       : category === 'REGIONAL'
                         ? 'bg-emerald-500'
@@ -112,29 +113,26 @@
                           ? 'bg-rose-500'
                           : 'bg-slate-400'}"
                   ></span>
-                  <span class="font-medium">{CATEGORY_LABELS[category]}</span>
-                  <span class="text-xs text-muted-foreground"
-                    >({categorySongs.length})</span
-                  >
+                  <span class="label-xs">{CATEGORY_LABELS[category]}</span>
+                  <span class="text-xs text-muted-foreground">({categorySongs.length})</span>
                 </div>
               </AccordionTrigger>
               <AccordionContent class="pb-2">
-                <ul class="space-y-1">
+                <ul class="space-y-px">
                   {#each categorySongs as song (song.id)}
                     <li>
                       <button
                         onclick={() => handleSongClick(song.id)}
-                        class="w-full rounded-lg px-4 py-2.5 text-left text-sm transition-colors {currentSongId ===
-                        song.id
-                          ? 'bg-primary/10 font-medium text-primary'
-                          : 'text-foreground hover:bg-accent'}"
+                        class="w-full px-4 py-2.5 text-left text-sm transition-colors border-l-2 {currentSongId === song.id
+                          ? 'border-primary bg-primary/10 font-medium text-primary'
+                          : 'border-transparent text-foreground/70 hover:bg-muted hover:text-foreground'}"
                       >
                         <span class="block">{song.title}</span>
                         {#if song.tags.length > 0}
-                          <div class="mt-1.5 flex flex-wrap gap-1.5">
+                          <div class="mt-1.5 flex flex-wrap gap-1">
                             {#each song.tags as tag (tag)}
                               <span
-                                class="rounded-md bg-muted px-2 py-0.5 text-xs text-muted-foreground"
+                                class="tag-chip"
                               >
                                 #{tag}
                               </span>

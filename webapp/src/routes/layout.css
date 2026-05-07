@@ -219,6 +219,34 @@
   }
 }
 
+/* Shared component primitives */
+@layer components {
+  /* Square icon button — replaces rounded-full icon buttons */
+  .btn-icon {
+    @apply flex h-10 w-10 items-center justify-center text-foreground/70 transition-colors hover:bg-muted hover:text-foreground;
+  }
+
+  /* Small uppercase label — section labels, metadata */
+  .label-xs {
+    @apply text-[10px] font-medium tracking-[0.25em] uppercase text-muted-foreground;
+  }
+
+  /* Tag chip — bordered, no border-radius */
+  .tag-chip {
+    @apply border border-border/50 bg-muted/40 px-2 py-0.5 text-xs tracking-wider text-muted-foreground;
+  }
+
+  /* Primary bordered CTA button (matches landing style) */
+  .btn-primary-outline {
+    @apply inline-block border border-primary px-8 py-3 font-impact tracking-[0.2em] uppercase text-primary transition-all duration-300 hover:bg-primary hover:text-primary-foreground;
+  }
+
+  /* Active left-border highlight (sidebar active song, active nav) */
+  .active-left-border {
+    @apply border-l-2 border-primary bg-primary/10 text-primary;
+  }
+}
+
 /* Scroll-triggered reveal */
 @layer utilities {
   .reveal-hidden {
