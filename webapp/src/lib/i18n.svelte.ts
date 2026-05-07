@@ -60,7 +60,7 @@ const translations: Record<Language, Translations> = {
 			daysLabel: 'Zile',
 			time: '18:30 – 20:30',
 			timeLabel: 'Orar',
-			location: 'Calea Ieșilor 10, et. 4',
+			location: 'Calea Ieșilor 10, et. 5',
 			locationLabel: 'Locație',
 			free: 'Prima lecție este gratuită',
 			cta: 'Vino să încerci'
@@ -80,7 +80,7 @@ const translations: Record<Language, Translations> = {
 			subtitle: 'Prima lecție este gratuită. Vino cum ești.',
 			instructor: 'Instructor',
 			phone: 'Telefon',
-			address: 'Calea Ieșilor 10, et. 4, Chișinău',
+			address: 'Calea Ieșilor 10, et. 5, Chișinău',
 			cta: 'Contactează-ne',
 			facebook: 'Facebook'
 		},
@@ -116,7 +116,7 @@ const translations: Record<Language, Translations> = {
 			daysLabel: 'Дни',
 			time: '18:30 – 20:30',
 			timeLabel: 'Расписание',
-			location: 'Calea Ieșilor 10, эт. 4',
+			location: 'Calea Ieșilor 10, эт. 5',
 			locationLabel: 'Место',
 			free: 'Первое занятие бесплатно',
 			cta: 'Попробовать'
@@ -136,7 +136,7 @@ const translations: Record<Language, Translations> = {
 			subtitle: 'Первый урок бесплатно. Приходи как есть.',
 			instructor: 'Инструктор',
 			phone: 'Телефон',
-			address: 'Calea Ieșilor 10, эт. 4, Кишинёв',
+			address: 'Calea Ieșilor 10, эт. 5, Кишинёв',
 			cta: 'Написать нам',
 			facebook: 'Facebook'
 		},
