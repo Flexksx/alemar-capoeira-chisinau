@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { useLanguageStore } from '$lib/i18n.svelte';
+	import { User, Phone, Facebook, MapPin } from '@lucide/svelte';
 
 	const lang = useLanguageStore();
 </script>
@@ -31,7 +32,7 @@
 
 		<div class="my-12 grid gap-8 md:grid-cols-3">
 			<div class="flex flex-col items-center gap-2">
-				<span class="inline-block h-2 w-2 rotate-45 bg-primary mb-2"></span>
+				<User class="mb-2 h-6 w-6 text-primary" />
 				<p class="text-xs tracking-[0.25em] uppercase text-foreground/40">
 					{lang.t.contact.instructor}
 				</p>
@@ -39,7 +40,7 @@
 			</div>
 
 			<div class="flex flex-col items-center gap-2">
-				<span class="inline-block h-2 w-2 rotate-45 bg-primary mb-2"></span>
+				<Phone class="mb-2 h-6 w-6 text-primary" />
 				<p class="text-xs tracking-[0.25em] uppercase text-foreground/40">
 					{lang.t.contact.phone}
 				</p>
@@ -52,7 +53,7 @@
 			</div>
 
 			<div class="flex flex-col items-center gap-2">
-				<span class="inline-block h-2 w-2 rotate-45 bg-primary mb-2"></span>
+				<Facebook class="mb-2 h-6 w-6 text-primary" />
 				<p class="text-xs tracking-[0.25em] uppercase text-foreground/40">
 					{lang.t.contact.facebook}
 				</p>
@@ -67,7 +68,8 @@
 			</div>
 		</div>
 
-		<p class="mb-10 text-sm tracking-[0.15em] uppercase text-foreground/40">
+		<p class="mb-10 flex items-center justify-center gap-2 text-sm tracking-[0.15em] uppercase text-foreground/40">
+			<MapPin class="h-4 w-4 shrink-0 text-primary/60" />
 			{lang.t.contact.address}
 		</p>
 
