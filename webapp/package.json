@@ -36,6 +36,8 @@
   "dependencies": {
     "@fontsource/bebas-neue": "^5.2.7",
     "@fontsource/dm-serif-display": "^5.2.8",
+    "@fontsource/oswald": "^5.2.8",
+    "@fontsource/playfair-display": "^5.2.8",
     "mode-watcher": "^1.1.0"
   }
 }

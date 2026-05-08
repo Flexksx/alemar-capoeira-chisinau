@@ -1,6 +1,13 @@
 @import '@fontsource/bebas-neue/latin-400.css';
+@import '@fontsource/bebas-neue/latin-ext-400.css';
 @import '@fontsource/dm-serif-display/latin-400.css';
+@import '@fontsource/dm-serif-display/latin-ext-400.css';
 @import '@fontsource/dm-serif-display/latin-400-italic.css';
+@import '@fontsource/dm-serif-display/latin-ext-400-italic.css';
+@import '@fontsource/playfair-display/400.css';
+@import '@fontsource/playfair-display/400-italic.css';
+@import '@fontsource/oswald/400.css';
+@import '@fontsource/oswald/700.css';
 
 @import "tailwindcss";
 
@@ -127,8 +134,8 @@
   --color-sidebar-ring: var(--sidebar-ring);
   
   /* Custom font */
-  --font-display: 'DM Serif Display', Georgia, serif;
-  --font-impact: 'Bebas Neue', Impact, sans-serif;
+  --font-display: 'DM Serif Display', 'Playfair Display', Georgia, serif;
+  --font-impact: 'Bebas Neue', 'Oswald', Impact, sans-serif;
 }
 
 @layer base {
@@ -198,12 +205,12 @@
 @layer utilities {
   /* Display font utility */
   .font-display {
-    font-family: 'DM Serif Display', Georgia, serif;
+    font-family: 'DM Serif Display', 'Playfair Display', Georgia, serif;
   }
 
   /* Impact/Bebas Neue utility */
   .font-impact {
-    font-family: 'Bebas Neue', Impact, sans-serif;
+    font-family: 'Bebas Neue', 'Oswald', Impact, sans-serif;
   }
 
   /* Afro geometric diamond pattern */
