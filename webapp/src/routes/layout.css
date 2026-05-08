@@ -1,4 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Serif+Display:ital@0;1&display=swap');
+@import '@fontsource/bebas-neue/latin-400.css';
+@import '@fontsource/dm-serif-display/latin-400.css';
+@import '@fontsource/dm-serif-display/latin-400-italic.css';
 
 @import "tailwindcss";
 
@@ -265,11 +267,20 @@
 /* Contact CTA gold pulse */
 @layer utilities {
   @keyframes gold-pulse {
-    0%, 100% { box-shadow: 0 0 0 0 oklch(0.75 0.15 75 / 0); }
-    50% { box-shadow: 0 0 0 8px oklch(0.75 0.15 75 / 0.15); }
+    0%, 100% { opacity: 0; transform: scale(0.94); }
+    50% { opacity: 1; transform: scale(1.08); }
   }
 
   .pulse-gold {
+    position: relative;
+  }
+
+  .pulse-gold::before {
+    content: '';
+    position: absolute;
+    inset: -8px;
+    border: 1px solid oklch(0.75 0.15 75 / 0.4);
+    pointer-events: none;
     animation: gold-pulse 2.5s ease-in-out infinite;
   }
 }

@@ -5,25 +5,36 @@
 
 	const lang = useLanguageStore();
 
-	let scrollY = $state(0);
-	let videoParallax = $derived(scrollY * 0.1);
+	let videoEl: HTMLVideoElement | undefined = $state();
+	let rafId: number;
+
+	function onScroll() {
+		cancelAnimationFrame(rafId);
+		rafId = requestAnimationFrame(() => {
+			if (videoEl) {
+				videoEl.style.transform = `translateY(-${window.scrollY * 0.1}px)`;
+			}
+		});
+	}
 </script>
 
-<svelte:window bind:scrollY />
+<svelte:window onscroll={onScroll} />
 
 <section class="relative flex min-h-dvh flex-col items-center justify-center overflow-hidden" id="hero">
 	<!-- Full-bleed video background with parallax -->
 	<!-- Video is slightly oversized (110% height) so parallax movement never reveals background -->
 	<video
+		bind:this={videoEl}
 		src={video1}
 		poster="/photos/hero.jpg"
 		autoplay
 		muted
 		loop
 		playsinline
+		preload="metadata"
 		aria-label="Capoeira training session"
 		class="absolute inset-x-0 h-[120%] w-full object-cover object-center"
-		style="top: -10%; transform: translateY(-{videoParallax}px); will-change: transform"
+		style="top: -10%; will-change: transform"
 	></video>
 
 	<!-- Dark scrim: base + gradient -->

@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { useLanguageStore } from '$lib/i18n.svelte';
 	import { reveal } from '$lib/actions/reveal';
+	import { lazyVideo } from '$lib/actions/lazyVideo';
 	import GalleryLightbox from './GalleryLightbox.svelte';
 	import bichoMicho from '$lib/assets/photos/bicho_micho.jpg';
 	import serginho from '$lib/assets/photos/serginho.jpg';
@@ -71,7 +72,7 @@
 				>
 					{#if item.type === 'video'}
 						<video
-							src={item.src}
+							use:lazyVideo={{ src: item.src }}
 							autoplay
 							muted
 							loop
@@ -82,6 +83,7 @@
 						<img
 							src={item.src}
 							alt={item.alt}
+							loading="lazy"
 							class="h-full w-full object-cover object-center transition-transform duration-700 group-hover:scale-105"
 						/>
 					{/if}
