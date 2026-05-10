@@ -43,7 +43,7 @@
 
 		<!-- Info cards -->
 		<div class="grid gap-px md:grid-cols-3" style="background: oklch(0.28 0.02 55)">
-			{#each infoCards as card, i}
+			{#each infoCards as card, i (card.label)}
 			{@const Icon = card.icon}
 				<div
 					class="flex flex-col gap-4 p-8 md:p-10"

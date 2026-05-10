@@ -110,7 +110,7 @@
 	<!-- Dot indicators -->
 	{#if items.length > 1}
 		<div class="absolute bottom-6 left-1/2 -translate-x-1/2 flex gap-2">
-			{#each items as _, i}
+			{#each items as _, i (i)}
 				<button
 					onclick={() => (current = i)}
 					class="h-1.5 rounded-full transition-all duration-300 cursor-pointer {i === current ? 'w-6 bg-primary' : 'w-1.5 bg-foreground/20'}"

@@ -16,6 +16,7 @@
 	<meta name="apple-mobile-web-app-capable" content="yes" />
 	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
 	<title>Alemar Capoeira - Cântece</title>
+	<!-- eslint-disable-next-line svelte/no-at-html-tags -->
 	{@html `<script>
 		// Set dark mode as default if no preference is stored
 		if (!localStorage.getItem('mode-watcher-mode')) {

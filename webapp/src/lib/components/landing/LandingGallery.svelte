@@ -62,7 +62,7 @@
 		</h2>
 
 		<div class="grid grid-cols-2 gap-2 md:grid-cols-3 md:gap-3 [grid-auto-flow:dense]">
-			{#each items as item, i}
+			{#each items as item, i (item.src)}
 				<button
 					class="group relative overflow-hidden bg-card text-left cursor-zoom-in {item.wide ? 'col-span-2' : ''}"
 					style="aspect-ratio: {item.wide ? '16/7' : '4/5'}"

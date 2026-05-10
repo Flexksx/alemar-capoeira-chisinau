@@ -67,7 +67,7 @@
 	<div class="mt-24 flex items-center gap-0 overflow-hidden">
 		<div class="h-px flex-1 bg-border/30"></div>
 		<div class="flex gap-3 px-6">
-			{#each [0, 1, 2] as i}
+			{#each [0, 1, 2] as i (i)}
 				<span
 					class="inline-block h-2 w-2 rotate-45 {i === 1 ? 'bg-primary' : 'bg-border/30'}"
 				></span>

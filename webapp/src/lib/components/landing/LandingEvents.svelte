@@ -15,6 +15,7 @@
 
 	const events = eventsData as LandingEvent[];
 
+	// eslint-disable-next-line svelte/prefer-svelte-reactivity
 	const today = new Date();
 	today.setHours(0, 0, 0, 0);
 
@@ -45,7 +46,7 @@
 			</div>
 		{:else}
 			<div class="flex flex-col gap-0">
-				{#each events as event, i}
+				{#each events as event, i (event.id)}
 					{@const past = isPast(event.date)}
 					<div
 						class="group relative flex gap-8 border-b border-border/20 py-8 transition-colors hover:border-primary/30 {past ? 'opacity-40' : ''}"

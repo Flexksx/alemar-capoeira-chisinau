@@ -54,7 +54,7 @@
 
 	<!-- Desktop nav -->
 	<div class="hidden items-center gap-8 md:flex">
-		{#each navLinks as link}
+		{#each navLinks as link (link.id)}
 			<a
 				href={link.href}
 				class="relative text-sm font-medium tracking-widest uppercase transition-colors hover:text-primary {activeSection === link.id ? 'text-primary' : 'text-foreground/70'}"
@@ -73,7 +73,7 @@
 		</a>
 
 		<div class="flex items-center gap-1 border border-border/40 rounded-sm px-1 py-0.5">
-			{#each languages as l}
+			{#each languages as l (l)}
 				<button
 					onclick={() => lang.set(l)}
 					class="px-2 py-0.5 text-xs font-bold tracking-widest uppercase rounded-sm transition-colors cursor-pointer {lang.current === l
@@ -89,7 +89,7 @@
 	<!-- Mobile: lang toggle + hamburger -->
 	<div class="flex items-center gap-3 md:hidden">
 		<div class="flex items-center gap-1 border border-border/40 rounded-sm px-1 py-0.5">
-			{#each languages as l}
+			{#each languages as l (l)}
 				<button
 					onclick={() => lang.set(l)}
 					class="px-1.5 py-0.5 text-xs font-bold tracking-wider uppercase rounded-sm transition-colors cursor-pointer {lang.current === l
@@ -131,7 +131,7 @@
 		class="fixed inset-0 z-40 flex flex-col items-center justify-center gap-8 md:hidden"
 		style="background: rgba(15,10,5,0.97)"
 	>
-		{#each navLinks as link}
+		{#each navLinks as link (link.id)}
 			<a
 				href={link.href}
 				onclick={closeMenu}
