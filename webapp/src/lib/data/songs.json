@@ -1323,5 +1323,115 @@
       }
     },
     "structure": [ "v1", "c1" ]
+  },
+  {
+    "id": "angola-dobrada",
+    "title": "Angola Dobrada",
+    "author": "Traditional",
+    "category": "ANGOLA",
+    "tags": [ "angola", "tradicional" ],
+    "verses": {
+      "v1": {
+        "type": "verse",
+        "pt": "Angola dobrada",
+        "localizations": {
+          "ro": {
+            "transcription": "Angola dobrada",
+            "translation": "Angola dublată"
+          }
+        }
+      },
+      "c1": {
+        "type": "chorus",
+        "pt": "Angola dobrada",
+        "localizations": {
+          "ro": {
+            "transcription": "Angola dobrada",
+            "translation": "Angola dublată"
+          }
+        }
+      },
+      "v2": {
+        "type": "verse",
+        "pt": "Toquei mandingueiro",
+        "localizations": {
+          "ro": {
+            "transcription": "Tokei mandingueiro",
+            "translation": "Am jucat cu un mandingueiro"
+          }
+        }
+      },
+      "c2": {
+        "type": "chorus",
+        "pt": "Toquei mandingueiro",
+        "localizations": {
+          "ro": {
+            "transcription": "Tokei mandingueiro",
+            "translation": "Am jucat cu un mandingueiro"
+          }
+        }
+      },
+      "v3": {
+        "type": "verse",
+        "pt": "Capoeira de Angola",
+        "localizations": {
+          "ro": {
+            "transcription": "Capoeira dji Angola",
+            "translation": "Capoeira din Angola"
+          }
+        }
+      },
+      "c3": {
+        "type": "chorus",
+        "pt": "Capoeira de Angola",
+        "localizations": {
+          "ro": {
+            "transcription": "Capoeira dji Angola",
+            "translation": "Capoeira din Angola"
+          }
+        }
+      },
+      "v4": {
+        "type": "verse",
+        "pt": "Gunga médio viola",
+        "localizations": {
+          "ro": {
+            "transcription": "Gunga mediu viola",
+            "translation": "Gunga, médio, violă (cele trei berimbau-uri)"
+          }
+        }
+      },
+      "c4": {
+        "type": "chorus",
+        "pt": "Gunga médio viola",
+        "localizations": {
+          "ro": {
+            "transcription": "Gunga mediu viola",
+            "translation": "Gunga, médio, violă (cele trei berimbau-uri)"
+          }
+        }
+      },
+      "v5": {
+        "type": "verse",
+        "pt": "Tico tico tico tico tico",
+        "localizations": {
+          "ro": {
+            "transcription": "Tiko tiko tiko tiko tiko",
+            "translation": "Tico tico tico tico tico (sunetul păsării tico-tico)"
+          }
+        }
+      },
+      "c5": {
+        "type": "chorus",
+        "pt": "Jogo de dentro jogo de fora",
+        "localizations": {
+          "ro": {
+            "transcription": "Jogu dji dentro jogu dji fora",
+            "translation": "Joc pe interior, joc pe exterior"
+          }
+        }
+      }
+    },
+    "structure": [ "v1", "c1", "v2", "c2", "v3", "c3", "v4", "c4", "v5", "c5" ]
   }
 ]
