@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { createSongSearch } from '$lib/search';
-	import type { Song } from '$lib/types';
-	import { sortSongsByCategory } from '$lib/utils';
+	import type { Song } from '$lib/resources/song/types';
+	import { sortSongsByCategory } from '$lib/resources/song/utils';
 	import CategoryBadge from './CategoryBadge.svelte';
 	import X from '@lucide/svelte/icons/x';
 	import Search from '@lucide/svelte/icons/search';

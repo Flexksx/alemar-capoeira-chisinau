@@ -10,9 +10,9 @@
   import Sidebar from "$lib/components/Sidebar.svelte";
   import SongCard from "$lib/components/songs/SongCard.svelte";
   import SearchModal from "$lib/components/SearchModal.svelte";
-  import songsData from "$lib/data/songs.json";
-  import type { Song } from "$lib/types";
-  import { sortSongsByCategory } from "$lib/utils";
+  import songsData from "$lib/resources/song/songs.json";
+  import type { Song } from "$lib/resources/song/types";
+  import { sortSongsByCategory } from "$lib/resources/song/utils";
   import Menu from "@lucide/svelte/icons/menu";
   import Search from "@lucide/svelte/icons/search";
   import FileDown from "@lucide/svelte/icons/file-down";

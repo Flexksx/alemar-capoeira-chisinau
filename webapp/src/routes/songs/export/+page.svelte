@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
 	import type { PageData } from './$types';
-	import { CATEGORY_LABELS } from '$lib/types';
+	import { CATEGORY_LABELS } from '$lib/resources/song/types';
 
 	let { data }: { data: PageData } = $props();
 
@@ -50,14 +50,15 @@
 
 				<div class="space-y-4">
 					{#each song.structure as verseId, index (`${song.id}-${verseId}-${index}`)}
-						{@const verse = song.verses[verseId]}
+						{@const variants = song.verses[verseId]}
+						{@const verse = variants?.find(v => v.language === 'pt')}
 						{#if verse}
 							<section class="songbook-verse">
 								<p
 									class="whitespace-pre-line leading-relaxed text-card-foreground"
 									class:font-semibold={verse.type === 'chorus'}
 								>
-									{verse.pt}
+									{verse.text}
 								</p>
 							</section>
 						{/if}

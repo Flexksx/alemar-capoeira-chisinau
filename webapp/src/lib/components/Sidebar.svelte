@@ -6,11 +6,11 @@
     AccordionTrigger,
   } from "$lib/components/ui/accordion";
   import {
+    Category,
     CATEGORY_LABELS,
     CATEGORY_ORDER,
-    type Category,
     type Song,
-  } from "$lib/types";
+  } from "$lib/resources/song/types";
   import X from "@lucide/svelte/icons/x";
   import House from "@lucide/svelte/icons/house";
 
