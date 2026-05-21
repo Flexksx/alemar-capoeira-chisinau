@@ -92,8 +92,15 @@
 
 <svelte:head>
   <title>
-    {currentSong ? `Alemar — ${currentSong.title}` : "Alemar Capoeira - Cântece"}
+    {currentSong ? `${currentSong.title} — Alemar Capoeira` : "Alemar Capoeira - Cântece"}
   </title>
+  {#if currentSong}
+    <meta
+      name="description"
+      content="Versurile cântecului de capoeira {currentSong.title} — colecție Alemar Capoeira Chisinau."
+    />
+    <link rel="canonical" href="https://capoeira.md/songs/{currentSong.id}" />
+  {/if}
 </svelte:head>
 
 <!-- Header -->
