@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { useLanguageStore, type Language } from '$lib/i18n.svelte';
+	import { goto } from '$app/navigation';
 	import alemArLogo from '$lib/assets/alemar-logo.png';
 
 	const lang = useLanguageStore();
@@ -10,6 +11,7 @@
 	const languages: Language[] = ['ro', 'ru', 'en'];
 
 	const navLinks = $derived([
+		{ href: `/${lang.current}/about`, label: lang.t.nav.about, isPage: true },
 		{ href: '#classes', label: lang.t.nav.classes, id: 'classes' },
 		{ href: '#events', label: lang.t.nav.events, id: 'events' },
 		{ href: '#contact', label: lang.t.nav.contact, id: 'contact' }
@@ -17,6 +19,10 @@
 
 	function closeMenu() {
 		menuOpen = false;
+	}
+
+	function switchLang(l: Language) {
+		goto(`/${l}`);
 	}
 
 	$effect(() => {
@@ -48,19 +54,19 @@
 	class="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-6 py-4 md:px-10"
 	style="background: linear-gradient(to bottom, rgba(15,10,5,0.95) 0%, rgba(15,10,5,0) 100%)"
 >
-	<a href="/">
+	<a href="/{lang.current}">
 		<img src={alemArLogo} alt="Alemar Capoeira" class="h-10 w-auto rounded-sm" />
 	</a>
 
 	<!-- Desktop nav -->
 	<div class="hidden items-center gap-8 md:flex">
-		{#each navLinks as link (link.id)}
+		{#each navLinks as link (link.href)}
 			<a
 				href={link.href}
-				class="relative text-sm font-medium tracking-widest uppercase transition-colors hover:text-primary {activeSection === link.id ? 'text-primary' : 'text-foreground/70'}"
+				class="relative text-sm font-medium tracking-widest uppercase transition-colors hover:text-primary {!link.isPage && activeSection === link.id ? 'text-primary' : 'text-foreground/70'}"
 			>
 				{link.label}
-				{#if activeSection === link.id}
+				{#if !link.isPage && activeSection === link.id}
 					<span class="absolute -bottom-1 left-0 h-px w-full bg-primary"></span>
 				{/if}
 			</a>
@@ -75,7 +81,7 @@
 		<div class="flex items-center gap-1 border border-border/40 rounded-sm px-1 py-0.5">
 			{#each languages as l (l)}
 				<button
-					onclick={() => lang.set(l)}
+					onclick={() => switchLang(l)}
 					class="px-2 py-0.5 text-xs font-bold tracking-widest uppercase rounded-sm transition-colors cursor-pointer {lang.current === l
 						? 'bg-primary text-primary-foreground'
 						: 'text-foreground/50 hover:text-foreground'}"
@@ -91,7 +97,7 @@
 		<div class="flex items-center gap-1 border border-border/40 rounded-sm px-1 py-0.5">
 			{#each languages as l (l)}
 				<button
-					onclick={() => lang.set(l)}
+					onclick={() => switchLang(l)}
 					class="px-1.5 py-0.5 text-xs font-bold tracking-wider uppercase rounded-sm transition-colors cursor-pointer {lang.current === l
 						? 'bg-primary text-primary-foreground'
 						: 'text-foreground/50 hover:text-foreground'}"
@@ -131,11 +137,11 @@
 		class="fixed inset-0 z-40 flex flex-col items-center justify-center gap-8 md:hidden"
 		style="background: rgba(15,10,5,0.97)"
 	>
-		{#each navLinks as link (link.id)}
+		{#each navLinks as link (link.href)}
 			<a
 				href={link.href}
 				onclick={closeMenu}
-				class="font-impact text-4xl tracking-widest uppercase transition-colors hover:text-primary {activeSection === link.id ? 'text-primary' : 'text-foreground/80'}"
+				class="font-impact text-4xl tracking-widest uppercase transition-colors hover:text-primary text-foreground/80"
 			>
 				{link.label}
 			</a>

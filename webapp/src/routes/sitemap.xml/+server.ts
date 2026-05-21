@@ -5,28 +5,37 @@ import type { RequestHandler } from '@sveltejs/kit';
 export const prerender = true;
 
 const SITE_URL = 'https://capoeira.md';
+const LANGS = ['ro', 'ru', 'en'];
 
 export const GET: RequestHandler = () => {
 	const songs = songsData as unknown as Song[];
 
-	const songUrls = songs
-		.map(
-			(song) => `
+	const langUrls = LANGS.flatMap((lang) => [
+		`
+  <url>
+    <loc>${SITE_URL}/${lang}</loc>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+  </url>`,
+		`
+  <url>
+    <loc>${SITE_URL}/${lang}/about</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+  </url>`
+	]);
+
+	const songUrls = songs.map(
+		(song) => `
   <url>
     <loc>${SITE_URL}/songs/${song.id}</loc>
     <changefreq>yearly</changefreq>
     <priority>0.4</priority>
   </url>`
-		)
-		.join('');
+	);
 
 	const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url>
-    <loc>${SITE_URL}/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>1.0</priority>
-  </url>${songUrls}
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">${langUrls.join('')}${songUrls.join('')}
 </urlset>`;
 
 	return new Response(sitemap, {
