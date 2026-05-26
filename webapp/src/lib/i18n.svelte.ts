@@ -42,6 +42,17 @@ export interface Translations {
 		adultsBody: string;
 		whyTitle: string;
 		why: string[];
+		compareSection: {
+			title: string;
+			subtitle: string;
+			capoeiraAdds: string;
+			cards: {
+				karate: { name: string; desc: string; contrast: string };
+				judo: { name: string; desc: string; contrast: string };
+				taekwondo: { name: string; desc: string; contrast: string };
+				mma: { name: string; desc: string; contrast: string };
+			};
+		};
 		communityTitle: string;
 		communityBody: string;
 		instructorTitle: string;
@@ -136,6 +147,33 @@ const translations: Record<Language, Translations> = {
 				'Comunitate activă cu evenimente regulate și batizaduri',
 				'Prima lecție este gratuită'
 			],
+			compareSection: {
+				title: 'CAPOEIRA VS ALTE ARTE MARȚIALE',
+				subtitle: 'Capoeira este singura artă marțială care îmbină lupta, muzica, dansul și acrobația.',
+				capoeiraAdds: 'Capoeira adaugă:',
+				cards: {
+					karate: {
+						name: 'Karate',
+						desc: 'Artă marțială japoneză axată pe lovituri precise, kata și lupte formale. Disciplinată și puternică — dar tăcută. Fără muzică, fără dans, fără poveste culturală dincolo de tehnică.',
+						contrast: 'Percuție live care dictează ritmul fiecărui schimb, ginga fluidă în locul posturilor statice și o identitate culturală afro-braziliană adânc înrădăcinată în fiecare mișcare.'
+					},
+					judo: {
+						name: 'Judo',
+						desc: 'Artă de grappling olimpică axată pe proiecții, baleiaje și control la sol. Eficientă și precisă — dar pur funcțională. Fără lovituri, fără acrobații, fără ritm.',
+						contrast: 'Lovituri explozive și fente aeriene, eschive acrobatice care transformă atacul în spectacol și un ritm muzical care însoțește fiecare antrenament.'
+					},
+					taekwondo: {
+						name: 'Taekwondo',
+						desc: 'Artă marțială olimpică renumită pentru lovituri înalte, rapide și competiție formală. Dinamică și atletică — dar structurată în jurul victoriei, nu al jocului.',
+						contrast: 'Ginga — legănarea ritmică permanentă — transformă loviturile într-un dialog fluid. Roda înlocuiește scorul: nu există câștigători, există parteneri.'
+					},
+					mma: {
+						name: 'MMA',
+						desc: 'Arte marțiale mixte care combină loviturile cu grappling-ul pentru eficiență maximă. Practic și versatil — dar pur combativ, fără dimensiune culturală sau expresie artistică.',
+						contrast: 'Expresie artistică, profunzime culturală și roda — un ritual comunitar care transformă fiecare joc într-o performanță împărtășită, nu doar o luptă.'
+					}
+				}
+			},
 			communityTitle: 'COMUNITATE',
 			communityBody:
 				'Capoeira nu se practică în singurătate. Roda — cercul în care se joacă — este o metaforă pentru viața comunității: fiecare participant contează, fiecare contribuie la energie. La Alemar Chișinău, studenții nu sunt numere — sunt parte dintr-un grup care crește împreună, indiferent de vârstă, gen sau naționalitate.',
@@ -230,6 +268,33 @@ const translations: Record<Language, Translations> = {
 				'Активное сообщество с регулярными мероприятиями и батизадо',
 				'Первое занятие бесплатно'
 			],
+			compareSection: {
+				title: 'КАПОЭЙРА VS ДРУГИЕ БОЕВЫЕ ИСКУССТВА',
+				subtitle: 'Капоэйра — единственное боевое искусство, сочетающее бой, музыку, танец и акробатику.',
+				capoeiraAdds: 'Капоэйра добавляет:',
+				cards: {
+					karate: {
+						name: 'Карате',
+						desc: 'Японское боевое искусство, основанное на точных ударах, ката и формальных поединках. Дисциплинированное и мощное — но молчаливое. Без музыки, без танца, без культурного нарратива.',
+						contrast: 'Живую перкуссию, задающую ритм каждого обмена, плавную гингу вместо статичных стоек и богатую афро-бразильскую культурную идентичность, вплетённую в каждое движение.'
+					},
+					judo: {
+						name: 'Дзюдо',
+						desc: 'Олимпийское борцовское искусство, сосредоточенное на бросках, подсечках и контроле на земле. Эффективное и точное — но сугубо функциональное. Без ударов, без акробатики, без ритма.',
+						contrast: 'Взрывные удары и воздушные финты, акробатические уклоны, делающие атаку красивой, и живой музыкальный ритм, ведущий каждую тренировку.'
+					},
+					taekwondo: {
+						name: 'Тхэквондо',
+						desc: 'Олимпийское боевое искусство, известное высокими быстрыми ударами и формальными соревнованиями. Динамичное и атлетичное — но ориентированное на победу, а не на игру.',
+						contrast: 'Гингу — постоянное ритмичное покачивание — превращающую удары в плавный диалог. Рода заменяет табло: нет победителей, есть партнёры.'
+					},
+					mma: {
+						name: 'ММА',
+						desc: 'Смешанные боевые искусства объединяют удары и борьбу для максимальной эффективности. Практичное и разностороннее — но чисто боевое, без культурного измерения и художественного выражения.',
+						contrast: 'Художественное выражение, культурную глубину и роду — общественный ритуал, превращающий каждую игру в совместное представление, а не просто поединок.'
+					}
+				}
+			},
 			communityTitle: 'СООБЩЕСТВО',
 			communityBody:
 				'Капоэйра не практикуется в одиночестве. Рода — круг, в котором играют — это метафора жизни сообщества: каждый участник важен, каждый вносит вклад в общую энергию. В Alemar Chișinău студенты — не числа, они часть группы, которая растёт вместе, независимо от возраста, пола или национальности.',
@@ -324,6 +389,33 @@ const translations: Record<Language, Translations> = {
 				'Active community with regular events and batizados',
 				'First class is free'
 			],
+			compareSection: {
+				title: 'CAPOEIRA VS OTHER MARTIAL ARTS',
+				subtitle: 'Capoeira is the only martial art that fuses combat, music, dance, and acrobatics.',
+				capoeiraAdds: 'Capoeira adds:',
+				cards: {
+					karate: {
+						name: 'Karate',
+						desc: 'A striking art from Japan built on precision, katas, and formal sparring. Powerful and disciplined — but silent. No music, no dance, no cultural narrative beyond technique.',
+						contrast: 'Live percussion that dictates the pace of every exchange, a fluid ginga in place of static stances, and a rich Afro-Brazilian cultural identity woven into each movement.'
+					},
+					judo: {
+						name: 'Judo',
+						desc: 'An Olympic grappling art focused on throws, sweeps, and ground control. Effective and precise — but purely functional. No strikes, no acrobatics, no rhythm.',
+						contrast: 'Explosive kicks and aerial feints, acrobatic evasions that make attack beautiful, and a live musical heartbeat driving every session.'
+					},
+					taekwondo: {
+						name: 'Taekwondo',
+						desc: 'An Olympic art known for high, fast kicks and formal competition. Dynamic and athletic — but structured around winning, not playing.',
+						contrast: 'The ginga — a constant rhythmic sway — turning kicks into flowing dialogue rather than a contest. The roda replaces the scoreboard: no winners, only partners.'
+					},
+					mma: {
+						name: 'MMA',
+						desc: 'Mixed Martial Arts combines striking and grappling for maximum effectiveness. Practical and versatile — but purely combative, with no cultural dimension or artistic expression.',
+						contrast: 'Artistic expression, cultural depth, and the roda — a communal ritual that makes every game a shared performance, not just a fight.'
+					}
+				}
+			},
 			communityTitle: 'COMMUNITY',
 			communityBody:
 				'Capoeira is not a solo practice. The roda — the circle in which the game is played — is a metaphor for community life: every participant matters, every person contributes to the energy. At Alemar Chișinău, students are not numbers — they are part of a group that grows together, regardless of age, gender, or background.',

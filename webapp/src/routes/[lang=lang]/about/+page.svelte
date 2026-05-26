@@ -10,6 +10,9 @@
 
 	const SITE = 'https://capoeira.md';
 	const languages: Language[] = ['ro', 'ru', 'en'];
+
+	type CardKey = 'karate' | 'judo' | 'taekwondo' | 'mma';
+	const cardKeys: CardKey[] = ['karate', 'judo', 'taekwondo', 'mma'];
 </script>
 
 <svelte:head>
@@ -174,6 +177,62 @@
 			</ul>
 		</div>
 	</section>
+
+	<!-- Compare section -->
+	<section class="py-20 md:py-28" id="vs">
+		<div class="mx-auto max-w-6xl px-6 md:px-10">
+			<div class="mb-16 text-center" use:reveal>
+				<h2 class="font-impact text-[clamp(2.5rem,8vw,6rem)] leading-none tracking-[0.04em] text-foreground">
+					{lang.t.aboutPage.compareSection.title}
+				</h2>
+				<p class="mt-4 text-foreground/60 text-base md:text-lg max-w-2xl mx-auto">
+					{lang.t.aboutPage.compareSection.subtitle}
+				</p>
+			</div>
+
+			<div class="grid gap-px md:grid-cols-2" style="background: oklch(0.28 0.02 55)">
+				{#each cardKeys as key, i (key)}
+					{@const card = lang.t.aboutPage.compareSection.cards[key]}
+					<div
+						class="flex flex-col gap-5 p-8 md:p-10"
+						style="background: oklch(0.14 0.015 60)"
+						use:reveal={{ delay: i * 80 }}
+					>
+						<div>
+							<p class="text-xs tracking-[0.3em] uppercase text-foreground/30 mb-2">vs</p>
+							<h3 class="font-impact text-4xl md:text-5xl tracking-[0.06em] text-foreground">
+								{card.name}
+							</h3>
+						</div>
+
+						<p class="text-foreground/60 text-sm leading-relaxed">
+							{card.desc}
+						</p>
+
+						<div class="border-t border-border/20 pt-5 flex flex-col gap-3">
+							<p class="text-xs tracking-[0.25em] uppercase text-foreground/35">
+								{lang.t.aboutPage.compareSection.capoeiraAdds}
+							</p>
+							<p class="font-display italic text-base md:text-lg text-primary/90 leading-relaxed">
+								{card.contrast}
+							</p>
+						</div>
+					</div>
+				{/each}
+			</div>
+		</div>
+	</section>
+
+	<!-- Diamond divider -->
+	<div class="flex items-center gap-0 overflow-hidden">
+		<div class="h-px flex-1 bg-border/30"></div>
+		<div class="flex gap-3 px-6">
+			{#each [0, 1, 2] as i (i)}
+				<span class="inline-block h-2 w-2 rotate-45 {i === 1 ? 'bg-primary' : 'bg-border/30'}"></span>
+			{/each}
+		</div>
+		<div class="h-px flex-1 bg-border/30"></div>
+	</div>
 
 	<!-- Community -->
 	<section class="py-20 md:py-28">
