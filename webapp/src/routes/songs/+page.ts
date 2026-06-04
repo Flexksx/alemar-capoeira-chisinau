@@ -10,5 +10,5 @@ export const load = () => {
 	if (songs.length === 0) {
 		throw redirect(302, '/');
 	}
-	throw redirect(302, `/songs/${songs[0].id}`);
+	throw redirect(301, `/songs/${songs[0].id}`);
 };

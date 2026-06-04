@@ -20,12 +20,14 @@
   import ChevronRight from "@lucide/svelte/icons/chevron-right";
   import ThemeToggle from "$lib/components/ThemeToggle.svelte";
 
+  let { data } = $props();
+
   const songs: Song[] = sortSongsByCategory(songsData as unknown as Song[]);
 
   let sidebarOpen = $state(false);
   let searchOpen = $state(false);
   let carouselApi = $state<CarouselAPI>();
-  let currentIndex = $state(0);
+  let currentIndex = $state(data.initialIndex ?? 0);
   let canScrollPrev = $state(false);
   let canScrollNext = $state(false);
 
