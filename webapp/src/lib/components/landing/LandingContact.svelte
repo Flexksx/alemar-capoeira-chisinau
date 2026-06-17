@@ -1,7 +1,10 @@
 <script lang="ts">
 	import { useLanguageStore } from '$lib/i18n.svelte';
 	import { reveal } from '$lib/actions/reveal';
-	import { User, Phone, Facebook, MapPin } from '@lucide/svelte';
+	import User from '@lucide/svelte/icons/user';
+	import Phone from '@lucide/svelte/icons/phone';
+	import Facebook from '@lucide/svelte/icons/facebook';
+	import MapPin from '@lucide/svelte/icons/map-pin';
 
 	const lang = useLanguageStore();
 </script>

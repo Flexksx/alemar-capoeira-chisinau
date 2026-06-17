@@ -1,7 +1,9 @@
 <script lang="ts">
 	import { useLanguageStore } from '$lib/i18n.svelte';
 	import { reveal } from '$lib/actions/reveal';
-	import { Calendar, Clock, MapPin } from '@lucide/svelte';
+	import Calendar from '@lucide/svelte/icons/calendar';
+	import Clock from '@lucide/svelte/icons/clock';
+	import MapPin from '@lucide/svelte/icons/map-pin';
 
 	const lang = useLanguageStore();
 

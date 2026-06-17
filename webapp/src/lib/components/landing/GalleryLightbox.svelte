@@ -1,5 +1,7 @@
 <script lang="ts">
-	import { X, ChevronLeft, ChevronRight } from '@lucide/svelte';
+	import X from '@lucide/svelte/icons/x';
+	import ChevronLeft from '@lucide/svelte/icons/chevron-left';
+	import ChevronRight from '@lucide/svelte/icons/chevron-right';
 
 	type LightboxItem =
 		| { type: 'photo'; src: string; alt: string }

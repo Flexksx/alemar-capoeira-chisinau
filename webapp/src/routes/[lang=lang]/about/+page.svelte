@@ -2,7 +2,10 @@
 	import { useLanguageStore, type Language } from '$lib/i18n.svelte';
 	import { goto } from '$app/navigation';
 	import { reveal } from '$lib/actions/reveal';
-	import { Phone, Facebook, MapPin, User } from '@lucide/svelte';
+	import Phone from '@lucide/svelte/icons/phone';
+	import Facebook from '@lucide/svelte/icons/facebook';
+	import MapPin from '@lucide/svelte/icons/map-pin';
+	import User from '@lucide/svelte/icons/user';
 	import alemArLogo from '$lib/assets/alemar-logo.png';
 
 	let { data } = $props();
