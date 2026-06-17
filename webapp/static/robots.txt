@@ -1,4 +1,6 @@
+# Allow all crawlers and AI agents to index the site.
 User-agent: *
+Allow: /
 Disallow: /songs/export
 
 Sitemap: https://capoeira.md/sitemap.xml
