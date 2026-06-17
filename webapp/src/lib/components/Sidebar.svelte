@@ -121,9 +121,13 @@
                 <ul class="space-y-px">
                   {#each categorySongs as song (song.id)}
                     <li>
-                      <button
-                        onclick={() => handleSongClick(song.id)}
-                        class="w-full px-4 py-2.5 text-left text-sm transition-colors border-l-2 {currentSongId === song.id
+                      <a
+                        href="/songs/{song.id}"
+                        onclick={(e) => {
+                          e.preventDefault();
+                          handleSongClick(song.id);
+                        }}
+                        class="block w-full px-4 py-2.5 text-left text-sm transition-colors border-l-2 {currentSongId === song.id
                           ? 'border-primary bg-primary/10 font-medium text-primary'
                           : 'border-transparent text-foreground/70 hover:bg-muted hover:text-foreground'}"
                       >
@@ -139,7 +143,7 @@
                             {/each}
                           </div>
                         {/if}
-                      </button>
+                      </a>
                     </li>
                   {/each}
                 </ul>

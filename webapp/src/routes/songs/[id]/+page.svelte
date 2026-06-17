@@ -19,10 +19,19 @@
   import ChevronLeft from "@lucide/svelte/icons/chevron-left";
   import ChevronRight from "@lucide/svelte/icons/chevron-right";
   import ThemeToggle from "$lib/components/ThemeToggle.svelte";
+  import { onMount } from "svelte";
 
   let { data } = $props();
 
   const songs: Song[] = sortSongsByCategory(songsData as unknown as Song[]);
+
+  // The carousel renders all songs and is mounted only on the client. The
+  // server prerenders a single SongCard for the current song so each URL has
+  // unique, crawlable content (one H1) instead of all 25 songs on every page.
+  let mounted = $state(false);
+  onMount(() => {
+    mounted = true;
+  });
 
   let sidebarOpen = $state(false);
   let searchOpen = $state(false);
@@ -159,23 +168,29 @@
 <main
   class="h-dvh overflow-hidden pt-[calc(60px+env(safe-area-inset-top))] pb-[80px] safe-bottom"
 >
-  <Carousel
-    class="h-full"
-    opts={{
-      align: "start",
-      loop: false,
-      dragFree: false,
-    }}
-    {setApi}
-  >
-    <CarouselContent class="h-full -ml-0">
-      {#each songs as song (song.id)}
-        <CarouselItem class="h-full pl-0">
-          <SongCard {song} />
-        </CarouselItem>
-      {/each}
-    </CarouselContent>
-  </Carousel>
+  {#if mounted}
+    <Carousel
+      class="h-full"
+      opts={{
+        align: "start",
+        loop: false,
+        dragFree: false,
+      }}
+      {setApi}
+    >
+      <CarouselContent class="h-full -ml-0">
+        {#each songs as song (song.id)}
+          <CarouselItem class="h-full pl-0">
+            <SongCard {song} />
+          </CarouselItem>
+        {/each}
+      </CarouselContent>
+    </Carousel>
+  {:else if currentSong}
+    <div class="h-full">
+      <SongCard song={currentSong} />
+    </div>
+  {/if}
 </main>
 
 <!-- Search FAB -->
