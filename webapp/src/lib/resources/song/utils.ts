@@ -1,8 +1,4 @@
-import { CATEGORY_ORDER, type Category, type Language, type Song, type Verse } from './types';
-
-export function getVerseForLanguage(variants: Verse[], language: Language): Verse | undefined {
-	return variants.find((v) => v.language === language);
-}
+import { CATEGORY_ORDER, type Category, type Language, type Song } from './types';
 
 export function getSongLanguages(song: Song): Language[] {
 	const languages = new Set<Language>();
