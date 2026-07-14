@@ -1,0 +1,20 @@
+set working-directory := "../.."
+
+[private]
+default:
+    just --list --justfile {{source_file()}}
+
+# Format Nix files
+nix:
+    alejandra .
+
+# Format Markdown files
+markdown:
+    rumdl check --fix .
+
+# Format the webapp (TypeScript/Svelte, via Prettier)
+webapp:
+    pnpm -C webapp format
+
+# Run every formatter
+all: nix markdown webapp

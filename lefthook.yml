@@ -1,0 +1,19 @@
+pre-commit:
+  commands:
+    format-nix:
+      glob: "{*.nix,**/*.nix}"
+      run: alejandra {staged_files}
+      stage_fixed: true
+    lint-markdown:
+      glob: "{*.md,**/*.md}"
+      run: rumdl check --fix {staged_files}
+      stage_fixed: true
+    format-webapp:
+      root: "webapp/"
+      glob: "webapp/src/{*.{ts,svelte},**/*.{ts,svelte}}"
+      run: pnpm exec prettier --write {staged_files}
+      stage_fixed: true
+    lint-webapp:
+      root: "webapp/"
+      glob: "webapp/src/{*.{ts,svelte},**/*.{ts,svelte}}"
+      run: pnpm exec eslint {staged_files}

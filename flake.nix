@@ -1,54 +1,12 @@
 {
-  description = "Development environment for Voisso - TypeScript frontend";
-
+  description = "alemar-capoeira-chisinau";
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
-    flake-utils.url = "github:numtide/flake-utils";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-26.05";
+    flake-parts.url = "github:hercules-ci/flake-parts";
+    import-tree.url = "github:vic/import-tree";
   };
-
-  outputs =
-    {
-      self,
-      nixpkgs,
-      flake-utils,
-      ...
-    }:
-    flake-utils.lib.eachDefaultSystem (
-      system:
-      let
-        pkgs = import nixpkgs {
-          inherit system;
-          config = {
-            allowUnfree = true;
-          };
-        };
-      in
-      {
-        devShells.default = pkgs.mkShell {
-          name = "voisso-ts-env";
-
-          packages = with pkgs; [
-            # Node.js / TypeScript / Frontend
-            nodejs_24
-            pnpm
-            nodePackages.typescript
-            nodePackages.typescript-language-server
-            nodePackages.eslint
-            nodePackages.prettier
-
-            # Common build tools & system libraries
-            openssl
-            pkg-config
-            zlib
-          ];
-
-          shellHook = ''
-            echo "🚀 Voisso TypeScript Development Environment"
-            echo "Node.js: $(node --version)"
-            echo "pnpm:    $(pnpm --version)"
-            echo "✨ Use 'pnpm install' to get started."
-          '';
-        };
-      }
+  outputs = inputs:
+    inputs.flake-parts.lib.mkFlake {inherit inputs;} (
+      inputs.import-tree [./nix]
     );
 }

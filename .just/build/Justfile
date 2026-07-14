@@ -1,0 +1,8 @@
+set working-directory := "../.."
+
+[private]
+default:
+    just --list --justfile {{source_file()}}
+
+webapp:
+    pnpm -C webapp build

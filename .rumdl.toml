@@ -1,0 +1,6 @@
+[global]
+exclude = [".claude/**"]
+
+[MD013]
+line-length = 120
+tables = false

@@ -1,0 +1,9 @@
+set working-directory := "../.."
+
+[private]
+default:
+    just --list --justfile {{source_file()}}
+
+# --- No test suite exists yet. Add one recipe per unit once it lands, e.g.: ---
+# webapp:
+#     pnpm -C webapp test

@@ -4,7 +4,8 @@ A simple static website built with Svelte 5 and SvelteKit that provides a librar
 
 ## About
 
-This is a straightforward song reference website for Alemar Capoeira Chisinau. The songs are stored in a JSON file and displayed through a clean, searchable interface to help our members learn and practice capoeira music.
+This is a straightforward song reference website for Alemar Capoeira Chisinau. The songs are stored in a JSON
+file and displayed through a clean, searchable interface to help our members learn and practice capoeira music.
 
 ## Tech Stack
 
