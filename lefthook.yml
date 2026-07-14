@@ -9,6 +9,10 @@ pre-commit:
       glob: "{*.md,**/*.md}"
       run: rumdl check --fix {staged_files}
       stage_fixed: true
+    format-yaml:
+      glob: "{lefthook.yml,webapp/pnpm-workspace.yaml}"
+      run: yamlfmt {staged_files}
+      stage_fixed: true
     format-webapp:
       root: "webapp/"
       glob: "webapp/src/{*.{ts,svelte},**/*.{ts,svelte}}"

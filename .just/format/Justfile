@@ -12,9 +12,13 @@ nix:
 markdown:
     rumdl check --fix .
 
+# Format YAML files
+yaml:
+    yamlfmt lefthook.yml webapp/pnpm-workspace.yaml
+
 # Format the webapp (TypeScript/Svelte, via Prettier)
 webapp:
     pnpm -C webapp format
 
 # Run every formatter
-all: nix markdown webapp
+all: nix markdown yaml webapp

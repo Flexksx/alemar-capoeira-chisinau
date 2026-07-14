@@ -10,7 +10,7 @@
       default = [];
     };
     config = {
-      shellPackages = with pkgs; [just alejandra lefthook rumdl];
+      shellPackages = with pkgs; [just alejandra lefthook rumdl yamlfmt];
       devShells.default = pkgs.mkShell {
         name = "alemar-capoeira-chisinau-dev-env";
         packages = config.shellPackages;

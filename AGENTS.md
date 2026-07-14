@@ -20,15 +20,16 @@ All developer actions go through `just`:
 
 - `just dev` — run the webapp dev server
 - `just build webapp` — production build
-- `just format all` / `just lint all` — repo-wide formatting/linting (Nix, Markdown, webapp)
+- `just format all` / `just lint all` — repo-wide formatting/linting (Nix, Markdown, YAML, webapp)
 - `just format webapp` / `just lint webapp` — webapp only (Prettier / ESLint)
 
 Run `just --list --list-submodules` to see everything currently wired up.
 
 ## Dev environment
 
-`direnv allow` (or `nix develop`) loads `just`, `alejandra`, `lefthook`, `rumdl`, and the pinned Node/pnpm toolchain.
-Run `lefthook install` once after cloning to activate the pre-commit hooks.
+`direnv allow` (or `nix develop`) loads `just`, `alejandra`, `lefthook`, `rumdl`, `yamlfmt`, and the pinned
+Node/pnpm toolchain (`nodejs_26`). Run `lefthook install` once after cloning to activate the pre-commit hooks
+(pre-commit runs its checks in parallel).
 
 ## Conventions an agent can't derive from the code
 

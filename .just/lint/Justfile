@@ -8,9 +8,13 @@ default:
 markdown:
     rumdl check .
 
+# Lint YAML files
+yaml:
+    yamlfmt -lint lefthook.yml webapp/pnpm-workspace.yaml
+
 # Lint the webapp (ESLint)
 webapp:
     pnpm -C webapp lint:check
 
 # Run every linter
-all: markdown webapp
+all: markdown yaml webapp
