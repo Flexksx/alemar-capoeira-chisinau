@@ -16,5 +16,9 @@ yaml:
 webapp:
     pnpm -C webapp lint:check
 
+# Check Terraform formatting
+terraform:
+    just infra fmt-check
+
 # Run every linter
-all: markdown yaml webapp
+all: markdown yaml webapp terraform

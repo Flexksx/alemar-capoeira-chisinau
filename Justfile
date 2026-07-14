@@ -1,5 +1,6 @@
 mod build '.just/build'
 mod format '.just/format'
+mod infra '.just/infra'
 mod lint '.just/lint'
 mod test '.just/test'
 

@@ -1,0 +1,7 @@
+bucket     = "alemar-capoeira-chisinau-tfstate"
+key        = "webapp/terraform.tfstate"
+access_key = "your-r2-access-key-id"
+secret_key = "your-r2-secret-access-key"
+endpoints = {
+  s3 = "https://your-account-id.r2.cloudflarestorage.com"
+}

@@ -13,6 +13,10 @@ pre-commit:
       glob: "{lefthook.yml,webapp/pnpm-workspace.yaml}"
       run: yamlfmt {staged_files}
       stage_fixed: true
+    format-terraform:
+      glob: "infra/**/*.tf"
+      run: terraform fmt {staged_files}
+      stage_fixed: true
     format-webapp:
       root: "webapp/"
       glob: "webapp/src/{*.{ts,svelte},**/*.{ts,svelte}}"

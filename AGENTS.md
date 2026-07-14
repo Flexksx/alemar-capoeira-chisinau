@@ -20,16 +20,30 @@ All developer actions go through `just`:
 
 - `just dev` — run the webapp dev server
 - `just build webapp` — production build
-- `just format all` / `just lint all` — repo-wide formatting/linting (Nix, Markdown, YAML, webapp)
+- `just format all` / `just lint all` — repo-wide formatting/linting (Nix, Markdown, YAML, webapp, Terraform)
 - `just format webapp` / `just lint webapp` — webapp only (Prettier / ESLint)
+- `just infra plan` / `just infra apply` — Terraform for the Cloudflare Pages project + `capoeira.md` domain
 
 Run `just --list --list-submodules` to see everything currently wired up.
 
 ## Dev environment
 
-`direnv allow` (or `nix develop`) loads `just`, `alejandra`, `lefthook`, `rumdl`, `yamlfmt`, and the pinned
-Node/pnpm toolchain (`nodejs_26`). Run `lefthook install` once after cloning to activate the pre-commit hooks
-(pre-commit runs its checks in parallel).
+`direnv allow` (or `nix develop`) loads `just`, `alejandra`, `lefthook`, `rumdl`, `yamlfmt`, `terraform`, and the
+pinned Node/pnpm toolchain (`nodejs_26`). Run `lefthook install` once after cloning to activate the pre-commit
+hooks (pre-commit runs its checks in parallel). `terraform` is unfree (BSL 1.1) — `nix/devtools.nix` scopes
+`allowUnfreePredicate` to just that package rather than disabling the unfree check repo-wide.
+
+## Infra and deployment
+
+- `infra/` — Terraform for the Cloudflare Pages project and the `capoeira.md`/`www.capoeira.md` custom
+  domains + DNS records. State lives in a Cloudflare R2 bucket (S3-compatible backend), not locally.
+  These resources were originally created by hand in the dashboard, so they were `terraform import`ed
+  rather than created fresh — check `terraform plan` reports no changes before trusting the config.
+- `.github/workflows/terraform-plan.yml` — runs `terraform plan` on PRs touching `infra/**`. `apply` is
+  intentionally not automated; run it locally after reviewing the plan.
+- `.github/workflows/deploy.yml` — builds and deploys the webapp (`wrangler pages deploy`) on every push
+  to `main` that touches `webapp/**`. This is independent of Terraform — Terraform only manages the Pages
+  project/domain scaffolding, never the deployed content.
 
 ## Conventions an agent can't derive from the code
 

@@ -20,5 +20,9 @@ yaml:
 webapp:
     pnpm -C webapp format
 
+# Format Terraform files
+terraform:
+    just infra fmt
+
 # Run every formatter
-all: nix markdown yaml webapp
+all: nix markdown yaml webapp terraform

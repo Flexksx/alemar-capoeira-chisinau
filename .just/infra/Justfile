@@ -1,0 +1,32 @@
+set working-directory := "../.."
+
+project_dir := "infra/projects/webapp"
+shared_vars := "-var-file=../../shared/cloudflare.tfvars"
+
+[private]
+default:
+    just --list --justfile {{source_file()}}
+
+# Initialize Terraform providers + backend
+init:
+    terraform -chdir={{project_dir}} init -backend-config=../../shared/backend.hcl
+
+# Check Terraform formatting
+fmt-check:
+    terraform -chdir={{project_dir}} fmt -check -diff
+
+# Format Terraform files
+fmt:
+    terraform -chdir={{project_dir}} fmt
+
+# Preview infrastructure changes
+plan:
+    terraform -chdir={{project_dir}} plan {{shared_vars}}
+
+# Apply infrastructure changes (run locally — not wired into CI)
+apply:
+    terraform -chdir={{project_dir}} apply {{shared_vars}}
+
+# Destroy managed infrastructure
+destroy:
+    terraform -chdir={{project_dir}} destroy {{shared_vars}}

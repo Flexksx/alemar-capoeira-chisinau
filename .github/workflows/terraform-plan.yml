@@ -1,0 +1,62 @@
+name: Terraform plan
+
+on:
+  pull_request:
+    paths:
+      - 'infra/**'
+      - '.github/workflows/terraform-plan.yml'
+
+concurrency:
+  group: terraform-plan-${{ github.event.pull_request.number }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+jobs:
+  plan:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: infra/projects/webapp
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: hashicorp/setup-terraform@v3
+        with:
+          terraform_version: '1.15.3'
+          terraform_wrapper: false
+
+      - name: Terraform fmt check
+        run: terraform fmt -check -diff
+
+      # Real secrets never get logged (masked by the runner); the files below
+      # only ever exist on the ephemeral CI runner, never committed.
+      - name: Write backend config
+        run: |
+          cat > backend.hcl <<EOF
+          bucket     = "alemar-capoeira-chisinau-tfstate"
+          key        = "webapp/terraform.tfstate"
+          access_key = "${{ secrets.TF_STATE_R2_ACCESS_KEY_ID }}"
+          secret_key = "${{ secrets.TF_STATE_R2_SECRET_ACCESS_KEY }}"
+          endpoints = {
+            s3 = "https://${{ secrets.CLOUDFLARE_ACCOUNT_ID }}.r2.cloudflarestorage.com"
+          }
+          EOF
+
+      - name: Write tfvars
+        run: |
+          cat > terraform.tfvars <<EOF
+          cloudflare_api_token  = "${{ secrets.CLOUDFLARE_API_TOKEN }}"
+          cloudflare_account_id = "${{ secrets.CLOUDFLARE_ACCOUNT_ID }}"
+          cloudflare_zone_id    = "${{ secrets.CLOUDFLARE_ZONE_ID }}"
+          EOF
+
+      - name: Terraform init
+        run: terraform init -backend-config=backend.hcl -input=false
+
+      - name: Terraform validate
+        run: terraform validate
+
+      - name: Terraform plan
+        run: terraform plan -input=false -no-color
