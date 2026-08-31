@@ -28,6 +28,7 @@ export interface Translations {
 		address: string;
 		cta: string;
 		facebook: string;
+		instagram: string;
 	};
 	footer: { tagline: string; since: string };
 	meta: { landingTitle: string; landingDescription: string; aboutTitle: string; aboutDescription: string };
@@ -112,7 +113,8 @@ const translations: Record<Language, Translations> = {
 			phone: 'Telefon',
 			address: 'Calea Ieșilor 10, et. 5, Chișinău',
 			cta: 'Contactează-ne',
-			facebook: 'Facebook'
+			facebook: 'Facebook',
+			instagram: 'Instagram'
 		},
 		footer: {
 			tagline: 'Artă marțială braziliană. Acrobații. Muzică.',
@@ -238,7 +240,8 @@ const translations: Record<Language, Translations> = {
 			phone: 'Телефон',
 			address: 'Calea Ieșilor 10, эт. 5, Кишинёв',
 			cta: 'Написать нам',
-			facebook: 'Facebook'
+			facebook: 'Facebook',
+			instagram: 'Instagram'
 		},
 		footer: {
 			tagline: 'Бразильское боевое искусство. Акробатика. Музыка.',
@@ -363,7 +366,8 @@ const translations: Record<Language, Translations> = {
 			phone: 'Phone',
 			address: 'Calea Ieșilor 10, 5th floor, Chișinău',
 			cta: 'Get in touch',
-			facebook: 'Facebook'
+			facebook: 'Facebook',
+			instagram: 'Instagram'
 		},
 		footer: {
 			tagline: 'Brazilian Martial Art. Acrobatics. Music.',

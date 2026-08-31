@@ -1,2 +1,8 @@
+# allowBuilds is the pnpm 11 name; onlyBuiltDependencies is the pnpm 10 name.
+# Keep both until the toolchain pin and the nix devshell agree on one major.
+allowBuilds:
+  esbuild: true
+  sharp: false
+  workerd: false
 onlyBuiltDependencies:
   - esbuild

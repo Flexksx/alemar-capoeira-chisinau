@@ -4,6 +4,7 @@
 	import User from '@lucide/svelte/icons/user';
 	import Phone from '@lucide/svelte/icons/phone';
 	import Facebook from '@lucide/svelte/icons/facebook';
+	import Instagram from '@lucide/svelte/icons/instagram';
 	import MapPin from '@lucide/svelte/icons/map-pin';
 
 	const lang = useLanguageStore();
@@ -36,7 +37,7 @@
 			</p>
 		</div>
 
-		<div class="my-12 grid gap-8 md:grid-cols-3">
+		<div class="my-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
 			<div class="flex flex-col items-center gap-2" use:reveal={{ delay: 0 }}>
 				<User class="mb-2 h-6 w-6 text-primary" />
 				<p class="text-xs tracking-[0.25em] uppercase text-foreground/40">
@@ -72,9 +73,27 @@
 					@capoeiramd
 				</a>
 			</div>
+
+			<div class="flex flex-col items-center gap-2" use:reveal={{ delay: 300 }}>
+				<Instagram class="mb-2 h-6 w-6 text-primary" />
+				<p class="text-xs tracking-[0.25em] uppercase text-foreground/40">
+					{lang.t.contact.instagram}
+				</p>
+				<a
+					href="https://www.instagram.com/capoeira.moldova/"
+					target="_blank"
+					rel="noopener noreferrer"
+					class="font-display text-lg text-foreground transition-colors hover:text-primary"
+				>
+					@capoeira.moldova
+				</a>
+			</div>
 		</div>
 
-		<p class="mb-10 flex items-center justify-center gap-2 text-sm tracking-[0.15em] uppercase text-foreground/40" use:reveal={{ delay: 150 }}>
+		<p
+			class="mb-10 flex items-center justify-center gap-2 text-sm tracking-[0.15em] uppercase text-foreground/40"
+			use:reveal={{ delay: 150 }}
+		>
 			<MapPin class="h-4 w-4 shrink-0 text-primary/60" />
 			{lang.t.contact.address}
 		</p>
