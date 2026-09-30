@@ -43,7 +43,6 @@
 			</p>
 		</div>
 
-		<!-- Info cards -->
 		<div class="grid gap-px md:grid-cols-3" style="background: oklch(0.28 0.02 55)">
 			{#each infoCards as card, i (card.label)}
 			{@const Icon = card.icon}
@@ -63,7 +62,6 @@
 			{/each}
 		</div>
 
-		<!-- CTA area -->
 		<div class="mt-16 flex flex-col items-center gap-6" use:reveal={{ delay: 200 }}>
 			<div class="flex items-center gap-4">
 				<span class="h-px w-8 bg-primary/40"></span>

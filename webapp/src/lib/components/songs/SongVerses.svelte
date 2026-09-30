@@ -10,10 +10,6 @@
 
 	let { structure, verses, selectedLanguage }: Props = $props();
 
-	// All language variants render (not just the selected one) so every song
-	// page has crawlable Portuguese + Romanian text on first load. Only the
-	// selected variant is shown; the rest are `hidden` via CSS, not removed
-	// from the DOM.
 	function visibleLanguage(variants: Verse[]): Language {
 		return variants.some((v) => v.language === selectedLanguage)
 			? selectedLanguage

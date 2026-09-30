@@ -25,9 +25,6 @@
 
   const songs: Song[] = sortSongsByCategory(songsData as unknown as Song[]);
 
-  // The carousel renders all songs and is mounted only on the client. The
-  // server prerenders a single SongCard for the current song so each URL has
-  // unique, crawlable content (one H1) instead of all 25 songs on every page.
   let mounted = $state(false);
   onMount(() => {
     mounted = true;
@@ -114,7 +111,6 @@
   {/if}
 </svelte:head>
 
-<!-- Header -->
 <header
   class="fixed top-0 left-0 right-0 z-30 border-b border-border/30 safe-top"
   style="background: oklch(0.14 0.01 60 / 0.92); backdrop-filter: blur(8px)"
@@ -128,7 +124,6 @@
       <Menu class="h-5 w-5" />
     </button>
 
-    <!-- Song indicator -->
     <div class="flex items-center gap-1">
       <button
         onclick={scrollPrev}
@@ -164,7 +159,6 @@
   </div>
 </header>
 
-<!-- Main Content -->
 <main
   class="h-dvh overflow-hidden pt-[calc(60px+env(safe-area-inset-top))] pb-[80px] safe-bottom"
 >
@@ -193,7 +187,6 @@
   {/if}
 </main>
 
-<!-- Search FAB -->
 <button
   onclick={() => (searchOpen = true)}
   class="fixed bottom-6 right-6 z-30 flex h-14 w-14 items-center justify-center bg-primary text-primary-foreground shadow-lg transition-all hover:brightness-110 active:scale-95 safe-bottom"
@@ -202,7 +195,6 @@
   <Search class="h-6 w-6" />
 </button>
 
-<!-- Sidebar -->
 <Sidebar
   {songs}
   isOpen={sidebarOpen}
@@ -211,7 +203,6 @@
   currentSongId={currentSong?.id}
 />
 
-<!-- Search Modal -->
 <SearchModal
   {songs}
   isOpen={searchOpen}

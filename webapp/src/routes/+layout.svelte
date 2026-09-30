@@ -18,7 +18,6 @@
 	<title>Alemar Capoeira - Cântece</title>
 	<!-- eslint-disable-next-line svelte/no-at-html-tags -->
 	{@html `<script>
-		// Set dark mode as default if no preference is stored
 		if (!localStorage.getItem('mode-watcher-mode')) {
 			document.documentElement.classList.add('dark');
 		}

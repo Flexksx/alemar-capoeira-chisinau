@@ -49,7 +49,6 @@
 <svelte:window onkeydown={handleKeydown} />
 
 {#if isOpen}
-	<!-- Backdrop -->
 	<button
 		class="fixed inset-0 z-50 bg-black/70 backdrop-blur-sm"
 		onclick={handleClose}
@@ -57,10 +56,8 @@
 		tabindex="-1"
 	></button>
 
-	<!-- Modal -->
 	<div class="fixed inset-x-4 top-4 z-50 mx-auto max-w-lg safe-top">
 		<div class="overflow-hidden bg-card shadow-2xl border border-border/40">
-			<!-- Search Header -->
 			<div class="flex items-center gap-2 border-b border-border/40 p-3">
 				<Search class="h-4 w-4 shrink-0 text-primary" />
 				<input
@@ -79,7 +76,6 @@
 				</button>
 			</div>
 
-			<!-- Results -->
 			<div class="max-h-[60vh] overflow-y-auto overscroll-contain">
 				{#if query.trim() && results.length === 0}
 					<div class="flex flex-col items-center justify-center py-12 text-muted-foreground">
@@ -112,7 +108,6 @@
 						{/each}
 					</ul>
 				{:else}
-					<!-- Empty state - show all songs -->
 					<div class="p-3">
 						<p class="label-xs mb-2 px-1">
 							Toate cântecele

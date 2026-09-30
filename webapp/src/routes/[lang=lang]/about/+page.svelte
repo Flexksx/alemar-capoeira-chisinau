@@ -37,7 +37,6 @@
 </svelte:head>
 
 <div class="dark bg-background text-foreground min-h-dvh">
-	<!-- Minimal header -->
 	<header
 		class="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-6 py-4 md:px-10"
 		style="background: linear-gradient(to bottom, rgba(15,10,5,0.95) 0%, rgba(15,10,5,0.6) 100%); backdrop-filter: blur(4px)"
@@ -60,7 +59,6 @@
 		</div>
 	</header>
 
-	<!-- Hero -->
 	<section
 		class="relative flex min-h-[50vh] flex-col items-center justify-end pb-16 pt-32 overflow-hidden"
 		style="background: linear-gradient(135deg, oklch(0.12 0.02 65) 0%, oklch(0.08 0.01 60) 100%)"
@@ -80,7 +78,6 @@
 		</div>
 	</section>
 
-	<!-- History -->
 	<section class="py-20 md:py-28">
 		<div class="mx-auto max-w-3xl px-6 md:px-10" use:reveal>
 			<p class="text-foreground/80 text-lg md:text-xl leading-relaxed text-center">
@@ -89,7 +86,6 @@
 		</div>
 	</section>
 
-	<!-- Diamond divider -->
 	<div class="flex items-center gap-0 overflow-hidden">
 		<div class="h-px flex-1 bg-border/30"></div>
 		<div class="flex gap-3 px-6">
@@ -100,7 +96,6 @@
 		<div class="h-px flex-1 bg-border/30"></div>
 	</div>
 
-	<!-- For whom -->
 	<section class="py-20 md:py-28" id="for-whom">
 		<div class="mx-auto max-w-6xl px-6 md:px-10">
 			<div class="mb-16 text-center" use:reveal>
@@ -110,7 +105,6 @@
 			</div>
 
 			<div class="grid gap-px md:grid-cols-2" style="background: oklch(0.28 0.02 55)">
-				<!-- Kids -->
 				<div
 					class="flex flex-col gap-6 p-8 md:p-12"
 					style="background: oklch(0.14 0.015 60)"
@@ -127,7 +121,6 @@
 					</p>
 				</div>
 
-				<!-- Adults -->
 				<div
 					class="flex flex-col gap-6 p-8 md:p-12"
 					style="background: oklch(0.14 0.015 60)"
@@ -147,7 +140,6 @@
 		</div>
 	</section>
 
-	<!-- Diamond divider -->
 	<div class="flex items-center gap-0 overflow-hidden">
 		<div class="h-px flex-1 bg-border/30"></div>
 		<div class="flex gap-3 px-6">
@@ -158,7 +150,6 @@
 		<div class="h-px flex-1 bg-border/30"></div>
 	</div>
 
-	<!-- Why Capoeira -->
 	<section class="py-20 md:py-28" style="background: linear-gradient(135deg, oklch(0.14 0.015 60) 0%, oklch(0.12 0.01 60) 100%)">
 		<div class="mx-auto max-w-4xl px-6 md:px-10">
 			<div class="mb-12 text-center" use:reveal>
@@ -181,7 +172,6 @@
 		</div>
 	</section>
 
-	<!-- Compare section -->
 	<section class="py-20 md:py-28" id="vs">
 		<div class="mx-auto max-w-6xl px-6 md:px-10">
 			<div class="mb-16 text-center" use:reveal>
@@ -226,7 +216,6 @@
 		</div>
 	</section>
 
-	<!-- Diamond divider -->
 	<div class="flex items-center gap-0 overflow-hidden">
 		<div class="h-px flex-1 bg-border/30"></div>
 		<div class="flex gap-3 px-6">
@@ -237,7 +226,6 @@
 		<div class="h-px flex-1 bg-border/30"></div>
 	</div>
 
-	<!-- Community -->
 	<section class="py-20 md:py-28">
 		<div class="mx-auto max-w-3xl px-6 md:px-10 text-center" use:reveal>
 			<h2 class="font-impact text-[clamp(2.5rem,8vw,6rem)] leading-none tracking-[0.04em] text-foreground mb-8">
@@ -251,7 +239,6 @@
 		</div>
 	</section>
 
-	<!-- Diamond divider -->
 	<div class="flex items-center gap-0 overflow-hidden">
 		<div class="h-px flex-1 bg-border/30"></div>
 		<div class="flex gap-3 px-6">
@@ -262,7 +249,6 @@
 		<div class="h-px flex-1 bg-border/30"></div>
 	</div>
 
-	<!-- Instructor -->
 	<section
 		class="py-20 md:py-28"
 		style="background: linear-gradient(135deg, oklch(0.14 0.015 60) 0%, oklch(0.12 0.01 60) 100%)"
@@ -281,7 +267,6 @@
 		</div>
 	</section>
 
-	<!-- CTA contact -->
 	<section
 		class="relative overflow-hidden py-20 md:py-28"
 		style="background: linear-gradient(135deg, oklch(0.16 0.02 65) 0%, oklch(0.12 0.01 60) 100%)"
@@ -343,7 +328,6 @@
 		</div>
 	</section>
 
-	<!-- Footer -->
 	<footer class="border-t border-border/20 py-10">
 		<div class="mx-auto max-w-6xl px-6 md:px-10 flex flex-col md:flex-row items-center justify-between gap-4">
 			<div class="text-center md:text-left">

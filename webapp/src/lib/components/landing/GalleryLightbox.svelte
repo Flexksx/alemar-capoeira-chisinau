@@ -43,14 +43,12 @@
 
 <svelte:window onkeydown={handleKey} />
 
-<!-- Backdrop -->
 <div
 	class="fixed inset-0 z-[100] flex items-center justify-center"
 	style="background: rgba(8,5,2,0.95)"
 	role="dialog"
 	aria-modal="true"
 >
-	<!-- Close -->
 	<button
 		onclick={onclose}
 		class="absolute top-5 right-5 z-10 flex h-10 w-10 items-center justify-center text-foreground/60 transition-colors hover:text-primary cursor-pointer"
@@ -59,12 +57,10 @@
 		<X size={22} />
 	</button>
 
-	<!-- Counter -->
 	<p class="absolute top-5 left-1/2 -translate-x-1/2 text-xs tracking-[0.25em] uppercase text-foreground/40">
 		{current + 1} / {items.length}
 	</p>
 
-	<!-- Prev -->
 	{#if items.length > 1}
 		<button
 			onclick={prev}
@@ -75,7 +71,6 @@
 		</button>
 	{/if}
 
-	<!-- Media -->
 	<div class="relative max-h-[85dvh] max-w-[90vw] md:max-w-[80vw]">
 		{#key current}
 			{#if items[current].type === 'video'}
@@ -98,7 +93,6 @@
 		{/key}
 	</div>
 
-	<!-- Next -->
 	{#if items.length > 1}
 		<button
 			onclick={next}
@@ -109,7 +103,6 @@
 		</button>
 	{/if}
 
-	<!-- Dot indicators -->
 	{#if items.length > 1}
 		<div class="absolute bottom-6 left-1/2 -translate-x-1/2 flex gap-2">
 			{#each items as _, i (i)}

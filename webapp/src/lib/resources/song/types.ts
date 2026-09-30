@@ -28,8 +28,8 @@ export interface Song {
 	author?: string;
 	category: Category;
 	tags: string[];
-	verses: Record<string, Verse[]>; // verseId -> all language variants
-	structure: string[]; // Ordered verseIds, shared across all languages
+	verses: Record<string, Verse[]>;
+	structure: string[];
 }
 
 export const CATEGORY_LABELS: Record<Category, string> = {

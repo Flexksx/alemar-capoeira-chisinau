@@ -58,7 +58,6 @@
 		<img src={alemArLogo} alt="Alemar Capoeira" class="h-10 w-auto rounded-sm" />
 	</a>
 
-	<!-- Desktop nav -->
 	<div class="hidden items-center gap-8 md:flex">
 		{#each navLinks as link (link.href)}
 			<a
@@ -92,7 +91,6 @@
 		</div>
 	</div>
 
-	<!-- Mobile: lang toggle + hamburger -->
 	<div class="flex items-center gap-3 md:hidden">
 		<div class="flex items-center gap-1 border border-border/40 rounded-sm px-1 py-0.5">
 			{#each languages as l (l)}
@@ -131,7 +129,6 @@
 	</div>
 </nav>
 
-<!-- Mobile menu overlay -->
 {#if menuOpen}
 	<div
 		class="fixed inset-0 z-40 flex flex-col items-center justify-center gap-8 md:hidden"

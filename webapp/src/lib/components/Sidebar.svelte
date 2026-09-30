@@ -24,7 +24,6 @@
 
   let { songs, isOpen, onClose, onSelectSong, currentSongId }: Props = $props();
 
-  // Group songs by category
   let songsByCategory = $derived.by(() => {
     const grouped: Record<Category, Song[]> = {
       ANGOLA: [],
@@ -52,7 +51,6 @@
 
 <svelte:window onkeydown={handleKeydown} />
 
-<!-- Backdrop -->
 {#if isOpen}
   <button
     class="fixed inset-0 z-40 bg-black/60 backdrop-blur-sm transition-opacity"
@@ -62,14 +60,12 @@
   ></button>
 {/if}
 
-<!-- Sidebar -->
 <aside
   class="fixed top-0 left-0 z-50 h-full w-[85vw] max-w-[320px] transform bg-card shadow-2xl transition-transform duration-300 ease-out {isOpen
     ? 'translate-x-0'
     : '-translate-x-full'}"
 >
   <div class="flex h-full flex-col">
-    <!-- Header -->
     <header
       class="flex items-center justify-between border-b border-border/40 px-4 py-4 safe-top"
     >
@@ -92,7 +88,6 @@
       </button>
     </header>
 
-    <!-- Song List -->
     <nav
       class="flex-1 overflow-y-auto overscroll-contain px-2 py-2 safe-bottom"
     >
@@ -103,7 +98,6 @@
             <AccordionItem value={category} class="border-b-0">
               <AccordionTrigger class="px-2 py-3 hover:no-underline">
                 <div class="flex items-center gap-2">
-                  <!-- Rotated diamond instead of circle dot -->
                   <span
                     class="inline-block h-2 w-2 rotate-45 {category === 'ANGOLA'
                       ? 'bg-amber-500'

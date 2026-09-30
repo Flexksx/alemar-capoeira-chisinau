@@ -21,7 +21,6 @@
 		| { type: 'photo'; src: string; alt: string; wide: boolean }
 		| { type: 'video'; src: string; wide: boolean };
 
-	// Videos first, then photos. grid-flow-dense fills gaps caused by wide items.
 	const items: GalleryItem[] = [
 		{ type: 'video', src: video1, wide: false },
 		{ type: 'video', src: video2, wide: false },
@@ -36,7 +35,6 @@
 		{ type: 'photo', src: bucharest2, alt: 'Echipa la București — Meli Melo', wide: false }
 	];
 
-	// Flat list for lightbox (all items)
 	const lightboxItems = items.map((item) =>
 		item.type === 'video'
 			? { type: 'video' as const, src: item.src }
@@ -87,7 +85,6 @@
 							class="h-full w-full object-cover object-center transition-transform duration-700 group-hover:scale-105"
 						/>
 					{/if}
-					<!-- Gold hover overlay -->
 					<div
 						class="absolute inset-0 border border-primary/0 transition-all duration-300 group-hover:border-primary/40 group-hover:bg-black/10"
 					></div>

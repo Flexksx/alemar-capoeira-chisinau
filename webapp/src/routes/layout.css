@@ -15,11 +15,9 @@
 
 @custom-variant dark (&:is(.dark *));
 
-/* Capoeira-themed color palette - Dark mode by default for mobile */
 :root {
   --radius: 0.75rem;
   
-  /* Light theme - default */
   --background: oklch(0.98 0.005 80);
   --foreground: oklch(0.15 0.02 60);
   --card: oklch(1 0 0);
@@ -48,7 +46,6 @@
   --sidebar-ring: oklch(0.55 0.15 75);
 }
 
-/* Dark theme - warm, earthy tones inspired by berimbau wood and capoeira culture */
 .dark {
   --background: oklch(0.12 0.01 60);
   --foreground: oklch(0.95 0.01 80);
@@ -57,19 +54,15 @@
   --popover: oklch(0.18 0.015 50);
   --popover-foreground: oklch(0.95 0.01 80);
   
-  /* Primary - warm amber/gold (like berimbau wood) */
   --primary: oklch(0.75 0.15 75);
   --primary-foreground: oklch(0.15 0.02 60);
   
-  /* Secondary - muted earth tone */
   --secondary: oklch(0.25 0.02 55);
   --secondary-foreground: oklch(0.9 0.01 80);
   
-  /* Muted - subtle contrast */
   --muted: oklch(0.22 0.015 50);
   --muted-foreground: oklch(0.65 0.02 70);
   
-  /* Accent - Brazilian green touch */
   --accent: oklch(0.28 0.04 145);
   --accent-foreground: oklch(0.95 0.01 80);
   
@@ -78,14 +71,12 @@
   --input: oklch(0.25 0.02 55);
   --ring: oklch(0.75 0.15 75);
   
-  /* Category colors */
-  --chart-1: oklch(0.75 0.15 75);  /* amber - angola */
-  --chart-2: oklch(0.65 0.18 155); /* emerald - regional */
-  --chart-3: oklch(0.65 0.2 15);   /* rose - samba */
-  --chart-4: oklch(0.55 0.05 250); /* slate - unspecified */
+  --chart-1: oklch(0.75 0.15 75);
+  --chart-2: oklch(0.65 0.18 155);
+  --chart-3: oklch(0.65 0.2 15);
+  --chart-4: oklch(0.55 0.05 250);
   --chart-5: oklch(0.7 0.12 45);
   
-  /* Sidebar */
   --sidebar: oklch(0.14 0.01 55);
   --sidebar-foreground: oklch(0.95 0.01 80);
   --sidebar-primary: oklch(0.75 0.15 75);
@@ -133,7 +124,6 @@
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-ring: var(--sidebar-ring);
   
-  /* Custom font */
   --font-display: 'DM Serif Display', 'Playfair Display', Georgia, serif;
   --font-impact: 'Bebas Neue', 'Oswald', Impact, sans-serif;
 }
@@ -144,25 +134,19 @@
   }
   
   html {
-    /* Prevent pull-to-refresh on mobile */
     overscroll-behavior: none;
-    /* Smooth scrolling */
     scroll-behavior: smooth;
-    /* Prevent text size adjustment on orientation change */
     -webkit-text-size-adjust: 100%;
   }
   
   body {
     @apply bg-background text-foreground;
-    /* Prevent overscroll bounce */
     overscroll-behavior: none;
-    /* Improve font rendering */
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
 }
 
-/* Safe area utilities for notched devices */
 @layer utilities {
   .safe-top {
     padding-top: env(safe-area-inset-top);
@@ -181,7 +165,6 @@
   }
 }
 
-/* Custom scrollbar for webkit browsers */
 @layer base {
   ::-webkit-scrollbar {
     width: 4px;
@@ -203,24 +186,20 @@
 }
 
 @layer utilities {
-  /* Display font utility */
   .font-display {
     font-family: 'DM Serif Display', 'Playfair Display', Georgia, serif;
   }
 
-  /* Impact/Bebas Neue utility */
   .font-impact {
     font-family: 'Bebas Neue', 'Oswald', Impact, sans-serif;
   }
 
-  /* Afro geometric diamond pattern */
   .geo-pattern {
     background-image: url("data:image/svg+xml,%3Csvg width='28' height='28' viewBox='0 0 28 28' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M14 2L26 14L14 26L2 14Z' fill='none' stroke='%23C8963E' stroke-opacity='0.15' stroke-width='1'/%3E%3C/svg%3E");
     background-size: 28px 28px;
   }
 }
 
-/* Touch-friendly tap targets */
 @layer utilities {
   .touch-target {
     min-height: 44px;
@@ -228,35 +207,28 @@
   }
 }
 
-/* Shared component primitives */
 @layer components {
-  /* Square icon button — replaces rounded-full icon buttons */
   .btn-icon {
     @apply flex h-10 w-10 items-center justify-center text-foreground/70 transition-colors hover:bg-muted hover:text-foreground;
   }
 
-  /* Small uppercase label — section labels, metadata */
   .label-xs {
     @apply text-[10px] font-medium tracking-[0.25em] uppercase text-muted-foreground;
   }
 
-  /* Tag chip — bordered, no border-radius */
   .tag-chip {
     @apply border border-border/50 bg-muted/40 px-2 py-0.5 text-xs tracking-wider text-muted-foreground;
   }
 
-  /* Primary bordered CTA button (matches landing style) */
   .btn-primary-outline {
     @apply inline-block border border-primary px-8 py-3 font-impact tracking-[0.2em] uppercase text-primary transition-all duration-300 hover:bg-primary hover:text-primary-foreground;
   }
 
-  /* Active left-border highlight (sidebar active song, active nav) */
   .active-left-border {
     @apply border-l-2 border-primary bg-primary/10 text-primary;
   }
 }
 
-/* Scroll-triggered reveal */
 @layer utilities {
   .reveal-hidden {
     opacity: 0;
@@ -271,7 +243,6 @@
   }
 }
 
-/* Contact CTA gold pulse */
 @layer utilities {
   @keyframes gold-pulse {
     0%, 100% { opacity: 0; transform: scale(0.94); }
@@ -292,7 +263,6 @@
   }
 }
 
-/* Animated scroll chevron */
 @layer utilities {
   @keyframes bounce-down {
     0%, 100% { transform: translateY(0); opacity: 0.5; }
@@ -304,7 +274,6 @@
   }
 }
 
-/* Smooth transitions for interactive elements */
 @layer base {
   button, a, [role="button"] {
     transition: transform 0.1s ease, background-color 0.15s ease, color 0.15s ease;
@@ -315,7 +284,6 @@
   }
 }
 
-/* Animation for accordion */
 @keyframes accordion-down {
   from {
     height: 0;

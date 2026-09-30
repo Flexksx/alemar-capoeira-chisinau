@@ -30,8 +30,6 @@ jobs:
       - name: Terraform fmt check
         run: terraform fmt -check -diff
 
-      # Real secrets never get logged (masked by the runner); the files below
-      # only ever exist on the ephemeral CI runner, never committed.
       - name: Write backend config
         run: |
           cat > backend.hcl <<EOF

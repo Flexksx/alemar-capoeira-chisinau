@@ -50,6 +50,10 @@
 			priceCurrency: 'MDL'
 		}
 	});
+
+	const jsonLd = $derived(
+		`<script type="application/ld+json">${JSON.stringify(schema)}<` + '/script>'
+	);
 </script>
 
 <svelte:head>
@@ -77,7 +81,8 @@
 	<meta name="twitter:description" content={lang.t.meta.landingDescription} />
 	<meta name="twitter:image" content="{SITE}/photos/hero.jpg" />
 
-	{@html `<script type="application/ld+json">${JSON.stringify(schema)}</script>`}
+	<!-- eslint-disable-next-line svelte/no-at-html-tags -->
+	{@html jsonLd}
 </svelte:head>
 
 <div class="dark bg-background text-foreground">

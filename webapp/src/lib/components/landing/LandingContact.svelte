@@ -15,10 +15,8 @@
 	id="contact"
 	style="background: linear-gradient(135deg, oklch(0.16 0.02 65) 0%, oklch(0.12 0.01 60) 100%)"
 >
-	<!-- Geo pattern -->
 	<div class="absolute inset-0 geo-pattern opacity-[0.06]"></div>
 
-	<!-- Diagonal accent bar -->
 	<div
 		class="absolute top-0 left-0 h-1 w-full"
 		style="background: linear-gradient(90deg, transparent, oklch(0.75 0.15 75), transparent)"
@@ -109,7 +107,6 @@
 	</div>
 </section>
 
-<!-- Footer -->
 <footer class="border-t border-border/20 py-10">
 	<div
 		class="mx-auto max-w-6xl px-6 md:px-10 flex flex-col md:flex-row items-center justify-between gap-4"

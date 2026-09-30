@@ -21,8 +21,6 @@
 <svelte:window onscroll={onScroll} />
 
 <section class="relative flex min-h-dvh flex-col items-center justify-center overflow-hidden" id="hero">
-	<!-- Full-bleed video background with parallax -->
-	<!-- Video is slightly oversized (110% height) so parallax movement never reveals background -->
 	<video
 		bind:this={videoEl}
 		src={video1}
@@ -37,17 +35,14 @@
 		style="top: -10%; will-change: transform"
 	></video>
 
-	<!-- Dark scrim: base + gradient -->
 	<div class="absolute inset-0 bg-black/40"></div>
 	<div
 		class="absolute inset-0"
 		style="background: linear-gradient(to bottom, rgba(10,7,3,0.05) 0%, rgba(10,7,3,0.55) 100%)"
 	></div>
 
-	<!-- Geo texture overlay -->
 	<div class="absolute inset-0 geo-pattern opacity-[0.06]"></div>
 
-	<!-- Text + CTA -->
 	<div class="content-enter relative z-10 flex flex-col items-center px-6 text-center">
 		<p class="mb-6 font-display text-xs font-medium italic tracking-[0.35em] uppercase text-primary/90">
 			{lang.t.hero.tagline}
@@ -83,7 +78,6 @@
 		</p>
 	</div>
 
-	<!-- Scroll indicator -->
 	<div class="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1">
 		<div class="h-6 w-px bg-gradient-to-b from-primary/0 to-primary/40"></div>
 		<ChevronDown size={18} class="bounce-down text-primary/60" />

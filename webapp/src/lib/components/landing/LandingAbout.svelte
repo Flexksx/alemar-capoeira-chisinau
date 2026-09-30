@@ -7,12 +7,10 @@
 </script>
 
 <section class="relative overflow-hidden py-24 md:py-36" id="about">
-	<!-- Subtle geo background -->
 	<div class="absolute inset-0 geo-pattern opacity-[0.04]"></div>
 
 	<div class="relative mx-auto max-w-6xl px-6 md:px-10">
 		<div class="grid gap-16 md:grid-cols-2 md:gap-24 md:items-center">
-			<!-- Left: title + quote -->
 			<div use:reveal={{ delay: 0 }}>
 				<h2 class="font-impact text-[clamp(2.5rem,7vw,5rem)] leading-none tracking-[0.04em] text-foreground mb-8">
 					{lang.t.about.title}
@@ -30,13 +28,11 @@
 				</p>
 			</div>
 
-			<!-- Right: body + photo -->
 			<div class="flex flex-col gap-8" use:reveal={{ delay: 150 }}>
 				<p class="text-foreground/70 text-lg leading-relaxed">
 					{lang.t.about.body}
 				</p>
 
-				<!-- Photo with clipped corner + gold accent -->
 				<div class="relative">
 					<div
 						class="relative aspect-[4/3] overflow-hidden bg-card"
@@ -48,12 +44,10 @@
 							class="h-full w-full object-cover object-center"
 							onerror={(e) => ((e.currentTarget as HTMLImageElement).style.display = 'none')}
 						/>
-						<!-- Placeholder when no photo -->
 						<div class="absolute inset-0 flex items-center justify-center bg-card -z-10">
 							<span class="font-impact text-6xl text-border tracking-widest">CAPOEIRA</span>
 						</div>
 					</div>
-					<!-- Gold fill at the clipped corner -->
 					<div
 						class="absolute bottom-0 right-0 pointer-events-none"
 						style="width: 8%; padding-bottom: 10%; clip-path: polygon(100% 0, 100% 100%, 0 100%); background: oklch(0.75 0.15 75 / 0.45)"
@@ -63,7 +57,6 @@
 		</div>
 	</div>
 
-	<!-- Bottom diamond divider -->
 	<div class="mt-24 flex items-center gap-0 overflow-hidden">
 		<div class="h-px flex-1 bg-border/30"></div>
 		<div class="flex gap-3 px-6">

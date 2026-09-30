@@ -8,7 +8,6 @@ export {
 	Trigger,
 	Content,
 	Item,
-	//
 	Root as DropdownMenu,
 	Trigger as DropdownMenuTrigger,
 	Content as DropdownMenuContent,

@@ -52,7 +52,6 @@
 						class="group relative flex gap-8 border-b border-border/20 py-8 transition-colors hover:border-primary/30 {past ? 'opacity-40' : ''}"
 						use:reveal={{ delay: i * 80 }}
 					>
-						<!-- Date column -->
 						<div class="w-32 shrink-0">
 							<time
 								datetime={event.date}
@@ -76,7 +75,6 @@
 							{/if}
 						</div>
 
-						<!-- Content -->
 						<div class="flex-1">
 							<h3 class="font-display text-xl text-foreground">
 								{event.title[lang.current]}
