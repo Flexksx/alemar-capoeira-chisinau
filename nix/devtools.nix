@@ -15,7 +15,7 @@
         inherit system;
         config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) ["terraform"];
       };
-      shellPackages = with pkgs; [just alejandra lefthook rumdl yamlfmt terraform];
+      shellPackages = with pkgs; [just moon alejandra lefthook rumdl yamlfmt terraform];
       devShells.default = pkgs.mkShell {
         name = "alemar-capoeira-chisinau-dev-env";
         packages = config.shellPackages;

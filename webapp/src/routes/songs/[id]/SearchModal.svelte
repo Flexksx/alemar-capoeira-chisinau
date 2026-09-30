@@ -1,7 +1,5 @@
 <script lang="ts">
-	import { createSongSearch } from './search';
-	import type { Song } from '$lib/resources/song/types';
-	import { sortSongsByCategory } from '$lib/resources/song/utils';
+	import { createSongSearch, sortByCategory, type Song } from '@alemar/songs';
 	import CategoryBadge from './CategoryBadge.svelte';
 	import X from '@lucide/svelte/icons/x';
 	import Search from '@lucide/svelte/icons/search';
@@ -15,7 +13,7 @@
 	}
 
 	let { songs: unsortedSongs, isOpen, onClose, onSelectSong }: Props = $props();
-	const songs = $derived(sortSongsByCategory(unsortedSongs));
+	const songs = $derived(sortByCategory(unsortedSongs));
 
 	let query = $state('');
 	let inputRef = $state<HTMLInputElement | null>(null);
@@ -29,21 +27,21 @@
 		}
 	});
 
-	function handleClose() {
+	const handleClose = () => {
 		query = '';
 		onClose();
-	}
+	};
 
-	function handleSelect(songId: string) {
+	const handleSelect = (songId: string) => {
 		onSelectSong(songId);
 		handleClose();
-	}
+	};
 
-	function handleKeydown(e: KeyboardEvent) {
+	const handleKeydown = (e: KeyboardEvent) => {
 		if (e.key === 'Escape') {
 			handleClose();
 		}
-	}
+	};
 </script>
 
 <svelte:window onkeydown={handleKeydown} />

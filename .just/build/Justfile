@@ -4,5 +4,7 @@ set working-directory := "../.."
 default:
     just --list --justfile {{source_file()}}
 
-webapp:
-    pnpm -C webapp build
+all *FLAGS:
+    moon run :build {{FLAGS}}
+
+import? 'units.just'

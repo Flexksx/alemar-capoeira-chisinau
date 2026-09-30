@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
 	import type { PageData } from './$types';
-	import { CATEGORY_LABELS } from '$lib/resources/song/types';
+	import { CATEGORY_LABELS } from '@alemar/songs';
 
 	let { data }: { data: PageData } = $props();
 

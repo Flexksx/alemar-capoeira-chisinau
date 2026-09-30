@@ -17,19 +17,19 @@
 
 	let current = $state(startIndex);
 
-	function prev() {
+	const prev = () => {
 		current = (current - 1 + items.length) % items.length;
-	}
+	};
 
-	function next() {
+	const next = () => {
 		current = (current + 1) % items.length;
-	}
+	};
 
-	function handleKey(e: KeyboardEvent) {
+	const handleKey = (e: KeyboardEvent) => {
 		if (e.key === 'Escape') onclose();
 		if (e.key === 'ArrowLeft') prev();
 		if (e.key === 'ArrowRight') next();
-	}
+	};
 
 	$effect(() => {
 		document.body.style.overflow = 'hidden';

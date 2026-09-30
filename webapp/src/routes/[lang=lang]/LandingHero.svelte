@@ -8,14 +8,14 @@
 	let videoEl: HTMLVideoElement | undefined = $state();
 	let rafId: number;
 
-	function onScroll() {
+	const onScroll = () => {
 		cancelAnimationFrame(rafId);
 		rafId = requestAnimationFrame(() => {
 			if (videoEl) {
 				videoEl.style.transform = `translateY(-${window.scrollY * 0.1}px)`;
 			}
 		});
-	}
+	};
 </script>
 
 <svelte:window onscroll={onScroll} />

@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Language, type Verse } from '$lib/resources/song/types';
+	import type { Language, Verse } from '@alemar/songs';
 	import VerseBlock from './VerseBlock.svelte';
 
 	interface Props {
@@ -10,11 +10,9 @@
 
 	let { structure, verses, selectedLanguage }: Props = $props();
 
-	function visibleLanguage(variants: Verse[]): Language {
-		return variants.some((v) => v.language === selectedLanguage)
-			? selectedLanguage
-			: Language.Portuguese;
-	}
+	const visibleLanguage = (variants: Verse[]): Language => {
+		return variants.some((v) => v.language === selectedLanguage) ? selectedLanguage : 'pt';
+	};
 </script>
 
 <div class="flex-1 min-h-0 overflow-y-scroll px-2">

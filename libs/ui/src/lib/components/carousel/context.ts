@@ -43,14 +43,14 @@ export type EmblaContext = {
 	selectedIndex: number;
 };
 
-export function setEmblaContext(config: EmblaContext): EmblaContext {
+export const setEmblaContext = (config: EmblaContext): EmblaContext => {
 	setContext(EMBLA_CAROUSEL_CONTEXT, config);
 	return config;
-}
+};
 
-export function getEmblaContext(name = 'This component') {
+export const getEmblaContext = (name = 'This component') => {
 	if (!hasContext(EMBLA_CAROUSEL_CONTEXT)) {
 		throw new Error(`${name} must be used within a <Carousel.Root> component`);
 	}
 	return getContext<ReturnType<typeof setEmblaContext>>(EMBLA_CAROUSEL_CONTEXT);
-}
+};

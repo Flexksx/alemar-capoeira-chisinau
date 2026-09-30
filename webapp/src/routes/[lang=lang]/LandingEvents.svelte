@@ -19,9 +19,9 @@
 	const today = new Date();
 	today.setHours(0, 0, 0, 0);
 
-	function isPast(iso: string) {
+	const isPast = (iso: string) => {
 		return new Date(iso) < today;
-	}
+	};
 </script>
 
 <section class="py-24 md:py-36" id="events">

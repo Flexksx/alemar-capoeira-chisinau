@@ -1,30 +1,7 @@
 pre-commit:
-  parallel: true
   commands:
-    format-nix:
-      glob: "{*.nix,**/*.nix}"
-      run: alejandra {staged_files}
+    format:
+      run: just format
       stage_fixed: true
-    lint-markdown:
-      glob: "{*.md,**/*.md}"
-      run: rumdl check --fix {staged_files}
-      stage_fixed: true
-    format-yaml:
-      glob: "{lefthook.yml,pnpm-workspace.yaml}"
-      run: yamlfmt {staged_files}
-      stage_fixed: true
-    format-terraform:
-      glob: "infra/**/*.tf"
-      run: terraform fmt {staged_files}
-      stage_fixed: true
-    format-ts:
-      glob: "{webapp,libs/*}/src/{*,**/*}.ts"
-      run: pnpm exec biome format --write {staged_files}
-      stage_fixed: true
-    format-svelte:
-      glob: "{webapp,libs/*}/src/{*,**/*}.svelte"
-      run: pnpm exec prettier --write {staged_files}
-      stage_fixed: true
-    lint-web:
-      glob: "{webapp,libs/*}/src/{*,**/*}.{ts,svelte}"
-      run: pnpm exec eslint {staged_files}
+    lint:
+      run: just lint

@@ -1,0 +1,40 @@
+$schema: 'https://moonrepo.dev/schemas/v2/project.json'
+
+layer: 'configuration'
+
+tasks:
+  format:
+    script: 'alejandra --quiet . && rumdl check --fix . && yamlfmt lefthook.yml pnpm-workspace.yaml .moon && terraform fmt -recursive infra'
+    toolchains: 'system'
+    inputs:
+      - '**/*.nix'
+      - '**/*.md'
+      - '**/*.yml'
+      - '**/*.yaml'
+      - 'infra/**/*.tf'
+    options:
+      runFromWorkspaceRoot: true
+
+  lint:
+    script: 'alejandra --quiet --check . && rumdl check . && yamlfmt -lint lefthook.yml pnpm-workspace.yaml .moon && terraform fmt -recursive -check -diff infra'
+    toolchains: 'system'
+    inputs:
+      - '**/*.nix'
+      - '**/*.md'
+      - '**/*.yml'
+      - '**/*.yaml'
+      - 'infra/**/*.tf'
+    options:
+      runFromWorkspaceRoot: true
+
+  install:
+    command: 'pnpm install'
+    toolchains: 'system'
+    inputs:
+      - 'package.json'
+      - 'pnpm-workspace.yaml'
+      - 'pnpm-lock.yaml'
+      - 'webapp/package.json'
+      - 'libs/*/package.json'
+    options:
+      runFromWorkspaceRoot: true

@@ -1,6 +1,5 @@
 <script lang="ts">
-	import { Language, LANGUAGE_LABELS, type Song } from '$lib/resources/song/types';
-	import { getSongLanguages } from '$lib/resources/song/utils';
+	import { languagesOf, LANGUAGE_LABELS, type Language, type Song } from '@alemar/songs';
 	import CategoryBadge from './CategoryBadge.svelte';
 	import SongVerses from './SongVerses.svelte';
 	import User from '@lucide/svelte/icons/user';
@@ -11,9 +10,9 @@
 
 	let { song }: Props = $props();
 
-	let selectedLanguage = $state<Language>(Language.Portuguese);
+	let selectedLanguage = $state<Language>('pt');
 
-	const songLanguages = $derived(getSongLanguages(song));
+	const songLanguages = $derived(languagesOf(song));
 	const hasMultipleLanguages = $derived(songLanguages.length > 1);
 </script>
 

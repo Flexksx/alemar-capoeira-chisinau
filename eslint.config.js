@@ -8,7 +8,16 @@ import globals from 'globals';
 const tsRules = {
 	...ts.configs.recommended.rules,
 	'@typescript-eslint/no-unused-vars': ['error', { argsIgnorePattern: '^_' }],
-	'@typescript-eslint/no-explicit-any': 'warn'
+	'@typescript-eslint/no-explicit-any': 'warn',
+	'func-style': ['error', 'expression'],
+	'@typescript-eslint/no-use-before-define': ['error', { variables: false, functions: false, classes: false }],
+	'no-restricted-syntax': [
+		'error',
+		{
+			selector: 'VariableDeclarator > FunctionExpression',
+			message: 'Use an arrow function.'
+		}
+	]
 };
 
 export default [

@@ -3,3 +3,9 @@
 node_modules/
 
 .env
+
+.moon/cache/
+.moon/docker/
+
+.just/*/units.just
+.just/*/units.just.staged

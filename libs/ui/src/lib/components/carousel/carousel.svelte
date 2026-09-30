@@ -18,6 +18,44 @@
 		...restProps
 	}: WithElementRef<CarouselProps> = $props();
 
+	const scrollPrev = () => {
+		carouselState.api?.scrollPrev();
+	};
+
+	const scrollNext = () => {
+		carouselState.api?.scrollNext();
+	};
+
+	const scrollTo = (index: number, jump?: boolean) => {
+		carouselState.api?.scrollTo(index, jump);
+	};
+
+	const onSelect = () => {
+		if (!carouselState.api) return;
+		carouselState.selectedIndex = carouselState.api.selectedScrollSnap();
+		carouselState.canScrollNext = carouselState.api.canScrollNext();
+		carouselState.canScrollPrev = carouselState.api.canScrollPrev();
+	};
+
+	const handleKeyDown = (e: KeyboardEvent) => {
+		if (e.key === 'ArrowLeft') {
+			e.preventDefault();
+			scrollPrev();
+		} else if (e.key === 'ArrowRight') {
+			e.preventDefault();
+			scrollNext();
+		}
+	};
+
+	const onInit = (event: CustomEvent<CarouselAPI>) => {
+		carouselState.api = event.detail;
+		setApi(carouselState.api);
+
+		carouselState.scrollSnaps = carouselState.api.scrollSnapList();
+		carouselState.api.on('select', onSelect);
+		onSelect();
+	};
+
 	let carouselState = $state<EmblaContext>({
 		api: undefined,
 		scrollPrev,
@@ -35,44 +73,6 @@
 	});
 
 	setEmblaContext(carouselState);
-
-	function scrollPrev() {
-		carouselState.api?.scrollPrev();
-	}
-
-	function scrollNext() {
-		carouselState.api?.scrollNext();
-	}
-
-	function scrollTo(index: number, jump?: boolean) {
-		carouselState.api?.scrollTo(index, jump);
-	}
-
-	function onSelect() {
-		if (!carouselState.api) return;
-		carouselState.selectedIndex = carouselState.api.selectedScrollSnap();
-		carouselState.canScrollNext = carouselState.api.canScrollNext();
-		carouselState.canScrollPrev = carouselState.api.canScrollPrev();
-	}
-
-	function handleKeyDown(e: KeyboardEvent) {
-		if (e.key === 'ArrowLeft') {
-			e.preventDefault();
-			scrollPrev();
-		} else if (e.key === 'ArrowRight') {
-			e.preventDefault();
-			scrollNext();
-		}
-	}
-
-	function onInit(event: CustomEvent<CarouselAPI>) {
-		carouselState.api = event.detail;
-		setApi(carouselState.api);
-
-		carouselState.scrollSnaps = carouselState.api.scrollSnapList();
-		carouselState.api.on('select', onSelect);
-		onSelect();
-	}
 
 	$effect(() => {
 		carouselState.orientation = orientation;

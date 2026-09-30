@@ -1,5 +1,4 @@
-import songsData from '$lib/resources/song/songs.json';
-import type { Song } from '$lib/resources/song/types';
+import { songs } from '@alemar/songs';
 import type { RequestHandler } from '@sveltejs/kit';
 
 export const prerender = true;
@@ -8,8 +7,6 @@ const SITE_URL = 'https://capoeira.md';
 const LANGS = ['ro', 'ru', 'en'];
 
 export const GET: RequestHandler = () => {
-	const songs = songsData as unknown as Song[];
-
 	const langUrls = LANGS.flatMap((lang) => [
 		`
   <url>

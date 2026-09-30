@@ -5,7 +5,7 @@
 		AccordionItem,
 		AccordionTrigger
 	} from '@alemar/ui/accordion';
-	import { Category, CATEGORY_LABELS, CATEGORY_ORDER, type Song } from '$lib/resources/song/types';
+	import { CATEGORIES, CATEGORY_LABELS, type Category, type Song } from '@alemar/songs';
 	import X from '@lucide/svelte/icons/x';
 	import House from '@lucide/svelte/icons/house';
 
@@ -32,16 +32,16 @@
 		return grouped;
 	});
 
-	function handleSongClick(songId: string) {
+	const handleSongClick = (songId: string) => {
 		onSelectSong(songId);
 		onClose();
-	}
+	};
 
-	function handleKeydown(e: KeyboardEvent) {
+	const handleKeydown = (e: KeyboardEvent) => {
 		if (e.key === 'Escape') {
 			onClose();
 		}
-	}
+	};
 </script>
 
 <svelte:window onkeydown={handleKeydown} />
@@ -79,7 +79,7 @@
 
 		<nav class="flex-1 overflow-y-auto overscroll-contain px-2 py-2 safe-bottom">
 			<Accordion type="multiple" class="w-full">
-				{#each CATEGORY_ORDER as category (category)}
+				{#each CATEGORIES as category (category)}
 					{@const categorySongs = songsByCategory[category]}
 					{#if categorySongs.length > 0}
 						<AccordionItem value={category} class="border-b-0">

@@ -13,31 +13,47 @@ The only deployable unit is `webapp/`. `libs/ui/` is the design system that the 
 - `libs/ui/` (`@alemar/ui`) — design system: bits-ui/shadcn-svelte components, `cn()`, theme tokens and fonts
   (`src/lib/theme.css`). Import components by subpath: `@alemar/ui/button`, `@alemar/ui/carousel`.
   The package exports its source directly, so it has no build step.
-- `libs/ui/src/routes/+page.svelte` — showcase page that shows every element in light and dark themes (`just showcase`)
+- `libs/ui/src/routes/+page.svelte` — showcase page that shows every element in light and dark themes (`just start ui`)
 - `webapp/src/routes/` — `/` (landing), `/songs` (redirects to first song id), `/songs/[id]`, `/songs/export` (PDF)
 - `webapp/src/lib/i18n.ts` — RO/RU/EN translations via `LanguageStore` (Svelte 5 runes)
-- `webapp/src/lib/data/songs.json`, `webapp/src/lib/data/events.json` — content data
+- `libs/songs/` (`@alemar/songs`) — songs domain: types, song data (`src/songs.json`), pure helpers, search.
+  Plain TypeScript, no Svelte. Use `type` and `as const` lists, not `enum` or `interface`.
+- `webapp/src/lib/data/events.json` — events content data
 - `webapp/src/routes/layout.css` — imports Tailwind and `@alemar/ui/theme.css`, then adds site-specific utilities
 
 ## Entry points
 
-All developer actions go through `just`:
+All developer actions go through `just`. `just` calls moon, and moon runs the tasks, keeps the graph and caches
+the results. Never write `moon run` in a document, a script or a hook.
 
-- `just dev` — run the webapp dev server
-- `just showcase` — open the design system showcase
+- `just start webapp` — run the webapp dev server
+- `just start ui` — open the design system showcase
 - `just build webapp` — production build
-- `just format` / `just lint` — format or check the whole repo (Nix, Markdown, YAML, Terraform, TS, Svelte).
-  Both call the scripts in `scripts/`. `lint` also runs `svelte-check` in every package.
+- `just format` / `just lint` — format or check every unit. moon runs only the units that changed. Add `-f` to
+  skip the cache.
+- `just sync` — rebuild the generated per-unit recipes (`.just/*/units.just`). Run it after you add a unit.
 - `just infra plan` / `just infra apply` — Terraform for the Cloudflare Pages project + `capoeira.md` domain
 
 Run `just --list --list-submodules` to see everything currently wired up.
 
 ## Dev environment
 
-`direnv allow` (or `nix develop`) loads `just`, `alejandra`, `lefthook`, `rumdl`, `yamlfmt`, `terraform`, and the
+`direnv allow` (or `nix develop`) loads `just`, `moon`, `alejandra`, `lefthook`, `rumdl`, `yamlfmt`, `terraform`, and the
 pinned Node/pnpm toolchain (`nodejs_26`). Run `lefthook install` once after cloning to activate the pre-commit
-hooks (pre-commit runs its checks in parallel). `terraform` is unfree (BSL 1.1) — `nix/devtools.nix` scopes
+hooks (pre-commit runs `just format`, then `just lint`). `terraform` is unfree (BSL 1.1) — `nix/devtools.nix` scopes
 `allowUnfreePredicate` to just that package rather than disabling the unfree check repo-wide.
+
+## moon wiring
+
+- `.moon/workspace.yml` — finds the units: `webapp/moon.yml` and `libs/*/moon.yml`. The root `moon.yml` is the
+  `repo` project. It holds the Nix, Markdown, YAML and Terraform checks and the `install` task.
+- `.moon/tasks/typescript.yml` — the tasks that every unit tagged `typescript` inherits. Each task calls the
+  `package.json` script of the same name (`format`, `lint`, `test`, `build`, `dev`).
+- A unit `moon.yml` holds only metadata (`language`, `layer`, `tags`, `dependsOn`). The libs exclude the
+  inherited tasks that they have no script for.
+- Each package `format`/`lint` script calls the root Biome, Prettier and ESLint. Prettier needs
+  `--ignore-path ../../.prettierignore`, because it reads the ignore file only from its working directory.
+- Every task sets `toolchains: 'system'`, so moon installs nothing. Nix supplies every tool.
 
 ## Infra and deployment
 

@@ -17,13 +17,13 @@
 		{ href: '#contact', label: lang.t.nav.contact, id: 'contact' }
 	]);
 
-	function closeMenu() {
+	const closeMenu = () => {
 		menuOpen = false;
-	}
+	};
 
-	function switchLang(l: Language) {
+	const switchLang = (l: Language) => {
 		goto(`/${l}`);
-	}
+	};
 
 	$effect(() => {
 		const sections = ['hero', 'about', 'classes', 'gallery', 'events', 'contact'];

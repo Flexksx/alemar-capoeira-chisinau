@@ -44,10 +44,10 @@
 	let lightboxOpen = $state(false);
 	let lightboxIndex = $state(0);
 
-	function openLightbox(index: number) {
+	const openLightbox = (index: number) => {
 		lightboxIndex = index;
 		lightboxOpen = true;
-	}
+	};
 </script>
 
 <section class="py-24 md:py-36" id="gallery">

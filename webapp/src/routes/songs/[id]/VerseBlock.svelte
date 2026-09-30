@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { VerseType, type Verse } from '$lib/resources/song/types';
+	import type { Verse } from '@alemar/songs';
 	import Music from '@lucide/svelte/icons/music';
 
 	interface Props {
@@ -8,7 +8,7 @@
 
 	let { verse }: Props = $props();
 
-	const isChorus = $derived(verse.type === VerseType.Chorus);
+	const isChorus = $derived(verse.type === 'chorus');
 </script>
 
 <div

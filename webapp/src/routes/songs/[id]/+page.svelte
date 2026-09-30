@@ -6,9 +6,7 @@
 	import Sidebar from './Sidebar.svelte';
 	import SongCard from './SongCard.svelte';
 	import SearchModal from './SearchModal.svelte';
-	import songsData from '$lib/resources/song/songs.json';
-	import type { Song } from '$lib/resources/song/types';
-	import { sortSongsByCategory } from '$lib/resources/song/utils';
+	import { songs } from '@alemar/songs';
 	import Menu from '@lucide/svelte/icons/menu';
 	import Search from '@lucide/svelte/icons/search';
 	import FileDown from '@lucide/svelte/icons/file-down';
@@ -18,8 +16,6 @@
 	import { onMount } from 'svelte';
 
 	let { data } = $props();
-
-	const songs: Song[] = sortSongsByCategory(songsData as unknown as Song[]);
 
 	let mounted = $state(false);
 	onMount(() => {
@@ -33,7 +29,7 @@
 	let canScrollPrev = $state(false);
 	let canScrollNext = $state(false);
 
-	function setApi(api: CarouselAPI | undefined) {
+	const setApi = (api: CarouselAPI | undefined) => {
 		carouselApi = api;
 		if (api) {
 			api.on('select', () => {
@@ -53,23 +49,23 @@
 			canScrollPrev = api.canScrollPrev();
 			canScrollNext = api.canScrollNext();
 		}
-	}
+	};
 
-	function selectSong(songId: string) {
+	const selectSong = (songId: string) => {
 		void goto(`/songs/${songId}`);
-	}
+	};
 
-	function scrollPrev() {
+	const scrollPrev = () => {
 		carouselApi?.scrollPrev();
-	}
+	};
 
-	function scrollNext() {
+	const scrollNext = () => {
 		carouselApi?.scrollNext();
-	}
+	};
 
-	function exportSongbookPdf() {
+	const exportSongbookPdf = () => {
 		void goto('/songs/export');
-	}
+	};
 
 	const currentSong = $derived(songs[currentIndex]);
 

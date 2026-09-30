@@ -1,13 +1,13 @@
 import Fuse, { type FuseResultMatch } from 'fuse.js';
-import type { Song } from '$lib/resources/song/types';
+import type { Song } from './types';
 
-export interface SearchResult {
+export type SearchResult = {
 	song: Song;
 	score: number;
 	matches?: readonly FuseResultMatch[];
-}
+};
 
-function prepareSongForSearch(song: Song) {
+const prepareSongForSearch = (song: Song) => {
 	const verseTexts: string[] = [];
 
 	Object.values(song.verses).forEach((variants) => {
@@ -21,9 +21,9 @@ function prepareSongForSearch(song: Song) {
 		verseTexts: verseTexts.join(' '),
 		tagsText: song.tags.join(' ')
 	};
-}
+};
 
-export function createSongSearch(songs: Song[]) {
+export const createSongSearch = (songs: Song[]) => {
 	const preparedSongs = songs.map(prepareSongForSearch);
 
 	const fuse = new Fuse(preparedSongs, {
@@ -52,4 +52,4 @@ export function createSongSearch(songs: Song[]) {
 			}));
 		}
 	};
-}
+};
