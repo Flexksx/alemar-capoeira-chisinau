@@ -7,21 +7,27 @@ SvelteKit 5 (runes) + Tailwind 4 + TypeScript, prerendered with `adapter-static`
 
 ## Structure
 
-Single deployable unit: `webapp/`. No `apps/`, `libs/`, or `moon` — nothing else depends on it.
+pnpm workspace (root `pnpm-workspace.yaml`, one root `pnpm-lock.yaml`). Shared versions live in its `catalog:`.
+The only deployable unit is `webapp/`. `libs/ui/` is the design system that the webapp imports.
 
+- `libs/ui/` (`@alemar/ui`) — design system: bits-ui/shadcn-svelte components, `cn()`, theme tokens and fonts
+  (`src/lib/theme.css`). Import components by subpath: `@alemar/ui/button`, `@alemar/ui/carousel`.
+  The package exports its source directly, so it has no build step.
+- `libs/ui/src/routes/+page.svelte` — showcase page that shows every element in light and dark themes (`just showcase`)
 - `webapp/src/routes/` — `/` (landing), `/songs` (redirects to first song id), `/songs/[id]`, `/songs/export` (PDF)
 - `webapp/src/lib/i18n.ts` — RO/RU/EN translations via `LanguageStore` (Svelte 5 runes)
 - `webapp/src/lib/data/songs.json`, `webapp/src/lib/data/events.json` — content data
-- `webapp/src/routes/layout.css` — global dark theme, Bebas Neue + DM Serif Display fonts
+- `webapp/src/routes/layout.css` — imports Tailwind and `@alemar/ui/theme.css`, then adds site-specific utilities
 
 ## Entry points
 
 All developer actions go through `just`:
 
 - `just dev` — run the webapp dev server
+- `just showcase` — open the design system showcase
 - `just build webapp` — production build
-- `just format all` / `just lint all` — repo-wide formatting/linting (Nix, Markdown, YAML, webapp, Terraform)
-- `just format webapp` / `just lint webapp` — webapp only (Prettier / ESLint)
+- `just format` / `just lint` — format or check the whole repo (Nix, Markdown, YAML, Terraform, TS, Svelte).
+  Both call the scripts in `scripts/`. `lint` also runs `svelte-check` in every package.
 - `just infra plan` / `just infra apply` — Terraform for the Cloudflare Pages project + `capoeira.md` domain
 
 Run `just --list --list-submodules` to see everything currently wired up.
@@ -55,3 +61,16 @@ hooks (pre-commit runs its checks in parallel). `terraform` is unfree (BSL 1.1) 
   keep SPA behavior), not `goto()`-only navigation. Both were fixes for Google Search Console
   flagging song pages as "Discovered – currently not indexed" (duplicate bodies + orphaned URLs).
   Don't revert to always-rendering the full carousel — it reintroduces duplicate content.
+- Put reusable, content-free UI in `libs/ui`. The webapp only arranges these components with site content.
+  Add each new element to the showcase page.
+- Inside `libs/ui/src/lib`, use relative imports, never `$lib`. In the webapp, `$lib` resolves to the webapp.
+- `webapp/src/routes/layout.css` has `@source '../../../libs/ui/src/lib'`. Without it, Tailwind does not generate the
+  classes that only the library uses.
+- Formatting: Biome formats `.ts` files, and Prettier formats `.svelte`/CSS/JSON. ESLint lints both. All configs are
+  at the repo root.
+- TypeScript: `typescript` is 6.0 because typescript-eslint and the svelte-check API refuse TS 7. TS 7 is installed
+  as `@typescript/native`. `libs/ui` runs `svelte-check --tsgo` (TS 7). The webapp cannot use `--tsgo`, because tsgo
+  does not transpile `.svelte` files outside the checked package (the linked `libs/ui` source).
+- Put a component or helper that only one route uses next to that route's `+page.svelte`, for example
+  `routes/songs/[id]/SongCard.svelte`. Use `$lib` only for code that more than one route uses. Put reusable UI
+  in `libs/ui`.

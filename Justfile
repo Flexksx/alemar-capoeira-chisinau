@@ -1,7 +1,5 @@
 mod build '.just/build'
-mod format '.just/format'
 mod infra '.just/infra'
-mod lint '.just/lint'
 mod test '.just/test'
 
 [private]
@@ -11,3 +9,15 @@ default:
 # Run the webapp dev server
 dev:
     pnpm -C webapp dev
+
+# Open the design system showcase
+showcase:
+    pnpm -C libs/ui showcase
+
+# Run every formatter
+format:
+    scripts/format.sh
+
+# Run every linter and format check
+lint:
+    scripts/lint.sh

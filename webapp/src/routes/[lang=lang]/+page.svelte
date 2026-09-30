@@ -1,21 +1,19 @@
 <script lang="ts">
 	import { useLanguageStore } from '$lib/i18n.svelte';
-	import LandingNav from '$lib/components/landing/LandingNav.svelte';
-	import LandingHero from '$lib/components/landing/LandingHero.svelte';
-	import LandingAbout from '$lib/components/landing/LandingAbout.svelte';
-	import LandingClasses from '$lib/components/landing/LandingClasses.svelte';
-	import LandingGallery from '$lib/components/landing/LandingGallery.svelte';
-	import LandingEvents from '$lib/components/landing/LandingEvents.svelte';
-	import LandingContact from '$lib/components/landing/LandingContact.svelte';
+	import LandingNav from './LandingNav.svelte';
+	import LandingHero from './LandingHero.svelte';
+	import LandingAbout from './LandingAbout.svelte';
+	import LandingClasses from './LandingClasses.svelte';
+	import LandingGallery from './LandingGallery.svelte';
+	import LandingEvents from './LandingEvents.svelte';
+	import LandingContact from './LandingContact.svelte';
 
 	let { data } = $props();
 	const lang = useLanguageStore();
 
 	const SITE = 'https://capoeira.md';
 
-	const ogLocale = $derived(
-		data.lang === 'ru' ? 'ru_MD' : data.lang === 'en' ? 'en_US' : 'ro_MD'
-	);
+	const ogLocale = $derived(data.lang === 'ru' ? 'ru_MD' : data.lang === 'en' ? 'en_US' : 'ro_MD');
 
 	const schema = $derived({
 		'@context': 'https://schema.org',

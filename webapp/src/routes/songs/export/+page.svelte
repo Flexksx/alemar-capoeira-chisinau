@@ -51,7 +51,7 @@
 				<div class="space-y-4">
 					{#each song.structure as verseId, index (`${song.id}-${verseId}-${index}`)}
 						{@const variants = song.verses[verseId]}
-						{@const verse = variants?.find(v => v.language === 'pt')}
+						{@const verse = variants?.find((v) => v.language === 'pt')}
 						{#if verse}
 							<section class="songbook-verse">
 								<p

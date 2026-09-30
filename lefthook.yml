@@ -10,19 +10,21 @@ pre-commit:
       run: rumdl check --fix {staged_files}
       stage_fixed: true
     format-yaml:
-      glob: "{lefthook.yml,webapp/pnpm-workspace.yaml}"
+      glob: "{lefthook.yml,pnpm-workspace.yaml}"
       run: yamlfmt {staged_files}
       stage_fixed: true
     format-terraform:
       glob: "infra/**/*.tf"
       run: terraform fmt {staged_files}
       stage_fixed: true
-    format-webapp:
-      root: "webapp/"
-      glob: "webapp/src/{*.{ts,svelte},**/*.{ts,svelte}}"
+    format-ts:
+      glob: "{webapp,libs/*}/src/{*,**/*}.ts"
+      run: pnpm exec biome format --write {staged_files}
+      stage_fixed: true
+    format-svelte:
+      glob: "{webapp,libs/*}/src/{*,**/*}.svelte"
       run: pnpm exec prettier --write {staged_files}
       stage_fixed: true
-    lint-webapp:
-      root: "webapp/"
-      glob: "webapp/src/{*.{ts,svelte},**/*.{ts,svelte}}"
+    lint-web:
+      glob: "{webapp,libs/*}/src/{*,**/*}.{ts,svelte}"
       run: pnpm exec eslint {staged_files}

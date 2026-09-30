@@ -5,6 +5,10 @@ on:
     branches: [main]
     paths:
       - 'webapp/**'
+      - 'libs/**'
+      - 'package.json'
+      - 'pnpm-lock.yaml'
+      - 'pnpm-workspace.yaml'
       - '.github/workflows/deploy.yml'
 
 concurrency:
@@ -26,11 +30,9 @@ jobs:
         with:
           node-version: 26
           cache: pnpm
-          cache-dependency-path: webapp/pnpm-lock.yaml
 
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
-        working-directory: webapp
 
       - name: Build
         run: pnpm build

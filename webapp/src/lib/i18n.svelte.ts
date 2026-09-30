@@ -19,7 +19,13 @@ export interface Translations {
 		cta: string;
 	};
 	gallery: { title: string };
-	events: { title: string; subtitle: string; noEvents: string; stayTuned: string; location: string };
+	events: {
+		title: string;
+		subtitle: string;
+		noEvents: string;
+		stayTuned: string;
+		location: string;
+	};
 	contact: {
 		title: string;
 		subtitle: string;
@@ -31,7 +37,12 @@ export interface Translations {
 		instagram: string;
 	};
 	footer: { tagline: string; since: string };
-	meta: { landingTitle: string; landingDescription: string; aboutTitle: string; aboutDescription: string };
+	meta: {
+		landingTitle: string;
+		landingDescription: string;
+		aboutTitle: string;
+		aboutDescription: string;
+	};
 	aboutPage: {
 		pageTitle: string;
 		subtitle: string;

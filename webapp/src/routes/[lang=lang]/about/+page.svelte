@@ -49,7 +49,8 @@
 			{#each languages as l (l)}
 				<button
 					onclick={() => goto(`/${l}/about`)}
-					class="px-2 py-0.5 text-xs font-bold tracking-widest uppercase rounded-sm transition-colors cursor-pointer {data.lang === l
+					class="px-2 py-0.5 text-xs font-bold tracking-widest uppercase rounded-sm transition-colors cursor-pointer {data.lang ===
+					l
 						? 'bg-primary text-primary-foreground'
 						: 'text-foreground/50 hover:text-foreground'}"
 				>
@@ -69,7 +70,9 @@
 			style="background: linear-gradient(90deg, transparent, oklch(0.75 0.15 75), transparent)"
 		></div>
 		<div class="relative z-10 text-center px-6">
-			<h1 class="font-impact text-[clamp(4rem,14vw,11rem)] leading-none tracking-[0.04em] text-foreground">
+			<h1
+				class="font-impact text-[clamp(4rem,14vw,11rem)] leading-none tracking-[0.04em] text-foreground"
+			>
 				{lang.t.aboutPage.pageTitle}
 			</h1>
 			<p class="mt-4 font-display italic text-lg md:text-xl text-primary/90 max-w-2xl mx-auto">
@@ -90,7 +93,8 @@
 		<div class="h-px flex-1 bg-border/30"></div>
 		<div class="flex gap-3 px-6">
 			{#each [0, 1, 2] as i (i)}
-				<span class="inline-block h-2 w-2 rotate-45 {i === 1 ? 'bg-primary' : 'bg-border/30'}"></span>
+				<span class="inline-block h-2 w-2 rotate-45 {i === 1 ? 'bg-primary' : 'bg-border/30'}"
+				></span>
 			{/each}
 		</div>
 		<div class="h-px flex-1 bg-border/30"></div>
@@ -99,7 +103,9 @@
 	<section class="py-20 md:py-28" id="for-whom">
 		<div class="mx-auto max-w-6xl px-6 md:px-10">
 			<div class="mb-16 text-center" use:reveal>
-				<h2 class="font-impact text-[clamp(2.5rem,8vw,6rem)] leading-none tracking-[0.04em] text-foreground">
+				<h2
+					class="font-impact text-[clamp(2.5rem,8vw,6rem)] leading-none tracking-[0.04em] text-foreground"
+				>
 					{lang.t.aboutPage.forTitle}
 				</h2>
 			</div>
@@ -144,16 +150,22 @@
 		<div class="h-px flex-1 bg-border/30"></div>
 		<div class="flex gap-3 px-6">
 			{#each [0, 1, 2] as i (i)}
-				<span class="inline-block h-2 w-2 rotate-45 {i === 1 ? 'bg-primary' : 'bg-border/30'}"></span>
+				<span class="inline-block h-2 w-2 rotate-45 {i === 1 ? 'bg-primary' : 'bg-border/30'}"
+				></span>
 			{/each}
 		</div>
 		<div class="h-px flex-1 bg-border/30"></div>
 	</div>
 
-	<section class="py-20 md:py-28" style="background: linear-gradient(135deg, oklch(0.14 0.015 60) 0%, oklch(0.12 0.01 60) 100%)">
+	<section
+		class="py-20 md:py-28"
+		style="background: linear-gradient(135deg, oklch(0.14 0.015 60) 0%, oklch(0.12 0.01 60) 100%)"
+	>
 		<div class="mx-auto max-w-4xl px-6 md:px-10">
 			<div class="mb-12 text-center" use:reveal>
-				<h2 class="font-impact text-[clamp(2.5rem,8vw,6rem)] leading-none tracking-[0.04em] text-foreground">
+				<h2
+					class="font-impact text-[clamp(2.5rem,8vw,6rem)] leading-none tracking-[0.04em] text-foreground"
+				>
 					{lang.t.aboutPage.whyTitle}
 				</h2>
 			</div>
@@ -175,7 +187,9 @@
 	<section class="py-20 md:py-28" id="vs">
 		<div class="mx-auto max-w-6xl px-6 md:px-10">
 			<div class="mb-16 text-center" use:reveal>
-				<h2 class="font-impact text-[clamp(2.5rem,8vw,6rem)] leading-none tracking-[0.04em] text-foreground">
+				<h2
+					class="font-impact text-[clamp(2.5rem,8vw,6rem)] leading-none tracking-[0.04em] text-foreground"
+				>
 					{lang.t.aboutPage.compareSection.title}
 				</h2>
 				<p class="mt-4 text-foreground/60 text-base md:text-lg max-w-2xl mx-auto">
@@ -220,7 +234,8 @@
 		<div class="h-px flex-1 bg-border/30"></div>
 		<div class="flex gap-3 px-6">
 			{#each [0, 1, 2] as i (i)}
-				<span class="inline-block h-2 w-2 rotate-45 {i === 1 ? 'bg-primary' : 'bg-border/30'}"></span>
+				<span class="inline-block h-2 w-2 rotate-45 {i === 1 ? 'bg-primary' : 'bg-border/30'}"
+				></span>
 			{/each}
 		</div>
 		<div class="h-px flex-1 bg-border/30"></div>
@@ -228,7 +243,9 @@
 
 	<section class="py-20 md:py-28">
 		<div class="mx-auto max-w-3xl px-6 md:px-10 text-center" use:reveal>
-			<h2 class="font-impact text-[clamp(2.5rem,8vw,6rem)] leading-none tracking-[0.04em] text-foreground mb-8">
+			<h2
+				class="font-impact text-[clamp(2.5rem,8vw,6rem)] leading-none tracking-[0.04em] text-foreground mb-8"
+			>
 				{lang.t.aboutPage.communityTitle}
 			</h2>
 			<div class="relative pl-0 mb-0">
@@ -243,7 +260,8 @@
 		<div class="h-px flex-1 bg-border/30"></div>
 		<div class="flex gap-3 px-6">
 			{#each [0, 1, 2] as i (i)}
-				<span class="inline-block h-2 w-2 rotate-45 {i === 1 ? 'bg-primary' : 'bg-border/30'}"></span>
+				<span class="inline-block h-2 w-2 rotate-45 {i === 1 ? 'bg-primary' : 'bg-border/30'}"
+				></span>
 			{/each}
 		</div>
 		<div class="h-px flex-1 bg-border/30"></div>
@@ -257,7 +275,9 @@
 			<p class="text-xs tracking-[0.3em] uppercase text-foreground/40 mb-4">
 				{lang.t.aboutPage.instructorTitle}
 			</p>
-			<h2 class="font-impact text-[clamp(2.5rem,7vw,5rem)] leading-none tracking-[0.04em] text-foreground mb-6">
+			<h2
+				class="font-impact text-[clamp(2.5rem,7vw,5rem)] leading-none tracking-[0.04em] text-foreground mb-6"
+			>
 				{lang.t.aboutPage.instructorName}
 			</h2>
 			<div class="mx-auto mb-8 h-px w-16 bg-primary/40"></div>
@@ -314,7 +334,9 @@
 				</div>
 			</div>
 
-			<p class="mb-10 flex items-center justify-center gap-2 text-sm tracking-[0.15em] uppercase text-foreground/40">
+			<p
+				class="mb-10 flex items-center justify-center gap-2 text-sm tracking-[0.15em] uppercase text-foreground/40"
+			>
 				<MapPin class="h-4 w-4 shrink-0 text-primary/60" />
 				{lang.t.contact.address}
 			</p>
@@ -329,7 +351,9 @@
 	</section>
 
 	<footer class="border-t border-border/20 py-10">
-		<div class="mx-auto max-w-6xl px-6 md:px-10 flex flex-col md:flex-row items-center justify-between gap-4">
+		<div
+			class="mx-auto max-w-6xl px-6 md:px-10 flex flex-col md:flex-row items-center justify-between gap-4"
+		>
 			<div class="text-center md:text-left">
 				<p class="font-impact text-lg tracking-widest uppercase text-foreground/60">
 					Alemar Capoeira Chisinau
