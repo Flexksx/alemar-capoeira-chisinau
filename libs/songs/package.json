@@ -12,7 +12,7 @@
 	"scripts": {
 		"check": "tsc",
 		"format": "biome format --write src && prettier --write --ignore-path ../../.prettierignore src",
-		"lint": "biome format src && prettier --check --ignore-path ../../.prettierignore src && eslint src && pnpm run check"
+		"lint": "biome format src && prettier --check --ignore-path ../../.prettierignore src && eslint src && pnpm run check && depcruise src --config .dependency-cruiser.cjs"
 	},
 	"dependencies": {
 		"fuse.js": "^7.5.0"

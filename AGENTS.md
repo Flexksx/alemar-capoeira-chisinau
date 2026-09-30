@@ -63,9 +63,9 @@ hooks (pre-commit runs `just format`, then `just lint`). `terraform` is unfree (
   rather than created fresh — check `terraform plan` reports no changes before trusting the config.
 - `.github/workflows/terraform-plan.yml` — runs `terraform plan` on PRs touching `infra/**`. `apply` is
   intentionally not automated; run it locally after reviewing the plan.
-- `.github/workflows/deploy.yml` — builds and deploys the webapp (`wrangler pages deploy`) on every push
-  to `main` that touches `webapp/**`. This is independent of Terraform — Terraform only manages the Pages
-  project/domain scaffolding, never the deployed content.
+- `.github/workflows/ci.yml` — runs `just lint`, then `just build all`, on every PR and every push to `main`.
+  On `main`, it deploys the build output with `wrangler pages deploy`. This is independent of Terraform.
+  Terraform manages only the Pages project and the domain, never the deployed content.
 
 ## Conventions an agent can't derive from the code
 

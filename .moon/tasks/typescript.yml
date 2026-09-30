@@ -9,6 +9,11 @@ fileGroups:
     - '*.json'
     - '*.config.js'
     - '*.config.ts'
+    - '.dependency-cruiser.cjs'
+    - '/eslint.config.js'
+    - '/biome.json'
+    - '/.prettierrc'
+    - '/config/**/*'
   tests:
     - 'tests/**/*'
 tasks:

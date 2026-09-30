@@ -1,0 +1,71 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    name: Lint and format check
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: cachix/install-nix-action@v31
+
+      - name: Install dependencies
+        run: nix develop --command pnpm install --frozen-lockfile
+
+      - name: Lint
+        run: nix develop --command just lint
+
+  build:
+    name: Build
+    needs: check
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: cachix/install-nix-action@v31
+
+      - name: Install dependencies
+        run: nix develop --command pnpm install --frozen-lockfile
+
+      - name: Build
+        run: nix develop --command just build all
+
+      - uses: actions/upload-artifact@v5
+        with:
+          name: webapp-build
+          path: webapp/build
+          if-no-files-found: error
+          retention-days: 7
+
+  deploy:
+    name: Deploy to Cloudflare Pages
+    needs: build
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    concurrency:
+      group: deploy-webapp
+      cancel-in-progress: false
+    steps:
+      - uses: actions/download-artifact@v5
+        with:
+          name: webapp-build
+          path: build
+
+      - uses: cloudflare/wrangler-action@v4
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          wranglerVersion: '4.143.0'
+          command: pages deploy build --project-name=alemar-capoeira-chisinau
