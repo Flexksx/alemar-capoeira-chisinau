@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { useLanguageStore } from '$lib/i18n.svelte';
+	import { useLanguageStore } from '$lib/i18n';
 	import { reveal } from '$lib/actions/reveal';
 	import User from '@lucide/svelte/icons/user';
 	import Phone from '@lucide/svelte/icons/phone';

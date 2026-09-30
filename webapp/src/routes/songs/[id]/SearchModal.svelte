@@ -16,16 +16,9 @@
 	const songs = $derived(sortByCategory(unsortedSongs));
 
 	let query = $state('');
-	let inputRef = $state<HTMLInputElement | null>(null);
 
 	const searcher = $derived(createSongSearch(songs));
 	const results = $derived(query.trim() ? searcher.search(query) : []);
-
-	$effect(() => {
-		if (isOpen && inputRef) {
-			setTimeout(() => inputRef?.focus(), 100);
-		}
-	});
 
 	const handleClose = () => {
 		query = '';
@@ -59,7 +52,7 @@
 			<div class="flex items-center gap-2 border-b border-border/40 p-3">
 				<Search class="h-4 w-4 shrink-0 text-primary" />
 				<input
-					bind:this={inputRef}
+					{@attach (el) => el.focus()}
 					bind:value={query}
 					type="text"
 					placeholder="Caută cântece..."

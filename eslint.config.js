@@ -57,6 +57,23 @@ export default [
 		}
 	},
 	{
+		files: ['webapp/src/routes/**/*.ts', 'webapp/src/routes/**/*.svelte'],
+		rules: {
+			'no-restricted-imports': [
+				'error',
+				{
+					patterns: [
+						{
+							regex: '^\\.\\./|^\\./[^/]+/',
+							message:
+								'A route owns the modules in its folder. Move a module that 2 routes need to src/lib.'
+						}
+					]
+				}
+			]
+		}
+	},
+	{
 		files: ['libs/ui/src/lib/components/**/*.svelte'],
 		rules: {
 			'@typescript-eslint/no-unused-vars': 'off'

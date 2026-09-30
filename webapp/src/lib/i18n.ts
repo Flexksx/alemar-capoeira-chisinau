@@ -461,23 +461,23 @@ const translations: Record<Language, Translations> = {
 const LANGUAGE_KEY = Symbol('language');
 
 export class LanguageStore {
-	current = $state<Language>('ro');
+	#getLang: () => Language;
 
-	constructor(initial: Language = 'ro') {
-		this.current = initial;
+	constructor(getLang: () => Language) {
+		this.#getLang = getLang;
+	}
+
+	get current(): Language {
+		return this.#getLang();
 	}
 
 	get t(): Translations {
 		return translations[this.current];
 	}
-
-	set(lang: Language) {
-		this.current = lang;
-	}
 }
 
-export const setLanguageStore = (initialLang: Language = 'ro') => {
-	const store = new LanguageStore(initialLang);
+export const setLanguageStore = (getLang: () => Language) => {
+	const store = new LanguageStore(getLang);
 	setContext(LANGUAGE_KEY, store);
 	return store;
 };

@@ -1,13 +1,9 @@
 <script lang="ts">
-	import { setLanguageStore, type Language } from '$lib/i18n.svelte';
+	import { setLanguageStore } from '$lib/i18n';
 
 	let { data, children } = $props();
 
-	const store = setLanguageStore(data.lang as Language);
-
-	$effect(() => {
-		store.set(data.lang as Language);
-	});
+	setLanguageStore(() => data.lang);
 </script>
 
 {@render children()}

@@ -25,30 +25,24 @@
 	let sidebarOpen = $state(false);
 	let searchOpen = $state(false);
 	let carouselApi = $state<CarouselAPI>();
-	let currentIndex = $state(data.initialIndex ?? 0);
-	let canScrollPrev = $state(false);
-	let canScrollNext = $state(false);
+
+	const currentIndex = $derived(data.initialIndex);
+	const currentSong = $derived(songs[currentIndex]);
+	const canScrollPrev = $derived(currentIndex > 0);
+	const canScrollNext = $derived(currentIndex < songs.length - 1);
 
 	const setApi = (api: CarouselAPI | undefined) => {
 		carouselApi = api;
-		if (api) {
-			api.on('select', () => {
-				currentIndex = api.selectedScrollSnap();
-				canScrollPrev = api.canScrollPrev();
-				canScrollNext = api.canScrollNext();
-				const snapId = songs[currentIndex]?.id;
-				if (snapId && snapId !== page.params.id) {
-					void goto(`/songs/${snapId}`, {
-						replaceState: true,
-						noScroll: true,
-						keepFocus: true
-					});
-				}
-			});
-			currentIndex = api.selectedScrollSnap();
-			canScrollPrev = api.canScrollPrev();
-			canScrollNext = api.canScrollNext();
-		}
+		api?.on('select', () => {
+			const snapId = songs[api.selectedScrollSnap()].id;
+			if (snapId !== page.params.id) {
+				void goto(`/songs/${snapId}`, {
+					replaceState: true,
+					noScroll: true,
+					keepFocus: true
+				});
+			}
+		});
 	};
 
 	const selectSong = (songId: string) => {
@@ -67,25 +61,9 @@
 		void goto('/songs/export');
 	};
 
-	const currentSong = $derived(songs[currentIndex]);
-
 	$effect(() => {
-		const id = page.params.id;
-		const api = carouselApi;
-		if (!id || !api || songs.length === 0) return;
-
-		const index = songs.findIndex((s) => s.id === id);
-		if (index === -1) {
-			void goto(`/songs/${songs[0].id}`, {
-				replaceState: true,
-				noScroll: true,
-				keepFocus: true
-			});
-			return;
-		}
-
-		if (api.selectedScrollSnap() !== index) {
-			api.scrollTo(index);
+		if (carouselApi && carouselApi.selectedScrollSnap() !== currentIndex) {
+			carouselApi.scrollTo(currentIndex);
 		}
 	});
 </script>

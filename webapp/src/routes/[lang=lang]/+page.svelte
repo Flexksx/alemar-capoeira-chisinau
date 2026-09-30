@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { useLanguageStore } from '$lib/i18n.svelte';
+	import { useLanguageStore } from '$lib/i18n';
 	import LandingNav from './LandingNav.svelte';
 	import LandingHero from './LandingHero.svelte';
 	import LandingAbout from './LandingAbout.svelte';

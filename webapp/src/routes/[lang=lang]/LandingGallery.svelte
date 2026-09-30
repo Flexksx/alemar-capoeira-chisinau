@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { useLanguageStore } from '$lib/i18n.svelte';
+	import { useLanguageStore } from '$lib/i18n';
 	import { reveal } from '$lib/actions/reveal';
 	import { lazyVideo } from './lazyVideo';
 	import GalleryLightbox from './GalleryLightbox.svelte';

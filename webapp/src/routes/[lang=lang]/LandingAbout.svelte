@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { useLanguageStore } from '$lib/i18n.svelte';
+	import { useLanguageStore } from '$lib/i18n';
 	import { reveal } from '$lib/actions/reveal';
 	import groupPhoto from '$lib/assets/photos/20250815_195516.jpg';
 

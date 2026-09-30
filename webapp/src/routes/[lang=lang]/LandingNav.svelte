@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { useLanguageStore, type Language } from '$lib/i18n.svelte';
+	import { useLanguageStore, type Language } from '$lib/i18n';
 	import { goto } from '$app/navigation';
 	import alemArLogo from '$lib/assets/alemar-logo.png';
 

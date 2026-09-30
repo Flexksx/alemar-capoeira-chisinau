@@ -1,4 +1,4 @@
-import type { Language } from '$lib/i18n.svelte';
+import type { Language } from '$lib/i18n';
 
 export const prerender = true;
 
