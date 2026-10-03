@@ -1,12 +1,13 @@
 <script lang="ts">
 	import { CATEGORY_LABELS, type Category } from '@alemar/songs';
+	import { Badge } from '@alemar/ui/badge';
 
 	interface Props {
 		category: Category;
-		size?: 'sm' | 'md';
+		size?: 'sm' | 'default';
 	}
 
-	let { category, size = 'md' }: Props = $props();
+	let { category, size = 'default' }: Props = $props();
 
 	const categoryColors: Record<Category, string> = {
 		ANGOLA: 'bg-amber-500/10 text-amber-600 dark:text-amber-400 border-amber-500/30',
@@ -16,10 +17,6 @@
 	};
 </script>
 
-<span
-	class="inline-flex items-center border font-medium tracking-wider uppercase {categoryColors[
-		category
-	]} {size === 'sm' ? 'px-2 py-0.5 text-[10px]' : 'px-2.5 py-1 text-xs'}"
->
+<Badge variant="outline" {size} class={categoryColors[category]}>
 	{CATEGORY_LABELS[category]}
-</span>
+</Badge>

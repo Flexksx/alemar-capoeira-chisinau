@@ -15,16 +15,14 @@
 	};
 </script>
 
-<div class="flex-1 min-h-0 overflow-y-scroll px-2">
-	<div class="space-y-3 py-4">
-		{#each structure as verseId, index (`${verseId}-${index}`)}
-			{@const variants = verses[verseId]}
-			{@const visible = visibleLanguage(variants)}
-			{#each variants as variant (variant.language)}
-				<div class={variant.language === visible ? '' : 'hidden'}>
-					<VerseBlock verse={variant} />
-				</div>
-			{/each}
+<div class="space-y-6">
+	{#each structure as verseId, index (`${verseId}-${index}`)}
+		{@const variants = verses[verseId]}
+		{@const visible = visibleLanguage(variants)}
+		{#each variants as variant (variant.language)}
+			<div class={variant.language === visible ? '' : 'hidden'}>
+				<VerseBlock verse={variant} />
+			</div>
 		{/each}
-	</div>
+	{/each}
 </div>

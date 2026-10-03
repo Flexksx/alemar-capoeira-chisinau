@@ -1,6 +1,6 @@
 <script lang="ts">
 	import type { Verse } from '@alemar/songs';
-	import Music from '@lucide/svelte/icons/music';
+	import Repeat from '@lucide/svelte/icons/repeat';
 
 	interface Props {
 		verse: Verse;
@@ -11,27 +11,20 @@
 	const isChorus = $derived(verse.type === 'chorus');
 </script>
 
-<div
-	class="relative px-4 py-3 transition-colors {isChorus
-		? 'border-l-2 border-primary bg-primary/5'
-		: 'hover:bg-muted/30'}"
->
-	<div class="mb-2 flex items-center">
-		<span class="label-xs flex items-center gap-1.5">
-			{#if isChorus}
-				<Music class="h-3 w-3 text-primary" />
-				Refren
-			{:else}
-				Vers
-			{/if}
+{#if isChorus}
+	<div class="border-l-2 border-primary py-1 pl-4">
+		<span
+			class="mb-1 flex items-center gap-1.5 text-[11px] font-medium tracking-[0.2em] text-primary uppercase"
+		>
+			<Repeat class="size-3" />
+			Refren
 		</span>
+		<p class="text-lg leading-relaxed font-medium whitespace-pre-line text-foreground lg:text-xl">
+			{verse.text}
+		</p>
 	</div>
-
-	<p
-		class="whitespace-pre-line text-base leading-relaxed {isChorus
-			? 'font-medium text-foreground'
-			: 'text-foreground/80'}"
-	>
+{:else}
+	<p class="pl-[18px] text-lg leading-relaxed whitespace-pre-line text-foreground/85 lg:text-xl">
 		{verse.text}
 	</p>
-</div>
+{/if}

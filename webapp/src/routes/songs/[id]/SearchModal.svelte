@@ -4,6 +4,7 @@
 	import X from '@lucide/svelte/icons/x';
 	import Search from '@lucide/svelte/icons/search';
 	import Music from '@lucide/svelte/icons/music';
+	import { Button } from '@alemar/ui/button';
 
 	interface Props {
 		songs: Song[];
@@ -58,9 +59,9 @@
 					placeholder="Caută cântece..."
 					class="flex-1 bg-transparent text-base outline-none placeholder:text-muted-foreground"
 				/>
-				<button onclick={handleClose} class="btn-icon h-8 w-8" aria-label="Close">
+				<Button variant="ghost" size="icon-sm" onclick={handleClose} aria-label="Închide căutarea">
 					<X class="h-5 w-5" />
-				</button>
+				</Button>
 			</div>
 
 			<div class="max-h-[60vh] overflow-y-auto overscroll-contain">

@@ -20,8 +20,11 @@
 		DropdownMenuItem,
 		DropdownMenuTrigger
 	} from '$lib/components/dropdown-menu';
+	import { Badge, type BadgeVariant } from '$lib/components/badge';
 	import { Input } from '$lib/components/input';
+	import { Kbd } from '$lib/components/kbd';
 	import { Popover, PopoverContent, PopoverTrigger } from '$lib/components/popover';
+	import { ToggleGroup, ToggleGroupItem } from '$lib/components/toggle-group';
 
 	const colors = [
 		'background',
@@ -46,6 +49,7 @@
 		'destructive'
 	];
 	const sizes: ButtonSize[] = ['sm', 'default', 'lg'];
+	const badgeVariants: BadgeVariant[] = ['default', 'secondary', 'outline'];
 </script>
 
 {#snippet section(title: string, body: Snippet)}
@@ -97,6 +101,32 @@
 	<Input placeholder="Search songs" />
 	<Input placeholder="Disabled" disabled />
 	<Input placeholder="Invalid" aria-invalid="true" />
+{/snippet}
+
+{#snippet badges()}
+	<div class="flex flex-wrap items-center gap-2">
+		{#each badgeVariants as variant (variant)}
+			<Badge {variant}>{variant}</Badge>
+			<Badge {variant} size="sm">{variant} sm</Badge>
+		{/each}
+	</div>
+{/snippet}
+
+{#snippet toggleGroup()}
+	<ToggleGroup type="single" value="original" aria-label="Lyrics language">
+		<ToggleGroupItem value="original">Original</ToggleGroupItem>
+		<ToggleGroupItem value="transcription">Transcription</ToggleGroupItem>
+		<ToggleGroupItem value="translation">Translation</ToggleGroupItem>
+	</ToggleGroup>
+	<ToggleGroup type="multiple" value={['angola']} aria-label="Categories">
+		<ToggleGroupItem value="angola">Angola</ToggleGroupItem>
+		<ToggleGroupItem value="regional">Regional</ToggleGroupItem>
+		<ToggleGroupItem value="samba" disabled>Samba</ToggleGroupItem>
+	</ToggleGroup>
+{/snippet}
+
+{#snippet kbd()}
+	<p class="text-sm">Press <Kbd>/</Kbd> or <Kbd>Ctrl</Kbd> <Kbd>K</Kbd> to search.</p>
 {/snippet}
 
 {#snippet accordion()}
@@ -153,6 +183,9 @@
 	{@render section('Typography', typography)}
 	<div id="buttons">{@render section('Button', buttons)}</div>
 	{@render section('Input', inputs)}
+	{@render section('Badge', badges)}
+	{@render section('Toggle group', toggleGroup)}
+	{@render section('Kbd', kbd)}
 	{@render section('Accordion', accordion)}
 	{@render section('Carousel', carousel)}
 	{@render section('Dropdown menu and popover', overlays)}

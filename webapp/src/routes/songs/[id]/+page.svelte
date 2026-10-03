@@ -6,25 +6,29 @@
 	import Sidebar from './Sidebar.svelte';
 	import SongCard from './SongCard.svelte';
 	import SearchModal from './SearchModal.svelte';
-	import { songs } from '@alemar/songs';
+	import { songs, type Language } from '@alemar/songs';
 	import Menu from '@lucide/svelte/icons/menu';
 	import Search from '@lucide/svelte/icons/search';
 	import FileDown from '@lucide/svelte/icons/file-down';
 	import ChevronLeft from '@lucide/svelte/icons/chevron-left';
 	import ChevronRight from '@lucide/svelte/icons/chevron-right';
 	import ThemeToggle from './ThemeToggle.svelte';
+	import { Button } from '@alemar/ui/button';
+	import { Kbd } from '@alemar/ui/kbd';
 	import { onMount } from 'svelte';
 
 	let { data } = $props();
 
-	let mounted = $state(false);
+	// Set once on mount, so the carousel opens on the current song instead of scrolling to it.
+	let carouselOpts = $state.raw<{ align: 'start'; startIndex: number }>();
 	onMount(() => {
-		mounted = true;
+		carouselOpts = { align: 'start', startIndex: data.initialIndex };
 	});
 
 	let sidebarOpen = $state(false);
 	let searchOpen = $state(false);
 	let carouselApi = $state<CarouselAPI>();
+	let selectedLanguage = $state<Language>('pt');
 
 	const currentIndex = $derived(data.initialIndex);
 	const currentSong = $derived(songs[currentIndex]);
@@ -61,12 +65,29 @@
 		void goto('/songs/export');
 	};
 
+	const isTyping = (target: EventTarget | null) =>
+		target instanceof HTMLElement &&
+		(target.isContentEditable || ['INPUT', 'TEXTAREA', 'SELECT'].includes(target.tagName));
+
+	const handleKeydown = (e: KeyboardEvent) => {
+		if (searchOpen || isTyping(e.target)) return;
+		if (e.key === '/' || (e.key === 'k' && (e.metaKey || e.ctrlKey))) {
+			e.preventDefault();
+			searchOpen = true;
+		}
+	};
+
 	$effect(() => {
-		if (carouselApi && carouselApi.selectedScrollSnap() !== currentIndex) {
-			carouselApi.scrollTo(currentIndex);
+		if (!carouselApi) return;
+		const distance = Math.abs(carouselApi.selectedScrollSnap() - currentIndex);
+		if (distance > 0) {
+			// Jump without animation when the target is not a neighbour.
+			carouselApi.scrollTo(currentIndex, distance > 1);
 		}
 	});
 </script>
+
+<svelte:window onkeydown={handleKeydown} />
 
 <svelte:head>
 	<title>
@@ -82,80 +103,97 @@
 </svelte:head>
 
 <header
-	class="fixed top-0 left-0 right-0 z-30 border-b border-border/30 safe-top"
-	style="background: oklch(0.14 0.01 60 / 0.92); backdrop-filter: blur(8px)"
+	class="fixed top-0 right-0 left-0 z-30 border-b border-border/60 bg-background/85 backdrop-blur-md safe-top lg:left-72"
 >
-	<div class="flex items-center justify-between px-2 py-2">
-		<button onclick={() => (sidebarOpen = true)} class="btn-icon" aria-label="Open menu">
-			<Menu class="h-5 w-5" />
-		</button>
-
-		<div class="flex items-center gap-1">
-			<button
-				onclick={scrollPrev}
-				disabled={!canScrollPrev}
-				class="btn-icon h-8 w-8 disabled:opacity-30"
-				aria-label="Previous song"
+	<div class="flex h-14 items-center justify-between gap-2 px-2 lg:px-4">
+		<div class="flex flex-1 items-center">
+			<Button
+				variant="ghost"
+				size="icon"
+				onclick={() => (sidebarOpen = true)}
+				class="lg:hidden"
+				aria-label="Deschide lista"
 			>
-				<ChevronLeft class="h-5 w-5" />
-			</button>
-			<span
-				class="min-w-[4rem] text-center font-impact text-lg tracking-[0.1em] text-muted-foreground"
-			>
-				{currentIndex + 1} / {songs.length}
-			</span>
-			<button
-				onclick={scrollNext}
-				disabled={!canScrollNext}
-				class="btn-icon h-8 w-8 disabled:opacity-30"
-				aria-label="Next song"
-			>
-				<ChevronRight class="h-5 w-5" />
-			</button>
+				<Menu class="size-5" />
+			</Button>
 		</div>
 
 		<div class="flex items-center gap-1">
-			<button onclick={exportSongbookPdf} class="btn-icon" aria-label="Export songs as PDF">
-				<FileDown class="h-5 w-5" />
-			</button>
+			<Button
+				variant="ghost"
+				size="icon"
+				onclick={scrollPrev}
+				disabled={!canScrollPrev}
+				aria-label="Cântecul anterior"
+			>
+				<ChevronLeft class="size-5" />
+			</Button>
+			<span
+				class="min-w-[4.5rem] text-center font-impact text-lg tracking-[0.1em] text-foreground/80 tabular-nums"
+			>
+				{currentIndex + 1} / {songs.length}
+			</span>
+			<Button
+				variant="ghost"
+				size="icon"
+				onclick={scrollNext}
+				disabled={!canScrollNext}
+				aria-label="Cântecul următor"
+			>
+				<ChevronRight class="size-5" />
+			</Button>
+		</div>
+
+		<div class="flex flex-1 items-center justify-end gap-1">
+			<Button
+				variant="ghost"
+				size="icon"
+				onclick={() => (searchOpen = true)}
+				class="sm:hidden"
+				aria-label="Caută cântece"
+			>
+				<Search class="size-5" />
+			</Button>
+			<Button
+				variant="outline"
+				size="sm"
+				onclick={() => (searchOpen = true)}
+				class="hidden font-normal text-muted-foreground sm:inline-flex"
+			>
+				<Search />
+				Caută
+				<Kbd class="hidden lg:inline-flex">/</Kbd>
+			</Button>
+			<Button
+				variant="ghost"
+				size="icon"
+				onclick={exportSongbookPdf}
+				aria-label="Exportă cântecele în PDF"
+			>
+				<FileDown class="size-5" />
+			</Button>
 			<ThemeToggle />
 		</div>
 	</div>
 </header>
 
-<main class="h-dvh overflow-hidden pt-[calc(60px+env(safe-area-inset-top))] pb-[80px] safe-bottom">
-	{#if mounted}
-		<Carousel
-			class="h-full"
-			opts={{
-				align: 'start',
-				loop: false,
-				dragFree: false
-			}}
-			{setApi}
-		>
-			<CarouselContent class="h-full -ml-0">
+<main class="h-dvh overflow-hidden pt-[calc(3.5rem+1px+env(safe-area-inset-top))] lg:pl-72">
+	{#if carouselOpts}
+		<Carousel class="h-full" opts={carouselOpts} {setApi}>
+			<CarouselContent class="-ms-0 h-full">
 				{#each songs as song (song.id)}
-					<CarouselItem class="h-full pl-0">
-						<SongCard {song} />
+					<CarouselItem class="h-full ps-0">
+						<SongCard {song} bind:selectedLanguage />
 					</CarouselItem>
 				{/each}
 			</CarouselContent>
 		</Carousel>
 	{:else if currentSong}
 		<div class="h-full">
-			<SongCard song={currentSong} />
+			<SongCard song={currentSong} bind:selectedLanguage />
 		</div>
 	{/if}
 </main>
-
-<button
-	onclick={() => (searchOpen = true)}
-	class="fixed bottom-6 right-6 z-30 flex h-14 w-14 items-center justify-center bg-primary text-primary-foreground shadow-lg transition-all hover:brightness-110 active:scale-95 safe-bottom"
-	aria-label="Search songs"
->
-	<Search class="h-6 w-6" />
-</button>
 
 <Sidebar
 	{songs}

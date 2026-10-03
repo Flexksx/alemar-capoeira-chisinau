@@ -2,62 +2,77 @@
 	import { languagesOf, LANGUAGE_LABELS, type Language, type Song } from '@alemar/songs';
 	import CategoryBadge from './CategoryBadge.svelte';
 	import SongVerses from './SongVerses.svelte';
-	import User from '@lucide/svelte/icons/user';
+	import { ToggleGroup, ToggleGroupItem } from '@alemar/ui/toggle-group';
+	import Music from '@lucide/svelte/icons/music';
+	import Speech from '@lucide/svelte/icons/speech';
+	import Languages from '@lucide/svelte/icons/languages';
+	import type { Component } from 'svelte';
 
 	interface Props {
 		song: Song;
+		selectedLanguage: Language;
 	}
 
-	let { song }: Props = $props();
+	let { song, selectedLanguage = $bindable() }: Props = $props();
 
-	let selectedLanguage = $state<Language>('pt');
+	const languageIcons: Record<Language, Component> = {
+		pt: Music,
+		ro: Speech,
+		'ro-translation': Languages
+	};
 
 	const songLanguages = $derived(languagesOf(song));
 	const hasMultipleLanguages = $derived(songLanguages.length > 1);
 </script>
 
-<article class="flex h-full flex-col">
-	<header class="shrink-0 border-b border-border/40 px-4 pb-3 pt-4">
-		<div class="mb-2 flex items-start justify-between gap-3">
-			<h1 class="font-impact text-3xl leading-none tracking-[0.04em] text-foreground">
+<article class="h-full overflow-y-auto overscroll-contain">
+	<div class="mx-auto w-full max-w-2xl px-4 pt-6 pb-16 lg:px-8 lg:pt-12">
+		<header class="mb-6 lg:mb-10">
+			<div class="mb-3 flex items-center gap-3">
+				<CategoryBadge category={song.category} size="sm" />
+				{#if song.author}
+					<span class="label-xs">{song.author}</span>
+				{/if}
+			</div>
+
+			<h1
+				class="font-impact text-4xl leading-[0.95] tracking-[0.03em] text-balance text-foreground lg:text-6xl"
+			>
 				{song.title}
 			</h1>
-			<CategoryBadge category={song.category} size="sm" />
-		</div>
 
-		{#if song.author}
-			<p class="label-xs flex items-center gap-1.5">
-				<User class="h-3.5 w-3.5" />
-				{song.author}
-			</p>
-		{/if}
+			{#if song.tags.length > 0}
+				<p class="mt-3 flex flex-wrap gap-x-3 gap-y-1 text-sm text-muted-foreground">
+					{#each song.tags as tag (tag)}
+						<span>#{tag}</span>
+					{/each}
+				</p>
+			{/if}
 
-		{#if song.tags.length > 0}
-			<div class="mt-2 flex flex-wrap gap-1.5">
-				{#each song.tags as tag (tag)}
-					<span class="tag-chip">#{tag}</span>
-				{/each}
-			</div>
-		{/if}
+			{#if hasMultipleLanguages}
+				<ToggleGroup
+					type="single"
+					class="mt-5"
+					aria-label="Limba versurilor"
+					bind:value={
+						() => selectedLanguage,
+						(v) => {
+							// A single toggle group clears its value when the active item is pressed again.
+							if (v) selectedLanguage = v as Language;
+						}
+					}
+				>
+					{#each songLanguages as language (language)}
+						{@const Icon = languageIcons[language]}
+						<ToggleGroupItem value={language}>
+							<Icon />
+							{LANGUAGE_LABELS[language].label}
+						</ToggleGroupItem>
+					{/each}
+				</ToggleGroup>
+			{/if}
+		</header>
 
-		{#if hasMultipleLanguages}
-			<div class="mt-3 flex gap-1">
-				{#each songLanguages as language (language)}
-					{@const label = LANGUAGE_LABELS[language]}
-					<button
-						onclick={() => (selectedLanguage = language)}
-						class="flex items-center gap-1.5 px-3 py-1.5 text-xs transition-colors {selectedLanguage ===
-						language
-							? 'bg-primary/15 text-primary font-medium'
-							: 'text-muted-foreground hover:bg-muted hover:text-foreground'}"
-					>
-						<span>{label.flag}</span>
-						{label.label}
-					</button>
-				{/each}
-			</div>
-		{/if}
-	</header>
-
-	<SongVerses structure={song.structure} verses={song.verses} {selectedLanguage} />
+		<SongVerses structure={song.structure} verses={song.verses} {selectedLanguage} />
+	</div>
 </article>

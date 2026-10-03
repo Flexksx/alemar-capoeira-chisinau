@@ -29,8 +29,8 @@ export const CATEGORY_LABELS: Record<Category, string> = {
 	UNSPECIFIED: 'Outras'
 };
 
-export const LANGUAGE_LABELS: Record<Language, { label: string; flag: string }> = {
-	pt: { label: 'Original', flag: '🇧🇷' },
-	ro: { label: 'Transcriere', flag: '📖' },
-	'ro-translation': { label: 'Traducere', flag: '🇷🇴' }
+export const LANGUAGE_LABELS: Record<Language, { label: string }> = {
+	pt: { label: 'Original' },
+	ro: { label: 'Transcriere' },
+	'ro-translation': { label: 'Traducere' }
 };

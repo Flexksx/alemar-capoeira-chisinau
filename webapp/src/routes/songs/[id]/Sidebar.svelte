@@ -8,6 +8,7 @@
 	import { CATEGORIES, CATEGORY_LABELS, type Category, type Song } from '@alemar/songs';
 	import X from '@lucide/svelte/icons/x';
 	import House from '@lucide/svelte/icons/house';
+	import { Button } from '@alemar/ui/button';
 
 	interface Props {
 		songs: Song[];
@@ -18,6 +19,11 @@
 	}
 
 	let { songs, isOpen, onClose, onSelectSong, currentSongId }: Props = $props();
+
+	const currentCategory = $derived(songs.find((s) => s.id === currentSongId)?.category);
+
+	// Open the current song's category. The user can still open or close others.
+	let openCategories = $derived<string[]>(currentCategory ? [currentCategory] : []);
 
 	let songsByCategory = $derived.by(() => {
 		const grouped: Record<Category, Song[]> = {
@@ -48,7 +54,7 @@
 
 {#if isOpen}
 	<button
-		class="fixed inset-0 z-40 bg-black/60 backdrop-blur-sm transition-opacity"
+		class="fixed inset-0 z-40 bg-black/60 backdrop-blur-sm transition-opacity lg:hidden"
 		onclick={onClose}
 		aria-label="Close menu"
 		tabindex="-1"
@@ -56,12 +62,14 @@
 {/if}
 
 <aside
-	class="fixed top-0 left-0 z-50 h-full w-[85vw] max-w-[320px] transform bg-card shadow-2xl transition-transform duration-300 ease-out {isOpen
-		? 'translate-x-0'
+	class="fixed top-0 left-0 z-50 h-full w-[85vw] max-w-[320px] transform bg-card transition-transform duration-300 ease-out lg:z-30 lg:w-72 lg:translate-x-0 lg:border-r lg:border-border/60 lg:shadow-none {isOpen
+		? 'translate-x-0 shadow-2xl'
 		: '-translate-x-full'}"
 >
 	<div class="flex h-full flex-col">
-		<header class="flex items-center justify-between border-b border-border/40 px-4 py-4 safe-top">
+		<header
+			class="flex items-center justify-between border-b border-border/60 px-4 py-4 safe-top lg:h-[calc(3.5rem+1px)] lg:py-0"
+		>
 			<div class="flex flex-col gap-1">
 				<a
 					href="/"
@@ -72,13 +80,23 @@
 				</a>
 				<h2 class="font-impact text-2xl tracking-[0.08em] text-foreground">Cântece</h2>
 			</div>
-			<button onclick={onClose} class="btn-icon h-9 w-9" aria-label="Close menu">
+			<Button
+				variant="ghost"
+				size="icon"
+				onclick={onClose}
+				class="lg:hidden"
+				aria-label="Închide lista"
+			>
 				<X class="h-5 w-5" />
-			</button>
+			</Button>
 		</header>
 
 		<nav class="flex-1 overflow-y-auto overscroll-contain px-2 py-2 safe-bottom">
-			<Accordion type="multiple" class="w-full">
+			<Accordion
+				type="multiple"
+				class="w-full"
+				bind:value={() => openCategories, (v) => (openCategories = v)}
+			>
 				{#each CATEGORIES as category (category)}
 					{@const categorySongs = songsByCategory[category]}
 					{#if categorySongs.length > 0}
@@ -104,6 +122,7 @@
 										<li>
 											<a
 												href="/songs/{song.id}"
+												aria-current={currentSongId === song.id ? 'page' : undefined}
 												onclick={(e) => {
 													e.preventDefault();
 													handleSongClick(song.id);
@@ -113,16 +132,7 @@
 													? 'border-primary bg-primary/10 font-medium text-primary'
 													: 'border-transparent text-foreground/70 hover:bg-muted hover:text-foreground'}"
 											>
-												<span class="block">{song.title}</span>
-												{#if song.tags.length > 0}
-													<div class="mt-1.5 flex flex-wrap gap-1">
-														{#each song.tags as tag (tag)}
-															<span class="tag-chip">
-																#{tag}
-															</span>
-														{/each}
-													</div>
-												{/if}
+												{song.title}
 											</a>
 										</li>
 									{/each}
