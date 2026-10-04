@@ -13,15 +13,21 @@
 	const visibleLanguage = (variants: Verse[]): Language => {
 		return variants.some((v) => v.language === selectedLanguage) ? selectedLanguage : 'pt';
 	};
+
+	// Number each solo verse occurrence. The refrain has no number.
+	const verseNumbers = $derived.by(() => {
+		let count = 0;
+		return structure.map((id) => (verses[id][0].type === 'chorus' ? undefined : ++count));
+	});
 </script>
 
-<div class="space-y-6">
+<div class="space-y-5">
 	{#each structure as verseId, index (`${verseId}-${index}`)}
 		{@const variants = verses[verseId]}
 		{@const visible = visibleLanguage(variants)}
 		{#each variants as variant (variant.language)}
 			<div class={variant.language === visible ? '' : 'hidden'}>
-				<VerseBlock verse={variant} />
+				<VerseBlock verse={variant} number={verseNumbers[index]} />
 			</div>
 		{/each}
 	{/each}

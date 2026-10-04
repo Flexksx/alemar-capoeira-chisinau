@@ -15,7 +15,7 @@ file and displayed through a clean, searchable interface to help our members lea
 
 ## Project Structure
 
-- `webapp/src/lib/data/songs.json` - Library of capoeira songs with lyrics and metadata
+- `libs/songs/src/songs.json` - Library of capoeira songs with lyrics and metadata
 - `webapp/src/` - Svelte components and application code
 
 ## Development

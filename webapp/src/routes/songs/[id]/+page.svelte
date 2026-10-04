@@ -13,6 +13,7 @@
 	import ChevronLeft from '@lucide/svelte/icons/chevron-left';
 	import ChevronRight from '@lucide/svelte/icons/chevron-right';
 	import ThemeToggle from './ThemeToggle.svelte';
+	import { songNumber } from './category';
 	import { Button } from '@alemar/ui/button';
 	import { Kbd } from '@alemar/ui/kbd';
 	import { onMount } from 'svelte';
@@ -91,19 +92,20 @@
 
 <svelte:head>
 	<title>
-		{currentSong ? `${currentSong.title} — Alemar Capoeira` : 'Alemar Capoeira - Cântece'}
+		{currentSong ? `${currentSong.title} | Alemar Capoeira` : 'Alemar Capoeira | Cântece'}
 	</title>
 	{#if currentSong}
 		<meta
 			name="description"
-			content="Versurile cântecului de capoeira {currentSong.title} — colecție Alemar Capoeira Chisinau."
+			content="Versurile cântecului de capoeira {currentSong.title}, din colecția Alemar Capoeira Chișinău."
 		/>
 		<link rel="canonical" href="https://capoeira.md/songs/{currentSong.id}" />
 	{/if}
 </svelte:head>
 
 <header
-	class="fixed top-0 right-0 left-0 z-30 border-b border-border/60 bg-background/85 backdrop-blur-md safe-top lg:left-72"
+	inert={sidebarOpen}
+	class="fixed top-0 right-0 left-0 z-30 border-b border-border bg-background safe-top lg:left-80"
 >
 	<div class="flex h-14 items-center justify-between gap-2 px-2 lg:px-4">
 		<div class="flex flex-1 items-center">
@@ -128,10 +130,8 @@
 			>
 				<ChevronLeft class="size-5" />
 			</Button>
-			<span
-				class="min-w-[4.5rem] text-center font-impact text-lg tracking-[0.1em] text-foreground/80 tabular-nums"
-			>
-				{currentIndex + 1} / {songs.length}
+			<span class="min-w-[5.5rem] text-center font-display text-xl leading-none tabular-nums">
+				{songNumber(currentIndex)} <span class="text-muted-foreground">/ {songs.length}</span>
 			</span>
 			<Button
 				variant="ghost"
@@ -158,7 +158,7 @@
 				variant="outline"
 				size="sm"
 				onclick={() => (searchOpen = true)}
-				class="hidden font-normal text-muted-foreground sm:inline-flex"
+				class="hidden sm:inline-flex"
 			>
 				<Search />
 				Caută
@@ -177,20 +177,35 @@
 	</div>
 </header>
 
-<main class="h-dvh overflow-hidden pt-[calc(3.5rem+1px+env(safe-area-inset-top))] lg:pl-72">
+<main
+	inert={sidebarOpen}
+	class="h-dvh overflow-hidden pt-[calc(3.5rem+1px+env(safe-area-inset-top))] lg:pl-80"
+>
 	{#if carouselOpts}
 		<Carousel class="h-full" opts={carouselOpts} {setApi}>
 			<CarouselContent class="-ms-0 h-full">
-				{#each songs as song (song.id)}
+				{#each songs as song, index (song.id)}
 					<CarouselItem class="h-full ps-0">
-						<SongCard {song} bind:selectedLanguage />
+						<SongCard
+							{song}
+							{index}
+							previous={songs[index - 1]}
+							next={songs[index + 1]}
+							bind:selectedLanguage
+						/>
 					</CarouselItem>
 				{/each}
 			</CarouselContent>
 		</Carousel>
 	{:else if currentSong}
 		<div class="h-full">
-			<SongCard song={currentSong} bind:selectedLanguage />
+			<SongCard
+				song={currentSong}
+				index={currentIndex}
+				previous={songs[currentIndex - 1]}
+				next={songs[currentIndex + 1]}
+				bind:selectedLanguage
+			/>
 		</div>
 	{/if}
 </main>

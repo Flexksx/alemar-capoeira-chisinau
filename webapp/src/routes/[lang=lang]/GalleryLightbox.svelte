@@ -1,5 +1,7 @@
 <script lang="ts">
-	import X from '@lucide/svelte/icons/x';
+	import { useLanguageStore } from '$lib/i18n';
+	import { Button } from '@alemar/ui/button';
+	import { Dialog, DialogContent, DialogTitle } from '@alemar/ui/dialog';
 	import ChevronLeft from '@lucide/svelte/icons/chevron-left';
 	import ChevronRight from '@lucide/svelte/icons/chevron-right';
 
@@ -15,7 +17,11 @@
 		onclose: () => void;
 	} = $props();
 
+	const lang = useLanguageStore();
+
+	// svelte-ignore state_referenced_locally
 	let current = $state(startIndex);
+	const item = $derived(items[current]);
 
 	const prev = () => {
 		current = (current - 1 + items.length) % items.length;
@@ -25,98 +31,87 @@
 		current = (current + 1) % items.length;
 	};
 
+	// The dialog handles Escape, focus and scroll lock. The arrows move between items.
 	const handleKey = (e: KeyboardEvent) => {
-		if (e.key === 'Escape') onclose();
 		if (e.key === 'ArrowLeft') prev();
 		if (e.key === 'ArrowRight') next();
 	};
-
-	$effect(() => {
-		document.body.style.overflow = 'hidden';
-		return () => {
-			document.body.style.overflow = '';
-		};
-	});
 </script>
 
-<svelte:window onkeydown={handleKey} />
-
-<div
-	class="fixed inset-0 z-[100] flex items-center justify-center"
-	style="background: rgba(8,5,2,0.95)"
-	role="dialog"
-	aria-modal="true"
->
-	<button
-		onclick={onclose}
-		class="absolute top-5 right-5 z-10 flex h-10 w-10 items-center justify-center text-foreground/60 transition-colors hover:text-primary cursor-pointer"
-		aria-label="Close"
+<Dialog open onOpenChange={(open) => !open && onclose()}>
+	<DialogContent
+		closeLabel={lang.t.gallery.close}
+		onkeydown={handleKey}
+		class="dark top-0 left-0 h-dvh max-h-none w-full max-w-none translate-x-0 items-center justify-center border-0 bg-ink/95"
 	>
-		<X size={22} />
-	</button>
+		<DialogTitle class="absolute top-4 left-1/2 -translate-x-1/2 font-sans text-sm font-semibold">
+			{current + 1} / {items.length}
+		</DialogTitle>
 
-	<p
-		class="absolute top-5 left-1/2 -translate-x-1/2 text-xs tracking-[0.25em] uppercase text-foreground/40"
-	>
-		{current + 1} / {items.length}
-	</p>
+		{#if items.length > 1}
+			<Button
+				variant="ghost"
+				size="icon-lg"
+				onclick={prev}
+				class="absolute left-2 z-10 md:left-6"
+				aria-label={lang.t.gallery.previous}
+			>
+				<ChevronLeft class="size-7" />
+			</Button>
+		{/if}
 
-	{#if items.length > 1}
-		<button
-			onclick={prev}
-			class="absolute left-4 md:left-8 z-10 flex h-12 w-12 items-center justify-center text-foreground/50 transition-colors hover:text-primary cursor-pointer"
-			aria-label="Previous"
-		>
-			<ChevronLeft size={32} />
-		</button>
-	{/if}
-
-	<div class="relative max-h-[85dvh] max-w-[90vw] md:max-w-[80vw]">
-		{#key current}
-			{#if items[current].type === 'video'}
-				<video
-					src={items[current].src}
-					autoplay
-					muted
-					loop
-					playsinline
-					controls
-					class="lightbox-media max-h-[85dvh] max-w-full rounded-sm object-contain"
-				></video>
-			{:else}
-				<img
-					src={items[current].src}
-					alt={(items[current] as { type: 'photo'; src: string; alt: string }).alt}
-					class="lightbox-media max-h-[85dvh] max-w-full rounded-sm object-contain"
-				/>
-			{/if}
-		{/key}
-	</div>
-
-	{#if items.length > 1}
-		<button
-			onclick={next}
-			class="absolute right-4 md:right-8 z-10 flex h-12 w-12 items-center justify-center text-foreground/50 transition-colors hover:text-primary cursor-pointer"
-			aria-label="Next"
-		>
-			<ChevronRight size={32} />
-		</button>
-	{/if}
-
-	{#if items.length > 1}
-		<div class="absolute bottom-6 left-1/2 -translate-x-1/2 flex gap-2">
-			{#each items as _, i (i)}
-				<button
-					onclick={() => (current = i)}
-					class="h-1.5 rounded-full transition-all duration-300 cursor-pointer {i === current
-						? 'w-6 bg-primary'
-						: 'w-1.5 bg-foreground/20'}"
-					aria-label="Go to item {i + 1}"
-				></button>
-			{/each}
+		<div class="relative max-h-[80dvh] max-w-[88vw] md:max-w-[80vw]">
+			{#key current}
+				{#if item.type === 'video'}
+					<video
+						src={item.src}
+						autoplay
+						muted
+						loop
+						playsinline
+						controls
+						class="lightbox-media max-h-[80dvh] max-w-full object-contain"
+					></video>
+				{:else}
+					<img
+						src={item.src}
+						alt={item.alt}
+						class="lightbox-media max-h-[80dvh] max-w-full object-contain"
+					/>
+				{/if}
+			{/key}
 		</div>
-	{/if}
-</div>
+
+		{#if items.length > 1}
+			<Button
+				variant="ghost"
+				size="icon-lg"
+				onclick={next}
+				class="absolute right-2 z-10 md:right-6"
+				aria-label={lang.t.gallery.next}
+			>
+				<ChevronRight class="size-7" />
+			</Button>
+
+			<div class="absolute bottom-3 left-1/2 flex -translate-x-1/2">
+				{#each items as _, i (i)}
+					<button
+						onclick={() => (current = i)}
+						class="flex h-11 items-center px-1"
+						aria-label="{lang.t.gallery.item} {i + 1}"
+						aria-current={i === current}
+					>
+						<span
+							class="block h-1.5 transition-all duration-300 {i === current
+								? 'w-6 bg-foreground'
+								: 'w-1.5 bg-foreground/30'}"
+						></span>
+					</button>
+				{/each}
+			</div>
+		{/if}
+	</DialogContent>
+</Dialog>
 
 <style>
 	@keyframes lightbox-in {

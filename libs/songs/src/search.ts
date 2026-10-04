@@ -33,7 +33,10 @@ export const createSongSearch = (songs: Song[]) => {
 			{ name: 'verseTexts', weight: 2 },
 			{ name: 'tagsText', weight: 1 }
 		],
-		threshold: 0.4,
+		// 0.3 still forgives a typo ("parna" finds "Paraná"), but a short word no longer matches
+		// almost every song's lyrics. Diacritics are ignored, so "mae" finds "mãe".
+		threshold: 0.3,
+		ignoreDiacritics: true,
 		includeScore: true,
 		includeMatches: true,
 		ignoreLocation: true,

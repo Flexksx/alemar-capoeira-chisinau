@@ -1,10 +1,10 @@
 <script lang="ts">
-	import { createSongSearch, sortByCategory, type Song } from '@alemar/songs';
-	import CategoryBadge from './CategoryBadge.svelte';
-	import X from '@lucide/svelte/icons/x';
+	import { createSongSearch, type Song } from '@alemar/songs';
+	import { Dialog, DialogContent, DialogTitle } from '@alemar/ui/dialog';
+	import { Input } from '@alemar/ui/input';
 	import Search from '@lucide/svelte/icons/search';
-	import Music from '@lucide/svelte/icons/music';
-	import { Button } from '@alemar/ui/button';
+	import CategoryBadge from './CategoryBadge.svelte';
+	import { songNumber } from './category';
 
 	interface Props {
 		songs: Song[];
@@ -13,111 +13,103 @@
 		onSelectSong: (songId: string) => void;
 	}
 
-	let { songs: unsortedSongs, isOpen, onClose, onSelectSong }: Props = $props();
-	const songs = $derived(sortByCategory(unsortedSongs));
+	let { songs, isOpen, onClose, onSelectSong }: Props = $props();
 
 	let query = $state('');
 
 	const searcher = $derived(createSongSearch(songs));
-	const results = $derived(query.trim() ? searcher.search(query) : []);
+	const indexOf = $derived(new Map(songs.map((song, index) => [song.id, index])));
+	const results = $derived(
+		query.trim() ? searcher.search(query).map((result) => result.song) : songs
+	);
 
-	const handleClose = () => {
+	// Highlighted result for keyboard use. A new query starts again from the top result.
+	let active = $derived.by(() => {
+		void query;
+		return 0;
+	});
+
+	$effect(() => {
+		document
+			.getElementById(`search-result-${results[active]?.id}`)
+			?.scrollIntoView({ block: 'nearest' });
+	});
+
+	const handleSelect = (songId: string) => {
 		query = '';
+		onSelectSong(songId);
 		onClose();
 	};
 
-	const handleSelect = (songId: string) => {
-		onSelectSong(songId);
-		handleClose();
+	const handleInputKeydown = (e: KeyboardEvent) => {
+		if (e.key === 'ArrowDown') {
+			e.preventDefault();
+			active = Math.min(active + 1, results.length - 1);
+		} else if (e.key === 'ArrowUp') {
+			e.preventDefault();
+			active = Math.max(active - 1, 0);
+		} else if (e.key === 'Enter' && results[active]) {
+			e.preventDefault();
+			handleSelect(results[active].id);
+		}
 	};
 
-	const handleKeydown = (e: KeyboardEvent) => {
-		if (e.key === 'Escape') {
-			handleClose();
+	const handleOpenChange = (open: boolean) => {
+		if (!open) {
+			query = '';
+			onClose();
 		}
 	};
 </script>
 
-<svelte:window onkeydown={handleKeydown} />
-
-{#if isOpen}
-	<button
-		class="fixed inset-0 z-50 bg-black/70 backdrop-blur-sm"
-		onclick={handleClose}
-		aria-label="Close search"
-		tabindex="-1"
-	></button>
-
-	<div class="fixed inset-x-4 top-4 z-50 mx-auto max-w-lg safe-top">
-		<div class="overflow-hidden bg-card shadow-2xl border border-border/40">
-			<div class="flex items-center gap-2 border-b border-border/40 p-3">
-				<Search class="h-4 w-4 shrink-0 text-primary" />
-				<input
-					{@attach (el) => el.focus()}
+<Dialog open={isOpen} onOpenChange={handleOpenChange}>
+	<DialogContent class="p-0" closeLabel="Închide căutarea">
+		<div class="border-b border-border p-4 pr-14">
+			<DialogTitle class="mb-3">Caută cântece</DialogTitle>
+			<div class="relative">
+				<Search class="pointer-events-none absolute top-1/2 left-3 size-4 -translate-y-1/2" />
+				<Input
 					bind:value={query}
-					type="text"
-					placeholder="Caută cântece..."
-					class="flex-1 bg-transparent text-base outline-none placeholder:text-muted-foreground"
+					onkeydown={handleInputKeydown}
+					type="search"
+					placeholder="Titlu, autor sau vers"
+					class="pl-9"
 				/>
-				<Button variant="ghost" size="icon-sm" onclick={handleClose} aria-label="Închide căutarea">
-					<X class="h-5 w-5" />
-				</Button>
-			</div>
-
-			<div class="max-h-[60vh] overflow-y-auto overscroll-contain">
-				{#if query.trim() && results.length === 0}
-					<div class="flex flex-col items-center justify-center py-12 text-muted-foreground">
-						<Music class="mb-2 h-8 w-8 opacity-30" />
-						<p class="text-sm tracking-wide">Niciun rezultat pentru "{query}"</p>
-					</div>
-				{:else if results.length > 0}
-					<ul class="divide-y divide-border/30">
-						{#each results as result (result.song.id)}
-							<li>
-								<button
-									onclick={() => handleSelect(result.song.id)}
-									class="flex w-full items-start gap-3 px-4 py-3 text-left transition-colors hover:bg-muted/50"
-								>
-									<div class="flex-1 min-w-0">
-										<div class="flex items-center gap-2">
-											<span class="truncate font-medium text-foreground">
-												{result.song.title}
-											</span>
-											<CategoryBadge category={result.song.category} size="sm" />
-										</div>
-										{#if result.song.author}
-											<p
-												class="mt-0.5 truncate text-xs tracking-wider uppercase text-muted-foreground"
-											>
-												{result.song.author}
-											</p>
-										{/if}
-									</div>
-								</button>
-							</li>
-						{/each}
-					</ul>
-				{:else}
-					<div class="p-3">
-						<p class="label-xs mb-2 px-1">Toate cântecele</p>
-						<ul class="divide-y divide-border/30 border border-border/30">
-							{#each songs as song (song.id)}
-								<li>
-									<button
-										onclick={() => handleSelect(song.id)}
-										class="flex w-full items-center gap-3 px-3 py-2.5 text-left transition-colors hover:bg-muted/50"
-									>
-										<span class="flex-1 truncate text-sm font-medium text-foreground">
-											{song.title}
-										</span>
-										<CategoryBadge category={song.category} size="sm" />
-									</button>
-								</li>
-							{/each}
-						</ul>
-					</div>
-				{/if}
 			</div>
 		</div>
-	</div>
-{/if}
+
+		<div class="min-h-0 flex-1 overflow-y-auto overscroll-contain">
+			{#if results.length === 0}
+				<p class="px-4 py-10 text-center text-muted-foreground">
+					Niciun cântec găsit pentru: {query}
+				</p>
+			{:else}
+				<ol>
+					{#each results as song, i (song.id)}
+						<li>
+							<button
+								id="search-result-{song.id}"
+								onclick={() => handleSelect(song.id)}
+								class="flex w-full items-center gap-3 border-b border-border px-4 py-3 text-left transition-colors hover:bg-foreground/5 focus-visible:bg-foreground/10 focus-visible:outline-none {i ===
+								active
+									? 'bg-foreground/10'
+									: ''}"
+							>
+								<span class="w-5 shrink-0 font-display text-sm tabular-nums">
+									{songNumber(indexOf.get(song.id) ?? 0)}
+								</span>
+								<span class="min-w-0 flex-1">
+									<span class="block truncate font-medium">{song.title}</span>
+									{#if song.author}
+										<span class="block truncate text-xs opacity-70">{song.author}</span>
+									{/if}
+								</span>
+								<CategoryBadge category={song.category} size="sm" />
+							</button>
+						</li>
+					{/each}
+				</ol>
+			{/if}
+		</div>
+	</DialogContent>
+</Dialog>

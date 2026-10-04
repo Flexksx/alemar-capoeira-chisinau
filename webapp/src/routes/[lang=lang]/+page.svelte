@@ -83,7 +83,7 @@
 	{@html jsonLd}
 </svelte:head>
 
-<div class="dark bg-background text-foreground">
+<div class="bg-background text-foreground">
 	<LandingNav />
 	<LandingHero />
 	<LandingAbout />

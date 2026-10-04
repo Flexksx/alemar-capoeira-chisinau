@@ -14,7 +14,7 @@
 	bind:this={ref}
 	data-slot="kbd"
 	class={cn(
-		'inline-flex h-5 min-w-5 items-center justify-center rounded-sm border bg-muted px-1 font-mono text-[11px] font-medium text-muted-foreground select-none',
+		'inline-flex h-5 min-w-5 items-center justify-center border border-current/40 px-1 font-mono text-[11px] leading-none font-medium select-none',
 		className
 	)}
 	{...restProps}

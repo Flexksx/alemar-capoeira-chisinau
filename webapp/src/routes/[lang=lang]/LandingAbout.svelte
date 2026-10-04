@@ -2,73 +2,53 @@
 	import { useLanguageStore } from '$lib/i18n';
 	import { reveal } from '$lib/actions/reveal';
 	import groupPhoto from '$lib/assets/photos/20250815_195516.jpg';
+	import Quote from '@lucide/svelte/icons/quote';
+	import ArrowRight from '@lucide/svelte/icons/arrow-right';
 
 	const lang = useLanguageStore();
 </script>
 
-<section class="relative overflow-hidden py-24 md:py-36" id="about">
-	<div class="absolute inset-0 geo-pattern opacity-[0.04]"></div>
+<section class="light bg-background py-24 text-foreground md:py-36" id="about">
+	<div class="mx-auto grid max-w-6xl gap-14 px-5 md:grid-cols-12 md:gap-10 md:px-10">
+		<div class="md:col-span-7" use:reveal>
+			<h2 class="title-lg">
+				{lang.t.about.title}
+			</h2>
 
-	<div class="relative mx-auto max-w-6xl px-6 md:px-10">
-		<div class="grid gap-16 md:grid-cols-2 md:gap-24 md:items-center">
-			<div use:reveal={{ delay: 0 }}>
-				<h2
-					class="font-impact text-[clamp(2.5rem,7vw,5rem)] leading-none tracking-[0.04em] text-foreground mb-8"
-				>
-					{lang.t.about.title}
-				</h2>
-
-				<div class="relative pl-6 mb-10">
-					<span class="absolute left-0 top-0 h-full w-px bg-primary"></span>
-					<blockquote
-						class="font-display italic text-xl md:text-2xl text-primary/90 leading-relaxed"
-					>
-						{lang.t.about.quote}
-					</blockquote>
-				</div>
-
-				<p class="text-sm font-medium tracking-[0.25em] uppercase text-foreground/40">
-					{lang.t.about.highlight}
+			<blockquote class="mt-10 flex gap-4">
+				<Quote class="size-9 shrink-0 fill-current text-muted-foreground" aria-hidden="true" />
+				<p class="text-2xl leading-snug font-medium text-balance md:text-3xl">
+					{lang.t.about.quote}
 				</p>
-			</div>
+			</blockquote>
 
-			<div class="flex flex-col gap-8" use:reveal={{ delay: 150 }}>
-				<p class="text-foreground/70 text-lg leading-relaxed">
-					{lang.t.about.body}
-				</p>
+			<p class="mt-8 max-w-prose text-lg leading-relaxed text-foreground/80">
+				{lang.t.about.body}
+			</p>
 
-				<div class="relative">
-					<div
-						class="relative aspect-[4/3] overflow-hidden bg-card"
-						style="clip-path: polygon(0 0, 100% 0, 100% 90%, 92% 100%, 0 100%)"
-					>
-						<img
-							src={groupPhoto}
-							alt="Alemar Capoeira Chișinău"
-							class="h-full w-full object-cover object-center"
-							onerror={(e) => ((e.currentTarget as HTMLImageElement).style.display = 'none')}
-						/>
-						<div class="absolute inset-0 flex items-center justify-center bg-card -z-10">
-							<span class="font-impact text-6xl text-border tracking-widest">CAPOEIRA</span>
-						</div>
-					</div>
-					<div
-						class="absolute bottom-0 right-0 pointer-events-none"
-						style="width: 8%; padding-bottom: 10%; clip-path: polygon(100% 0, 100% 100%, 0 100%); background: oklch(0.75 0.15 75 / 0.45)"
-					></div>
-				</div>
+			<p class="mt-8 text-lg font-semibold">{lang.t.about.highlight}</p>
+
+			<a
+				href="/{lang.current}/about"
+				class="mt-6 inline-flex min-h-11 items-center gap-2 font-semibold underline-link"
+			>
+				{lang.t.about.more}
+				<ArrowRight class="size-4" />
+			</a>
+		</div>
+
+		<div class="md:col-span-5 md:pt-24" use:reveal={{ delay: 150 }}>
+			<!-- Offset colour block behind the photo, like a layered print. -->
+			<div class="relative">
+				<div
+					class="absolute inset-0 translate-x-3 translate-y-3 bg-sun-orange md:translate-x-5 md:translate-y-5"
+				></div>
+				<img
+					src={groupPhoto}
+					alt="Alemar Capoeira Chișinău"
+					class="relative aspect-[4/5] w-full object-cover object-center"
+				/>
 			</div>
 		</div>
-	</div>
-
-	<div class="mt-24 flex items-center gap-0 overflow-hidden">
-		<div class="h-px flex-1 bg-border/30"></div>
-		<div class="flex gap-3 px-6">
-			{#each [0, 1, 2] as i (i)}
-				<span class="inline-block h-2 w-2 rotate-45 {i === 1 ? 'bg-primary' : 'bg-border/30'}"
-				></span>
-			{/each}
-		</div>
-		<div class="h-px flex-1 bg-border/30"></div>
 	</div>
 </section>

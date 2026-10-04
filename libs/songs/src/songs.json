@@ -1,41 +1,77 @@
 [
 	{
 		"id": "parana-e",
-		"title": "Paraná Ê",
+		"title": "Paraná ê",
 		"author": "Traditional",
 		"category": "REGIONAL",
 		"tags": ["corrido", "popular"],
 		"structure": ["c1", "v1", "c1", "v2", "c1", "v3", "c1"],
 		"verses": {
 			"c1": [
-				{ "type": "chorus", "text": "Paraná ê, Paraná ê, Paraná", "language": "pt" },
-				{ "type": "chorus", "text": "Parana ie, Parana ie, Parana", "language": "ro" },
 				{
 					"type": "chorus",
-					"text": "Paraná (nume de râu în Brazilia)",
+					"text": "Paraná ê, Paraná ê, Paraná",
+					"language": "pt"
+				},
+				{
+					"type": "chorus",
+					"text": "Parana e, Parana e, Parana",
+					"language": "ro"
+				},
+				{
+					"type": "chorus",
+					"text": "Paraná ê, Paraná ê, Paraná (Paraná: râu din America de Sud)",
 					"language": "ro-translation"
 				}
 			],
 			"v1": [
-				{ "type": "verse", "text": "Vou dizer a meu mestre\nComo Paraná é bom", "language": "pt" },
-				{ "type": "verse", "text": "Voi dzizer a meu meștri\nComu Parana e bom", "language": "ro" },
 				{
 					"type": "verse",
-					"text": "Voi spune maestrului meu\nCât de bun este Paraná",
+					"text": "Vou dizer minha mulher, Paraná\nCapoeira me venceu, Paraná",
+					"language": "pt"
+				},
+				{
+					"type": "verse",
+					"text": "Vou djizer minia mulier, Parana\nKapoeira mi venseu, Parana",
+					"language": "ro"
+				},
+				{
+					"type": "verse",
+					"text": "Îi voi spune soției mele, Paraná\nCapoeira m-a învins, Paraná",
 					"language": "ro-translation"
 				}
 			],
 			"v2": [
-				{ "type": "verse", "text": "Água de beber\nParaná é bom", "language": "pt" },
-				{ "type": "verse", "text": "Agua dji beber\nParana e bom", "language": "ro" },
-				{ "type": "verse", "text": "Apă de băut\nParaná este bun", "language": "ro-translation" }
-			],
-			"v3": [
-				{ "type": "verse", "text": "Terra de plantar\nParaná é bom", "language": "pt" },
-				{ "type": "verse", "text": "Tera dji plantar\nParana e bom", "language": "ro" },
 				{
 					"type": "verse",
-					"text": "Pământ de cultivat\nParaná este bun",
+					"text": "Ela quis bater pé firme, Paraná\nIsso não aconteceu, Paraná",
+					"language": "pt"
+				},
+				{
+					"type": "verse",
+					"text": "Ela kis bater pe firmi, Parana\nIsu nau akonteseu, Parana",
+					"language": "ro"
+				},
+				{
+					"type": "verse",
+					"text": "Ea a vrut să bată din picior (să se impună), Paraná\nAsta nu s-a întâmplat, Paraná",
+					"language": "ro-translation"
+				}
+			],
+			"v3": [
+				{
+					"type": "verse",
+					"text": "Mulher pra ser bonita, Paraná\nNão precisa se pintar, Paraná",
+					"language": "pt"
+				},
+				{
+					"type": "verse",
+					"text": "Mulier pra ser bonita, Parana\nNau presiza si pintar, Parana",
+					"language": "ro"
+				},
+				{
+					"type": "verse",
+					"text": "Femeia, ca să fie frumoasă, Paraná\nNu are nevoie să se fardeze, Paraná",
 					"language": "ro-translation"
 				}
 			]
@@ -47,48 +83,39 @@
 		"author": "Traditional",
 		"category": "SAMBA",
 		"tags": ["samba", "festa"],
-		"structure": ["c1", "c2", "v1", "c2"],
+		"structure": ["v1", "c1", "v1", "c1"],
 		"verses": {
+			"v1": [
+				{
+					"type": "verse",
+					"text": "Samba Lelê tá doente\nTá com a cabeça quebrada\nSamba Lelê precisava\nÉ de umas boas palmadas",
+					"language": "pt"
+				},
+				{
+					"type": "verse",
+					"text": "Samba Lele ta doenci\nTa kom a kabesa kebrada\nSamba Lele presizava\nE dji umas boas palmadas",
+					"language": "ro"
+				},
+				{
+					"type": "verse",
+					"text": "Samba Lelê e bolnavă\nAre capul spart\nDe ce avea nevoie Samba Lelê\nEra de o bătaie bună la fund",
+					"language": "ro-translation"
+				}
+			],
 			"c1": [
 				{
 					"type": "chorus",
-					"text": "Samba Lelê tá doente\nTá com a cabeça quebrada",
+					"text": "Samba, samba, samba ô Lelê\nSamba, samba, samba ô Lalá\nSamba, samba, samba ô Lelê\nPisa na barra da saia ô Lalá",
 					"language": "pt"
 				},
 				{
 					"type": "chorus",
-					"text": "Samba Lele ta doenti\nTa com a cabesa quebrada",
+					"text": "Samba, samba, samba o Lele\nSamba, samba, samba o Lala\nSamba, samba, samba o Lele\nPiza na bara da saia o Lala",
 					"language": "ro"
 				},
 				{
 					"type": "chorus",
-					"text": "Samba Lelê e bolnavă\nAre capul spart",
-					"language": "ro-translation"
-				}
-			],
-			"c2": [
-				{
-					"type": "chorus",
-					"text": "Samba, samba, samba ô Lelê\nSamba, samba, samba ô Lalá",
-					"language": "pt"
-				},
-				{
-					"type": "chorus",
-					"text": "Samba, samba, samba o Lele\nSamba, samba, samba o Lala",
-					"language": "ro"
-				},
-				{
-					"type": "chorus",
-					"text": "Samba, samba, samba o Lelê\nSamba, samba, samba o Lalá",
-					"language": "ro-translation"
-				}
-			],
-			"v1": [
-				{ "type": "verse", "text": "Samba Lelê precisa\nÉ de uma boa lambada", "language": "pt" },
-				{ "type": "verse", "text": "Samba Lele presiza\nE dji uma boa lambada", "language": "ro" },
-				{
-					"type": "verse",
-					"text": "Samba Lelê are nevoie\nDe o lovitură bună",
+					"text": "Samba, samba, samba, o Lelê\nSamba, samba, samba, o Lalá\nSamba, samba, samba, o Lelê\nCalcă pe tivul fustei, o Lalá",
 					"language": "ro-translation"
 				}
 			]
@@ -97,28 +124,112 @@
 	{
 		"id": "boa-viagem",
 		"title": "Boa Viagem",
+		"author": "Traditional",
 		"category": "REGIONAL",
 		"tags": ["despedida", "corrido"],
-		"structure": ["c1", "v1", "c1", "v2", "c1"],
+		"structure": ["v1", "c1", "v2", "c1", "v3", "c1", "v4", "c1", "v5", "c1"],
 		"verses": {
-			"c1": [
-				{ "type": "chorus", "text": "Adeus, adeus\nBoa viagem", "language": "pt" },
-				{ "type": "chorus", "text": "Adeus, adeus\nBoa viajeim", "language": "ro" },
+			"v1": [
 				{
-					"type": "chorus",
-					"text": "La revedere, la revedere\nDrum bun",
+					"type": "verse",
+					"text": "Adeus, adeus",
+					"language": "pt"
+				},
+				{
+					"type": "verse",
+					"text": "Adeus, adeus",
+					"language": "ro"
+				},
+				{
+					"type": "verse",
+					"text": "La revedere, la revedere",
 					"language": "ro-translation"
 				}
 			],
-			"v1": [
-				{ "type": "verse", "text": "Eu vou me embora\nBoa viagem", "language": "pt" },
-				{ "type": "verse", "text": "Eu voi mi embora\nBoa viajeim", "language": "ro" },
-				{ "type": "verse", "text": "Eu plec\nDrum bun", "language": "ro-translation" }
+			"c1": [
+				{
+					"type": "chorus",
+					"text": "Boa viagem",
+					"language": "pt"
+				},
+				{
+					"type": "chorus",
+					"text": "Boa viajeim",
+					"language": "ro"
+				},
+				{
+					"type": "chorus",
+					"text": "Drum bun",
+					"language": "ro-translation"
+				}
 			],
 			"v2": [
-				{ "type": "verse", "text": "Eu vou com Deus\nBoa viagem", "language": "pt" },
-				{ "type": "verse", "text": "Eu voi com Deus\nBoa viajeim", "language": "ro" },
-				{ "type": "verse", "text": "Merg cu Dumnezeu\nDrum bun", "language": "ro-translation" }
+				{
+					"type": "verse",
+					"text": "Eu vou, eu vou",
+					"language": "pt"
+				},
+				{
+					"type": "verse",
+					"text": "Eu vou, eu vou",
+					"language": "ro"
+				},
+				{
+					"type": "verse",
+					"text": "Plec, plec",
+					"language": "ro-translation"
+				}
+			],
+			"v3": [
+				{
+					"type": "verse",
+					"text": "Eu vou me embora",
+					"language": "pt"
+				},
+				{
+					"type": "verse",
+					"text": "Eu vou mi embora",
+					"language": "ro"
+				},
+				{
+					"type": "verse",
+					"text": "Eu plec de aici",
+					"language": "ro-translation"
+				}
+			],
+			"v4": [
+				{
+					"type": "verse",
+					"text": "Eu vou com Deus",
+					"language": "pt"
+				},
+				{
+					"type": "verse",
+					"text": "Eu vou kom Deus",
+					"language": "ro"
+				},
+				{
+					"type": "verse",
+					"text": "Plec cu Dumnezeu",
+					"language": "ro-translation"
+				}
+			],
+			"v5": [
+				{
+					"type": "verse",
+					"text": "E com Nossa Senhora",
+					"language": "pt"
+				},
+				{
+					"type": "verse",
+					"text": "I kom Nosa Siniora",
+					"language": "ro"
+				},
+				{
+					"type": "verse",
+					"text": "Și cu Maica Domnului",
+					"language": "ro-translation"
+				}
 			]
 		}
 	},
@@ -131,9 +242,21 @@
 		"structure": ["v1", "c1", "v2", "c1", "v3", "c1", "v4", "c1"],
 		"verses": {
 			"v1": [
-				{ "type": "verse", "text": "Eu pisei na folha seca", "language": "pt" },
-				{ "type": "verse", "text": "Eu pisei na folha seka", "language": "ro" },
-				{ "type": "verse", "text": "Am călcat pe frunza uscată", "language": "ro-translation" }
+				{
+					"type": "verse",
+					"text": "Eu pisei na folha seca",
+					"language": "pt"
+				},
+				{
+					"type": "verse",
+					"text": "Eu pizei na folia seka",
+					"language": "ro"
+				},
+				{
+					"type": "verse",
+					"text": "Am călcat pe frunza uscată",
+					"language": "ro-translation"
+				}
 			],
 			"c1": [
 				{
@@ -143,47 +266,63 @@
 				},
 				{
 					"type": "chorus",
-					"text": "Ovi fazer chue chua,\nchue chue chue chua\nOvi fazer chue chua",
+					"text": "Ovi fazer șue șua,\nșue șue șue șua\nOvi fazer șue șua",
 					"language": "ro"
 				},
 				{
 					"type": "chorus",
-					"text": "Am auzit făcând chué chuá,\nchué chué chué chuá\nAm auzit făcând chué chuá",
+					"text": "Am auzit cum face chué chuá,\nchué chué chué chuá\nAm auzit cum face chué chuá",
 					"language": "ro-translation"
 				}
 			],
 			"v2": [
-				{ "type": "verse", "text": "Joga o nego para cima deixa o nego vadiar", "language": "pt" },
-				{ "type": "verse", "text": "Joga u nego para cima deixa u nego vadiar", "language": "ro" },
 				{
 					"type": "verse",
-					"text": "Aruncă negrul în sus lasă negrul să se plimbe",
+					"text": "Joga o nego para cima deixa o nego vadiar",
+					"language": "pt"
+				},
+				{
+					"type": "verse",
+					"text": "Joga u negu para sima deișa u negu vadjiar",
+					"language": "ro"
+				},
+				{
+					"type": "verse",
+					"text": "Aruncă-l pe negru în sus, lasă-l pe negru să joace (vadiar)",
 					"language": "ro-translation"
 				}
 			],
 			"v3": [
 				{
 					"type": "verse",
-					"text": "vocé diz que dá no nego, no nego vocé não dá",
+					"text": "Você diz que dá no nego, no nego você não dá",
 					"language": "pt"
 				},
 				{
 					"type": "verse",
-					"text": "vose diz ke da nu nego, nu nego vose nao da",
+					"text": "Vose djiz ke da nu negu, nu negu vose nau da",
 					"language": "ro"
 				},
 				{
 					"type": "verse",
-					"text": "tu spui că dai în negru, în negru tu nu dai",
+					"text": "Tu zici că-l lovești pe negru, dar pe negru nu-l lovești",
 					"language": "ro-translation"
 				}
 			],
 			"v4": [
-				{ "type": "verse", "text": "nego da canela seca, chega de Baragadá", "language": "pt" },
-				{ "type": "verse", "text": "nego dji kanela seka, chega dji Baragada", "language": "ro" },
 				{
 					"type": "verse",
-					"text": "negru cu canela uscată, ajunge de Baragadá",
+					"text": "Nego da canela seca, chega de Baragadá",
+					"language": "pt"
+				},
+				{
+					"type": "verse",
+					"text": "Negu da kanela seka, șega dji Baragada",
+					"language": "ro"
+				},
+				{
+					"type": "verse",
+					"text": "Negrul cu fluierele picioarelor uscate vine din Baragadá",
 					"language": "ro-translation"
 				}
 			]
@@ -205,46 +344,46 @@
 				},
 				{
 					"type": "chorus",
-					"text": "O dji kasa o dji fora\nMeu filho vai ver kem e\nPode ser os angoleiros\nLa dji Ilha dji Mare",
+					"text": "O dji kaza o dji fora\nMeu filiu vai ver kem e\nPodji ser us angoleirus\nLa da Ilia dji Mare",
 					"language": "ro"
 				},
 				{
 					"type": "chorus",
-					"text": "O de casă o de afară\nFiul meu va vedea cine este\nPoate fi angoleiros\nDe pe Insula de Maré",
+					"text": "Hei, cei din casă! Hei, cei de afară!\nFiule, du-te să vezi cine e\nPot fi angoleirii\nDe acolo, din Ilha de Maré",
 					"language": "ro-translation"
 				}
 			],
 			"v1": [
 				{
 					"type": "verse",
-					"text": "Urucungo ta chamando\nO nego pra vadiar\nVou chamar o cantador\nO famoso Waldemar",
+					"text": "Urucungo tá chamando\nO nego pra vadiar\nVou chamar o cantador\nO famoso Waldemar",
 					"language": "pt"
 				},
 				{
 					"type": "verse",
-					"text": "Urucungo ta chamando\nU nego pra vadiar\nVoi chamar u kantador\nU famozu Waldemar",
+					"text": "Urukungu ta șamandu\nU negu pra vadjiar\nVou șamar u kantador\nU famozu Valdemar",
 					"language": "ro"
 				},
 				{
 					"type": "verse",
-					"text": "Urucungo cheamă\nNegrul să se plimbe\nVoi chema cântărețul\nFaimosul Waldemar",
+					"text": "Urucungo (berimbaul) cheamă\nNegrul la joc (vadiar)\nÎl voi chema pe cântăreț\nPe faimosul Waldemar",
 					"language": "ro-translation"
 				}
 			],
 			"v2": [
 				{
 					"type": "verse",
-					"text": "Berimbau chamou pro jogo\nAngoleiro já chegou\nHoje tem mandingaria\nNo terreiro de ioio",
+					"text": "Berimbau chamou pro jogo\nAngoleiro já chegou\nHoje tem mandingaria\nNo terreiro de ioiô",
 					"language": "pt"
 				},
 				{
 					"type": "verse",
-					"text": "Berimbau chamou pro jogo\nAngoleiro ja chegou\nOje tem mandingaria\nNu terreiro dji ioio",
+					"text": "Berimbau șamou pru jogu\nAngoleiru ja șegou\nOji tem mandjingaria\nNu tereiru dji ioio",
 					"language": "ro"
 				},
 				{
 					"type": "verse",
-					"text": "Berimbau a chemat la joc\nAngoleiro a sosit deja\nAstăzi este mandingaria\nÎn terenul de ioio",
+					"text": "Berimbaul a chemat la joc\nAngoleirul a sosit deja\nAstăzi e mandinga (vrajă și viclenie)\nÎn curtea stăpânului (ioiô)",
 					"language": "ro-translation"
 				}
 			]
@@ -253,7 +392,7 @@
 	{
 		"id": "conselho",
 		"title": "Conselho",
-		"author": "Traditional",
+		"author": "Adilson Bispo & Zé Roberto",
 		"category": "SAMBA",
 		"tags": ["samba"],
 		"structure": ["v1", "v2", "c1", "v1", "v2", "c1"],
@@ -266,12 +405,12 @@
 				},
 				{
 					"type": "verse",
-					"text": "Deixe dji lado esse baixo astral\nErga a cabesa enfrente u mal\nKe agindo assim sera vital para o seu coracao\nE ke em kada esperiensa se aprende uma licao",
+					"text": "Deiși dji ladu esi baișu astral\nErga a kabesa enfrenci u mal\nKi ajindu asim sera vital para u seu korasau\nE ki em kada isperiensia si aprendi uma lisau",
 					"language": "ro"
 				},
 				{
 					"type": "verse",
-					"text": "Lasă deoparte acest starea de spirit joasă\nRidică capul înfruntă răul\nCă acționând astfel va fi vital pentru inima ta\nEste că în fiecare experiență se învață o lecție",
+					"text": "Lasă deoparte această stare proastă\nRidică capul, înfruntă răul\nCăci, procedând așa, va fi vital pentru inima ta\nPentru că din fiecare experiență se învață o lecție",
 					"language": "ro-translation"
 				}
 			],
@@ -283,12 +422,12 @@
 				},
 				{
 					"type": "verse",
-					"text": "Eu ja sofri por amar assim\nMe dedikei mas foi tudo em vao\nPra ke se lamentar\nSe em sua vida pode encontrar\nKem te ame com toda forsa e ardor\nAssim sukumbira a dor (tem ke lutar)",
+					"text": "Eu ja sofri por amar asim\nMi djedikei mas foi tudu em vau\nPra ki si lamentar\nSi em sua vida podji enkontrar\nKem ci ami kom toda forsa i ardor\nAsim sukumbira a dor (tem ki lutar)",
 					"language": "ro"
 				},
 				{
 					"type": "verse",
-					"text": "Am suferit deja iubind astfel\nM-am dedicat dar a fost totul în zadar\nPentru ce să te plângi\nDacă în viața ta poți găsi\nPe cineva care să te iubească cu toată puterea și ardoarea\nAstfel va sucumbe durerea (trebuie să lupți)",
+					"text": "Am suferit și eu iubind așa\nM-am dăruit, dar totul a fost în zadar\nDe ce să te plângi\nDacă în viața ta poți găsi\nPe cineva care să te iubească cu toată puterea și ardoarea\nAșa durerea va pieri (trebuie să lupți)",
 					"language": "ro-translation"
 				}
 			],
@@ -300,12 +439,12 @@
 				},
 				{
 					"type": "chorus",
-					"text": "Tem ke lutar, nao se abater\nSo se entregar a kem te merecer\nNao estou dando nem vendendo\nComu u ditado diz\nU meu konselho e pra te ver feliz",
+					"text": "Tem ki lutar, nau si abater\nSo si entregar a kem ci mereser\nNau istou dandu nem vendendu\nKomu u djitadu djiz\nU meu konseliu e pra ci ver feliz",
 					"language": "ro"
 				},
 				{
 					"type": "chorus",
-					"text": "Trebuie să lupți, nu te descuraja\nDoar să te predai celui care te merită\nNu dau nici vând\nCum spune zicala\nConsiliul meu este să te văd fericit",
+					"text": "Trebuie să lupți, nu te lăsa doborât\nSă te dăruiești doar celui care te merită\nNici nu dau, nici nu vând\nCum spune zicala\nSfatul meu e ca să te văd fericit",
 					"language": "ro-translation"
 				}
 			]
@@ -315,7 +454,7 @@
 		"id": "nego-nago",
 		"title": "Nego Nagô",
 		"author": "Mestre Ananias",
-		"category": "REGIONAL",
+		"category": "ANGOLA",
 		"tags": ["corrido", "angola"],
 		"structure": ["v1", "c2", "v1", "c2"],
 		"verses": {
@@ -327,29 +466,12 @@
 				},
 				{
 					"type": "verse",
-					"text": "Negu nago kandu mori, vai na tumba dji banguê\nUș parentis vão dizendu, urubu tem ke komer\nAki babá, a kangerê, negu nago, tem katinga dji sariguê",
+					"text": "Negu nago kandu mori, vai na tumba dji banguê\nUș parentis vau dizendu, urubu tem ke komer\nAki babá, a kangerê, negu nago, tem katinga dji sariguê",
 					"language": "ro"
 				},
 				{
 					"type": "verse",
-					"text": "Nego nagô, când moare, merge în mormântul din Banguê\nRudele tot spun: urubu (vulturul) trebuie să mănânce\nAici, babá, a cangerê, nego nagô are miros de sariguê",
-					"language": "ro-translation"
-				}
-			],
-			"c1": [
-				{
-					"type": "chorus",
-					"text": "Aqui babá, a cangerê, nego nagô tem catinga de sariguê",
-					"language": "pt"
-				},
-				{
-					"type": "chorus",
-					"text": "Aki babá, a kangerê, negu nago tem katinga dji sariguê",
-					"language": "ro"
-				},
-				{
-					"type": "chorus",
-					"text": "Aici, babá, a cangerê, nego nagô are miros de sariguê",
+					"text": "Nego nagô, când moare, e dus pe targa de morți (banguê)\nRudele tot spun: urubu (vulturul) trebuie să mănânce\nAici, babá, la cangerê (ritual), nego nagô miroase a oposum (sariguê)",
 					"language": "ro-translation"
 				}
 			],
@@ -366,7 +488,7 @@
 				},
 				{
 					"type": "chorus",
-					"text": "Aici, babá, a cangerê, nego nagô are miros de sariguê\nAici, babá, a cangerê, nego nagô are miros de sariguê",
+					"text": "Aici, babá, la cangerê (ritual), nego nagô miroase a oposum (sariguê)\nAici, babá, la cangerê (ritual), nego nagô miroase a oposum (sariguê)",
 					"language": "ro-translation"
 				}
 			]
@@ -381,8 +503,16 @@
 		"structure": ["v1", "c2", "v2", "c2"],
 		"verses": {
 			"v1": [
-				{ "type": "verse", "text": "Ô mãe amanhã eu vou\nÔ mãe amanhã chego lá", "language": "pt" },
-				{ "type": "verse", "text": "O mãi amanhă eu vou\nO mãi amanhă shegu la", "language": "ro" },
+				{
+					"type": "verse",
+					"text": "Ô mãe amanhã eu vou\nÔ mãe amanhã chego lá",
+					"language": "pt"
+				},
+				{
+					"type": "verse",
+					"text": "O măi amaniă eu vou\nO măi amaniă șegu la",
+					"language": "ro"
+				},
 				{
 					"type": "verse",
 					"text": "O, mamă, mâine plec\nO, mamă, mâine ajung acolo",
@@ -390,8 +520,16 @@
 				}
 			],
 			"c2": [
-				{ "type": "chorus", "text": "Mãe amanhã eu vou\nMãe amanhã chego lá", "language": "pt" },
-				{ "type": "chorus", "text": "Mãi amanhă eu vou\nMãi amanhă shegu la", "language": "ro" },
+				{
+					"type": "chorus",
+					"text": "Mãe amanhã eu vou\nMãe amanhã chego lá",
+					"language": "pt"
+				},
+				{
+					"type": "chorus",
+					"text": "Măi amaniă eu vou\nMăi amaniă șegu la",
+					"language": "ro"
+				},
 				{
 					"type": "chorus",
 					"text": "Mamă, mâine plec\nMamă, mâine ajung acolo",
@@ -406,7 +544,7 @@
 				},
 				{
 					"type": "verse",
-					"text": "O mãi amanhă eu vou\nO mãi amanhă shegu la, ai ai",
+					"text": "O măi amaniă eu vou\nO măi amaniă șegu la, ai ai",
 					"language": "ro"
 				},
 				{
@@ -420,10 +558,10 @@
 	{
 		"id": "ta-na-hora-de-jogar",
 		"title": "Tá na hora de jogar",
-		"author": "Traditional",
+		"author": "Mestrando Charm (ABADÁ-Capoeira)",
 		"category": "REGIONAL",
 		"tags": ["corrido", "roda"],
-		"structure": ["c1", "c2", "v1", "c1", "v2", "c1", "v3", "c1", "v4", "c1"],
+		"structure": ["c1", "v2", "c1", "v1", "c1", "v3", "c1", "v4", "c1", "c2", "c1"],
 		"verses": {
 			"c1": [
 				{
@@ -438,7 +576,7 @@
 				},
 				{
 					"type": "chorus",
-					"text": "E timpul să jucăm\nHai să vadiăm\nE timpul să jucăm\nHai să vadiăm\n(2x)",
+					"text": "E timpul să jucăm\nHai să ne jucăm (vadiar)\nE timpul să jucăm\nHai să ne jucăm (vadiar)\n(2x)",
 					"language": "ro-translation"
 				}
 			],
@@ -455,41 +593,41 @@
 				},
 				{
 					"type": "chorus",
-					"text": "Eu merg, eu merg\nMă duc să vadi-ez\nEu merg, eu merg\nMă duc să vadi-ez\n(2x)",
+					"text": "Mă duc, mă duc\nMă duc să joc (vadiar)\nMă duc, mă duc\nMă duc să joc (vadiar)\n(2x)",
 					"language": "ro-translation"
 				}
 			],
 			"v1": [
 				{
 					"type": "verse",
-					"text": "Quando chega a hora\nPara mim é uma alegria\nEu pego no berimbau\nE começo a cantoria",
+					"text": "E quando chega a hora\nPara mim é uma alegria\nEu pego no berimbau\nE começo a cantoria",
 					"language": "pt"
 				},
 				{
 					"type": "verse",
-					"text": "Kuandu shega a ora\nPara mim e uma alegria\nEu pegu nu berimbau\nI komeçu a kantoria",
+					"text": "I kuandu șega a ora\nPara mim e uma alegria\nEu pegu nu berimbau\nI komesu a kantoria",
 					"language": "ro"
 				},
 				{
 					"type": "verse",
-					"text": "Când vine momentul\nPentru mine e o bucurie\nPun mâna pe berimbau\nȘi încep cântarea",
+					"text": "Și când vine momentul\nPentru mine e o bucurie\nPun mâna pe berimbau\nȘi încep cântarea",
 					"language": "ro-translation"
 				}
 			],
 			"v2": [
 				{
 					"type": "verse",
-					"text": "Berimbau me convidou\nEu não posso recusar\nBenzo logo meu corpo\nE entro para jogar",
+					"text": "O berimbau me convidou\nEu não posso recusar\nEu benzo o meu corpo\nE entro para jogar",
 					"language": "pt"
 				},
 				{
 					"type": "verse",
-					"text": "Berimbau mi konvidou\nEu nao posu rekuzar\nBenzo logo meu korpu\nI entru para jogar",
+					"text": "U berimbau mi konvidou\nEu nau posu rekuzar\nEu benzu u meu korpu\nI entru para jogar",
 					"language": "ro"
 				},
 				{
 					"type": "verse",
-					"text": "Berimbau m-a chemat\nNu pot să refuz\nÎmi binecuvântez îndată trupul\nȘi intru să joc",
+					"text": "Berimbau-ul m-a chemat\nNu pot să refuz\nÎmi binecuvântez trupul\nȘi intru să joc",
 					"language": "ro-translation"
 				}
 			],
@@ -501,7 +639,7 @@
 				},
 				{
 					"type": "verse",
-					"text": "A roda pasou du mei-u\nBerimbau falou asim\nU jogo termina agora\nMas a kapoeira nao tem fim",
+					"text": "A roda pasou du mei-u\nBerimbau falou asim\nU jogo termina agora\nMas a kapoeira nau tem fim",
 					"language": "ro"
 				},
 				{
@@ -518,7 +656,7 @@
 				},
 				{
 					"type": "verse",
-					"text": "Pra kem vivi kapoeira\nKuandu u berimbau dezarma\nDa uma tristez-a nu ispiritu\nI us olhus enchendu d'agua",
+					"text": "Pra kem vivi kapoeira\nKuandu u berimbau dezarma\nDa uma tristez-a nu ispiritu\nI us olius enșendu d'agua",
 					"language": "ro"
 				},
 				{
@@ -532,7 +670,7 @@
 	{
 		"id": "meu-patua",
 		"title": "Meu patuá",
-		"author": "Traditional",
+		"author": "Mestre Casquinha",
 		"category": "REGIONAL",
 		"tags": ["corrido", "roda"],
 		"structure": ["c1", "v1", "c1", "v2", "c1", "v3", "c1", "v4", "c1"],
@@ -540,12 +678,12 @@
 			"c1": [
 				{
 					"type": "chorus",
-					"text": "Foi na Bahia que eu mandei fazer\nFoi na Bahia que mandei preparar\nMeu patuá meu pai\nMeu patuá\nMeu patuá para me proteger",
+					"text": "Foi na Bahia que eu mandei fazer\nFoi na Bahia que eu mandei preparar\nMeu patuá meu pai\nMeu patuá\nMeu patuá para me proteger",
 					"language": "pt"
 				},
 				{
 					"type": "chorus",
-					"text": "Foi na Bahia ke eu mandei fazer\nFoi na Bahia ke mandei preparar\nMeu patuá meu pai\nMeu patuá\nMeu patuá para mi proteger",
+					"text": "Foi na Bahia ke eu mandei fazer\nFoi na Bahia ke eu mandei preparar\nMeu patuá meu pai\nMeu patuá\nMeu patuá para mi proteger",
 					"language": "ro"
 				},
 				{
@@ -557,17 +695,17 @@
 			"v1": [
 				{
 					"type": "verse",
-					"text": "Era domingo era um dia de oferendas\nE eu levei flores para Iemanjá\nFoi celebrar Janaina\nRainha menina\nE a Iemanjá que e a dona do mar",
+					"text": "Era domingo era um dia de oferendas\nE eu levei flores para Iemanjá\nFui celebrar Janaína\nRainha menina\nE Iemanjá que é a dona do mar",
 					"language": "pt"
 				},
 				{
 					"type": "verse",
-					"text": "Era domingo era um djia dji oferendas\nI eu levei flores para Iemanjá\nFoi selebrar Janaina\nRainha menina\nI a Iemanjá ke e a dona du mar",
+					"text": "Era domingo era um djia dji oferendas\nI eu levei flores para Iemanjá\nFui selebrar Janaina\nRainia menina\nI Iemanjá ke e a dona du mar",
 					"language": "ro"
 				},
 				{
 					"type": "verse",
-					"text": "Era duminică, era o zi de ofrande\nȘi am dus flori pentru Iemanjá\nA fost să o celebrez pe Janaina\nRegina-fetiță\nȘi pe Iemanjá, stăpâna mării",
+					"text": "Era duminică, era o zi de ofrande\nȘi am dus flori pentru Iemanjá\nAm mers s-o sărbătoresc pe Janaína\nRegina-fetiță\nȘi pe Iemanjá, care e stăpâna mării",
 					"language": "ro-translation"
 				}
 			],
@@ -579,7 +717,7 @@
 				},
 				{
 					"type": "verse",
-					"text": "Na Bahia um meștri velhu mandingueiru\nAbriu a roda fazendu uma louvasau\nKantou bem forti u lamento\nMi dandu a bênsau\nEra ora dji eu sair para jogar",
+					"text": "Na Bahia um meștri veliu mandingueiru\nAbriu a roda fazendu uma louvasau\nKantou bem forti u lamento\nMi dandu a bensau\nEra ora dji eu sair para jogar",
 					"language": "ro"
 				},
 				{
@@ -591,34 +729,34 @@
 			"v3": [
 				{
 					"type": "verse",
-					"text": "Foi convidado para uma roda de gigantes\nCom dois pandeiros e três berimbaus\nE um atabaque tocando\nManeiro e sereno\nEra hora de eu sair para jogar",
+					"text": "Fui convidado para uma roda de gigante\nCom dois pandeiros e três berimbaus\nE um atabaque tocando\nManeiro e sereno\nÉ a roda que já vai começar",
 					"language": "pt"
 				},
 				{
 					"type": "verse",
-					"text": "Foi konvidadu para uma roda dji gigantes\nCom dois pandeirus i treiș berimbaus\nI um atabaque tokandu\nManeiru i serenu\nEra ora dji eu sair para jogar",
+					"text": "Fui konvidadu para uma roda dji jiganci\nCom dois pandeirus i treiș berimbaus\nI um atabaque tokandu\nManeiru i serenu\nE a roda ke ja vai komesar",
 					"language": "ro"
 				},
 				{
 					"type": "verse",
-					"text": "Am fost invitat la o roda de giganți\nCu două pandeiro și trei berimbau\nȘi un atabaque cântând\nFrumos și senin\nEra timpul să ies să joc",
+					"text": "Am fost invitat la o roda uriașă\nCu două pandeiro și trei berimbau\nȘi un atabaque cântând\nFrumos și senin\nE roda care tocmai începe",
 					"language": "ro-translation"
 				}
 			],
 			"v4": [
 				{
 					"type": "verse",
-					"text": "Meu patuá é meu berimbau sagrado\nE minha vida também é meu cantar\nÉ os meus amigos sorrindo\nSempre junto comigo\nNa volta que o mundo da",
+					"text": "Meu patuá é meu berimbau sagrado\nÉ minha vida e também o meu cantar\nÉ os meus amigos sorrindo\nSempre junto comigo\nNa volta que o mundo dá",
 					"language": "pt"
 				},
 				{
 					"type": "verse",
-					"text": "Meu patuá e meu berimbau sagradu\nI minha vida tambem e meu kantar\nI us meus amigos sorindu\nSempri junto komigu\nNa volta ke u mundu da",
+					"text": "Meu patuá e meu berimbau sagradu\nE minia vida i tambem u meu kantar\nE us meus amigus sorindu\nSempri juntu komigu\nNa volta ke u mundu da",
 					"language": "ro"
 				},
 				{
 					"type": "verse",
-					"text": "Patuá-ul meu e berimbau-ul meu sacru\nȘi viața mea e și cântecul meu\nSunt prietenii mei zâmbind\nMereu lângă mine\nÎn întoarcerea pe care o face lumea",
+					"text": "Patuá-ul meu e berimbau-ul meu sacru\nE viața mea și cântecul meu\nSunt prietenii mei zâmbind\nMereu lângă mine\nOricât s-ar învârti lumea",
 					"language": "ro-translation"
 				}
 			]
@@ -635,7 +773,7 @@
 			"c1": [
 				{
 					"type": "chorus",
-					"text": "Samba lê lê bateu na porta\nSamba lê lê vai ver quem é ?\nSamba lê lê é meu amor\nSamba lê lê samba no pé",
+					"text": "Samba lê lê bateu na porta\nSamba lê lê vai ver quem é?\nSamba lê lê é meu amor\nSamba lê lê samba no pé",
 					"language": "pt"
 				},
 				{
@@ -645,7 +783,7 @@
 				},
 				{
 					"type": "chorus",
-					"text": "Samba Lelê a bătut la ușă\nSamba Lelê se duce să vadă cine e?\nSamba Lelê e iubirea mea\nSamba Lelê dansează samba din picioare",
+					"text": "Samba Lelê a bătut la ușă\nSamba Lelê, du-te și vezi cine e\nSamba Lelê e iubirea mea\nSamba Lelê are samba în picioare",
 					"language": "ro-translation"
 				}
 			],
@@ -674,7 +812,7 @@
 				},
 				{
 					"type": "verse",
-					"text": "Mais mulier velha nao se kaza\nPorke nao așa ninguem\nKuandu shega nu roșadu\nShama todos dji meu bem",
+					"text": "Mais mulier velia nau se kaza\nPorke nau așa ninguem\nKuandu șega nu roșadu\nȘama todos dji meu bem",
 					"language": "ro"
 				},
 				{
@@ -755,8 +893,16 @@
 		"structure": ["c1", "v1", "c1", "v2", "c1"],
 		"verses": {
 			"c1": [
-				{ "type": "chorus", "text": "Adeus Santo Amaro, vou ver, vou pra lá", "language": "pt" },
-				{ "type": "chorus", "text": "Adeus Santu Amaru, vou ver, vou pra la", "language": "ro" },
+				{
+					"type": "chorus",
+					"text": "Adeus Santo Amaro, vou ver, vou pra lá",
+					"language": "pt"
+				},
+				{
+					"type": "chorus",
+					"text": "Adeus Santu Amaru, vou ver, vou pra la",
+					"language": "ro"
+				},
 				{
 					"type": "chorus",
 					"text": "La revedere, Santo Amaro, mă duc să văd, plec acolo",
@@ -805,22 +951,56 @@
 		"author": "Traditional",
 		"category": "ANGOLA",
 		"tags": ["corrido", "angola"],
-		"structure": ["c1"],
+		"structure": ["v1", "c1", "v2", "c1"],
 		"verses": {
+			"v1": [
+				{
+					"type": "verse",
+					"text": "O meu atabaque é de couro de boi\nOlha o meu atabaque",
+					"language": "pt"
+				},
+				{
+					"type": "verse",
+					"text": "U meu atabaque e dji kouru dji boi\nOlia u meu atabaque",
+					"language": "ro"
+				},
+				{
+					"type": "verse",
+					"text": "Atabaque-ul meu e din piele de bou\nUite atabaque-ul meu",
+					"language": "ro-translation"
+				}
+			],
 			"c1": [
 				{
 					"type": "chorus",
-					"text": "Meu atabaque é de couro de boi\nOlha o meu atabaque\n(é de couro de boi)\nMeu atabaque\n(é de couro de boi)",
+					"text": "É de couro de boi",
 					"language": "pt"
 				},
 				{
 					"type": "chorus",
-					"text": "Meu atabaque e dji kouru dji boi\nOlia u meu atabaque\n(e dji kouru dji boi)\nMeu atabaque\n(e dji kouru dji boi)",
+					"text": "E dji kouru dji boi",
 					"language": "ro"
 				},
 				{
 					"type": "chorus",
-					"text": "Atabaque-ul meu e din piele de bou\nUite la atabaque-ul meu\n(e din piele de bou)\nAtabaque-ul meu\n(e din piele de bou)",
+					"text": "E din piele de bou",
+					"language": "ro-translation"
+				}
+			],
+			"v2": [
+				{
+					"type": "verse",
+					"text": "Meu atabaque",
+					"language": "pt"
+				},
+				{
+					"type": "verse",
+					"text": "Meu atabaque",
+					"language": "ro"
+				},
+				{
+					"type": "verse",
+					"text": "Atabaque-ul meu",
 					"language": "ro-translation"
 				}
 			]
@@ -842,7 +1022,7 @@
 				},
 				{
 					"type": "chorus",
-					"text": "Eu vou botar minha redji na varanda\nEu keru ver minha redji balansar\nBalansa redji ioio\nBalansa redji iaia",
+					"text": "Eu vou botar minia redji na varanda\nEu keru ver minia redji balansar\nBalansa redji ioio\nBalansa redji iaia",
 					"language": "ro"
 				},
 				{
@@ -857,7 +1037,7 @@
 		"id": "quem-vem-la-sou-eu",
 		"title": "Quem vem lá, sou eu",
 		"author": "Traditional",
-		"category": "ANGOLA",
+		"category": "UNSPECIFIED",
 		"tags": ["corrido", "angola", "roda"],
 		"structure": ["c1", "c2", "v1", "c1", "v2", "c1"],
 		"verses": {
@@ -903,7 +1083,7 @@
 				},
 				{
 					"type": "verse",
-					"text": "Eu venhu dji lonji, venhu dji Itabuna\nJogu kapoeira meu nomi e Suassuna",
+					"text": "Eu veniu dji lonji, veniu dji Itabuna\nJogu kapoeira meu nomi e Suassuna",
 					"language": "ro"
 				},
 				{
@@ -915,17 +1095,17 @@
 			"v2": [
 				{
 					"type": "verse",
-					"text": "Mas sou eu, sou eu\nQuem vem lá\nEu sou bevenuto\nQuem vem lá\nMontado a cavalo\nQuem vem lá\nFumando a charuto-\nQuem vem lá\nMas sou eu, sou eu\nQuem vem lá\nQuem vem lá, sou eu",
+					"text": "Mas sou eu, sou eu\nQuem vem lá\nMas sou eu, Brevenuto\nQuem vem lá\nMontado a cavalo\nQuem vem lá\nFumando um charuto\nQuem vem lá\nMas sou eu, sou eu\nQuem vem lá\nQuem vem lá, sou eu",
 					"language": "pt"
 				},
 				{
 					"type": "verse",
-					"text": "Maiș sou eu, sou eu\nKem vem la\nEu sou bevenuto\nKem vem la\nMontadu a kavalu\nKem vem la\nFumandu a sharutu\nKem vem la\nMaiș sou eu, sou eu\nKem vem la\nKem vem la, sou eu",
+					"text": "Maiș sou eu, sou eu\nKem vem la\nMaiș sou eu, Brevenutu\nKem vem la\nMontadu a kavalu\nKem vem la\nFumandu um șarutu\nKem vem la\nMaiș sou eu, sou eu\nKem vem la\nKem vem la, sou eu",
 					"language": "ro"
 				},
 				{
 					"type": "verse",
-					"text": "Dar sunt eu, sunt eu\nCine vine acolo?\nEu sunt Bevenuto\nCine vine acolo?\nCălare pe cal\nCine vine acolo?\nFumând un trabuc\nCine vine acolo?\nDar sunt eu, sunt eu\nCine vine acolo?\nCine vine acolo? Sunt eu",
+					"text": "Dar sunt eu, sunt eu\nCine vine acolo?\nDar sunt eu, Brevenuto\nCine vine acolo?\nCălare pe cal\nCine vine acolo?\nFumând un trabuc\nCine vine acolo?\nDar sunt eu, sunt eu\nCine vine acolo?\nCine vine acolo? Sunt eu",
 					"language": "ro-translation"
 				}
 			]
@@ -933,9 +1113,9 @@
 	},
 	{
 		"id": "marinheiro-sou",
-		"title": "Marinheiro sou",
+		"title": "Marinheiro só",
 		"author": "Traditional",
-		"category": "REGIONAL",
+		"category": "SAMBA",
 		"tags": ["corrido", "popular", "call-and-response"],
 		"structure": [
 			"v1",
@@ -965,69 +1145,225 @@
 		],
 		"verses": {
 			"c1": [
-				{ "type": "chorus", "text": "Marinheiro sou", "language": "pt" },
-				{ "type": "chorus", "text": "Marinheiru sou", "language": "ro" },
-				{ "type": "chorus", "text": "Sunt marinar", "language": "ro-translation" }
+				{
+					"type": "chorus",
+					"text": "Marinheiro só",
+					"language": "pt"
+				},
+				{
+					"type": "chorus",
+					"text": "Marinieiru so",
+					"language": "ro"
+				},
+				{
+					"type": "chorus",
+					"text": "Marinar singur",
+					"language": "ro-translation"
+				}
 			],
 			"v1": [
-				{ "type": "verse", "text": "Eu não sou daqui", "language": "pt" },
-				{ "type": "verse", "text": "Eu nao sou daqui", "language": "ro" },
-				{ "type": "verse", "text": "Eu nu sunt de aici", "language": "ro-translation" }
+				{
+					"type": "verse",
+					"text": "Eu não sou daqui",
+					"language": "pt"
+				},
+				{
+					"type": "verse",
+					"text": "Eu nau sou daqui",
+					"language": "ro"
+				},
+				{
+					"type": "verse",
+					"text": "Eu nu sunt de aici",
+					"language": "ro-translation"
+				}
 			],
 			"v2": [
-				{ "type": "verse", "text": "Eu não tenho amor", "language": "pt" },
-				{ "type": "verse", "text": "Eu nao tenhu amor", "language": "ro" },
-				{ "type": "verse", "text": "Eu n-am iubire", "language": "ro-translation" }
+				{
+					"type": "verse",
+					"text": "Eu não tenho amor",
+					"language": "pt"
+				},
+				{
+					"type": "verse",
+					"text": "Eu nau teniu amor",
+					"language": "ro"
+				},
+				{
+					"type": "verse",
+					"text": "Eu n-am iubire",
+					"language": "ro-translation"
+				}
 			],
 			"v3": [
-				{ "type": "verse", "text": "Eu sou da Bahia", "language": "pt" },
-				{ "type": "verse", "text": "Eu sou da Bahia", "language": "ro" },
-				{ "type": "verse", "text": "Eu sunt din Bahia", "language": "ro-translation" }
+				{
+					"type": "verse",
+					"text": "Eu sou da Bahia",
+					"language": "pt"
+				},
+				{
+					"type": "verse",
+					"text": "Eu sou da Bahia",
+					"language": "ro"
+				},
+				{
+					"type": "verse",
+					"text": "Eu sunt din Bahia",
+					"language": "ro-translation"
+				}
 			],
 			"v4": [
-				{ "type": "verse", "text": "De São Salvador", "language": "pt" },
-				{ "type": "verse", "text": "Dji São Salvador", "language": "ro" },
-				{ "type": "verse", "text": "Din São Salvador", "language": "ro-translation" }
+				{
+					"type": "verse",
+					"text": "De São Salvador",
+					"language": "pt"
+				},
+				{
+					"type": "verse",
+					"text": "Dji Sau Salvador",
+					"language": "ro"
+				},
+				{
+					"type": "verse",
+					"text": "Din São Salvador",
+					"language": "ro-translation"
+				}
 			],
 			"v5": [
-				{ "type": "verse", "text": "Oh! Marinheiro, marinheiro", "language": "pt" },
-				{ "type": "verse", "text": "O! Marinheiru, marinheiru", "language": "ro" },
-				{ "type": "verse", "text": "O, marinarule, marinarule", "language": "ro-translation" }
+				{
+					"type": "verse",
+					"text": "Oh! Marinheiro, marinheiro",
+					"language": "pt"
+				},
+				{
+					"type": "verse",
+					"text": "O! Marinieiru, marinieiru",
+					"language": "ro"
+				},
+				{
+					"type": "verse",
+					"text": "O, marinarule, marinarule",
+					"language": "ro-translation"
+				}
 			],
 			"v6": [
-				{ "type": "verse", "text": "Quem te ensinou a nadar", "language": "pt" },
-				{ "type": "verse", "text": "Kem tji ensinou a nadar", "language": "ro" },
-				{ "type": "verse", "text": "Cine te-a învățat să înoți", "language": "ro-translation" }
+				{
+					"type": "verse",
+					"text": "Quem te ensinou a nadar",
+					"language": "pt"
+				},
+				{
+					"type": "verse",
+					"text": "Kem tji ensinou a nadar",
+					"language": "ro"
+				},
+				{
+					"type": "verse",
+					"text": "Cine te-a învățat să înoți",
+					"language": "ro-translation"
+				}
 			],
 			"v7": [
-				{ "type": "verse", "text": "Ou foi o tombo do navio", "language": "pt" },
-				{ "type": "verse", "text": "Ou foi u tombu du navio", "language": "ro" },
-				{ "type": "verse", "text": "A fost oare răsturnarea vasului", "language": "ro-translation" }
+				{
+					"type": "verse",
+					"text": "Ou foi o tombo do navio",
+					"language": "pt"
+				},
+				{
+					"type": "verse",
+					"text": "Ou foi u tombu du navio",
+					"language": "ro"
+				},
+				{
+					"type": "verse",
+					"text": "Sau a fost clătinarea corăbiei",
+					"language": "ro-translation"
+				}
 			],
 			"v8": [
-				{ "type": "verse", "text": "Ou foi o balanço do mar", "language": "pt" },
-				{ "type": "verse", "text": "Ou foi u balansu du mar", "language": "ro" },
-				{ "type": "verse", "text": "Sau legănarea mării", "language": "ro-translation" }
+				{
+					"type": "verse",
+					"text": "Ou foi o balanço do mar",
+					"language": "pt"
+				},
+				{
+					"type": "verse",
+					"text": "Ou foi u balansu du mar",
+					"language": "ro"
+				},
+				{
+					"type": "verse",
+					"text": "Sau legănarea mării",
+					"language": "ro-translation"
+				}
 			],
 			"v9": [
-				{ "type": "verse", "text": "Oi lá vem, lá vem", "language": "pt" },
-				{ "type": "verse", "text": "Oi la vem, la vem", "language": "ro" },
-				{ "type": "verse", "text": "Oi, iată-l, iată-l că vine", "language": "ro-translation" }
+				{
+					"type": "verse",
+					"text": "Lá vem, lá vem",
+					"language": "pt"
+				},
+				{
+					"type": "verse",
+					"text": "La vem, la vem",
+					"language": "ro"
+				},
+				{
+					"type": "verse",
+					"text": "Iată-l, iată-l că vine",
+					"language": "ro-translation"
+				}
 			],
 			"v10": [
-				{ "type": "verse", "text": "Ele vem faceiro!", "language": "pt" },
-				{ "type": "verse", "text": "Eli vem faseiru!", "language": "ro" },
-				{ "type": "verse", "text": "Vine mândru!", "language": "ro-translation" }
+				{
+					"type": "verse",
+					"text": "Ele vem faceiro!",
+					"language": "pt"
+				},
+				{
+					"type": "verse",
+					"text": "Eli vem faseiru!",
+					"language": "ro"
+				},
+				{
+					"type": "verse",
+					"text": "Vine mândru!",
+					"language": "ro-translation"
+				}
 			],
 			"v11": [
-				{ "type": "verse", "text": "Todo de branco", "language": "pt" },
-				{ "type": "verse", "text": "Todo dji branku", "language": "ro" },
-				{ "type": "verse", "text": "Îmbrăcat tot în alb", "language": "ro-translation" }
+				{
+					"type": "verse",
+					"text": "Todo de branco",
+					"language": "pt"
+				},
+				{
+					"type": "verse",
+					"text": "Todu dji branku",
+					"language": "ro"
+				},
+				{
+					"type": "verse",
+					"text": "Îmbrăcat tot în alb",
+					"language": "ro-translation"
+				}
 			],
 			"v12": [
-				{ "type": "verse", "text": "Com seu bonezinho", "language": "pt" },
-				{ "type": "verse", "text": "Com seu bonezinyu", "language": "ro" },
-				{ "type": "verse", "text": "Cu șepcuța lui", "language": "ro-translation" }
+				{
+					"type": "verse",
+					"text": "Com seu bonezinho",
+					"language": "pt"
+				},
+				{
+					"type": "verse",
+					"text": "Com seu boneziniu",
+					"language": "ro"
+				},
+				{
+					"type": "verse",
+					"text": "Cu șepcuța lui",
+					"language": "ro-translation"
+				}
 			]
 		}
 	},
@@ -1047,12 +1383,12 @@
 				},
 				{
 					"type": "chorus",
-					"text": "Vose nao sabi u valor ke a kapoeira tem\nVose nao sabi u valor ke a kapoeira tem\nEla tem valor dji-mais, ê se segura rapaiz\nVose nao sabi u valor ke a kapoeira tem",
+					"text": "Vose nau sabi u valor ke a kapoeira tem\nVose nau sabi u valor ke a kapoeira tem\nEla tem valor djimaiș, ê si segura rapaiz\nVose nau sabi u valor ke a kapoeira tem",
 					"language": "ro"
 				},
 				{
 					"type": "chorus",
-					"text": "Tu nu știi ce valoare are capoeira\nTu nu știi ce valoare are capoeira\nAre prea multă valoare, ê, ține-te bine, băiete\nTu nu știi ce valoare are capoeira",
+					"text": "Tu nu știi ce valoare are capoeira\nTu nu știi ce valoare are capoeira\nAre o valoare imensă, ê, ține-te bine, băiete\nTu nu știi ce valoare are capoeira",
 					"language": "ro-translation"
 				}
 			],
@@ -1064,7 +1400,7 @@
 				},
 				{
 					"type": "verse",
-					"text": "Um djia a kapoeira ela li ajudou\nTirou vose da mizeria li transformou\nUs seus amigos jamaiș, nenhum deles foram kapaz\nDji tji dar ajuda na vida kuandu preşizô\nTu nao sabi u valor",
+					"text": "Um djia a kapoeira ela li ajudou\nTirou vose da mizeria li transformou\nUs seus amigus jamaiș, neniun deles foram kapaz\nDji tji dar ajuda na vida kuandu presizou\nTu nau sabi u valor",
 					"language": "ro"
 				},
 				{
@@ -1081,7 +1417,7 @@
 				},
 				{
 					"type": "verse",
-					"text": "Um djia um grandi amigo eli mi disi asim\nVamus jogar kapoeira, vamus la brĩnkar\nMuita gente konheci, ai foi ke eu entendi\nKe a kapoeira ela veio pra mi ajudar\nTu nao sabi u valor",
+					"text": "Um djia um grandji amigu eli mi disi asim\nVamus jogar kapoeira, vamus la brinkar\nMuita jenti koniesi, ai foi ke eu entendji\nKe a kapoeira ela veiu pra mi ajudar\nTu nau sabi u valor",
 					"language": "ro"
 				},
 				{
@@ -1098,12 +1434,12 @@
 				},
 				{
 					"type": "verse",
-					"text": "Oji eu lembr-u dji um mundu em ke um djia pasei\nTudo na vida, parceiru, a primeira vez\nAgradeçu ao bom senhor\nA kapoeira mi ajudou\nEla mi fez ser na vida oji kem eu sou\nTu nao sabi u valor",
+					"text": "Oji eu lembru dji um mundu em ke um djia pasei\nTudu na vida, parseiru, a primeira vez\nAgradesu au bom senior\nA kapoeira mi ajudou\nEla mi fez ser na vida oji kem eu sou\nTu nau sabi u valor",
 					"language": "ro"
 				},
 				{
 					"type": "verse",
-					"text": "Azi îmi amintesc de o lume prin care într-o zi am trecut\nTotul în viață, prietene, e prima oară\nÎi mulțumesc bunului Domn\nCapoeira m-a ajutat\nEa m-a făcut să fiu în viață azi cine sunt\nTu nu știi valoarea",
+					"text": "Azi îmi amintesc de o lume prin care am trecut cândva\nTotul în viață, prietene, are o primă dată\nÎi mulțumesc bunului Dumnezeu\nCapoeira m-a ajutat\nEa m-a făcut să fiu azi în viață cine sunt\nTu nu știi valoarea",
 					"language": "ro-translation"
 				}
 			],
@@ -1115,7 +1451,7 @@
 				},
 				{
 					"type": "verse",
-					"text": "Eu falu da kapoeira com muita emoşau\nMexi com meu korpu todo, com meu korasau\nSe e pra falar dji amor, ela ke mi konkistou\nEla mi botou nos brasus i mi tirou du şau\nTu nao sabi u valor",
+					"text": "Eu falu da kapoeira kom muita emosau\nMeși kom meu korpu todu, kom meu korasau\nSi e pra falar dji amor, ela ke mi konkistou\nEla mi botou nus brasus i mi tirou du șau\nTu nau sabi u valor",
 					"language": "ro"
 				},
 				{
@@ -1135,8 +1471,16 @@
 		"structure": ["s1", "c1", "s1", "c1", "s2", "c2", "s2", "c3"],
 		"verses": {
 			"s1": [
-				{ "type": "verse", "text": "Beira mar ioiô\nBeira mar iaiá", "language": "pt" },
-				{ "type": "verse", "text": "Beira mar ioio\nBeira mar iaia", "language": "ro" },
+				{
+					"type": "verse",
+					"text": "Beira mar ioiô\nBeira mar iaiá",
+					"language": "pt"
+				},
+				{
+					"type": "verse",
+					"text": "Beira mar ioio\nBeira mar iaia",
+					"language": "ro"
+				},
 				{
 					"type": "verse",
 					"text": "Pe malul mării, ioiô\nPe malul mării, iaiá",
@@ -1144,8 +1488,16 @@
 				}
 			],
 			"c1": [
-				{ "type": "chorus", "text": "Beira mar ioiô\nBeira mar iaiá", "language": "pt" },
-				{ "type": "chorus", "text": "Beira mar ioio\nBeira mar iaia", "language": "ro" },
+				{
+					"type": "chorus",
+					"text": "Beira mar ioiô\nBeira mar iaiá",
+					"language": "pt"
+				},
+				{
+					"type": "chorus",
+					"text": "Beira mar ioio\nBeira mar iaia",
+					"language": "ro"
+				},
 				{
 					"type": "chorus",
 					"text": "Pe malul mării, ioiô\nPe malul mării, iaiá",
@@ -1153,19 +1505,55 @@
 				}
 			],
 			"s2": [
-				{ "type": "verse", "text": "Beira mar, beira mar", "language": "pt" },
-				{ "type": "verse", "text": "Beira mar, beira mar", "language": "ro" },
-				{ "type": "verse", "text": "Pe malul mării, pe malul mării", "language": "ro-translation" }
+				{
+					"type": "verse",
+					"text": "Beira mar, beira mar",
+					"language": "pt"
+				},
+				{
+					"type": "verse",
+					"text": "Beira mar, beira mar",
+					"language": "ro"
+				},
+				{
+					"type": "verse",
+					"text": "Pe malul mării, pe malul mării",
+					"language": "ro-translation"
+				}
 			],
 			"c2": [
-				{ "type": "chorus", "text": "É de ioiô", "language": "pt" },
-				{ "type": "chorus", "text": "E dji ioio", "language": "ro" },
-				{ "type": "chorus", "text": "Este al lui ioiô", "language": "ro-translation" }
+				{
+					"type": "chorus",
+					"text": "É de ioiô",
+					"language": "pt"
+				},
+				{
+					"type": "chorus",
+					"text": "E dji ioio",
+					"language": "ro"
+				},
+				{
+					"type": "chorus",
+					"text": "Este al lui ioiô",
+					"language": "ro-translation"
+				}
 			],
 			"c3": [
-				{ "type": "chorus", "text": "É de iaiá", "language": "pt" },
-				{ "type": "chorus", "text": "E dji iaia", "language": "ro" },
-				{ "type": "chorus", "text": "Este al lui iaiá", "language": "ro-translation" }
+				{
+					"type": "chorus",
+					"text": "É de iaiá",
+					"language": "pt"
+				},
+				{
+					"type": "chorus",
+					"text": "E dji iaia",
+					"language": "ro"
+				},
+				{
+					"type": "chorus",
+					"text": "Este al lui iaiá",
+					"language": "ro-translation"
+				}
 			]
 		}
 	},
@@ -1180,63 +1568,119 @@
 			"v1": [
 				{
 					"type": "verse",
-					"text": "A maré tá cheia, ioió\nA maré tá cheia, iaiá",
+					"text": "A maré tá cheia, ioiô\nA maré tá cheia, iaiá",
 					"language": "pt"
 				},
 				{
 					"type": "verse",
-					"text": "A mare ta cheia, ioio\nA mare ta cheia, iaia",
+					"text": "A mare ta șeia, ioio\nA mare ta șeia, iaia",
 					"language": "ro"
 				},
 				{
 					"type": "verse",
-					"text": "Marea e plină, ioió\nMarea e plină, iaiá",
+					"text": "Mareea e plină, ioiô\nMareea e plină, iaiá",
 					"language": "ro-translation"
 				}
 			],
 			"c1": [
 				{
 					"type": "chorus",
-					"text": "A maré tá cheia, ioió\nA maré tá cheia, iaiá",
+					"text": "A maré tá cheia, ioiô\nA maré tá cheia, iaiá",
 					"language": "pt"
 				},
 				{
 					"type": "chorus",
-					"text": "A mare ta cheia, ioio\nA mare ta cheia, iaia",
+					"text": "A mare ta șeia, ioio\nA mare ta șeia, iaia",
 					"language": "ro"
 				},
 				{
 					"type": "chorus",
-					"text": "Marea e plină, ioió\nMarea e plină, iaiá",
+					"text": "Mareea e plină, ioiô\nMareea e plină, iaiá",
 					"language": "ro-translation"
 				}
 			],
 			"v2": [
-				{ "type": "verse", "text": "A maré subiu", "language": "pt" },
-				{ "type": "verse", "text": "A mare subiu", "language": "ro" },
-				{ "type": "verse", "text": "Marea a crescut", "language": "ro-translation" }
-			],
-			"c2": [
-				{ "type": "chorus", "text": "Sobe maré", "language": "pt" },
-				{ "type": "chorus", "text": "Sobi mare", "language": "ro" },
-				{ "type": "chorus", "text": "Urcă, mare", "language": "ro-translation" }
-			],
-			"v3": [
-				{ "type": "verse", "text": "A maré desceu", "language": "pt" },
-				{ "type": "verse", "text": "A mare desceu", "language": "ro" },
-				{ "type": "verse", "text": "Marea a scăzut", "language": "ro-translation" }
-			],
-			"c3": [
-				{ "type": "chorus", "text": "Desce maré", "language": "pt" },
-				{ "type": "chorus", "text": "Desse mare", "language": "ro" },
-				{ "type": "chorus", "text": "Coboară, mare", "language": "ro-translation" }
-			],
-			"v4": [
-				{ "type": "verse", "text": "Ô maré é de maré\nVou pra Ilha de Maré", "language": "pt" },
-				{ "type": "verse", "text": "O mare e dji Mare\nVou pra Ilha dji Mare", "language": "ro" },
 				{
 					"type": "verse",
-					"text": "O, marea e din Maré\nMă duc spre Insula Maré",
+					"text": "A maré subiu",
+					"language": "pt"
+				},
+				{
+					"type": "verse",
+					"text": "A mare subiu",
+					"language": "ro"
+				},
+				{
+					"type": "verse",
+					"text": "Mareea a crescut",
+					"language": "ro-translation"
+				}
+			],
+			"c2": [
+				{
+					"type": "chorus",
+					"text": "Sobe maré",
+					"language": "pt"
+				},
+				{
+					"type": "chorus",
+					"text": "Sobi mare",
+					"language": "ro"
+				},
+				{
+					"type": "chorus",
+					"text": "Urcă, maree",
+					"language": "ro-translation"
+				}
+			],
+			"v3": [
+				{
+					"type": "verse",
+					"text": "A maré desceu",
+					"language": "pt"
+				},
+				{
+					"type": "verse",
+					"text": "A mare deseu",
+					"language": "ro"
+				},
+				{
+					"type": "verse",
+					"text": "Mareea a scăzut",
+					"language": "ro-translation"
+				}
+			],
+			"c3": [
+				{
+					"type": "chorus",
+					"text": "Desce maré",
+					"language": "pt"
+				},
+				{
+					"type": "chorus",
+					"text": "Desi mare",
+					"language": "ro"
+				},
+				{
+					"type": "chorus",
+					"text": "Coboară, maree",
+					"language": "ro-translation"
+				}
+			],
+			"v4": [
+				{
+					"type": "verse",
+					"text": "Olha maré de maré\nVou pra Ilha de Maré",
+					"language": "pt"
+				},
+				{
+					"type": "verse",
+					"text": "Olia mare dji mare\nVou pra Ilia dji Mare",
+					"language": "ro"
+				},
+				{
+					"type": "verse",
+					"text": "Uite mareea, mareea\nMă duc pe Insula Maré",
 					"language": "ro-translation"
 				}
 			]
@@ -1251,24 +1695,72 @@
 		"structure": ["c1", "v1", "c1", "v1", "c1", "v2", "c1", "v3", "c1"],
 		"verses": {
 			"c1": [
-				{ "type": "chorus", "text": "E, e, e, tum tum tum", "language": "pt" },
-				{ "type": "chorus", "text": "E, e, e, tum tum tum", "language": "ro" },
-				{ "type": "chorus", "text": "E, e, e, tum tum tum", "language": "ro-translation" }
+				{
+					"type": "chorus",
+					"text": "E, e, e, tum tum tum",
+					"language": "pt"
+				},
+				{
+					"type": "chorus",
+					"text": "E, e, e, tum tum tum",
+					"language": "ro"
+				},
+				{
+					"type": "chorus",
+					"text": "E, e, e, tum tum tum",
+					"language": "ro-translation"
+				}
 			],
 			"v1": [
-				{ "type": "verse", "text": "Olha a pisada de Lampião", "language": "pt" },
-				{ "type": "verse", "text": "Olia a pisada dji Lampião", "language": "ro" },
-				{ "type": "verse", "text": "Uite urma (pasul) lui Lampião", "language": "ro-translation" }
+				{
+					"type": "verse",
+					"text": "Olha a pisada de Lampião",
+					"language": "pt"
+				},
+				{
+					"type": "verse",
+					"text": "Olia a pizada dji Lampiau",
+					"language": "ro"
+				},
+				{
+					"type": "verse",
+					"text": "Uite pasul (călcătura) lui Lampião",
+					"language": "ro-translation"
+				}
 			],
 			"v2": [
-				{ "type": "verse", "text": "Lampião desceu a serra", "language": "pt" },
-				{ "type": "verse", "text": "Lampião desceu a sera", "language": "ro" },
-				{ "type": "verse", "text": "Lampião a coborât din munți", "language": "ro-translation" }
+				{
+					"type": "verse",
+					"text": "Lampião desceu a serra",
+					"language": "pt"
+				},
+				{
+					"type": "verse",
+					"text": "Lampiau deseu a sera",
+					"language": "ro"
+				},
+				{
+					"type": "verse",
+					"text": "Lampião a coborât din munți",
+					"language": "ro-translation"
+				}
 			],
 			"v3": [
-				{ "type": "verse", "text": "Amanhã é dia santo", "language": "pt" },
-				{ "type": "verse", "text": "Amanhã e djia santu", "language": "ro" },
-				{ "type": "verse", "text": "Mâine e zi sfântă", "language": "ro-translation" }
+				{
+					"type": "verse",
+					"text": "Amanhã é dia santo",
+					"language": "pt"
+				},
+				{
+					"type": "verse",
+					"text": "Amaniă e djia santu",
+					"language": "ro"
+				},
+				{
+					"type": "verse",
+					"text": "Mâine e zi sfântă",
+					"language": "ro-translation"
+				}
 			]
 		}
 	},
@@ -1300,38 +1792,118 @@
 		],
 		"verses": {
 			"c1": [
-				{ "type": "chorus", "text": "Olha o nego sinhá", "language": "pt" },
-				{ "type": "chorus", "text": "Olia u nego sinhá", "language": "ro" },
-				{ "type": "chorus", "text": "Uite-l pe negru, stăpână", "language": "ro-translation" }
+				{
+					"type": "chorus",
+					"text": "Olha o nego sinhá",
+					"language": "pt"
+				},
+				{
+					"type": "chorus",
+					"text": "Olia u nego siniá",
+					"language": "ro"
+				},
+				{
+					"type": "chorus",
+					"text": "Uite-l pe negru, stăpână",
+					"language": "ro-translation"
+				}
 			],
 			"v1": [
-				{ "type": "verse", "text": "Olha lá o nego", "language": "pt" },
-				{ "type": "verse", "text": "Olia la u nego", "language": "ro" },
-				{ "type": "verse", "text": "Uite-l acolo pe negru", "language": "ro-translation" }
+				{
+					"type": "verse",
+					"text": "Olha lá o nego",
+					"language": "pt"
+				},
+				{
+					"type": "verse",
+					"text": "Olia la u nego",
+					"language": "ro"
+				},
+				{
+					"type": "verse",
+					"text": "Uite-l acolo pe negru",
+					"language": "ro-translation"
+				}
 			],
 			"v2": [
-				{ "type": "verse", "text": "Mas que nego danado", "language": "pt" },
-				{ "type": "verse", "text": "Mas ke nego danadu", "language": "ro" },
-				{ "type": "verse", "text": "Ce negru năzdrăvan", "language": "ro-translation" }
+				{
+					"type": "verse",
+					"text": "Mas que nego danado",
+					"language": "pt"
+				},
+				{
+					"type": "verse",
+					"text": "Mas ke nego danadu",
+					"language": "ro"
+				},
+				{
+					"type": "verse",
+					"text": "Ce negru năzdrăvan",
+					"language": "ro-translation"
+				}
 			],
 			"v3": [
-				{ "type": "verse", "text": "Oi me pega esse nego", "language": "pt" },
-				{ "type": "verse", "text": "Oi mi pega esi nego", "language": "ro" },
-				{ "type": "verse", "text": "Hei, prinde-l pe negrul ăsta", "language": "ro-translation" }
+				{
+					"type": "verse",
+					"text": "Oi me pega esse nego",
+					"language": "pt"
+				},
+				{
+					"type": "verse",
+					"text": "Oi mi pega esi nego",
+					"language": "ro"
+				},
+				{
+					"type": "verse",
+					"text": "Hei, prinde-l pe negrul ăsta",
+					"language": "ro-translation"
+				}
 			],
 			"v4": [
-				{ "type": "verse", "text": "E derruba no chão", "language": "pt" },
-				{ "type": "verse", "text": "I derruba nu șau", "language": "ro" },
-				{ "type": "verse", "text": "Și trântește-l la pământ", "language": "ro-translation" }
+				{
+					"type": "verse",
+					"text": "E derruba no chão",
+					"language": "pt"
+				},
+				{
+					"type": "verse",
+					"text": "I derruba nu șau",
+					"language": "ro"
+				},
+				{
+					"type": "verse",
+					"text": "Și trântește-l la pământ",
+					"language": "ro-translation"
+				}
 			],
 			"v5": [
-				{ "type": "verse", "text": "Esse nego é valente", "language": "pt" },
-				{ "type": "verse", "text": "Esi nego e valenti", "language": "ro" },
-				{ "type": "verse", "text": "Negrul ăsta e curajos", "language": "ro-translation" }
+				{
+					"type": "verse",
+					"text": "Esse nego é valente",
+					"language": "pt"
+				},
+				{
+					"type": "verse",
+					"text": "Esi nego e valenti",
+					"language": "ro"
+				},
+				{
+					"type": "verse",
+					"text": "Negrul ăsta e curajos",
+					"language": "ro-translation"
+				}
 			],
 			"v6": [
-				{ "type": "verse", "text": "Esse nego é um cão", "language": "pt" },
-				{ "type": "verse", "text": "Esi nego e um kau", "language": "ro" },
+				{
+					"type": "verse",
+					"text": "Esse nego é um cão",
+					"language": "pt"
+				},
+				{
+					"type": "verse",
+					"text": "Esi nego e um kau",
+					"language": "ro"
+				},
 				{
 					"type": "verse",
 					"text": "Negrul ăsta e un câine (foarte dur)",
@@ -1344,7 +1916,11 @@
 					"text": "Mas castiga esse nego\nMas conforme a razão",
 					"language": "pt"
 				},
-				{ "type": "verse", "text": "Mas kastiga esi nego\nMas konformi a razau", "language": "ro" },
+				{
+					"type": "verse",
+					"text": "Mas kastiga esi nego\nMas konformi a razau",
+					"language": "ro"
+				},
 				{
 					"type": "verse",
 					"text": "Dar pedepsește-l pe negrul ăsta\nÎnsă după dreptate",
@@ -1352,14 +1928,38 @@
 				}
 			],
 			"v8": [
-				{ "type": "verse", "text": "Esse nego é ligeiro", "language": "pt" },
-				{ "type": "verse", "text": "Esi nego e lijiêru", "language": "ro" },
-				{ "type": "verse", "text": "Negrul ăsta e iute", "language": "ro-translation" }
+				{
+					"type": "verse",
+					"text": "Esse nego é ligeiro",
+					"language": "pt"
+				},
+				{
+					"type": "verse",
+					"text": "Esi nego e lijiêru",
+					"language": "ro"
+				},
+				{
+					"type": "verse",
+					"text": "Negrul ăsta e iute",
+					"language": "ro-translation"
+				}
 			],
 			"v9": [
-				{ "type": "verse", "text": "Esse nego é cão", "language": "pt" },
-				{ "type": "verse", "text": "Esi nego e kau", "language": "ro" },
-				{ "type": "verse", "text": "Negrul ăsta e dur (ca un câine)", "language": "ro-translation" }
+				{
+					"type": "verse",
+					"text": "Esse nego é cão",
+					"language": "pt"
+				},
+				{
+					"type": "verse",
+					"text": "Esi nego e kau",
+					"language": "ro"
+				},
+				{
+					"type": "verse",
+					"text": "Negrul ăsta e dur (ca un câine)",
+					"language": "ro-translation"
+				}
 			]
 		}
 	},
@@ -1369,82 +1969,90 @@
 		"author": "Traditional",
 		"category": "REGIONAL",
 		"tags": ["corrido", "história", "luta"],
-		"structure": ["v1", "c1", "v2", "c1", "v3", "c1", "v4", "c1", "v2", "c1", "v3", "c1"],
+		"structure": ["v1", "c1", "v2", "c1", "v3", "c1", "v4", "c1"],
 		"verses": {
 			"c1": [
 				{
 					"type": "chorus",
-					"text": "Tava lá em casa, \nSem pensar, sem imaginar",
+					"text": "Tava lá em casa, oiaiá\nSem pensar, sem imaginar",
 					"language": "pt"
 				},
 				{
 					"type": "chorus",
-					"text": "Tava la em kaza\nSeim pensar, seim imajinar",
+					"text": "Tava la em kaza, oiaia\nSeim pensar, seim imajinar",
 					"language": "ro"
 				},
 				{
 					"type": "chorus",
-					"text": "Eram acasă\nFără să gândesc, fără să-mi imaginez",
+					"text": "Eram acasă, oiaiá\nFără să mă gândesc, fără să bănuiesc",
 					"language": "ro-translation"
 				}
 			],
 			"v1": [
 				{
 					"type": "verse",
-					"text": "Tava lá em casa\nSem pensar, sem imaginar,\nQuando ouvi bater na porta\nSalomão mandou chamar",
+					"text": "Tava lá em casa, oiaiá\nSem pensar, sem imaginar",
 					"language": "pt"
 				},
 				{
 					"type": "verse",
-					"text": "Tava la em kaza\nSeim pensar, seim imajinar,\nKuandu ovi batêr na porta\nSalomau mandou shamar",
+					"text": "Tava la em kaza, oiaia\nSeim pensar, seim imajinar",
 					"language": "ro"
 				},
 				{
 					"type": "verse",
-					"text": "Eram acasă\nFără să gândesc, fără să-mi imaginez,\nCând am auzit bătăi în ușă\nSolomon a trimis să mă cheme",
+					"text": "Eram acasă, oiaiá\nFără să mă gândesc, fără să bănuiesc",
 					"language": "ro-translation"
 				}
 			],
 			"v2": [
 				{
 					"type": "verse",
-					"text": "Tava lá em casa, \nSem pensar, sem imaginar",
+					"text": "Quando ouvi bater na porta\nSalomão mandou chamar\nEra hora de lutar",
 					"language": "pt"
 				},
 				{
 					"type": "verse",
-					"text": "Tava la em kaza\nSeim pensar, seim imajinar",
+					"text": "Kuandu ovi batêr na porta\nSalomau mandou șamar\nEra ora dji lutar",
 					"language": "ro"
 				},
 				{
 					"type": "verse",
-					"text": "Eram acasă\nFără să gândesc, fără să-mi imaginez",
+					"text": "Când am auzit bătăi în ușă\nSolomon a trimis să mă cheme\nEra ora de luptă",
 					"language": "ro-translation"
 				}
 			],
 			"v3": [
 				{
 					"type": "verse",
-					"text": "Quando ouvi bater na porta\nSalomão mandou chamar",
+					"text": "Para ajudar a vencer\nA batalha liberal",
 					"language": "pt"
 				},
 				{
 					"type": "verse",
-					"text": "Kuandu ovi batêr na porta\nSalomau mandou shamar",
+					"text": "Para ajudar a venser\nA batalia liberau",
 					"language": "ro"
 				},
 				{
 					"type": "verse",
-					"text": "Când am auzit bătăi în ușă\nSolomon a trimis să mă cheme",
+					"text": "Ca să ajut la câștigarea\nBătăliei liberale (pentru libertate)",
 					"language": "ro-translation"
 				}
 			],
 			"v4": [
-				{ "type": "verse", "text": "Para ajudar a vencer\nA batalha liderar", "language": "pt" },
-				{ "type": "verse", "text": "Para aiudar a vence\nA batalia ligera", "language": "ro" },
 				{
 					"type": "verse",
-					"text": "Pentru a ajuta la biruință\nSă conduc bătălia",
+					"text": "Eu que nunca fui de luta\nNem pretendia lutar, amigo velho\nBotei a arma na mão\nEra tempo de lutar",
+					"language": "pt"
+				},
+				{
+					"type": "verse",
+					"text": "Eu ki nunka fui dji luta\nNem pretendjia lutar, amigu veliu\nBotei a arma na mau\nEra tempu dji lutar",
+					"language": "ro"
+				},
+				{
+					"type": "verse",
+					"text": "Eu, care n-am fost niciodată luptător\nȘi nici nu voiam să lupt, prietene vechi\nAm pus mâna pe armă\nEra vremea să lupt",
 					"language": "ro-translation"
 				}
 			]
@@ -1454,14 +2062,14 @@
 		"id": "eu-vim-aqui-pra-lhe-ver",
 		"title": "Eu vim aqui pra lhe ver",
 		"author": "Traditional",
-		"category": "REGIONAL",
+		"category": "SAMBA",
 		"tags": ["corrido"],
 		"structure": ["v1", "c1"],
 		"verses": {
 			"v1": [
 				{
 					"type": "verse",
-					"text": "Eu vim aqui pra lhe ver\npra saber da sua saude.\nMeu cavalo empacou na ladeira\neu vim pra lhe ver, mais não pude.",
+					"text": "Eu vim aqui pra lhe ver\npra saber da sua saúde.\nMeu cavalo empacou na ladeira\neu vim pra lhe ver, mas não pude.",
 					"language": "pt"
 				},
 				{
@@ -1471,14 +2079,14 @@
 				},
 				{
 					"type": "verse",
-					"text": "Am venit aici să te văd\nsă aflu de sănătatea ta.\nCalul meu s-a oprit în deal\nam venit să te văd, dar n-am putut.",
+					"text": "Am venit aici să te văd\nsă aflu cum îți merge cu sănătatea.\nCalul meu s-a împotmolit (n-a mai vrut să urce) pe pantă\nam venit să te văd, dar n-am putut.",
 					"language": "ro-translation"
 				}
 			],
 			"c1": [
 				{
 					"type": "chorus",
-					"text": "Eu vim aqui pra lhe ver\npra saber da sua saude.\nMeu cavalo empacou na ladeira\neu vim pra lhe ver, mais não pude.",
+					"text": "Eu vim aqui pra lhe ver\npra saber da sua saúde.\nMeu cavalo empacou na ladeira\neu vim pra lhe ver, mas não pude.",
 					"language": "pt"
 				},
 				{
@@ -1488,83 +2096,102 @@
 				},
 				{
 					"type": "chorus",
-					"text": "Am venit aici să te văd\nsă aflu de sănătatea ta.\nCalul meu s-a oprit în deal\nam venit să te văd, dar n-am putut.",
+					"text": "Am venit aici să te văd\nsă aflu cum îți merge cu sănătatea.\nCalul meu s-a împotmolit (n-a mai vrut să urce) pe pantă\nam venit să te văd, dar n-am putut.",
 					"language": "ro-translation"
 				}
 			]
 		}
 	},
 	{
-		"id": "angola-dobrada",
-		"title": "Angola Dobrada",
+		"id": "jogo-de-dentro-jogo-de-fora",
+		"title": "Jogo de dentro, jogo de fora",
 		"author": "Traditional",
 		"category": "ANGOLA",
-		"tags": ["angola", "tradicional"],
-		"structure": ["v1", "c1", "v2", "c2", "v3", "c3", "v4", "c4", "v5", "c5"],
+		"tags": ["corrido", "call-and-response", "angola", "roda"],
+		"structure": ["v1", "c1", "v2", "c1", "v3", "c1", "v4", "c1"],
 		"verses": {
-			"v1": [
-				{ "type": "verse", "text": "Angola dobrada", "language": "pt" },
-				{ "type": "verse", "text": "Angola dobrada", "language": "ro" },
-				{ "type": "verse", "text": "Angola dublată", "language": "ro-translation" }
-			],
 			"c1": [
-				{ "type": "chorus", "text": "Angola dobrada", "language": "pt" },
-				{ "type": "chorus", "text": "Angola dobrada", "language": "ro" },
-				{ "type": "chorus", "text": "Angola dublată", "language": "ro-translation" }
+				{
+					"type": "chorus",
+					"text": "Jogo de dentro, jogo de fora",
+					"language": "pt"
+				},
+				{
+					"type": "chorus",
+					"text": "Jogu dji dentru, jogu dji fora",
+					"language": "ro"
+				},
+				{
+					"type": "chorus",
+					"text": "Joc pe dinăuntru, joc pe dinafară",
+					"language": "ro-translation"
+				}
+			],
+			"v1": [
+				{
+					"type": "verse",
+					"text": "Olha o jogo é de dentro, o jogo é de fora",
+					"language": "pt"
+				},
+				{
+					"type": "verse",
+					"text": "Olia u jogu e dji dentru, u jogu e dji fora",
+					"language": "ro"
+				},
+				{
+					"type": "verse",
+					"text": "Uite, jocul e pe dinăuntru, jocul e pe dinafară",
+					"language": "ro-translation"
+				}
 			],
 			"v2": [
-				{ "type": "verse", "text": "Toquei mandingueiro", "language": "pt" },
-				{ "type": "verse", "text": "Tokei mandingueiro", "language": "ro" },
-				{ "type": "verse", "text": "Am jucat cu un mandingueiro", "language": "ro-translation" }
-			],
-			"c2": [
-				{ "type": "chorus", "text": "Toquei mandingueiro", "language": "pt" },
-				{ "type": "chorus", "text": "Tokei mandingueiro", "language": "ro" },
-				{ "type": "chorus", "text": "Am jucat cu un mandingueiro", "language": "ro-translation" }
+				{
+					"type": "verse",
+					"text": "Valha-me Deus, minha Nossa Senhora",
+					"language": "pt"
+				},
+				{
+					"type": "verse",
+					"text": "Valia-mi Deus, minia Nosa Siniora",
+					"language": "ro"
+				},
+				{
+					"type": "verse",
+					"text": "Doamne, ajută-mă, Maica Domnului",
+					"language": "ro-translation"
+				}
 			],
 			"v3": [
-				{ "type": "verse", "text": "Capoeira de Angola", "language": "pt" },
-				{ "type": "verse", "text": "Capoeira dji Angola", "language": "ro" },
-				{ "type": "verse", "text": "Capoeira din Angola", "language": "ro-translation" }
-			],
-			"c3": [
-				{ "type": "chorus", "text": "Capoeira de Angola", "language": "pt" },
-				{ "type": "chorus", "text": "Capoeira dji Angola", "language": "ro" },
-				{ "type": "chorus", "text": "Capoeira din Angola", "language": "ro-translation" }
+				{
+					"type": "verse",
+					"text": "Cuidado, seu moço, esse jogo é de Angola",
+					"language": "pt"
+				},
+				{
+					"type": "verse",
+					"text": "Kuidadu, seu mosu, esi jogu e dji Angola",
+					"language": "ro"
+				},
+				{
+					"type": "verse",
+					"text": "Ai grijă, tinere, jocul ăsta e de Angola",
+					"language": "ro-translation"
+				}
 			],
 			"v4": [
-				{ "type": "verse", "text": "Gunga médio viola", "language": "pt" },
-				{ "type": "verse", "text": "Gunga mediu viola", "language": "ro" },
 				{
 					"type": "verse",
-					"text": "Gunga, médio, violă (cele trei berimbau-uri)",
-					"language": "ro-translation"
-				}
-			],
-			"c4": [
-				{ "type": "chorus", "text": "Gunga médio viola", "language": "pt" },
-				{ "type": "chorus", "text": "Gunga mediu viola", "language": "ro" },
-				{
-					"type": "chorus",
-					"text": "Gunga, médio, violă (cele trei berimbau-uri)",
-					"language": "ro-translation"
-				}
-			],
-			"v5": [
-				{ "type": "verse", "text": "Tico tico tico tico tico", "language": "pt" },
-				{ "type": "verse", "text": "Tiko tiko tiko tiko tiko", "language": "ro" },
+					"text": "Joga bonito, eu quero ver agora",
+					"language": "pt"
+				},
 				{
 					"type": "verse",
-					"text": "Tico tico tico tico tico (sunetul păsării tico-tico)",
-					"language": "ro-translation"
-				}
-			],
-			"c5": [
-				{ "type": "chorus", "text": "Jogo de dentro jogo de fora", "language": "pt" },
-				{ "type": "chorus", "text": "Jogu dji dentro jogu dji fora", "language": "ro" },
+					"text": "Joga bonitu, eu keru ver agora",
+					"language": "ro"
+				},
 				{
-					"type": "chorus",
-					"text": "Joc pe interior, joc pe exterior",
+					"type": "verse",
+					"text": "Joacă frumos, vreau să văd acum",
 					"language": "ro-translation"
 				}
 			]

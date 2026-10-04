@@ -1,134 +1,84 @@
 <script lang="ts">
 	import { useLanguageStore } from '$lib/i18n';
 	import { reveal } from '$lib/actions/reveal';
-	import User from '@lucide/svelte/icons/user';
+	import { Button } from '@alemar/ui/button';
 	import Phone from '@lucide/svelte/icons/phone';
-	import Facebook from '@lucide/svelte/icons/facebook';
-	import Instagram from '@lucide/svelte/icons/instagram';
 	import MapPin from '@lucide/svelte/icons/map-pin';
 
 	const lang = useLanguageStore();
+
+	const contacts = $derived([
+		{ label: lang.t.contact.instructor, value: 'Sergiu Melnic', href: undefined },
+		{ label: lang.t.contact.phone, value: '079 70 70 72', href: 'tel:+37379707072' },
+		{
+			label: lang.t.contact.facebook,
+			value: '@capoeiramd',
+			href: 'https://www.facebook.com/capoeiramd/'
+		},
+		{
+			label: lang.t.contact.instagram,
+			value: '@capoeira.moldova',
+			href: 'https://www.instagram.com/capoeira.moldova/'
+		}
+	]);
 </script>
 
-<section
-	class="relative overflow-hidden py-24 md:py-36"
-	id="contact"
-	style="background: linear-gradient(135deg, oklch(0.16 0.02 65) 0%, oklch(0.12 0.01 60) 100%)"
->
-	<div class="absolute inset-0 geo-pattern opacity-[0.06]"></div>
-
-	<div
-		class="absolute top-0 left-0 h-1 w-full"
-		style="background: linear-gradient(90deg, transparent, oklch(0.75 0.15 75), transparent)"
-	></div>
-
-	<div class="relative mx-auto max-w-4xl px-6 md:px-10 text-center">
+<section class="dark bg-background py-24 text-foreground md:py-36" id="contact">
+	<div class="mx-auto max-w-6xl px-5 md:px-10">
 		<div use:reveal>
-			<h2
-				class="font-impact text-[clamp(3.5rem,11vw,9rem)] leading-none tracking-[0.04em] text-foreground"
-			>
-				{lang.t.contact.title}
-			</h2>
-
-			<p class="mt-6 font-display italic text-xl md:text-2xl text-primary/90">
-				{lang.t.contact.subtitle}
-			</p>
+			<h2 class="title-xl">{lang.t.contact.title}</h2>
+			<p class="mt-4 text-lg text-muted-foreground">{lang.t.contact.subtitle}</p>
 		</div>
 
-		<div class="my-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
-			<div class="flex flex-col items-center gap-2" use:reveal={{ delay: 0 }}>
-				<User class="mb-2 h-6 w-6 text-primary" />
-				<p class="text-xs tracking-[0.25em] uppercase text-foreground/40">
-					{lang.t.contact.instructor}
-				</p>
-				<p class="font-display text-lg text-foreground">Sergiu Melnic</p>
-			</div>
+		<dl class="mt-14 grid gap-px border border-border bg-border sm:grid-cols-2 lg:grid-cols-4">
+			{#each contacts as contact, i (contact.label)}
+				<div class="bg-background p-5" use:reveal={{ delay: i * 80 }}>
+					<dt class="text-label text-muted-foreground">{contact.label}</dt>
+					<dd class="mt-1 text-lg font-semibold">
+						{#if contact.href}
+							<a
+								href={contact.href}
+								target={contact.href.startsWith('http') ? '_blank' : undefined}
+								rel={contact.href.startsWith('http') ? 'noopener noreferrer' : undefined}
+								class="inline-flex min-h-11 items-center underline-link"
+							>
+								{contact.value}
+							</a>
+						{:else}
+							{contact.value}
+						{/if}
+					</dd>
+				</div>
+			{/each}
+		</dl>
 
-			<div class="flex flex-col items-center gap-2" use:reveal={{ delay: 100 }}>
-				<Phone class="mb-2 h-6 w-6 text-primary" />
-				<p class="text-xs tracking-[0.25em] uppercase text-foreground/40">
-					{lang.t.contact.phone}
-				</p>
-				<a
-					href="tel:+37379707072"
-					class="font-display text-lg text-foreground transition-colors hover:text-primary"
-				>
-					079 70 70 72
-				</a>
-			</div>
-
-			<div class="flex flex-col items-center gap-2" use:reveal={{ delay: 200 }}>
-				<Facebook class="mb-2 h-6 w-6 text-primary" />
-				<p class="text-xs tracking-[0.25em] uppercase text-foreground/40">
-					{lang.t.contact.facebook}
-				</p>
-				<a
-					href="https://www.facebook.com/capoeiramd/"
-					target="_blank"
-					rel="noopener noreferrer"
-					class="font-display text-lg text-foreground transition-colors hover:text-primary"
-				>
-					@capoeiramd
-				</a>
-			</div>
-
-			<div class="flex flex-col items-center gap-2" use:reveal={{ delay: 300 }}>
-				<Instagram class="mb-2 h-6 w-6 text-primary" />
-				<p class="text-xs tracking-[0.25em] uppercase text-foreground/40">
-					{lang.t.contact.instagram}
-				</p>
-				<a
-					href="https://www.instagram.com/capoeira.moldova/"
-					target="_blank"
-					rel="noopener noreferrer"
-					class="font-display text-lg text-foreground transition-colors hover:text-primary"
-				>
-					@capoeira.moldova
-				</a>
-			</div>
-		</div>
-
-		<p
-			class="mb-10 flex items-center justify-center gap-2 text-sm tracking-[0.15em] uppercase text-foreground/40"
+		<div
+			class="mt-10 flex flex-col gap-6 sm:flex-row sm:items-center sm:justify-between"
 			use:reveal={{ delay: 150 }}
 		>
-			<MapPin class="h-4 w-4 shrink-0 text-primary/60" />
-			{lang.t.contact.address}
-		</p>
-
-		<div use:reveal={{ delay: 250 }}>
-			<a
-				href="tel:+37379707072"
-				class="pulse-gold inline-block border border-primary px-12 py-5 font-impact text-xl tracking-[0.2em] uppercase text-primary transition-all duration-300 hover:bg-primary hover:text-primary-foreground"
-			>
-				{lang.t.contact.cta} →
-			</a>
+			<p class="flex items-center gap-2 text-muted-foreground">
+				<MapPin class="size-4 shrink-0" />
+				{lang.t.contact.address}
+			</p>
+			<Button href="tel:+37379707072" size="lg">
+				<Phone />
+				{lang.t.contact.cta}
+			</Button>
 		</div>
 	</div>
 </section>
 
-<footer class="border-t border-border/20 py-10">
+<footer class="dark border-t border-border bg-background py-10 text-foreground">
 	<div
-		class="mx-auto max-w-6xl px-6 md:px-10 flex flex-col md:flex-row items-center justify-between gap-4"
+		class="mx-auto flex max-w-6xl flex-col gap-4 px-5 md:flex-row md:items-end md:justify-between md:px-10"
 	>
-		<div class="text-center md:text-left">
-			<p class="font-impact text-lg tracking-widest uppercase text-foreground/60">
-				Alemar Capoeira Chișinău
-			</p>
-			<p class="text-xs tracking-[0.2em] uppercase text-foreground/30 mt-1">
-				{lang.t.footer.since}
-			</p>
+		<div>
+			<p class="font-display text-2xl leading-none uppercase">Alemar Capoeira Chișinău</p>
+			<p class="mt-2 text-sm text-muted-foreground">{lang.t.footer.since}</p>
 		</div>
-
-		<p class="font-display italic text-foreground/30 text-sm">
-			{lang.t.footer.tagline}
-		</p>
-
-		<a
-			href="/songs"
-			class="text-xs tracking-[0.25em] uppercase text-foreground/30 transition-colors hover:text-primary"
-		>
-			{lang.t.nav.songs} ♪
+		<p class="text-sm text-muted-foreground">{lang.t.footer.tagline}</p>
+		<a href="/songs" class="inline-flex min-h-11 items-center text-sm font-semibold underline-link">
+			{lang.t.nav.songs}
 		</a>
 	</div>
 </footer>

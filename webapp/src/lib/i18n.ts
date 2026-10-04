@@ -5,7 +5,7 @@ export type Language = 'ro' | 'ru' | 'en';
 export interface Translations {
 	nav: { about: string; classes: string; events: string; contact: string; songs: string };
 	hero: { tagline: string; line1: string; line2: string; cta: string; since: string };
-	about: { title: string; quote: string; body: string; highlight: string };
+	about: { title: string; quote: string; body: string; highlight: string; more: string };
 	classes: {
 		title: string;
 		subtitle: string;
@@ -18,7 +18,8 @@ export interface Translations {
 		free: string;
 		cta: string;
 	};
-	gallery: { title: string };
+	gallery: { title: string; close: string; previous: string; next: string; item: string };
+	ui: { language: string; menu: string; close: string; pauseVideo: string; playVideo: string };
 	events: {
 		title: string;
 		subtitle: string;
@@ -95,7 +96,8 @@ const translations: Record<Language, Translations> = {
 			title: 'CE ESTE CAPOEIRA?',
 			quote: 'A început ca rezistență, funcționează ca luptă și trăiește prin muzică.',
 			body: 'Capoeira este o artă marțială braziliană care îmbină tehnici de luptă, acrobații și muzică. S-a născut din rezistența africană în Brazilia. Forța fizică și strategia fluidă lucrează împreună: doi sportivi stau față în față și își răspund mișcare cu mișcare, în timp real.',
-			highlight: 'Un sport și o cultură întreagă în jurul lui.'
+			highlight: 'Un sport și o cultură întreagă în jurul lui.',
+			more: 'Povestea noastră'
 		},
 		classes: {
 			title: 'ANTRENAMENTE',
@@ -109,7 +111,20 @@ const translations: Record<Language, Translations> = {
 			free: 'Prima lecție este gratuită',
 			cta: 'Vino la un antrenament'
 		},
-		gallery: { title: 'GALERIE' },
+		gallery: {
+			title: 'GALERIE',
+			close: 'Închide',
+			previous: 'Anterior',
+			next: 'Următor',
+			item: 'Element'
+		},
+		ui: {
+			language: 'Limba',
+			menu: 'Meniu',
+			close: 'Închide',
+			pauseVideo: 'Oprește video',
+			playVideo: 'Pornește video'
+		},
 		events: {
 			title: 'EVENIMENTE',
 			subtitle: 'Batizados, workshopuri și spectacole',
@@ -222,7 +237,8 @@ const translations: Record<Language, Translations> = {
 			title: 'ЧТО ТАКОЕ КАПОЭЙРА?',
 			quote: 'Она началась как сопротивление, работает как бой и живёт через музыку.',
 			body: 'Бразильское боевое искусство капоэйра соединяет боевые техники, акробатику и музыку. Она выросла из африканского сопротивления в Бразилии. Физическая сила и боевая стратегия работают вместе: два спортсмена стоят друг против друга и отвечают движением на движение, в реальном времени.',
-			highlight: 'Спорт и целая культура вокруг него.'
+			highlight: 'Спорт и целая культура вокруг него.',
+			more: 'Наша история'
 		},
 		classes: {
 			title: 'ТРЕНИРОВКИ',
@@ -236,7 +252,20 @@ const translations: Record<Language, Translations> = {
 			free: 'Первое занятие бесплатно',
 			cta: 'Прийти на тренировку'
 		},
-		gallery: { title: 'ГАЛЕРЕЯ' },
+		gallery: {
+			title: 'ГАЛЕРЕЯ',
+			close: 'Закрыть',
+			previous: 'Назад',
+			next: 'Вперёд',
+			item: 'Элемент'
+		},
+		ui: {
+			language: 'Язык',
+			menu: 'Меню',
+			close: 'Закрыть',
+			pauseVideo: 'Остановить видео',
+			playVideo: 'Включить видео'
+		},
 		events: {
 			title: 'СОБЫТИЯ',
 			subtitle: 'Батизадо, мастер-классы и выступления',
@@ -348,7 +377,8 @@ const translations: Record<Language, Translations> = {
 			title: 'WHAT IS CAPOEIRA?',
 			quote: 'It began as resistance, it works as a fight, and it lives through music.',
 			body: 'Capoeira is a Brazilian martial art that mixes fighting technique, acrobatics, and music. It grew out of African resistance in Brazil. Physical power and combat strategy work together: two athletes face each other and answer move for move, in real time.',
-			highlight: 'A sport, and a whole culture around it.'
+			highlight: 'A sport, and a whole culture around it.',
+			more: 'Our story'
 		},
 		classes: {
 			title: 'CLASSES',
@@ -362,7 +392,20 @@ const translations: Record<Language, Translations> = {
 			free: 'First class is free',
 			cta: 'Come try a class'
 		},
-		gallery: { title: 'GALLERY' },
+		gallery: {
+			title: 'GALLERY',
+			close: 'Close',
+			previous: 'Previous',
+			next: 'Next',
+			item: 'Item'
+		},
+		ui: {
+			language: 'Language',
+			menu: 'Menu',
+			close: 'Close',
+			pauseVideo: 'Pause video',
+			playVideo: 'Play video'
+		},
 		events: {
 			title: 'EVENTS',
 			subtitle: 'Batizados, workshops and showcases',

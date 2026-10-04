@@ -1,82 +1,46 @@
 <script lang="ts">
 	import { useLanguageStore } from '$lib/i18n';
 	import { reveal } from '$lib/actions/reveal';
-	import Calendar from '@lucide/svelte/icons/calendar';
-	import Clock from '@lucide/svelte/icons/clock';
-	import MapPin from '@lucide/svelte/icons/map-pin';
+	import { Button } from '@alemar/ui/button';
+	import ArrowRight from '@lucide/svelte/icons/arrow-right';
 
 	const lang = useLanguageStore();
 
-	const infoCards = $derived([
-		{
-			label: lang.t.classes.daysLabel,
-			value: lang.t.classes.days,
-			icon: Calendar
-		},
-		{
-			label: lang.t.classes.timeLabel,
-			value: lang.t.classes.time,
-			icon: Clock
-		},
-		{
-			label: lang.t.classes.locationLabel,
-			value: lang.t.classes.location,
-			icon: MapPin
-		}
+	const facts = $derived([
+		{ label: lang.t.classes.daysLabel, value: lang.t.classes.days },
+		{ label: lang.t.classes.timeLabel, value: lang.t.classes.time },
+		{ label: lang.t.classes.locationLabel, value: lang.t.classes.location }
 	]);
 </script>
 
-<section
-	class="relative py-24 md:py-36"
-	id="classes"
-	style="background: linear-gradient(135deg, oklch(0.14 0.015 60) 0%, oklch(0.12 0.01 60) 100%)"
->
-	<div class="mx-auto max-w-5xl px-6 md:px-10">
-		<div class="mb-16 text-center" use:reveal>
-			<h2
-				class="font-impact text-[clamp(3rem,9vw,7rem)] leading-none tracking-[0.04em] text-foreground"
-			>
-				{lang.t.classes.title}
-			</h2>
-			<p class="mt-4 text-sm tracking-[0.2em] uppercase text-foreground/50">
-				{lang.t.classes.subtitle}
-			</p>
+<!-- The schedule is the most useful block for a new visitor, so it gets the brand colour field. -->
+<section class="light bg-primary py-24 text-primary-foreground md:py-32" id="classes">
+	<div class="mx-auto max-w-6xl px-5 md:px-10">
+		<div use:reveal>
+			<h2 class="title-xl">{lang.t.classes.title}</h2>
+			<p class="mt-4 text-lg font-medium">{lang.t.classes.subtitle}</p>
 		</div>
 
-		<div class="grid gap-px md:grid-cols-3" style="background: oklch(0.28 0.02 55)">
-			{#each infoCards as card, i (card.label)}
-				{@const Icon = card.icon}
-				<div
-					class="flex flex-col gap-4 p-8 md:p-10"
-					style="background: oklch(0.14 0.015 60)"
-					use:reveal={{ delay: i * 100 }}
-				>
-					<Icon size={28} class="text-primary" />
-					<p class="text-xs font-medium tracking-[0.25em] uppercase text-foreground/40">
-						{card.label}
-					</p>
-					<p class="font-display text-xl text-foreground leading-snug">
-						{card.value}
-					</p>
+		<dl class="mt-14 grid gap-8 md:grid-cols-3 md:gap-10">
+			{#each facts as fact, i (fact.label)}
+				<div class="border-t-2 border-current pt-4" use:reveal={{ delay: i * 100 }}>
+					<dt class="text-label">{fact.label}</dt>
+					<dd class="mt-3 font-display text-3xl leading-none uppercase md:text-4xl">
+						{fact.value}
+					</dd>
 				</div>
 			{/each}
-		</div>
+		</dl>
 
-		<div class="mt-16 flex flex-col items-center gap-6" use:reveal={{ delay: 200 }}>
-			<div class="flex items-center gap-4">
-				<span class="h-px w-8 bg-primary/40"></span>
-				<p class="font-display italic text-lg text-primary">
-					{lang.t.classes.free}
-				</p>
-				<span class="h-px w-8 bg-primary/40"></span>
-			</div>
-
-			<a
-				href="#contact"
-				class="inline-block border border-primary px-10 py-4 font-impact text-lg tracking-[0.2em] uppercase text-primary transition-all duration-300 hover:bg-primary hover:text-primary-foreground"
-			>
-				{lang.t.classes.cta} →
-			</a>
+		<div
+			class="mt-16 flex flex-col gap-5 sm:flex-row sm:items-center sm:justify-between"
+			use:reveal={{ delay: 200 }}
+		>
+			<p class="text-xl font-semibold">{lang.t.classes.free}</p>
+			<Button href="#contact" variant="secondary" size="lg">
+				{lang.t.classes.cta}
+				<ArrowRight />
+			</Button>
 		</div>
 	</div>
 </section>

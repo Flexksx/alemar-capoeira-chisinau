@@ -1,95 +1,104 @@
-@import '@fontsource/bebas-neue/latin-400.css';
-@import '@fontsource/bebas-neue/latin-ext-400.css';
-@import '@fontsource/dm-serif-display/latin-400.css';
-@import '@fontsource/dm-serif-display/latin-ext-400.css';
-@import '@fontsource/dm-serif-display/latin-400-italic.css';
-@import '@fontsource/dm-serif-display/latin-ext-400-italic.css';
-@import '@fontsource/playfair-display/400.css';
-@import '@fontsource/playfair-display/400-italic.css';
-@import '@fontsource/oswald/400.css';
-@import '@fontsource/oswald/700.css';
+/*
+ * Alemar design system. This file is the only source of tokens, fonts and shared styles.
+ * Direction: printed capoeira poster. Big condensed titles, flat colour, square edges,
+ * paper grain. Controls stay light: thin borders and plain text. Anton is for titles only.
+ * The palette comes from the Alemar logo: a sunset and a black silhouette.
+ * Add `light` or `dark` to any element to fix the theme of that part of the page.
+ */
+
+@import '@fontsource/anton/latin-400.css';
+@import '@fontsource/anton/latin-ext-400.css';
+@import '@fontsource-variable/archivo/wdth.css';
+@import '@fontsource-variable/archivo/wdth-italic.css';
+/* Russian pages: Anton and Archivo have no Cyrillic letters, so titles use Oswald throughout. */
+@import '@fontsource/oswald/latin-700.css';
+@import '@fontsource/oswald/latin-ext-700.css';
+@import '@fontsource/oswald/cyrillic-700.css';
+@import '@fontsource-variable/golos-text/index.css';
 
 @import 'tw-animate-css';
 
 @custom-variant dark (&:is(.dark *));
 
-:root {
-	--radius: 0.75rem;
+:root,
+.light {
+	/*
+	 * Palette, sampled from the Alemar logo. Amber is the brand colour. Amber, orange, red
+	 * and yellow are fill colours: put ink text on them. Never set text in them on paper.
+	 */
+	--paper: oklch(0.954 0.016 83);
+	--ink: oklch(0.224 0.018 1);
+	--sun-red: oklch(0.624 0.238 31);
+	--sun-orange: oklch(0.667 0.201 41);
+	--sun-amber: oklch(0.773 0.165 71);
+	--sun-yellow: oklch(0.881 0.181 99);
 
-	--background: oklch(0.98 0.005 80);
-	--foreground: oklch(0.15 0.02 60);
-	--card: oklch(1 0 0);
-	--card-foreground: oklch(0.15 0.02 60);
-	--popover: oklch(1 0 0);
-	--popover-foreground: oklch(0.15 0.02 60);
-	--primary: oklch(0.55 0.15 75);
-	--primary-foreground: oklch(0.98 0.01 80);
-	--secondary: oklch(0.95 0.01 80);
-	--secondary-foreground: oklch(0.2 0.02 60);
-	--muted: oklch(0.95 0.01 80);
-	--muted-foreground: oklch(0.45 0.02 60);
-	--accent: oklch(0.95 0.02 145);
-	--accent-foreground: oklch(0.2 0.02 60);
-	--destructive: oklch(0.55 0.22 25);
-	--border: oklch(0.9 0.01 80);
-	--input: oklch(0.9 0.01 80);
-	--ring: oklch(0.55 0.15 75);
-	--sidebar: oklch(0.97 0.005 80);
-	--sidebar-foreground: oklch(0.15 0.02 60);
-	--sidebar-primary: oklch(0.55 0.15 75);
-	--sidebar-primary-foreground: oklch(0.98 0.01 80);
-	--sidebar-accent: oklch(0.95 0.01 80);
-	--sidebar-accent-foreground: oklch(0.2 0.02 60);
-	--sidebar-border: oklch(0.9 0.01 80);
-	--sidebar-ring: oklch(0.55 0.15 75);
+	/* Square edges everywhere. */
+	--radius: 0px;
+
+	--background: var(--paper);
+	--foreground: var(--ink);
+	--card: oklch(0.977 0.009 83);
+	--card-foreground: var(--ink);
+	--popover: oklch(0.977 0.009 83);
+	--popover-foreground: var(--ink);
+	--primary: var(--sun-amber);
+	--primary-foreground: var(--ink);
+	--secondary: var(--ink);
+	--secondary-foreground: var(--paper);
+	--muted: oklch(0.915 0.02 80);
+	--muted-foreground: oklch(0.45 0.02 20);
+	--accent: oklch(0.92 0.07 80);
+	--accent-foreground: var(--ink);
+	/* Darker than sun-red, so paper text on it passes 4.5:1. */
+	--destructive: oklch(0.5 0.19 29);
+	--border: oklch(0.224 0.018 1 / 0.16);
+	--input: var(--ink);
+	--ring: var(--ink);
 }
 
 .dark {
-	--background: oklch(0.12 0.01 60);
-	--foreground: oklch(0.95 0.01 80);
-	--card: oklch(0.16 0.01 55);
-	--card-foreground: oklch(0.95 0.01 80);
-	--popover: oklch(0.18 0.015 50);
-	--popover-foreground: oklch(0.95 0.01 80);
+	--background: oklch(0.16 0.014 1);
+	--foreground: var(--paper);
+	--card: oklch(0.205 0.017 1);
+	--card-foreground: var(--paper);
+	--popover: oklch(0.205 0.017 1);
+	--popover-foreground: var(--paper);
+	--muted: oklch(0.25 0.018 1);
+	--muted-foreground: oklch(0.74 0.02 60);
+	--secondary: var(--paper);
+	--secondary-foreground: var(--ink);
+	--accent: oklch(0.28 0.03 30);
+	--accent-foreground: var(--paper);
+	--border: oklch(0.954 0.016 83 / 0.16);
+	--input: var(--paper);
+	--ring: var(--sun-amber);
+}
 
-	--primary: oklch(0.75 0.15 75);
-	--primary-foreground: oklch(0.15 0.02 60);
+/* Title font. Theme scopes (.light, .dark) do not reset it. */
+:root {
+	--font-display-stack: 'Anton', 'Oswald', Impact, sans-serif;
+}
 
-	--secondary: oklch(0.25 0.02 55);
-	--secondary-foreground: oklch(0.9 0.01 80);
-
-	--muted: oklch(0.22 0.015 50);
-	--muted-foreground: oklch(0.65 0.02 70);
-
-	--accent: oklch(0.28 0.04 145);
-	--accent-foreground: oklch(0.95 0.01 80);
-
-	--destructive: oklch(0.65 0.2 25);
-	--border: oklch(0.28 0.02 55);
-	--input: oklch(0.25 0.02 55);
-	--ring: oklch(0.75 0.15 75);
-
-	--chart-1: oklch(0.75 0.15 75);
-	--chart-2: oklch(0.65 0.18 155);
-	--chart-3: oklch(0.65 0.2 15);
-	--chart-4: oklch(0.55 0.05 250);
-	--chart-5: oklch(0.7 0.12 45);
-
-	--sidebar: oklch(0.14 0.01 55);
-	--sidebar-foreground: oklch(0.95 0.01 80);
-	--sidebar-primary: oklch(0.75 0.15 75);
-	--sidebar-primary-foreground: oklch(0.15 0.02 60);
-	--sidebar-accent: oklch(0.22 0.02 50);
-	--sidebar-accent-foreground: oklch(0.95 0.01 80);
-	--sidebar-border: oklch(0.28 0.02 55);
-	--sidebar-ring: oklch(0.75 0.15 75);
+/* One title font per line of Russian text: Oswald for Latin and Cyrillic letters alike. */
+:lang(ru) {
+	--font-display-stack: 'Oswald', Impact, sans-serif;
 }
 
 @theme inline {
-	--radius-sm: calc(var(--radius) - 4px);
-	--radius-md: calc(var(--radius) - 2px);
+	--radius-xs: var(--radius);
+	--radius-sm: var(--radius);
+	--radius-md: var(--radius);
 	--radius-lg: var(--radius);
-	--radius-xl: calc(var(--radius) + 4px);
+	--radius-xl: var(--radius);
+
+	--color-paper: var(--paper);
+	--color-ink: var(--ink);
+	--color-sun-red: var(--sun-red);
+	--color-sun-orange: var(--sun-orange);
+	--color-sun-amber: var(--sun-amber);
+	--color-sun-yellow: var(--sun-yellow);
+
 	--color-background: var(--background);
 	--color-foreground: var(--foreground);
 	--color-card: var(--card);
@@ -108,22 +117,12 @@
 	--color-border: var(--border);
 	--color-input: var(--input);
 	--color-ring: var(--ring);
-	--color-chart-1: var(--chart-1);
-	--color-chart-2: var(--chart-2);
-	--color-chart-3: var(--chart-3);
-	--color-chart-4: var(--chart-4);
-	--color-chart-5: var(--chart-5);
-	--color-sidebar: var(--sidebar);
-	--color-sidebar-foreground: var(--sidebar-foreground);
-	--color-sidebar-primary: var(--sidebar-primary);
-	--color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
-	--color-sidebar-accent: var(--sidebar-accent);
-	--color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
-	--color-sidebar-border: var(--sidebar-border);
-	--color-sidebar-ring: var(--sidebar-ring);
 
-	--font-display: 'DM Serif Display', 'Playfair Display', Georgia, serif;
-	--font-impact: 'Bebas Neue', 'Oswald', Impact, sans-serif;
+	--font-sans: 'Archivo Variable', 'Golos Text Variable', ui-sans-serif, system-ui, sans-serif;
+	--font-display: var(--font-display-stack);
+
+	--animate-accordion-down: accordion-down 0.2s ease-out;
+	--animate-accordion-up: accordion-up 0.2s ease-out;
 }
 
 @layer base {
@@ -138,10 +137,142 @@
 	}
 
 	body {
-		@apply bg-background text-foreground;
+		@apply bg-background font-sans text-foreground;
 		overscroll-behavior: none;
 		-webkit-font-smoothing: antialiased;
 		-moz-osx-font-smoothing: grayscale;
+	}
+
+	/* Paper grain over the whole page. */
+	body::after {
+		content: '';
+		position: fixed;
+		inset: 0;
+		z-index: 100;
+		pointer-events: none;
+		opacity: 0.07;
+		background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+	}
+
+	/* Bolder icon strokes, closer to printed symbols than the default hairline. */
+	.lucide {
+		stroke-width: 2.25;
+	}
+
+	::-webkit-scrollbar {
+		width: 4px;
+		height: 4px;
+	}
+
+	::-webkit-scrollbar-track {
+		background: transparent;
+	}
+
+	::-webkit-scrollbar-thumb {
+		background: var(--muted-foreground);
+	}
+
+	button,
+	a,
+	[role='button'] {
+		transition:
+			transform 0.1s ease,
+			background-color 0.15s ease,
+			color 0.15s ease;
+	}
+
+	button:active,
+	a:active,
+	[role='button']:active {
+		transform: scale(0.98);
+	}
+}
+
+/* Small label for eyebrows, section names and metadata. Titles use font-display instead. */
+@utility text-label {
+	font-size: 0.75rem;
+	font-weight: 600;
+	line-height: 1;
+	letter-spacing: 0.06em;
+	text-transform: uppercase;
+}
+
+/*
+ * Display title scale. The top padding leaves room for accent marks (Ă Î Ș Ț, Й),
+ * which the tight line height would otherwise clip.
+ */
+@utility title-xl {
+	font-family: var(--font-display);
+	font-size: clamp(2.5rem, 10vw, 8rem);
+	line-height: 0.9;
+	padding-top: 0.12em;
+	text-transform: uppercase;
+	text-wrap: balance;
+}
+
+@utility title-lg {
+	font-family: var(--font-display);
+	font-size: clamp(2.5rem, 7vw, 6rem);
+	line-height: 0.92;
+	padding-top: 0.12em;
+	text-transform: uppercase;
+	text-wrap: balance;
+}
+
+/* Inline text link: brand underline that turns to the text colour on hover. */
+@utility underline-link {
+	text-decoration-line: underline;
+	text-decoration-color: var(--primary);
+	text-decoration-thickness: 2px;
+	text-underline-offset: 4px;
+
+	&:hover {
+		text-decoration-color: currentColor;
+	}
+}
+
+/* Repeating diamond pattern in the brand colour. The SVG is only a mask, so the colour is a token. */
+@utility bg-pattern {
+	background-color: var(--primary);
+	mask-image: url("data:image/svg+xml,%3Csvg width='28' height='28' viewBox='0 0 28 28' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M14 2L26 14L14 26L2 14Z' fill='none' stroke='black' stroke-width='1'/%3E%3C/svg%3E");
+	mask-size: 28px 28px;
+}
+
+@utility safe-top {
+	padding-top: env(safe-area-inset-top);
+}
+
+@utility safe-bottom {
+	padding-bottom: env(safe-area-inset-bottom);
+}
+
+/* Scroll reveal. The webapp `reveal` action adds these classes. */
+@utility reveal-hidden {
+	opacity: 0;
+	transform: translateY(28px);
+	transition:
+		opacity 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+		transform 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+
+	&.revealed {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+@utility bounce-down {
+	animation: bounce-down 1.8s ease-in-out infinite;
+}
+
+@keyframes bounce-down {
+	0%,
+	100% {
+		transform: translateY(0);
+		opacity: 0.5;
+	}
+	50% {
+		transform: translateY(6px);
+		opacity: 1;
 	}
 }
 
@@ -167,7 +298,22 @@
 	}
 }
 
-@theme inline {
-	--animate-accordion-down: accordion-down 0.2s ease-out;
-	--animate-accordion-up: accordion-up 0.2s ease-out;
+/* Respect the system setting for less motion: no animations, no smooth scroll, no reveal. */
+@media (prefers-reduced-motion: reduce) {
+	html {
+		scroll-behavior: auto;
+	}
+
+	*,
+	*::before,
+	*::after {
+		animation-duration: 0.01ms !important;
+		animation-iteration-count: 1 !important;
+		transition-duration: 0.01ms !important;
+	}
+
+	.reveal-hidden {
+		opacity: 1;
+		transform: none;
+	}
 }

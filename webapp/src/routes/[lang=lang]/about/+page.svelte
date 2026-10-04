@@ -1,4 +1,6 @@
 <script lang="ts">
+	import ArrowRight from '@lucide/svelte/icons/arrow-right';
+	import ArrowLeft from '@lucide/svelte/icons/arrow-left';
 	import { useLanguageStore, type Language } from '$lib/i18n';
 	import { goto } from '$app/navigation';
 	import { reveal } from '$lib/actions/reveal';
@@ -64,18 +66,18 @@
 		class="relative flex min-h-[50vh] flex-col items-center justify-end pb-16 pt-32 overflow-hidden"
 		style="background: linear-gradient(135deg, oklch(0.12 0.02 65) 0%, oklch(0.08 0.01 60) 100%)"
 	>
-		<div class="absolute inset-0 geo-pattern opacity-[0.05]"></div>
+		<div class="absolute inset-0 bg-pattern opacity-[0.05]"></div>
 		<div
 			class="absolute top-0 left-0 h-1 w-full"
 			style="background: linear-gradient(90deg, transparent, oklch(0.75 0.15 75), transparent)"
 		></div>
 		<div class="relative z-10 text-center px-6">
 			<h1
-				class="font-impact text-[clamp(4rem,14vw,11rem)] leading-none tracking-[0.04em] text-foreground"
+				class="font-display uppercase text-[clamp(4rem,14vw,11rem)] leading-none tracking-[0.04em] text-foreground"
 			>
 				{lang.t.aboutPage.pageTitle}
 			</h1>
-			<p class="mt-4 font-display italic text-lg md:text-xl text-primary/90 max-w-2xl mx-auto">
+			<p class="mt-4 font-sans italic text-lg md:text-xl text-primary/90 max-w-2xl mx-auto">
 				{lang.t.aboutPage.subtitle}
 			</p>
 		</div>
@@ -104,7 +106,7 @@
 		<div class="mx-auto max-w-6xl px-6 md:px-10">
 			<div class="mb-16 text-center" use:reveal>
 				<h2
-					class="font-impact text-[clamp(2.5rem,8vw,6rem)] leading-none tracking-[0.04em] text-foreground"
+					class="font-display uppercase text-[clamp(2.5rem,8vw,6rem)] leading-none tracking-[0.04em] text-foreground"
 				>
 					{lang.t.aboutPage.forTitle}
 				</h2>
@@ -118,7 +120,7 @@
 				>
 					<div class="flex items-center gap-3">
 						<span class="inline-block h-2 w-2 rotate-45 bg-primary shrink-0"></span>
-						<h3 class="font-impact text-3xl md:text-4xl tracking-[0.06em] text-primary">
+						<h3 class="font-display uppercase text-3xl md:text-4xl tracking-[0.06em] text-primary">
 							{lang.t.aboutPage.kidsTitle}
 						</h3>
 					</div>
@@ -134,7 +136,7 @@
 				>
 					<div class="flex items-center gap-3">
 						<span class="inline-block h-2 w-2 rotate-45 bg-primary shrink-0"></span>
-						<h3 class="font-impact text-3xl md:text-4xl tracking-[0.06em] text-primary">
+						<h3 class="font-display uppercase text-3xl md:text-4xl tracking-[0.06em] text-primary">
 							{lang.t.aboutPage.adultsTitle}
 						</h3>
 					</div>
@@ -164,7 +166,7 @@
 		<div class="mx-auto max-w-4xl px-6 md:px-10">
 			<div class="mb-12 text-center" use:reveal>
 				<h2
-					class="font-impact text-[clamp(2.5rem,8vw,6rem)] leading-none tracking-[0.04em] text-foreground"
+					class="font-display uppercase text-[clamp(2.5rem,8vw,6rem)] leading-none tracking-[0.04em] text-foreground"
 				>
 					{lang.t.aboutPage.whyTitle}
 				</h2>
@@ -188,7 +190,7 @@
 		<div class="mx-auto max-w-6xl px-6 md:px-10">
 			<div class="mb-16 text-center" use:reveal>
 				<h2
-					class="font-impact text-[clamp(2.5rem,8vw,6rem)] leading-none tracking-[0.04em] text-foreground"
+					class="font-display uppercase text-[clamp(2.5rem,8vw,6rem)] leading-none tracking-[0.04em] text-foreground"
 				>
 					{lang.t.aboutPage.compareSection.title}
 				</h2>
@@ -207,7 +209,9 @@
 					>
 						<div>
 							<p class="text-xs tracking-[0.3em] uppercase text-foreground/30 mb-2">vs</p>
-							<h3 class="font-impact text-4xl md:text-5xl tracking-[0.06em] text-foreground">
+							<h3
+								class="font-display uppercase text-4xl md:text-5xl tracking-[0.06em] text-foreground"
+							>
 								{card.name}
 							</h3>
 						</div>
@@ -220,7 +224,7 @@
 							<p class="text-xs tracking-[0.25em] uppercase text-foreground/35">
 								{lang.t.aboutPage.compareSection.capoeiraAdds}
 							</p>
-							<p class="font-display italic text-base md:text-lg text-primary/90 leading-relaxed">
+							<p class="font-sans italic text-base md:text-lg text-primary/90 leading-relaxed">
 								{card.contrast}
 							</p>
 						</div>
@@ -244,12 +248,12 @@
 	<section class="py-20 md:py-28">
 		<div class="mx-auto max-w-3xl px-6 md:px-10 text-center" use:reveal>
 			<h2
-				class="font-impact text-[clamp(2.5rem,8vw,6rem)] leading-none tracking-[0.04em] text-foreground mb-8"
+				class="font-display uppercase text-[clamp(2.5rem,8vw,6rem)] leading-none tracking-[0.04em] text-foreground mb-8"
 			>
 				{lang.t.aboutPage.communityTitle}
 			</h2>
 			<div class="relative pl-0 mb-0">
-				<p class="font-display italic text-xl md:text-2xl text-primary/90 leading-relaxed mb-8">
+				<p class="font-sans italic text-xl md:text-2xl text-primary/90 leading-relaxed mb-8">
 					{lang.t.aboutPage.communityBody}
 				</p>
 			</div>
@@ -276,7 +280,7 @@
 				{lang.t.aboutPage.instructorTitle}
 			</p>
 			<h2
-				class="font-impact text-[clamp(2.5rem,7vw,5rem)] leading-none tracking-[0.04em] text-foreground mb-6"
+				class="font-display uppercase text-[clamp(2.5rem,7vw,5rem)] leading-none tracking-[0.04em] text-foreground mb-6"
 			>
 				{lang.t.aboutPage.instructorName}
 			</h2>
@@ -291,7 +295,7 @@
 		class="relative overflow-hidden py-20 md:py-28"
 		style="background: linear-gradient(135deg, oklch(0.16 0.02 65) 0%, oklch(0.12 0.01 60) 100%)"
 	>
-		<div class="absolute inset-0 geo-pattern opacity-[0.06]"></div>
+		<div class="absolute inset-0 bg-pattern opacity-[0.06]"></div>
 		<div
 			class="absolute top-0 left-0 h-1 w-full"
 			style="background: linear-gradient(90deg, transparent, oklch(0.75 0.15 75), transparent)"
@@ -304,7 +308,7 @@
 					<p class="text-xs tracking-[0.25em] uppercase text-foreground/40">
 						{lang.t.contact.instructor}
 					</p>
-					<p class="font-display text-lg text-foreground">Sergiu Melnic</p>
+					<p class="font-sans text-lg text-foreground">Sergiu Melnic</p>
 				</div>
 				<div class="flex flex-col items-center gap-2">
 					<Phone class="mb-2 h-6 w-6 text-primary" />
@@ -313,7 +317,7 @@
 					</p>
 					<a
 						href="tel:+37379707072"
-						class="font-display text-lg text-foreground transition-colors hover:text-primary"
+						class="font-sans text-lg text-foreground transition-colors hover:text-primary"
 					>
 						079 70 70 72
 					</a>
@@ -327,7 +331,7 @@
 						href="https://www.facebook.com/capoeiramd/"
 						target="_blank"
 						rel="noopener noreferrer"
-						class="font-display text-lg text-foreground transition-colors hover:text-primary"
+						class="font-sans text-lg text-foreground transition-colors hover:text-primary"
 					>
 						@capoeiramd
 					</a>
@@ -343,9 +347,10 @@
 
 			<a
 				href="tel:+37379707072"
-				class="inline-block border border-primary px-12 py-5 font-impact text-xl tracking-[0.2em] uppercase text-primary transition-all duration-300 hover:bg-primary hover:text-primary-foreground"
+				class="inline-block border border-primary px-12 py-5 font-display text-xl tracking-[0.2em] uppercase text-primary transition-all duration-300 hover:bg-primary hover:text-primary-foreground"
 			>
-				{lang.t.aboutPage.ctaText} →
+				{lang.t.aboutPage.ctaText}
+				<ArrowRight class="ml-2 inline size-5 align-[-0.15em]" />
 			</a>
 		</div>
 	</section>
@@ -355,7 +360,7 @@
 			class="mx-auto max-w-6xl px-6 md:px-10 flex flex-col md:flex-row items-center justify-between gap-4"
 		>
 			<div class="text-center md:text-left">
-				<p class="font-impact text-lg tracking-widest uppercase text-foreground/60">
+				<p class="font-display text-lg tracking-widest uppercase text-foreground/60">
 					Alemar Capoeira Chisinau
 				</p>
 				<p class="text-xs tracking-[0.2em] uppercase text-foreground/30 mt-1">
@@ -366,7 +371,8 @@
 				href="/{data.lang}"
 				class="text-xs tracking-[0.25em] uppercase text-foreground/30 transition-colors hover:text-primary"
 			>
-				← {lang.t.aboutPage.backToHome}
+				<ArrowLeft class="mr-1 inline size-3.5 align-[-0.2em]" />
+				{lang.t.aboutPage.backToHome}
 			</a>
 		</div>
 	</footer>

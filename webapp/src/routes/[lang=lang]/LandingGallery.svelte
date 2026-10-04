@@ -24,15 +24,15 @@
 	const items: GalleryItem[] = [
 		{ type: 'video', src: video1, wide: false },
 		{ type: 'video', src: video2, wide: false },
-		{ type: 'photo', src: bichoMicho, alt: 'Jogo de Capoeira — demonstrație publică', wide: true },
+		{ type: 'photo', src: bichoMicho, alt: 'Jogo de capoeira, demonstrație publică', wide: true },
 		{ type: 'photo', src: serginho, alt: 'Sergiu Melnic la berimbau', wide: false },
 		{ type: 'photo', src: ticoTicoMimi, alt: 'Roda de Capoeira', wide: true },
-		{ type: 'photo', src: bichoBibi, alt: 'Jogo — roda în aer liber', wide: false },
-		{ type: 'photo', src: groupPhoto, alt: 'Alemar Capoeira Chișinău — antrenament', wide: true },
+		{ type: 'photo', src: bichoBibi, alt: 'Jogo într-o roda în aer liber', wide: false },
+		{ type: 'photo', src: groupPhoto, alt: 'Antrenament Alemar Capoeira Chișinău', wide: true },
 		{ type: 'photo', src: bucharest, alt: 'Echipa la București', wide: false },
 		{ type: 'photo', src: tiraspol, alt: 'Echipa la Tiraspol cu steagul Braziliei', wide: false },
-		{ type: 'photo', src: verandamall, alt: 'Batizado — Veranda Mall', wide: false },
-		{ type: 'photo', src: bucharest2, alt: 'Echipa la București — Meli Melo', wide: false }
+		{ type: 'photo', src: verandamall, alt: 'Batizado la Veranda Mall', wide: false },
+		{ type: 'photo', src: bucharest2, alt: 'Echipa la București, Meli Melo', wide: false }
 	];
 
 	const lightboxItems = items.map((item) =>
@@ -50,25 +50,28 @@
 	};
 </script>
 
-<section class="py-24 md:py-36" id="gallery">
-	<div class="mx-auto max-w-6xl px-6 md:px-10">
+<section class="light bg-background py-24 text-foreground md:py-36" id="gallery">
+	<div class="mx-auto max-w-6xl px-5 md:px-10">
 		<h2
-			class="mb-12 font-impact text-[clamp(2.5rem,7vw,5rem)] leading-none tracking-[0.04em] text-foreground/20"
+			class="mb-10 flex items-end justify-between gap-4 border-b border-border pb-4 title-lg"
 			use:reveal
 		>
 			{lang.t.gallery.title}
+			<span class="pb-1 font-sans text-base font-semibold text-muted-foreground"
+				>{items.length}</span
+			>
 		</h2>
 
 		<div class="grid grid-cols-2 gap-2 md:grid-cols-3 md:gap-3 [grid-auto-flow:dense]">
 			{#each items as item, i (item.src)}
 				<button
-					class="group relative overflow-hidden bg-card text-left cursor-zoom-in {item.wide
+					class="group relative cursor-zoom-in overflow-hidden bg-muted text-left {item.wide
 						? 'col-span-2'
 						: ''}"
 					style="aspect-ratio: {item.wide ? '16/7' : '4/5'}"
 					onclick={() => openLightbox(i)}
 					use:reveal={{ delay: (i % 3) * 80 }}
-					aria-label="Open media {i + 1}"
+					aria-label={item.type === 'photo' ? item.alt : `${lang.t.gallery.item} ${i + 1}`}
 				>
 					{#if item.type === 'video'}
 						<video
@@ -87,9 +90,6 @@
 							class="h-full w-full object-cover object-center transition-transform duration-700 group-hover:scale-105"
 						/>
 					{/if}
-					<div
-						class="absolute inset-0 border border-primary/0 transition-all duration-300 group-hover:border-primary/40 group-hover:bg-black/10"
-					></div>
 				</button>
 			{/each}
 		</div>

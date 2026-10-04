@@ -1,28 +1,30 @@
 <script lang="ts">
 	import { useLanguageStore, type Language } from '$lib/i18n';
 	import { goto } from '$app/navigation';
+	import { Button } from '@alemar/ui/button';
+	import { Dialog, DialogContent, DialogTitle } from '@alemar/ui/dialog';
+	import { ToggleGroup, ToggleGroupItem } from '@alemar/ui/toggle-group';
+	import Menu from '@lucide/svelte/icons/menu';
+	import Music from '@lucide/svelte/icons/music';
 	import alemArLogo from '$lib/assets/alemar-logo.png';
 
 	const lang = useLanguageStore();
 
 	let menuOpen = $state(false);
+	let scrolled = $state(false);
 	let activeSection = $state('hero');
 
 	const languages: Language[] = ['ro', 'ru', 'en'];
 
 	const navLinks = $derived([
-		{ href: `/${lang.current}/about`, label: lang.t.nav.about, isPage: true },
+		{ href: '#about', label: lang.t.nav.about, id: 'about' },
 		{ href: '#classes', label: lang.t.nav.classes, id: 'classes' },
 		{ href: '#events', label: lang.t.nav.events, id: 'events' },
 		{ href: '#contact', label: lang.t.nav.contact, id: 'contact' }
 	]);
 
-	const closeMenu = () => {
-		menuOpen = false;
-	};
-
-	const switchLang = (l: Language) => {
-		goto(`/${l}`);
+	const switchLang = (l: string) => {
+		if (l && l !== lang.current) void goto(`/${l}`);
 	};
 
 	$effect(() => {
@@ -50,110 +52,85 @@
 	});
 </script>
 
-<nav
-	class="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-6 py-4 md:px-10"
-	style="background: linear-gradient(to bottom, rgba(15,10,5,0.95) 0%, rgba(15,10,5,0) 100%)"
+<svelte:window onscroll={() => (scrolled = window.scrollY > 24)} />
+
+<header
+	class="dark fixed inset-x-0 top-0 z-40 text-foreground transition-colors duration-300 {scrolled
+		? 'border-b border-border bg-background'
+		: 'bg-transparent'}"
 >
-	<a href="/{lang.current}">
-		<img src={alemArLogo} alt="Alemar Capoeira" class="h-10 w-auto rounded-sm" />
-	</a>
-
-	<div class="hidden items-center gap-8 md:flex">
-		{#each navLinks as link (link.href)}
-			<a
-				href={link.href}
-				class="relative text-sm font-medium tracking-widest uppercase transition-colors hover:text-primary {!link.isPage &&
-				activeSection === link.id
-					? 'text-primary'
-					: 'text-foreground/70'}"
-			>
-				{link.label}
-				{#if !link.isPage && activeSection === link.id}
-					<span class="absolute -bottom-1 left-0 h-px w-full bg-primary"></span>
-				{/if}
-			</a>
-		{/each}
-		<a
-			href="/songs"
-			class="border border-primary/60 px-4 py-1.5 font-impact text-sm tracking-[0.15em] uppercase text-primary transition-all hover:bg-primary hover:text-primary-foreground"
-		>
-			{lang.t.nav.songs} ♪
+	<nav class="mx-auto flex h-16 max-w-6xl items-center justify-between gap-6 px-5 md:px-10">
+		<a href="/{lang.current}" class="shrink-0" aria-label="Alemar Capoeira">
+			<img src={alemArLogo} alt="" class="h-10 w-auto" />
 		</a>
 
-		<div class="flex items-center gap-1 border border-border/40 rounded-sm px-1 py-0.5">
-			{#each languages as l (l)}
-				<button
-					onclick={() => switchLang(l)}
-					class="px-2 py-0.5 text-xs font-bold tracking-widest uppercase rounded-sm transition-colors cursor-pointer {lang.current ===
-					l
-						? 'bg-primary text-primary-foreground'
-						: 'text-foreground/50 hover:text-foreground'}"
+		<div class="hidden items-center gap-1 md:flex">
+			{#each navLinks as link (link.href)}
+				{@const active = link.id === activeSection}
+				<a
+					href={link.href}
+					class="inline-flex min-h-11 items-center px-3 text-sm font-semibold transition-colors hover:text-foreground {active
+						? 'text-foreground underline decoration-2 underline-offset-8'
+						: 'text-foreground/70'}"
 				>
-					{l}
-				</button>
-			{/each}
-		</div>
-	</div>
-
-	<div class="flex items-center gap-3 md:hidden">
-		<div class="flex items-center gap-1 border border-border/40 rounded-sm px-1 py-0.5">
-			{#each languages as l (l)}
-				<button
-					onclick={() => switchLang(l)}
-					class="px-1.5 py-0.5 text-xs font-bold tracking-wider uppercase rounded-sm transition-colors cursor-pointer {lang.current ===
-					l
-						? 'bg-primary text-primary-foreground'
-						: 'text-foreground/50 hover:text-foreground'}"
-				>
-					{l}
-				</button>
+					{link.label}
+				</a>
 			{/each}
 		</div>
 
-		<button
-			onclick={() => (menuOpen = !menuOpen)}
-			class="flex flex-col gap-1.5 p-1 cursor-pointer"
-			aria-label="Toggle menu"
-		>
-			<span
-				class="block h-px w-6 bg-foreground transition-transform duration-300 {menuOpen
-					? 'translate-y-2.5 rotate-45'
-					: ''}"
-			></span>
-			<span
-				class="block h-px w-6 bg-foreground transition-opacity duration-300 {menuOpen
-					? 'opacity-0'
-					: ''}"
-			></span>
-			<span
-				class="block h-px w-6 bg-foreground transition-transform duration-300 {menuOpen
-					? '-translate-y-2.5 -rotate-45'
-					: ''}"
-			></span>
-		</button>
-	</div>
-</nav>
+		<div class="flex items-center gap-2">
+			<!-- Same 36px height as the language switch. The pseudo-element keeps a 44px tap area. -->
+			<Button
+				href="/songs"
+				variant="outline"
+				size="sm"
+				class="relative hidden h-9 after:absolute after:inset-x-0 after:-inset-y-1 sm:inline-flex"
+			>
+				<Music />
+				{lang.t.nav.songs}
+			</Button>
+			<ToggleGroup
+				type="single"
+				value={lang.current}
+				onValueChange={switchLang}
+				aria-label={lang.t.ui.language}
+			>
+				{#each languages as l (l)}
+					<ToggleGroupItem value={l} class="h-[34px] min-w-11 px-2 text-xs uppercase"
+						>{l}</ToggleGroupItem
+					>
+				{/each}
+			</ToggleGroup>
+			<Button
+				variant="ghost"
+				size="icon"
+				class="md:hidden"
+				onclick={() => (menuOpen = true)}
+				aria-label={lang.t.ui.menu}
+				aria-expanded={menuOpen}
+			>
+				<Menu class="size-5" />
+			</Button>
+		</div>
+	</nav>
+</header>
 
-{#if menuOpen}
-	<div
-		class="fixed inset-0 z-40 flex flex-col items-center justify-center gap-8 md:hidden"
-		style="background: rgba(15,10,5,0.97)"
+<Dialog bind:open={menuOpen}>
+	<DialogContent
+		closeLabel={lang.t.ui.close}
+		class="dark top-0 left-0 h-dvh max-h-none w-full max-w-none translate-x-0 border-0 px-5 pt-20 pb-10"
 	>
-		{#each navLinks as link (link.href)}
-			<a
-				href={link.href}
-				onclick={closeMenu}
-				class="font-impact text-4xl tracking-widest uppercase transition-colors hover:text-primary text-foreground/80"
-			>
-				{link.label}
-			</a>
-		{/each}
-		<a
-			href="/songs"
-			onclick={closeMenu}
-			class="font-impact text-4xl tracking-widest uppercase text-foreground/80 transition-colors hover:text-primary"
-		>
-			{lang.t.nav.songs} ♪
-		</a>
-	</div>
-{/if}
+		<DialogTitle class="sr-only">{lang.t.ui.menu}</DialogTitle>
+		<nav class="flex flex-col">
+			{#each [...navLinks, { href: '/songs', label: lang.t.nav.songs, id: 'songs' }] as link (link.href)}
+				<a
+					href={link.href}
+					onclick={() => (menuOpen = false)}
+					class="border-b border-border py-4 font-display text-4xl leading-none uppercase transition-colors hover:text-foreground/70"
+				>
+					{link.label}
+				</a>
+			{/each}
+		</nav>
+	</DialogContent>
+</Dialog>

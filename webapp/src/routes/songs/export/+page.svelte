@@ -17,7 +17,7 @@
 
 <main class="mx-auto max-w-4xl px-6 py-8 print:max-w-none print:px-0 print:py-0">
 	<header class="mb-8 border-b border-border pb-4 print-songbook-header">
-		<h1 class="font-display text-3xl font-bold text-foreground">Alemar Capoeira Songbook</h1>
+		<h1 class="font-sans text-3xl font-bold text-foreground">Alemar Capoeira Songbook</h1>
 		<p class="mt-2 text-sm text-muted-foreground">
 			{data.songs.length} songs - generated from the current library
 		</p>
@@ -39,7 +39,7 @@
 					<p class="text-xs uppercase tracking-wide text-muted-foreground">
 						#{songIndex + 1} - {CATEGORY_LABELS[song.category]}
 					</p>
-					<h2 class="font-display text-2xl font-semibold text-card-foreground">{song.title}</h2>
+					<h2 class="font-sans text-2xl font-semibold text-card-foreground">{song.title}</h2>
 					{#if song.author}
 						<p class="mt-1 text-sm text-muted-foreground">By {song.author}</p>
 					{/if}

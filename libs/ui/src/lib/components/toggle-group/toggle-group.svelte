@@ -14,6 +14,6 @@
 	bind:ref
 	bind:value={value as never}
 	data-slot="toggle-group"
-	class={cn('inline-flex w-fit items-center rounded-md shadow-xs', className)}
+	class={cn('inline-flex w-fit items-stretch border border-foreground/55', className)}
 	{...restProps}
 />

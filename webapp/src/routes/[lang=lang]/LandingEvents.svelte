@@ -2,6 +2,7 @@
 	import { useLanguageStore } from '$lib/i18n';
 	import { reveal } from '$lib/actions/reveal';
 	import eventsData from '$lib/data/events.json';
+	import MapPin from '@lucide/svelte/icons/map-pin';
 
 	const lang = useLanguageStore();
 
@@ -22,80 +23,73 @@
 	const isPast = (iso: string) => {
 		return new Date(iso) < today;
 	};
+
+	const locale = $derived(
+		lang.current === 'ro' ? 'ro-RO' : lang.current === 'ru' ? 'ru-RU' : 'en-GB'
+	);
 </script>
 
-<section class="py-24 md:py-36" id="events">
-	<div class="mx-auto max-w-5xl px-6 md:px-10">
-		<div class="mb-16" use:reveal>
-			<h2
-				class="font-impact text-[clamp(3rem,9vw,7rem)] leading-none tracking-[0.04em] text-foreground"
-			>
-				{lang.t.events.title}
-			</h2>
-			<p class="mt-4 text-sm tracking-[0.2em] uppercase text-foreground/50">
-				{lang.t.events.subtitle}
-			</p>
-		</div>
-
+<section class="light bg-background text-foreground" id="events">
+	<div class="mx-auto max-w-6xl px-5 md:px-10">
 		{#if events.length === 0}
-			<div class="border-l-2 border-primary/30 pl-8 py-4">
-				<p class="text-foreground/50 text-lg">{lang.t.events.noEvents}</p>
-				<p class="mt-2 text-sm tracking-[0.15em] uppercase text-foreground/30">
-					{lang.t.events.stayTuned}
+			<!-- Nothing planned: one compact row instead of a full section. -->
+			<div
+				class="flex flex-col gap-4 border-t border-border py-16 md:flex-row md:items-end md:justify-between md:py-20"
+				use:reveal
+			>
+				<h2 class="title-lg">{lang.t.events.title}</h2>
+				<p class="max-w-md text-lg md:pb-2 md:text-right">
+					<span class="font-semibold">{lang.t.events.noEvents}</span>
+					<span class="text-muted-foreground">{lang.t.events.stayTuned}</span>
 				</p>
 			</div>
 		{:else}
-			<div class="flex flex-col gap-0">
+			<div class="border-t border-border pt-20 md:pt-28" use:reveal>
+				<h2 class="title-xl">{lang.t.events.title}</h2>
+				<p class="mt-4 text-lg text-muted-foreground">{lang.t.events.subtitle}</p>
+			</div>
+			<ol class="mt-12 pb-24 md:pb-36">
 				{#each events as event, i (event.id)}
 					{@const past = isPast(event.date)}
-					<div
-						class="group relative flex gap-8 border-b border-border/20 py-8 transition-colors hover:border-primary/30 {past
-							? 'opacity-40'
+					{@const date = new Date(event.date)}
+					<li
+						class="grid grid-cols-[5.5rem_1fr] gap-5 border-b border-border py-7 md:grid-cols-[8rem_1fr] md:gap-10 {past
+							? 'text-muted-foreground'
 							: ''}"
 						use:reveal={{ delay: i * 80 }}
 					>
-						<div class="w-32 shrink-0">
-							<time
-								datetime={event.date}
-								class="font-impact text-4xl leading-none tracking-[0.04em] {past
-									? 'text-foreground/60'
-									: 'text-primary'}"
-							>
-								{new Date(event.date).getDate()}
-							</time>
-							<p class="mt-1 text-xs tracking-[0.2em] uppercase text-foreground/40">
-								{new Date(event.date).toLocaleDateString(
-									lang.current === 'ro' ? 'ro-RO' : lang.current === 'ru' ? 'ru-RU' : 'en-GB',
-									{ month: 'long' }
-								)}
-								{new Date(event.date).getFullYear()}
-							</p>
-							{#if past}
-								<p class="mt-2 text-[10px] tracking-[0.2em] uppercase text-foreground/30">past</p>
-							{:else}
-								<span class="mt-2 inline-block h-1.5 w-1.5 rounded-full bg-primary animate-pulse"
-								></span>
-							{/if}
-						</div>
+						<time
+							datetime={event.date}
+							class="flex flex-col items-center justify-center self-start px-2 pt-3 pb-2 {past
+								? 'border border-border'
+								: 'bg-foreground text-background'}"
+						>
+							<span class="font-display text-5xl leading-none md:text-6xl">{date.getDate()}</span>
+							<span class="mt-1 text-label">
+								{date.toLocaleDateString(locale, { month: 'short' })}
+								{date.getFullYear()}
+							</span>
+						</time>
 
-						<div class="flex-1">
-							<h3 class="font-display text-xl text-foreground">
+						<div class="pt-1">
+							<h3 class="font-display text-2xl leading-tight uppercase md:text-3xl">
 								{event.title[lang.current]}
 							</h3>
 							{#if event.description}
-								<p class="mt-2 text-foreground/60 leading-relaxed">
+								<p class="mt-2 max-w-prose leading-relaxed text-foreground/80">
 									{event.description[lang.current]}
 								</p>
 							{/if}
 							{#if event.location}
-								<p class="mt-3 text-xs tracking-[0.2em] uppercase text-foreground/40">
-									{lang.t.events.location}: {event.location}
+								<p class="mt-3 flex items-center gap-1.5 text-label text-muted-foreground">
+									<MapPin class="size-3.5" />
+									{event.location}
 								</p>
 							{/if}
 						</div>
-					</div>
+					</li>
 				{/each}
-			</div>
+			</ol>
 		{/if}
 	</div>
 </section>
