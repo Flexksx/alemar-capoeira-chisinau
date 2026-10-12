@@ -4,6 +4,7 @@
 	import { Button } from '@alemar/ui/button';
 	import Phone from '@lucide/svelte/icons/phone';
 	import MapPin from '@lucide/svelte/icons/map-pin';
+	import { audiences } from '$lib/audiences';
 
 	const lang = useLanguageStore();
 
@@ -77,8 +78,25 @@
 			<p class="mt-2 text-sm text-muted-foreground">{lang.t.footer.since}</p>
 		</div>
 		<p class="text-sm text-muted-foreground">{lang.t.footer.tagline}</p>
-		<a href="/songs" class="inline-flex min-h-11 items-center text-sm font-semibold underline-link">
-			{lang.t.nav.songs}
-		</a>
+		<ul class="flex flex-wrap gap-x-6">
+			{#each audiences as audience (audience)}
+				<li>
+					<a
+						href="/{lang.current}/{audience}"
+						class="inline-flex min-h-11 items-center text-sm font-semibold underline-link"
+					>
+						{lang.t.audiences.cards[audience].title}
+					</a>
+				</li>
+			{/each}
+			<li>
+				<a
+					href="/songs"
+					class="inline-flex min-h-11 items-center text-sm font-semibold underline-link"
+				>
+					{lang.t.nav.songs}
+				</a>
+			</li>
+		</ul>
 	</div>
 </footer>

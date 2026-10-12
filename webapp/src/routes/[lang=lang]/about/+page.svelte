@@ -9,6 +9,7 @@
 	import MapPin from '@lucide/svelte/icons/map-pin';
 	import User from '@lucide/svelte/icons/user';
 	import alemArLogo from '$lib/assets/alemar-logo.png';
+	import groupPhoto from '$lib/assets/photos/20250815_195516.jpg';
 
 	let { data } = $props();
 	const lang = useLanguageStore();
@@ -34,7 +35,7 @@
 	<meta property="og:url" content="{SITE}/{data.lang}/about" />
 	<meta property="og:title" content={lang.t.meta.aboutTitle} />
 	<meta property="og:description" content={lang.t.meta.aboutDescription} />
-	<meta property="og:image" content="{SITE}/photos/group.jpg" />
+	<meta property="og:image" content="{SITE}{groupPhoto}" />
 	<meta property="og:site_name" content="Alemar Capoeira Chisinau" />
 </svelte:head>
 

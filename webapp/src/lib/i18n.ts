@@ -1,4 +1,5 @@
 import { getContext, setContext } from 'svelte';
+import type { Audience } from './audiences';
 
 export type Language = 'ro' | 'ru' | 'en';
 
@@ -38,6 +39,13 @@ export interface Translations {
 		instagram: string;
 	};
 	footer: { tagline: string; since: string };
+	audiences: {
+		title: string;
+		subtitle: string;
+		more: string;
+		cards: Record<Audience, { title: string; body: string }>;
+	};
+	audiencePage: { faqTitle: string; otherTitle: string; home: string };
 	meta: {
 		landingTitle: string;
 		landingDescription: string;
@@ -95,7 +103,7 @@ const translations: Record<Language, Translations> = {
 		about: {
 			title: 'CE ESTE CAPOEIRA?',
 			quote: 'A început ca rezistență, funcționează ca luptă și trăiește prin muzică.',
-			body: 'Capoeira este o artă marțială braziliană care îmbină tehnici de luptă, acrobații și muzică. S-a născut din rezistența africană în Brazilia. Forța fizică și strategia fluidă lucrează împreună: doi sportivi stau față în față și își răspund mișcare cu mișcare, în timp real.',
+			body: 'Capoeira este o artă marțială braziliană care îmbină tehnici de luptă, acrobații și muzică. S-a născut din rezistența africană în Brazilia. Jocul cere forță și strategie: doi sportivi stau față în față și își răspund mișcare cu mișcare.',
 			highlight: 'Un sport și o cultură întreagă în jurul lui.',
 			more: 'Povestea noastră'
 		},
@@ -146,6 +154,30 @@ const translations: Record<Language, Translations> = {
 			tagline: 'Artă marțială braziliană. Acrobații. Muzică.',
 			since: 'Activi din 2003 în Chișinău'
 		},
+		audiences: {
+			title: 'PENTRU CINE',
+			subtitle: 'Copiii și adulții se antrenează în același grup.',
+			more: 'Află mai mult',
+			cards: {
+				kids: {
+					title: 'Copii',
+					body: 'De la 5 ani. Coordonare, încredere și muzică, într-o artă marțială fără agresivitate.'
+				},
+				adults: {
+					title: 'Adulți',
+					body: 'Mobilitate și forță pentru tot corpul. Poți începe de la zero, la orice vârstă.'
+				},
+				culture: {
+					title: 'Cultură braziliană',
+					body: 'Instrumente, cântece în portugheză, roda și batizados.'
+				}
+			}
+		},
+		audiencePage: {
+			faqTitle: 'ÎNTREBĂRI FRECVENTE',
+			otherTitle: 'VEZI ȘI',
+			home: 'Acasă'
+		},
 		meta: {
 			landingTitle: 'Alemar Capoeira Chișinău: artă marțială braziliană în Moldova',
 			landingDescription:
@@ -158,62 +190,61 @@ const translations: Record<Language, Translations> = {
 			pageTitle: 'DESPRE NOI',
 			subtitle: 'Artă marțială, dans, muzică și o comunitate în Chișinău, din 2003.',
 			history:
-				'Alemar Capoeira Chișinău s-a deschis în 2003. A fost prima școală de capoeira din Moldova și rămâne cea mai veche care funcționează. În timp s-a format un grup apropiat în jurul ei. Pe oameni îi ține împreună respectul unul pentru altul, bucuria jocului și cei cu care se antrenează.',
+				'Alemar Capoeira Chișinău s-a deschis în 2003. A fost prima școală de capoeira din Moldova și este cea mai veche care funcționează și azi. În timp, în jurul ei s-a format un grup apropiat, ținut împreună de respect reciproc și de bucuria jocului.',
 			forTitle: 'PENTRU CINE?',
 			kidsTitle: 'COPII',
 			kidsBody:
-				'Copiii pot începe de la 5 ani. Antrenamentul dezvoltă coordonarea, flexibilitatea și echilibrul, dar formează și caracterul. Copiii învață să vorbească între ei, să lucreze împreună și să treacă peste ce credeau că pot. Sala este sigură, atmosfera este jucăușă și muzica sună tot timpul. Nimeni nu concurează și nimeni nu pierde, pentru că în capoeira se joacă împreună.',
+				'Copiii pot începe de la 5 ani. Antrenamentul le dezvoltă coordonarea, flexibilitatea și echilibrul și le formează caracterul: copiii învață să lucreze împreună și să facă mișcări pe care nu credeau că le pot face. Sala este sigură și atmosfera jucăușă, iar muzica sună tot antrenamentul. Nimeni nu concurează și nimeni nu pierde, pentru că în capoeira se joacă împreună.',
 			adultsTitle: 'ADULȚI',
 			adultsBody:
-				'Vârsta, forma fizică și ce ai făcut înainte nu contează. Adulții care se antrenează devin mai puternici și mai flexibili și au o pauză reală de la ziua de lucru. Intri și într-un grup: trei antrenamente pe săptămână, evenimente, batizaduri și prietenii care continuă în afara sălii.',
+				'Vârsta, forma fizică și ce ai făcut înainte nu contează. Adulții care se antrenează devin mai puternici și mai flexibili și au o pauză reală de la ziua de lucru. Devii și parte dintr-un grup: trei antrenamente pe săptămână, evenimente, batizados și prietenii care continuă în afara sălii.',
 			whyTitle: 'DE CE CAPOEIRA?',
 			why: [
 				'Antrenament pentru tot corpul: forță, flexibilitate, coordonare și echilibru',
 				'Deschis pentru orice vârstă, orice gen și orice nivel de pregătire',
 				'Muzică live la fiecare antrenament, cântată la berimbau, atabaque și pandeiro',
 				'Artă marțială, dans și acrobații în același sport',
-				'O comunitate cu evenimente regulate și batizaduri',
+				'O comunitate cu evenimente regulate și batizados',
 				'Prima lecție este gratuită'
 			],
 			compareSection: {
 				title: 'CAPOEIRA VS ALTE ARTE MARȚIALE',
-				subtitle:
-					'Capoeira este singura artă marțială care pune lupta, muzica, dansul și acrobația în aceeași practică.',
+				subtitle: 'Capoeira pune lupta, muzica, dansul și acrobația în aceeași practică.',
 				capoeiraAdds: 'Capoeira adaugă:',
 				cards: {
 					karate: {
 						name: 'Karate',
-						desc: 'Artă marțială japoneză construită pe lovituri precise, kata și lupte formale. Este disciplinată și puternică, și este și tăcută. Tehnica duce toată practica, fără muzică și fără dans.',
+						desc: 'Artă marțială japoneză construită pe lovituri precise, kata și lupte formale. Este disciplinată și puternică. Se practică în liniște, fără muzică și fără dans.',
 						contrast:
-							'Percuția live dă ritmul fiecărui schimb. Ginga te ține în mișcare în loc să stai într-o poziție fixă, iar rădăcinile afro-braziliene se văd în mișcarea în sine.'
+							'Percuția live dă ritmul fiecărui schimb. Ginga te ține în mișcare în loc să stai într-o poziție fixă, iar mișcările vin din tradiția afro-braziliană.'
 					},
 					judo: {
 						name: 'Judo',
-						desc: 'Artă de grappling olimpică. Proiecții, baleiaje și control la sol, făcute cu multă precizie. Judo este construit ca să funcționeze, nu ca să arate bine, așa că nu are lovituri, nu are acrobații și nu are ritm după care să te iei.',
+						desc: 'Artă marțială olimpică de grappling: proiecții, baleiaje și control la sol, executate cu precizie. Judo nu are lovituri, acrobații sau ritm muzical.',
 						contrast:
-							'Lovituri explozive, fente în aer și eschive care transformă apărarea în ceva de privit. Muzica live curge sub tot antrenamentul.'
+							'Lovituri, fente și eschive, multe dintre ele acrobatice. Tot antrenamentul se face pe muzică live.'
 					},
 					taekwondo: {
 						name: 'Taekwondo',
-						desc: 'Artă marțială olimpică știută pentru lovituri înalte și rapide și pentru competiții formale. Este atletică și iute. Este și construită în jurul câștigării unui meci, nu al jocului.',
+						desc: 'Artă marțială olimpică, cunoscută pentru lovituri înalte și rapide. Este atletică, iar antrenamentul este construit în jurul competițiilor formale și al câștigării meciului.',
 						contrast:
-							'Ginga, legănarea care nu se oprește niciodată, transformă loviturile într-o conversație. Roda ia locul tabelei de scor, așa că ai parteneri în loc de câștigători.'
+							'Ginga, legănarea continuă a capoeirei, face din lovituri un schimb între doi parteneri. În roda nu se ține scorul și nu există câștigători.'
 					},
 					mma: {
 						name: 'MMA',
-						desc: 'Artele marțiale mixte pun laolaltă loviturile și grappling-ul ca să obțină cel mai bun rezultat. Sunt practice și acoperă mult teren. Sunt și numai despre luptă, fără latură culturală și fără loc pentru expresie.',
+						desc: 'Artele marțiale mixte combină loviturile și grappling-ul ca să obțină cel mai eficient rezultat. Sunt practice și acoperă multe tehnici. Accentul cade doar pe luptă, fără latură culturală și fără loc pentru exprimare.',
 						contrast:
-							'Loc să te exprimi, o cultură în spatele sportului și roda. În cerc, fiecare joc este o reprezentație la care ia parte tot grupul.'
+							'O cultură în spatele sportului. În roda, fiecare joc este o formă de exprimare la care ia parte tot grupul.'
 					}
 				}
 			},
 			communityTitle: 'COMUNITATE',
 			communityBody:
-				'Capoeira nu se practică singur. Jocul are loc în roda, cercul în care se intră, iar cercul merge doar dacă participă toți. La Alemar Chișinău studenții se cunosc și cresc împreună, indiferent de vârstă, gen sau naționalitate.',
+				'Capoeira nu se practică de unul singur. Jocul are loc în roda, un cerc care funcționează doar dacă participă toți. La Alemar Chișinău elevii se cunosc între ei și progresează împreună, indiferent de vârstă, gen sau naționalitate.',
 			instructorTitle: 'INSTRUCTORUL',
 			instructorName: 'Sergiu Melnic',
 			instructorBio:
-				'Sergiu Melnic practică capoeira de peste douăzeci de ani și conduce grupul Alemar Chișinău din 2003. Sute de studenți au trecut prin sala lui: copii și adulți, începători și avansați.',
+				'Sergiu Melnic practică capoeira de peste douăzeci de ani și conduce grupul Alemar Chișinău din 2003.',
 			ctaText: 'Vino la un antrenament',
 			backToHome: 'Înapoi la pagina principală'
 		}
@@ -236,7 +267,7 @@ const translations: Record<Language, Translations> = {
 		about: {
 			title: 'ЧТО ТАКОЕ КАПОЭЙРА?',
 			quote: 'Она началась как сопротивление, работает как бой и живёт через музыку.',
-			body: 'Бразильское боевое искусство капоэйра соединяет боевые техники, акробатику и музыку. Она выросла из африканского сопротивления в Бразилии. Физическая сила и боевая стратегия работают вместе: два спортсмена стоят друг против друга и отвечают движением на движение, в реальном времени.',
+			body: 'Капоэйра — бразильское боевое искусство, которое соединяет боевые техники, акробатику и музыку. Она выросла из сопротивления африканцев в Бразилии. Игра требует силы и стратегии: два спортсмена стоят друг против друга и отвечают движением на движение.',
 			highlight: 'Спорт и целая культура вокруг него.',
 			more: 'Наша история'
 		},
@@ -287,6 +318,30 @@ const translations: Record<Language, Translations> = {
 			tagline: 'Бразильское боевое искусство. Акробатика. Музыка.',
 			since: 'С 2003 года в Кишинёве'
 		},
+		audiences: {
+			title: 'ДЛЯ КОГО',
+			subtitle: 'Дети и взрослые тренируются в одной группе.',
+			more: 'Подробнее',
+			cards: {
+				kids: {
+					title: 'Дети',
+					body: 'С 5 лет. Координация, уверенность и музыка в боевом искусстве без агрессии.'
+				},
+				adults: {
+					title: 'Взрослые',
+					body: 'Подвижность и сила для всего тела. Можно начать с нуля, в любом возрасте.'
+				},
+				culture: {
+					title: 'Бразильская культура',
+					body: 'Инструменты, песни на португальском, рода и батизадо.'
+				}
+			}
+		},
+		audiencePage: {
+			faqTitle: 'ЧАСТЫЕ ВОПРОСЫ',
+			otherTitle: 'СМОТРИТЕ ТАКЖЕ',
+			home: 'Главная'
+		},
 		meta: {
 			landingTitle: 'Alemar Capoeira Кишинёв: бразильское боевое искусство в Молдове',
 			landingDescription:
@@ -299,61 +354,61 @@ const translations: Record<Language, Translations> = {
 			pageTitle: 'О НАС',
 			subtitle: 'Боевое искусство, танец, музыка и сообщество в Кишинёве, с 2003 года.',
 			history:
-				'Alemar Capoeira Chișinău открылась в 2003 году. Это была первая школа капоэйры в Молдове, и она остаётся самой старой из работающих. За эти годы вокруг неё собралась близкая группа. Людей держат вместе уважение друг к другу, радость игры и те, с кем они тренируются.',
+				'Alemar Capoeira Chișinău открылась в 2003 году. Это была первая школа капоэйры в Молдове, и она остаётся самой старой из работающих. За эти годы вокруг неё собралась близкая группа, которую объединяют уважение друг к другу и радость игры.',
 			forTitle: 'ДЛЯ КОГО?',
 			kidsTitle: 'ДЕТИ',
 			kidsBody:
-				'Дети могут начать с 5 лет. Тренировки развивают координацию, гибкость и равновесие, а ещё формируют характер. Дети учатся разговаривать друг с другом, работать вместе и делать больше, чем считали возможным. В зале безопасно, настроение игровое, музыка звучит всё занятие. Никто не соревнуется и никто не проигрывает, потому что в капоэйру играют вместе.',
+				'Дети могут начать с 5 лет. Тренировки развивают координацию, гибкость и равновесие и воспитывают характер: дети учатся работать вместе и делать то, что раньше казалось им невозможным. В зале безопасно и весело, а музыка звучит всё занятие. Никто не соревнуется и никто не проигрывает, потому что в капоэйру играют вместе.',
 			adultsTitle: 'ВЗРОСЛЫЕ',
 			adultsBody:
-				'Возраст, физическая форма и прошлый опыт не имеют значения. Взрослые, которые тренируются, становятся сильнее и гибче и получают настоящий перерыв от рабочего дня. Вы также входите в группу: три тренировки в неделю, мероприятия, батизадо и дружба, которая продолжается за стенами зала.',
+				'Возраст, физическая форма и прошлый опыт не имеют значения. Взрослые, которые тренируются, становятся сильнее и гибче и по-настоящему отдыхают от рабочего дня. Вы также становитесь частью группы: три тренировки в неделю, мероприятия, батизадо и дружба, которая продолжается за стенами зала.',
 			whyTitle: 'ПОЧЕМУ КАПОЭЙРА?',
 			why: [
 				'Тренировка для всего тела: сила, гибкость, координация и баланс',
 				'Открыто для любого возраста, любого пола и любой подготовки',
 				'Живая музыка на каждой тренировке, на беримбау, атабаке и пандейро',
-				'Боевое искусство, танец и акробатика в одном и том же виде спорта',
+				'Боевое искусство, танец и акробатика в одном виде спорта',
 				'Сообщество с регулярными мероприятиями и батизадо',
 				'Первое занятие бесплатно'
 			],
 			compareSection: {
 				title: 'КАПОЭЙРА VS ДРУГИЕ БОЕВЫЕ ИСКУССТВА',
-				subtitle: 'Только капоэйра соединяет бой, музыку, танец и акробатику в одной практике.',
+				subtitle: 'Капоэйра соединяет бой, музыку, танец и акробатику в одной практике.',
 				capoeiraAdds: 'Капоэйра добавляет:',
 				cards: {
 					karate: {
 						name: 'Карате',
-						desc: 'Японское боевое искусство, построенное на точных ударах, ката и формальных поединках. Оно дисциплинированное и мощное, и ещё оно молчаливое. Всю практику несёт техника, без музыки и без танца.',
+						desc: 'Японское боевое искусство, построенное на точных ударах, ката и формальных поединках. Оно дисциплинированное и мощное. Тренируются в тишине, без музыки и танца.',
 						contrast:
-							'Живая перкуссия задаёт темп каждого обмена. Гинга держит вас в движении вместо статичной стойки, а афро-бразильские корни видны в самом движении.'
+							'Живая перкуссия задаёт темп каждого обмена. Жинга держит вас в движении вместо статичной стойки, а сами движения идут из афро-бразильской традиции.'
 					},
 					judo: {
 						name: 'Дзюдо',
-						desc: 'Олимпийская борьба. Броски, подсечки и контроль на земле, сделанные очень точно. Дзюдо построено, чтобы работать, а не чтобы красиво выглядеть, поэтому в нём нет ударов, нет акробатики и нет ритма.',
+						desc: 'Олимпийская борьба: броски, подсечки и контроль в партере, выполненные очень точно. В дзюдо нет ударов, акробатики и музыкального ритма.',
 						contrast:
-							'Взрывные удары, финты в воздухе и уходы, которые превращают защиту в зрелище. Живая музыка идёт под всей тренировкой.'
+							'Удары, финты и уходы, многие из них акробатические. Вся тренировка идёт под живую музыку.'
 					},
 					taekwondo: {
 						name: 'Тхэквондо',
-						desc: 'Олимпийское боевое искусство, известное высокими быстрыми ударами и формальными соревнованиями. Оно атлетичное и быстрое. Оно ещё и построено вокруг победы в матче, а не вокруг игры.',
+						desc: 'Олимпийское боевое искусство, известное высокими и быстрыми ударами ногами. Оно атлетичное, а тренировки построены вокруг формальных соревнований и победы в поединке.',
 						contrast:
-							'Гинга, покачивание, которое не останавливается, превращает удары в разговор. Рода занимает место табло, поэтому у вас есть партнёры, а не победители.'
+							'Жинга, постоянное покачивание капоэйры, превращает удары в обмен между двумя партнёрами. В роде не ведут счёт и нет победителей.'
 					},
 					mma: {
 						name: 'ММА',
-						desc: 'Смешанные боевые искусства складывают удары и борьбу, чтобы получить лучший результат. Они практичны и охватывают многое. Они ещё и только про бой, без культурной стороны и без места для выражения.',
+						desc: 'Смешанные боевые искусства соединяют удары и борьбу ради максимальной эффективности. Они практичны и охватывают много техник. Всё внимание отдано бою, без культурной стороны и без места для самовыражения.',
 						contrast:
-							'Место, чтобы выразить себя, культура за спортом и рода. В круге каждая игра становится выступлением, в котором участвует вся группа.'
+							'Культура за спортом. В роде каждая игра становится способом выразить себя, и в ней участвует вся группа.'
 					}
 				}
 			},
 			communityTitle: 'СООБЩЕСТВО',
 			communityBody:
-				'Капоэйрой нельзя заниматься в одиночку. Игра идёт в роде, в круге, и круг работает только если участвуют все. В Alemar Chișinău студенты знают друг друга и растут вместе, независимо от возраста, пола или национальности.',
+				'Капоэйрой нельзя заниматься в одиночку. Игра идёт в роде, круге, который работает, только если участвуют все. В Alemar Chișinău ученики знают друг друга и вместе развиваются, независимо от возраста, пола или национальности.',
 			instructorTitle: 'ИНСТРУКТОР',
 			instructorName: 'Sergiu Melnic',
 			instructorBio:
-				'Сержиу Мелник занимается капоэйрой больше двадцати лет и ведёт группу Alemar Chișinău с 2003 года. Через его занятия прошли сотни студентов: дети и взрослые, новички и продвинутые.',
+				'Сержиу Мелник занимается капоэйрой больше двадцати лет и ведёт группу Alemar Chișinău с 2003 года.',
 			ctaText: 'Прийти на тренировку',
 			backToHome: 'На главную страницу'
 		}
@@ -367,7 +422,7 @@ const translations: Record<Language, Translations> = {
 			songs: 'Songs'
 		},
 		hero: {
-			tagline: 'Brazilian Martial Art. Acrobatics. Music.',
+			tagline: 'Brazilian martial art. Acrobatics. Music.',
 			line1: 'CAPOEIRA',
 			line2: 'IN CHIȘINĂU',
 			cta: 'First class free',
@@ -376,7 +431,7 @@ const translations: Record<Language, Translations> = {
 		about: {
 			title: 'WHAT IS CAPOEIRA?',
 			quote: 'It began as resistance, it works as a fight, and it lives through music.',
-			body: 'Capoeira is a Brazilian martial art that mixes fighting technique, acrobatics, and music. It grew out of African resistance in Brazil. Physical power and combat strategy work together: two athletes face each other and answer move for move, in real time.',
+			body: 'Capoeira is a Brazilian martial art that mixes fighting technique, acrobatics, and music. It grew out of African resistance in Brazil. The game takes strength and strategy: two athletes face each other and answer move for move.',
 			highlight: 'A sport, and a whole culture around it.',
 			more: 'Our story'
 		},
@@ -424,8 +479,32 @@ const translations: Record<Language, Translations> = {
 			instagram: 'Instagram'
 		},
 		footer: {
-			tagline: 'Brazilian Martial Art. Acrobatics. Music.',
+			tagline: 'Brazilian martial art. Acrobatics. Music.',
 			since: 'Active since 2003 in Chișinău'
+		},
+		audiences: {
+			title: 'WHO IT IS FOR',
+			subtitle: 'Children and adults train in the same group.',
+			more: 'Read more',
+			cards: {
+				kids: {
+					title: 'Kids',
+					body: 'From age 5. Coordination, confidence and music, in a martial art without aggression.'
+				},
+				adults: {
+					title: 'Adults',
+					body: 'Mobility and strength for the whole body. You can start from zero, at any age.'
+				},
+				culture: {
+					title: 'Brazilian culture',
+					body: 'Instruments, songs in Portuguese, the roda and batizados.'
+				}
+			}
+		},
+		audiencePage: {
+			faqTitle: 'FREQUENTLY ASKED QUESTIONS',
+			otherTitle: 'SEE ALSO',
+			home: 'Home'
 		},
 		meta: {
 			landingTitle: 'Alemar Capoeira Chișinău: Brazilian martial art in Moldova',
@@ -439,17 +518,17 @@ const translations: Record<Language, Translations> = {
 			pageTitle: 'ABOUT US',
 			subtitle: 'Martial art, dance, music, and a community in Chișinău since 2003.',
 			history:
-				'Alemar Capoeira Chișinău opened in 2003. It was the first capoeira school in Moldova and it is still the oldest one running. Over the years a close group formed around it. What holds the group together is respect for each other, the fun of the game, and the people you train with.',
+				'Alemar Capoeira Chișinău opened in 2003. It was the first capoeira school in Moldova and it is still the oldest one running. Over the years a close group formed around it, held together by mutual respect and the fun of the game.',
 			forTitle: 'WHO IS IT FOR?',
 			kidsTitle: 'KIDS',
 			kidsBody:
-				'Children can start at age 5. Training builds coordination, flexibility, and balance, and it builds character too. Kids learn to talk to each other, work together, and get past what they thought they could do. The room is safe, the mood is playful, and the music runs the whole time. Nobody competes and nobody loses, because capoeira is played together.',
+				'Children can start at age 5. Training builds coordination, flexibility, and balance, and it shapes character: kids learn to work together and to do moves they did not think they could. The room is safe and the mood is playful, with music the whole time. Nobody competes and nobody loses, because capoeira is played together.',
 			adultsTitle: 'ADULTS',
 			adultsBody:
 				'Your age, your fitness, and what you have done before do not matter. Adults who train here get stronger and more flexible, and they get a real break from the working day. You also join a group: three sessions a week, events, batizados, and friendships that carry on outside the gym.',
 			whyTitle: 'WHY CAPOEIRA?',
 			why: [
-				'A full body workout: strength, flexibility, coordination, and balance',
+				'A full-body workout: strength, flexibility, coordination, and balance',
 				'Open to any age, any gender, and any level of fitness',
 				'Live music at every session, played on berimbau, atabaque, and pandeiro',
 				'Martial art, dance, and acrobatics in the same sport',
@@ -458,43 +537,42 @@ const translations: Record<Language, Translations> = {
 			],
 			compareSection: {
 				title: 'CAPOEIRA VS OTHER MARTIAL ARTS',
-				subtitle:
-					'Capoeira is the only martial art that puts combat, music, dance, and acrobatics in the same practice.',
+				subtitle: 'Capoeira puts combat, music, dance, and acrobatics in the same practice.',
 				capoeiraAdds: 'Capoeira adds:',
 				cards: {
 					karate: {
 						name: 'Karate',
-						desc: 'A striking art from Japan, built on precision, katas, and formal sparring. It is powerful and disciplined, and it is also silent. Technique carries the whole practice, without music or dance.',
+						desc: 'A striking art from Japan, built on precision, kata, and formal sparring. It is powerful and disciplined, and it is practiced in silence, with no music or dance.',
 						contrast:
-							'Live percussion sets the pace of every exchange. The ginga keeps you moving instead of holding a stance, and the Afro-Brazilian roots show in the movement itself.'
+							'Live percussion sets the pace of every exchange. The ginga keeps you moving instead of holding a stance, and the moves come from Afro-Brazilian tradition.'
 					},
 					judo: {
 						name: 'Judo',
-						desc: 'An Olympic grappling art. Throws, sweeps, and ground control, done with a lot of precision. Judo is built to work rather than to look good, so it has no strikes, no acrobatics, and no rhythm to follow.',
+						desc: 'An Olympic grappling art: throws, sweeps, and ground control, done with precision. Judo has no strikes, acrobatics, or musical rhythm.',
 						contrast:
-							'Kicks, feints in the air, and escapes that turn defense into something worth watching. Live music runs under the whole session.'
+							'Kicks, feints, and escapes, many of them acrobatic. The whole session runs to live music.'
 					},
 					taekwondo: {
 						name: 'Taekwondo',
-						desc: 'An Olympic art known for high, fast kicks and formal competition. It is athletic and quick. It is also built around winning a match rather than playing a game.',
+						desc: 'An Olympic art known for high, fast kicks. It is athletic, and training is built around formal competition and winning the match.',
 						contrast:
-							'The ginga, a steady sway that never stops, turns kicks into a conversation. The roda takes the place of the scoreboard, so you get partners instead of winners.'
+							'The ginga, the constant sway of capoeira, makes kicks an exchange between two partners. The roda keeps no score and has no winners.'
 					},
 					mma: {
 						name: 'MMA',
-						desc: 'Mixed martial arts puts striking and grappling together to get the most effective result. It is practical and it covers a lot of ground. It is also only about fighting, with no cultural side and no room for expression.',
+						desc: 'Mixed martial arts combines striking and grappling to get the most effective result. It is practical and covers a lot of technique. The focus is on fighting alone, with no cultural side and no room for self-expression.',
 						contrast:
-							'Room to express yourself, a culture behind the sport, and the roda. In the circle every game is a performance the whole group takes part in.'
+							'A culture behind the sport. In the roda, every game is a form of self-expression that the whole group takes part in.'
 					}
 				}
 			},
 			communityTitle: 'COMMUNITY',
 			communityBody:
-				'You cannot practice capoeira on your own. The game happens in the roda, the circle, and the circle only works if everyone in it takes part. At Alemar Chișinău the students know each other and grow together, whatever their age, gender, or background.',
+				'You cannot practice capoeira on your own. The game happens in the roda, a circle that only works if everyone in it takes part. At Alemar Chișinău the students know each other and progress together, whatever their age, gender, or nationality.',
 			instructorTitle: 'THE INSTRUCTOR',
 			instructorName: 'Sergiu Melnic',
 			instructorBio:
-				'Sergiu Melnic has trained in capoeira for more than twenty years and has led the Alemar Chișinău group since 2003. Hundreds of students have come through his classes: children and adults, first-timers and advanced.',
+				'Sergiu Melnic has trained in capoeira for more than twenty years and has led the Alemar Chișinău group since 2003.',
 			ctaText: 'Come to a class',
 			backToHome: 'Back to home page'
 		}

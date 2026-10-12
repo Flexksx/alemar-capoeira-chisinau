@@ -1,0 +1,11 @@
+{
+	// dependency-cruiser reads the generated $lib paths relative to this folder, not to .svelte-kit, so it cannot
+	// resolve them. SvelteKit warns about paths in tsconfig.json, so the paths for dependency-cruiser live here.
+	"extends": "./tsconfig.json",
+	"compilerOptions": {
+		"paths": {
+			"$lib": ["./src/lib"],
+			"$lib/*": ["./src/lib/*"]
+		}
+	}
+}

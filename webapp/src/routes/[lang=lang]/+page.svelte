@@ -3,10 +3,12 @@
 	import LandingNav from './LandingNav.svelte';
 	import LandingHero from './LandingHero.svelte';
 	import LandingAbout from './LandingAbout.svelte';
-	import LandingClasses from './LandingClasses.svelte';
+	import ClassesSection from '$lib/components/ClassesSection.svelte';
 	import LandingGallery from './LandingGallery.svelte';
 	import LandingEvents from './LandingEvents.svelte';
-	import LandingContact from './LandingContact.svelte';
+	import ContactSection from '$lib/components/ContactSection.svelte';
+	import AudiencesSection from '$lib/components/AudiencesSection.svelte';
+	import groupPhoto from '$lib/assets/photos/20250815_195516.jpg';
 
 	let { data } = $props();
 	const lang = useLanguageStore();
@@ -23,7 +25,7 @@
 		url: SITE,
 		telephone: '+37379707072',
 		foundingDate: '2003',
-		image: `${SITE}/photos/hero.jpg`,
+		image: `${SITE}${groupPhoto}`,
 		sport: 'Capoeira',
 		address: {
 			'@type': 'PostalAddress',
@@ -68,16 +70,14 @@
 	<meta property="og:url" content="{SITE}/{data.lang}" />
 	<meta property="og:title" content={lang.t.meta.landingTitle} />
 	<meta property="og:description" content={lang.t.meta.landingDescription} />
-	<meta property="og:image" content="{SITE}/photos/hero.jpg" />
-	<meta property="og:image:width" content="1200" />
-	<meta property="og:image:height" content="630" />
+	<meta property="og:image" content="{SITE}{groupPhoto}" />
 	<meta property="og:locale" content={ogLocale} />
 	<meta property="og:site_name" content="Alemar Capoeira Chisinau" />
 
 	<meta name="twitter:card" content="summary_large_image" />
 	<meta name="twitter:title" content={lang.t.meta.landingTitle} />
 	<meta name="twitter:description" content={lang.t.meta.landingDescription} />
-	<meta name="twitter:image" content="{SITE}/photos/hero.jpg" />
+	<meta name="twitter:image" content="{SITE}{groupPhoto}" />
 
 	<!-- eslint-disable-next-line svelte/no-at-html-tags -->
 	{@html jsonLd}
@@ -87,8 +87,9 @@
 	<LandingNav />
 	<LandingHero />
 	<LandingAbout />
-	<LandingClasses />
+	<ClassesSection />
+	<AudiencesSection />
 	<LandingGallery />
 	<LandingEvents />
-	<LandingContact />
+	<ContactSection />
 </div>

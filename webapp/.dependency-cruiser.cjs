@@ -15,6 +15,6 @@ module.exports = {
 	],
 	options: {
 		...base.options,
-		tsConfig: { fileName: 'tsconfig.json' }
+		tsConfig: { fileName: 'tsconfig.depcruise.json' }
 	}
 };

@@ -21,6 +21,13 @@ Alemar Capoeira Chișinău is the only dedicated capoeira school in Moldova, ope
 
 Capoeira originated among enslaved Africans in Brazil. It blends martial arts, acrobatics, dance, and music. Participants play inside a roda (circle) accompanied by the berimbau, atabaque, and pandeiro. The school practices both Capoeira Angola and Capoeira Regional styles.
 
+## Pages for each audience
+
+- Capoeira for kids (from age 5, non-aggressive, kids and parents train in one group): https://capoeira.md/en/kids
+- Capoeira for adults (mobility, strength, beginners welcome): https://capoeira.md/en/adults
+- Brazilian culture (instruments, songs in Portuguese, roda, batizado): https://capoeira.md/en/culture
+- Romanian and Russian versions: replace /en/ with /ro/ or /ru/
+
 ## Song Collection
 
 The site includes a digital capoeira songbook with 25 traditional songs used in training and ceremonies, including ladainhas, corridos, and quadras.

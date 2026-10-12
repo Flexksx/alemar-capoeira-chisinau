@@ -6,6 +6,7 @@
 	import Pause from '@lucide/svelte/icons/pause';
 	import Play from '@lucide/svelte/icons/play';
 	import { onMount } from 'svelte';
+	import heroPoster from '$lib/assets/photos/hero.jpg';
 	import video1 from '$lib/assets/videos/559186123_31809521748693885_2546781122121030783_n.mp4';
 
 	const lang = useLanguageStore();
@@ -32,7 +33,7 @@
 		bind:this={video}
 		bind:paused
 		src={video1}
-		poster="/photos/hero.jpg"
+		poster={heroPoster}
 		autoplay
 		muted
 		loop

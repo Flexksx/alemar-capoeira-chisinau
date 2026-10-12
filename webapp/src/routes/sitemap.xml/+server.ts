@@ -1,5 +1,6 @@
 import { songs } from '@alemar/songs';
 import type { RequestHandler } from '@sveltejs/kit';
+import { audiences } from '$lib/audiences';
 
 export const prerender = true;
 
@@ -19,7 +20,15 @@ export const GET: RequestHandler = () => {
     <loc>${SITE_URL}/${lang}/about</loc>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
+  </url>`,
+		...audiences.map(
+			(audience) => `
+  <url>
+    <loc>${SITE_URL}/${lang}/${audience}</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.9</priority>
   </url>`
+		)
 	]);
 
 	const songUrls = songs.map(
